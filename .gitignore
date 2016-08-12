@@ -1,6 +1,7 @@
 .emacs.d/
 .gnupg/
 .subversion/
+.local/
 \#*
 *.stackdump
 .DS_Store
