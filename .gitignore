@@ -1,0 +1,7 @@
+.emacs.d/
+.gnupg/
+.subversion/
+\#*
+*.stackdump
+.DS_Store
+.gitignore.swp
