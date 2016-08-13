@@ -51,6 +51,7 @@ values."
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
+     c-c++
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -383,6 +384,14 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;;
+  ;; Frame title bar formatting to show full path of file
+  (setq-default
+   frame-title-format
+   (list '((buffer-file-name " %f" (dired-directory
+                                    dired-directory
+                                    (refert-buffer-function " %b"
+                                                            ("%b - Dir: " default-directory)))))))
   (global-company-mode)            ;; enable it globally
   (set-default 'truncate-lines t)  ;; don't want line wrapping
   (spacemacs/toggle-vi-tilde-fringe-off) ;; don't want tilde on empty lines
