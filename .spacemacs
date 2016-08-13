@@ -42,6 +42,7 @@ values."
      emacs-lisp
      ;; git
      ;; markdown
+     latex
      org-plus-contrib
      shell-scripts
      ;; (shell :variables
