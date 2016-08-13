@@ -291,94 +291,91 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (setq projectile-svn-command "find . -type f -not -iwholename '*.svn/*' -print0"))
   (when t  ;; org mode
     (with-eval-after-load 'org
-  ;; publishing (specific for each project)
-  ;;(require 'ox-publish) ;; ox-publish already install inside org-plus-contrib package
-  (setq org-publish-project-alist
-        '(;; TODOC project
-          ("todoc-notes"
-           :base-directory "~/project/todoc.org/org/"
-           :base-extension "org"
-           :publishing-directory "~/project/todoc.org/bo/html/"
-           :recursive t
-           :publishing-function org-html-publish-to-html
-           :headline-levels 4             ; Just the default for this project.
-           :auto-preamble t)
-          ("todoc-static"
-           :base-directory "~/project/todoc.org/org/"
-           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-           :publishing-directory "~/project/todoc.org/bo/html/"
-           :recursive t
-           :publishing-function org-publish-attachment)
-          ("todoc-org" :components ("todoc-notes" "todoc-static"))
-          ;; DNOTE project
-          ("dnote-notes"
-           :base-directory "~/project/dnote/org/"
-           :base-extension "org"
-           :publishing-directory "~/project/dnote/bo/html/"
-           :recursive t
-           :publishing-function org-html-publish-to-html
-           :headline-levels 4             ; Just the default for this project.
-           :auto-preamble t)
-          ("dnote-static"
-           :base-directory "~/project/dnote/org/"
-           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-           :publishing-directory "~/project/dnote/bo/html/"
-           :recursive t
-           :publishing-function org-publish-attachment)
-          ("dnote-org-html-themes"
-           :base-directory "~/project/org-html-themes/styles/"
-           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-           :publishing-directory "~/project/dnote/bo/html/styles/"
-           :recursive t
-           :publishing-function org-publish-attachment)
-          ("dnote-org" :components ("dnote-notes" "dnote-static" "dnote-org-html-themes"))
-          ;; omaha.org project here
-          ("omaha.org-notes"
-           :base-directory "~/project/omaha.org/org/"
-           :base-extension "org"
-           :publishing-directory "~/project/omaha.org/bo/html/"
-           :recursive t
-           :publishing-function org-html-publish-to-html
-           :headline-levels 4             ; Just the default for this project.
-           :auto-preamble t)
-          ("omaha.org-static"
-           :base-directory "~/project/omaha.org/org/"
-           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-           :publishing-directory "~/project/omaha.org/bo/html/"
-           :recursive t
-           :publishing-function org-publish-attachment)
-          ("omaha.org-org-html-themes"
-           :base-directory "~/project/org-html-themes/styles/"
-           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-           :publishing-directory "~/project/omaha.org/bo/html/styles/"
-           :recursive t
-           :publishing-function org-publish-attachment)
-          ("omaha.org-org" :components ("omaha.org-notes" "omaha.org-static" "omaha.org-org-html-themes"))
-          ;; SSDC project
-          ("ssdc-notes"
-           :base-directory "~/project/ssdc/org/"
-           :base-extension "org"
-           :publishing-directory "~/project/ssdc/bo/html/"
-           :recursive t
-           :publishing-function org-html-publish-to-html
-           :headline-levels 4             ; Just the default for this project.
-           :auto-preamble t)
-          ("ssdc-static"
-           :base-directory "~/project/ssdc/org/"
-           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-           :publishing-directory "~/project/ssdc/bo/html/"
-           :recursive t
-           :publishing-function org-publish-attachment)
-          ("ssdc-org-html-themes"
-           :base-directory "~/project/org-html-themes/styles/"
-           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-           :publishing-directory "~/project/ssdc/bo/html/styles/"
-           :recursive t
-           :publishing-function org-publish-attachment)
-          ("ssdc-org" :components ("ssdc-notes" "ssdc-static" "ssdc-org-html-themes"))
-          ))
-      )
-    )
+      ;; publishing (specific for each project)
+      ;;(require 'ox-publish) ;; ox-publish already install inside org-plus-contrib package
+      (setq org-publish-project-alist
+            '(;; TODOC project
+              ("todoc-notes"
+              :base-directory "~/project/todoc.org/org/"
+              :base-extension "org"
+              :publishing-directory "~/project/todoc.org/bo/html/"
+              :recursive t
+              :publishing-function org-html-publish-to-html
+              :headline-levels 4             ; Just the default for this project.
+              :auto-preamble t)
+              ("todoc-static"
+              :base-directory "~/project/todoc.org/org/"
+              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+              :publishing-directory "~/project/todoc.org/bo/html/"
+              :recursive t
+              :publishing-function org-publish-attachment)
+              ("todoc-org" :components ("todoc-notes" "todoc-static"))
+              ;; DNOTE project
+              ("dnote-notes"
+              :base-directory "~/project/dnote/org/"
+              :base-extension "org"
+              :publishing-directory "~/project/dnote/bo/html/"
+              :recursive t
+              :publishing-function org-html-publish-to-html
+              :headline-levels 4             ; Just the default for this project.
+              :auto-preamble t)
+              ("dnote-static"
+              :base-directory "~/project/dnote/org/"
+              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+              :publishing-directory "~/project/dnote/bo/html/"
+              :recursive t
+              :publishing-function org-publish-attachment)
+              ("dnote-org-html-themes"
+              :base-directory "~/project/org-html-themes/styles/"
+              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+              :publishing-directory "~/project/dnote/bo/html/styles/"
+              :recursive t
+              :publishing-function org-publish-attachment)
+              ("dnote-org" :components ("dnote-notes" "dnote-static" "dnote-org-html-themes"))
+              ;; omaha.org project here
+              ("omaha.org-notes"
+              :base-directory "~/project/omaha.org/org/"
+              :base-extension "org"
+              :publishing-directory "~/project/omaha.org/bo/html/"
+              :recursive t
+              :publishing-function org-html-publish-to-html
+              :headline-levels 4             ; Just the default for this project.
+              :auto-preamble t)
+              ("omaha.org-static"
+              :base-directory "~/project/omaha.org/org/"
+              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+              :publishing-directory "~/project/omaha.org/bo/html/"
+              :recursive t
+              :publishing-function org-publish-attachment)
+              ("omaha.org-org-html-themes"
+              :base-directory "~/project/org-html-themes/styles/"
+              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+              :publishing-directory "~/project/omaha.org/bo/html/styles/"
+              :recursive t
+              :publishing-function org-publish-attachment)
+              ("omaha.org-org" :components ("omaha.org-notes" "omaha.org-static" "omaha.org-org-html-themes"))
+              ;; SSDC project
+              ("ssdc-notes"
+              :base-directory "~/project/ssdc/org/"
+              :base-extension "org"
+              :publishing-directory "~/project/ssdc/bo/html/"
+              :recursive t
+              :publishing-function org-html-publish-to-html
+              :headline-levels 4             ; Just the default for this project.
+              :auto-preamble t)
+              ("ssdc-static"
+              :base-directory "~/project/ssdc/org/"
+              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+              :publishing-directory "~/project/ssdc/bo/html/"
+              :recursive t
+              :publishing-function org-publish-attachment)
+              ("ssdc-org-html-themes"
+              :base-directory "~/project/org-html-themes/styles/"
+              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+              :publishing-directory "~/project/ssdc/bo/html/styles/"
+              :recursive t
+              :publishing-function org-publish-attachment)
+              ("ssdc-org" :components ("ssdc-notes" "ssdc-static" "ssdc-org-html-themes"))))))
   )
 
 (defun dotspacemacs/user-config ()
@@ -388,7 +385,9 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  ;;
+  ;; *************************************
+  ;; Here for emacs standard stuffs
+  ;; *************************************
   ;; Frame title bar formatting to show full path of file
   (setq-default
    frame-title-format
@@ -396,20 +395,26 @@ you should place your code here."
                                     dired-directory
                                     (refert-buffer-function " %b"
                                                             ("%b - Dir: " default-directory)))))))
-  (global-company-mode)            ;; enable it globally
-  (set-default 'truncate-lines t)  ;; don't want line wrapping
-  (spacemacs/toggle-vi-tilde-fringe-off) ;; don't want tilde on empty lines
+  ;; Don't want line wrapping globally
+  (set-default 'truncate-lines t)
   ;; vi like scrolling
   (setq scroll-step 1           ; scroll just goes down 1 line even it hits the bottom
         scroll-margin 3)        ; 3 lines margin
   ;;
-  ;; Here for vim/spacemacs behaviour
+  ;; ****
+  ;; Here for package configuration
+  ;; ****
+  (global-company-mode)            ;; enable it globally
   ;;
+  ;; ******
+  ;; Here for evil/spacemacs behaviour
+  ;; ******
   ;; Stop Cursor Creep. Does it bother you that the cursor creeps back when you
   ;; go back to normal mode? Here's how to stop it.
   ;; With this setting, command '$' in normal mode will bring cursor go pass the
   ;; end of line (just like emacs behaviour).
   (setq evil-move-cursor-back nil)
+  (spacemacs/toggle-vi-tilde-fringe-off) ;; don't want tilde on empty lines
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
