@@ -37,7 +37,7 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      ivy
-     ;; auto-completion
+     auto-completion
      ;; better-defaults
      emacs-lisp
      ;; git
@@ -382,6 +382,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (global-company-mode)            ;; enable it globally
   (set-default 'truncate-lines t)  ;; don't want line wrapping
   (spacemacs/toggle-vi-tilde-fringe-off) ;; don't want tilde on empty lines
   ;; vi like scrolling
