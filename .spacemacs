@@ -42,7 +42,7 @@ values."
      emacs-lisp
      ;; git
      ;; markdown
-     ;; org
+     org-plus-contrib
      shell-scripts
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -283,6 +283,96 @@ before packages are loaded. If you are unsure, you should try in setting them in
     ;;(setq projectile-mode-line '(:eval (format " P:%s" (projectile-project-name))))
     (setq projectile-completion-system 'ivy) ; it's nice (from swiper package)
     (setq projectile-svn-command "find . -type f -not -iwholename '*.svn/*' -print0"))
+  (when t  ;; org mode
+    (with-eval-after-load 'org
+  ;; publishing (specific for each project)
+  ;;(require 'ox-publish) ;; ox-publish already install inside org-plus-contrib package
+  (setq org-publish-project-alist
+        '(;; TODOC project
+          ("todoc-notes"
+           :base-directory "~/project/todoc.org/org/"
+           :base-extension "org"
+           :publishing-directory "~/project/todoc.org/bo/html/"
+           :recursive t
+           :publishing-function org-html-publish-to-html
+           :headline-levels 4             ; Just the default for this project.
+           :auto-preamble t)
+          ("todoc-static"
+           :base-directory "~/project/todoc.org/org/"
+           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+           :publishing-directory "~/project/todoc.org/bo/html/"
+           :recursive t
+           :publishing-function org-publish-attachment)
+          ("todoc-org" :components ("todoc-notes" "todoc-static"))
+          ;; DNOTE project
+          ("dnote-notes"
+           :base-directory "~/project/dnote/org/"
+           :base-extension "org"
+           :publishing-directory "~/project/dnote/bo/html/"
+           :recursive t
+           :publishing-function org-html-publish-to-html
+           :headline-levels 4             ; Just the default for this project.
+           :auto-preamble t)
+          ("dnote-static"
+           :base-directory "~/project/dnote/org/"
+           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+           :publishing-directory "~/project/dnote/bo/html/"
+           :recursive t
+           :publishing-function org-publish-attachment)
+          ("dnote-org-html-themes"
+           :base-directory "~/project/org-html-themes/styles/"
+           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+           :publishing-directory "~/project/dnote/bo/html/styles/"
+           :recursive t
+           :publishing-function org-publish-attachment)
+          ("dnote-org" :components ("dnote-notes" "dnote-static" "dnote-org-html-themes"))
+          ;; omaha.org project here
+          ("omaha.org-notes"
+           :base-directory "~/project/omaha.org/org/"
+           :base-extension "org"
+           :publishing-directory "~/project/omaha.org/bo/html/"
+           :recursive t
+           :publishing-function org-html-publish-to-html
+           :headline-levels 4             ; Just the default for this project.
+           :auto-preamble t)
+          ("omaha.org-static"
+           :base-directory "~/project/omaha.org/org/"
+           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+           :publishing-directory "~/project/omaha.org/bo/html/"
+           :recursive t
+           :publishing-function org-publish-attachment)
+          ("omaha.org-org-html-themes"
+           :base-directory "~/project/org-html-themes/styles/"
+           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+           :publishing-directory "~/project/omaha.org/bo/html/styles/"
+           :recursive t
+           :publishing-function org-publish-attachment)
+          ("omaha.org-org" :components ("omaha.org-notes" "omaha.org-static" "omaha.org-org-html-themes"))
+          ;; SSDC project
+          ("ssdc-notes"
+           :base-directory "~/project/ssdc/org/"
+           :base-extension "org"
+           :publishing-directory "~/project/ssdc/bo/html/"
+           :recursive t
+           :publishing-function org-html-publish-to-html
+           :headline-levels 4             ; Just the default for this project.
+           :auto-preamble t)
+          ("ssdc-static"
+           :base-directory "~/project/ssdc/org/"
+           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+           :publishing-directory "~/project/ssdc/bo/html/"
+           :recursive t
+           :publishing-function org-publish-attachment)
+          ("ssdc-org-html-themes"
+           :base-directory "~/project/org-html-themes/styles/"
+           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+           :publishing-directory "~/project/ssdc/bo/html/styles/"
+           :recursive t
+           :publishing-function org-publish-attachment)
+          ("ssdc-org" :components ("ssdc-notes" "ssdc-static" "ssdc-org-html-themes"))
+          ))
+      )
+    )
   )
 
 (defun dotspacemacs/user-config ()
