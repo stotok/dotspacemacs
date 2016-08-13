@@ -402,6 +402,14 @@ you should place your code here."
   ;; vi like scrolling
   (setq scroll-step 1           ; scroll just goes down 1 line even it hits the bottom
         scroll-margin 3)        ; 3 lines margin
+  ;;
+  ;; Here for vim/spacemacs behaviour
+  ;;
+  ;; Stop Cursor Creep. Does it bother you that the cursor creeps back when you
+  ;; go back to normal mode? Here's how to stop it.
+  ;; With this setting, command '$' in normal mode will bring cursor go pass the
+  ;; end of line (just like emacs behaviour).
+  (setq evil-move-cursor-back nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
