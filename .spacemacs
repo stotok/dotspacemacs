@@ -41,7 +41,7 @@ values."
      ;; better-defaults
      emacs-lisp
      ;; git
-     ;; markdown
+     markdown
      latex
      org-plus-contrib
      shell-scripts
