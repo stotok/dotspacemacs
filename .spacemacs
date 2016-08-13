@@ -294,6 +294,9 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (set-default 'truncate-lines t)  ;; don't want line wrapping
   (spacemacs/toggle-vi-tilde-fringe-off) ;; don't want tilde on empty lines
+  ;; vi like scrolling
+  (setq scroll-step 1           ; scroll just goes down 1 line even it hits the bottom
+        scroll-margin 3)        ; 3 lines margin
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
