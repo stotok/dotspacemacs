@@ -409,6 +409,8 @@ you should place your code here."
   ;; Here for emacs standard stuffs
   ;;
   ;; ************************************************************************************
+  ;; Depend on the font size, sometimes frame size cannot be maximized (there's ugly gap)
+  (setq frame-resize-pixelwise t)
   ;; Frame title bar formatting to show full path of file
   (setq-default
    frame-title-format
