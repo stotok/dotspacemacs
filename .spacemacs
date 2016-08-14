@@ -129,13 +129,6 @@ values."
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
-   ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
-   ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Inconsolata"
-                               :size 14
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -273,7 +266,33 @@ values."
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
-   ))
+   )
+  ;;
+  ;; This is based on conditional
+  ;;
+  (cond
+   ((eq system-type 'darwin)
+    (setq-default
+     ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
+     ;; quickly tweak the mode-line size to make separators look not too crappy.
+     dotspacemacs-default-font '("Andale Mono"
+                                 :size 12
+                                 :weight normal
+                                 :width normal
+                                 :powerline-scale 1.1))
+    ) ;; end of darwin
+   (t
+    (setq-default
+     ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
+     ;; quickly tweak the mode-line size to make separators look not too crappy.
+     dotspacemacs-default-font '("Source Code Pro"
+                                 :size 13
+                                 :weight normal
+                                 :width normal
+                                 :powerline-scale 1.1))
+    ) ;; end of t
+   ) ;; end of conditional
+  ) ;; end of dotspacemacs/init
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
