@@ -415,6 +415,8 @@ you should place your code here."
   ;; end of line (just like emacs behaviour).
   (setq evil-move-cursor-back nil)
   (spacemacs/toggle-vi-tilde-fringe-off) ;; don't want tilde on empty lines
+  ;; ivy-mode: well, i don't like dir buffer. let's change :)
+  (define-key ivy-minibuffer-map (kbd "RET") 'ivy-alt-done)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
