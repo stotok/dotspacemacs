@@ -385,9 +385,11 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  ;; *************************************
+  ;; ************************************************************************************
+  ;;
   ;; Here for emacs standard stuffs
-  ;; *************************************
+  ;;
+  ;; ************************************************************************************
   ;; Frame title bar formatting to show full path of file
   (setq-default
    frame-title-format
@@ -401,14 +403,11 @@ you should place your code here."
   (setq scroll-step 1           ; scroll just goes down 1 line even it hits the bottom
         scroll-margin 3)        ; 3 lines margin
   ;;
-  ;; ****
-  ;; Here for package configuration
-  ;; ****
-  (global-company-mode)            ;; enable it globally
+  ;; ************************************************************************************
   ;;
-  ;; ******
   ;; Here for evil/spacemacs behaviour
-  ;; ******
+  ;;
+  ;; ************************************************************************************
   ;; Stop Cursor Creep. Does it bother you that the cursor creeps back when you
   ;; go back to normal mode? Here's how to stop it.
   ;; With this setting, command '$' in normal mode will bring cursor go pass the
@@ -417,6 +416,14 @@ you should place your code here."
   (spacemacs/toggle-vi-tilde-fringe-off) ;; don't want tilde on empty lines
   ;; ivy-mode: well, i don't like dir buffer. let's change :)
   (define-key ivy-minibuffer-map (kbd "RET") 'ivy-alt-done)
+  ;;
+  ;; ************************************************************************************
+  ;;
+  ;; Here for package configuration
+  ;;
+  ;; ************************************************************************************
+  (global-company-mode)            ;; enable it globally
+  ;;
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
