@@ -281,6 +281,16 @@ values."
                                  :width normal
                                  :powerline-scale 1.1))
     ) ;; end of darwin
+   ((eq system-type 'gnu/linux)
+    (setq-default
+     ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
+     ;; quickly tweak the mode-line size to make separators look not too crappy.
+     dotspacemacs-default-font '("Inconsolata"
+                                 :size 14
+                                 :weight normal
+                                 :width normal
+                                 :powerline-scale 1.1))
+    ) ;; end of gnu/linux
    (t
     (setq-default
      ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
