@@ -6,3 +6,5 @@
 *.stackdump
 .DS_Store
 .gitignore.swp
+.spacemacs.swp
+

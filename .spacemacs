@@ -291,6 +291,20 @@ values."
                                  :width normal
                                  :powerline-scale 1.1))
     ) ;; end of gnu/linux
+   ((or (eq system-type 'cygwin) (eq system-type 'windows-nt))
+    ;; This is to fix error when calling server start on startup
+    (require 'server)
+    (and (>= emacs-major-version 23)
+         (defun server-ensure-safe-dir (dir) "Noop" t))
+    (setq-default
+     ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
+     ;; quickly tweak the mode-line size to make separators look not too crappy.
+     dotspacemacs-default-font '("Consolas"
+                                 :size 12
+                                 :weight normal
+                                 :width normal
+                                 :powerline-scale 1.1))
+    ) ;; end of cygwin or windows
    (t
     (setq-default
      ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
