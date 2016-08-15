@@ -470,8 +470,10 @@ you should place your code here."
     ;;(add-to-list 'default-frame-alist (cons 'height 52))
     )
   ;;
-  ;; Don't want line wrapping globally
-  (set-default 'truncate-lines t)
+  (setq-default indent-tabs-mode nil) ; use spaces (not tabs) for indenting
+  (setq-default truncate-lines t)     ; turn on truncating long lines
+  (setq require-final-newline t)      ; always add a final newline
+  (set-fringe-mode '(0 . 0))          ; disable fringe, dun need it (no line wrap, etc)
   ;; vi like scrolling
   (setq scroll-step 1           ; scroll just goes down 1 line even it hits the bottom
         scroll-margin 3)        ; 3 lines margin
