@@ -52,6 +52,11 @@ values."
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
+     ;; -----------------------------------------------------------------------
+     ;; This is private layers stored in ~/dotspacemacs/mycontribs/
+     ;; -----------------------------------------------------------------------
+     ;; To get persistent spacemacs frame/window position/size on startup
+     frame-geometry
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -483,35 +488,6 @@ you should place your code here."
                                     dired-directory
                                     (refert-buffer-function " %b"
                                                             ("%b - Dir: " default-directory)))))))
-  ;;
-  ;; set frame size
-  ;;
-  (when window-system
-    ;;(when nil
-    ;;;; initial frame size
-    ;;(setq initial-frame-alist
-    ;;      '((width  .  92)                ; characters in a line
-    ;;        (height .  54)))              ; number of lines
-    ;;;; subsequent frame
-    ;;(setq default-frame-alist
-    ;;      '((width  .  90)                ; characters in a line
-    ;;        (height .  52))))             ; number of lines
-    ;;
-    ;; set initial frame size
-    ;;
-    (add-to-list 'initial-frame-alist (cons 'width 92))
-    ;; set initial frame height: substract a couple of hundreds pixels from
-    ;; the screen height (for panels, menubars and whatnot), then devide
-    ;; by the height of a char to the the height we want
-    ;;  (add-to-list 'default-frame-alist
-    ;;               (cons 'height (/ (- (x-display-pixel-height) 150)
-    ;;                                (frame-char-height))))
-    ;;
-    ;; set subsequent frame size
-    ;;
-    (add-to-list 'default-frame-alist (cons 'width  92))
-    ;;(add-to-list 'default-frame-alist (cons 'height 52))
-    )
   ;;
   (setq-default indent-tabs-mode nil) ; use spaces (not tabs) for indenting
   (setq-default truncate-lines t)     ; turn on truncating long lines
