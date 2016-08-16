@@ -294,7 +294,7 @@ values."
                                  :size 14
                                  :weight normal
                                  :width normal
-                                 :powerline-scale 1.1))
+                                 :powerline-scale 1.2))
     ) ;; gnu/linux
    ((or (eq system-type 'cygwin) (eq system-type 'windows-nt))
     ;; This is to fix error when calling server start on startup
