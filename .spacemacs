@@ -411,7 +411,8 @@ you should place your code here."
   ;; go back to normal mode? Here's how to stop it.
   ;; With this setting, command '$' in normal mode will bring cursor go pass the
   ;; end of line (just like emacs behaviour).
-  (setq evil-move-cursor-back nil)
+  ;; Wait ... I think cursor creep is the way to go. Keep it creep :)
+  (setq evil-move-cursor-back t)
   (spacemacs/toggle-vi-tilde-fringe-off) ;; don't want tilde on empty lines
   ;; ivy-mode: well, i don't like dir buffer. let's change :)
   (define-key ivy-minibuffer-map (kbd "RET") 'ivy-alt-done)
