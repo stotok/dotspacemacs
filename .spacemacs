@@ -41,7 +41,7 @@ values."
      ;; better-defaults
      emacs-lisp
      ;; git
-     c-c++
+     (c-c++ :variables c-c++-enable-clang-support t)
      markdown
      latex
      org-plus-contrib
