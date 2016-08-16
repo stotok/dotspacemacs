@@ -285,7 +285,7 @@ values."
                                  :weight normal
                                  :width normal
                                  :powerline-scale 1.1))
-    ) ;; end of darwin
+    ) ;; darwin
    ((eq system-type 'gnu/linux)
     (setq-default
      ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -295,7 +295,7 @@ values."
                                  :weight normal
                                  :width normal
                                  :powerline-scale 1.1))
-    ) ;; end of gnu/linux
+    ) ;; gnu/linux
    ((or (eq system-type 'cygwin) (eq system-type 'windows-nt))
     ;; This is to fix error when calling server start on startup
     (require 'server)
@@ -309,7 +309,7 @@ values."
                                  :weight normal
                                  :width normal
                                  :powerline-scale 1.1))
-    ) ;; end of cygwin or windows
+    ) ;; cygwin or windows
    (t
     (setq-default
      ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -319,9 +319,9 @@ values."
                                  :weight normal
                                  :width normal
                                  :powerline-scale 1.1))
-    ) ;; end of t
-   ) ;; end of conditional
-  ) ;; end of dotspacemacs/init
+    ) ;; t
+   ) ;; conditional
+  ) ;; dotspacemacs/init
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
@@ -348,6 +348,88 @@ before packages are loaded. If you are unsure, you should try in setting them in
     ;; tell projectile to not try and find the file on the remote SVN server and
     ;; instead search locally, see https://github.com/bbatsov/projectile/issues/520
     (setq projectile-svn-command "find . -type f -not -iwholename '*.svn/*' -print0"))
+  ) ;; dotspacemacs/user-init
+
+(defun dotspacemacs/user-config ()
+  "Configuration function for user code.
+This function is called at the very end of Spacemacs initialization after
+layers configuration.
+This is the place where most of your configurations should be done. Unless it is
+explicitly specified that a variable should be set before a package is loaded,
+you should place your code here."
+  ;; ************************************************************************************
+  ;;
+  ;; Here for emacs standard stuffs
+  ;;
+  ;; ************************************************************************************
+  ;;
+  ;; Enable utf coding
+  ;;
+  ;; disable CJK coding/encoding (chinese/japanese/korean characters)
+  (setq utf-translate-cjk-mode nil)
+  (set-language-environment 'utf-8)
+  (setq locale-coding-system 'utf-8)
+  ;; set the default encoding system
+  (prefer-coding-system 'utf-8)
+  (setq default-file-name-coding-system 'utf-8)
+  (set-default-coding-systems 'utf-8)
+  (set-terminal-coding-system 'utf-8)
+  (set-keyboard-coding-system 'utf-8)
+  ;; backwards compatibility as default-buffer-file-coding-system
+  ;; is deprecated in 23.2
+  (if (boundp buffer-file-coding-system)
+      (setq buffer-file-coding-system 'utf-8)
+    (setq default-buffer-file-coding-system 'utf-8))
+  ;; Treat clipboard input as UTF-8 string first; compound text next, etc
+  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+  ;; Depend on the font size, sometimes frame size cannot be maximized (there's ugly gap)
+  (setq frame-resize-pixelwise t)
+  ;;
+  ;; Frame title bar formatting to show full path of file
+  ;;
+  (setq-default
+   frame-title-format
+   (list '((buffer-file-name " %f" (dired-directory
+                                    dired-directory
+                                    (refert-buffer-function " %b"
+                                                            ("%b - Dir: " default-directory)))))))
+  ;;
+  (setq-default indent-tabs-mode nil) ; use spaces (not tabs) for indenting
+  (setq-default truncate-lines t)     ; turn on truncating long lines
+  (setq require-final-newline t)      ; always add a final newline
+  (set-fringe-mode '(0 . 0))          ; disable fringe, dun need it (no line wrap, etc)
+  ;; vi like scrolling
+  (setq scroll-step 1           ; scroll just goes down 1 line even it hits the bottom
+        scroll-margin 3)        ; 3 lines margin
+  ;;
+  ;; ************************************************************************************
+  ;;
+  ;; Here for evil/spacemacs behaviour
+  ;;
+  ;; ************************************************************************************
+  ;; Stop Cursor Creep. Does it bother you that the cursor creeps back when you
+  ;; go back to normal mode? Here's how to stop it.
+  ;; With this setting, command '$' in normal mode will bring cursor go pass the
+  ;; end of line (just like emacs behaviour).
+  (setq evil-move-cursor-back nil)
+  (spacemacs/toggle-vi-tilde-fringe-off) ;; don't want tilde on empty lines
+  ;; ivy-mode: well, i don't like dir buffer. let's change :)
+  (define-key ivy-minibuffer-map (kbd "RET") 'ivy-alt-done)
+  ;;
+  ;; ************************************************************************************
+  ;;
+  ;; Here for package configuration
+  ;;
+  ;; ************************************************************************************
+  (global-company-mode)            ;; enable it globally
+  (when t  ;; projectile
+    ;; tramp-mode and projectile does not play well together, it is because the projectile
+    ;; tries to retrieve project name this is slow on remote host.
+    ;; so let's make projectile modeline only displays static string and won't slow you down
+    (add-hook 'find-file-hook
+              (lambda ()
+                (when (file-remote-p default-directory)
+                  (setq-local projectile-mode-line "P:remote")))))
   (when t  ;; org mode
     (with-eval-after-load 'org
       ;; publishing (specific for each project)
@@ -435,90 +517,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
               :recursive t
               :publishing-function org-publish-attachment)
               ("ssdc-org" :components ("ssdc-notes" "ssdc-static" "ssdc-org-html-themes"))))))
-  )
-
-(defun dotspacemacs/user-config ()
-  "Configuration function for user code.
-This function is called at the very end of Spacemacs initialization after
-layers configuration.
-This is the place where most of your configurations should be done. Unless it is
-explicitly specified that a variable should be set before a package is loaded,
-you should place your code here."
-  ;; ************************************************************************************
-  ;;
-  ;; Here for emacs standard stuffs
-  ;;
-  ;; ************************************************************************************
-  ;;
-  ;; Enable utf coding
-  ;;
-  ;; disable CJK coding/encoding (chinese/japanese/korean characters)
-  (setq utf-translate-cjk-mode nil)
-  (set-language-environment 'utf-8)
-  (setq locale-coding-system 'utf-8)
-  ;; set the default encoding system
-  (prefer-coding-system 'utf-8)
-  (setq default-file-name-coding-system 'utf-8)
-  (set-default-coding-systems 'utf-8)
-  (set-terminal-coding-system 'utf-8)
-  (set-keyboard-coding-system 'utf-8)
-  ;; backwards compatibility as default-buffer-file-coding-system
-  ;; is deprecated in 23.2
-  (if (boundp buffer-file-coding-system)
-      (setq buffer-file-coding-system 'utf-8)
-    (setq default-buffer-file-coding-system 'utf-8))
-  ;; Treat clipboard input as UTF-8 string first; compound text next, etc
-  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
-  ;; Depend on the font size, sometimes frame size cannot be maximized (there's ugly gap)
-  (setq frame-resize-pixelwise t)
-  ;;
-  ;; Frame title bar formatting to show full path of file
-  ;;
-  (setq-default
-   frame-title-format
-   (list '((buffer-file-name " %f" (dired-directory
-                                    dired-directory
-                                    (refert-buffer-function " %b"
-                                                            ("%b - Dir: " default-directory)))))))
-  ;;
-  (setq-default indent-tabs-mode nil) ; use spaces (not tabs) for indenting
-  (setq-default truncate-lines t)     ; turn on truncating long lines
-  (setq require-final-newline t)      ; always add a final newline
-  (set-fringe-mode '(0 . 0))          ; disable fringe, dun need it (no line wrap, etc)
-  ;; vi like scrolling
-  (setq scroll-step 1           ; scroll just goes down 1 line even it hits the bottom
-        scroll-margin 3)        ; 3 lines margin
-  ;;
-  ;; ************************************************************************************
-  ;;
-  ;; Here for evil/spacemacs behaviour
-  ;;
-  ;; ************************************************************************************
-  ;; Stop Cursor Creep. Does it bother you that the cursor creeps back when you
-  ;; go back to normal mode? Here's how to stop it.
-  ;; With this setting, command '$' in normal mode will bring cursor go pass the
-  ;; end of line (just like emacs behaviour).
-  (setq evil-move-cursor-back nil)
-  (spacemacs/toggle-vi-tilde-fringe-off) ;; don't want tilde on empty lines
-  ;; ivy-mode: well, i don't like dir buffer. let's change :)
-  (define-key ivy-minibuffer-map (kbd "RET") 'ivy-alt-done)
-  ;;
-  ;; ************************************************************************************
-  ;;
-  ;; Here for package configuration
-  ;;
-  ;; ************************************************************************************
-  (global-company-mode)            ;; enable it globally
-  (when t  ;; projectile
-    ;; tramp-mode and projectile does not play well together, it is because the projectile
-    ;; tries to retrieve project name this is slow on remote host.
-    ;; so let's make projectile modeline only displays static string and won't slow you down
-    (add-hook 'find-file-hook
-              (lambda ()
-                (when (file-remote-p default-directory)
-                  (setq-local projectile-mode-line "P:remote")))))
-  ;;
-  )
+  ) ;; dotspacemacs/user-config
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
