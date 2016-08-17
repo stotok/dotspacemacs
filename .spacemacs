@@ -57,6 +57,8 @@ values."
      ;; -----------------------------------------------------------------------
      ;; To get persistent spacemacs frame/window position/size on startup
      frame-geometry
+     ;; To display quotes on echo area message at startup
+     ttk-quotes
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
