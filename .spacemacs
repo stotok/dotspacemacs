@@ -31,11 +31,11 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     ;; ----------------------------------------------------------------
+     ;; ----------------------------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
+     ;; ----------------------------------------------------------------------------------
      ivy
      (auto-completion :disabled-for org git)
      ;; better-defaults
@@ -52,13 +52,12 @@ values."
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
-     ;; -----------------------------------------------------------------------
+     ;; ----------------------------------------------------------------------------------
      ;; This is private layers stored in ~/dotspacemacs/mycontribs/
-     ;; -----------------------------------------------------------------------
-     ;; To get persistent spacemacs frame/window position/size on startup
-     frame-geometry
-     ;; To display quotes on echo area message at startup
-     ttk-quotes
+     ;; ----------------------------------------------------------------------------------
+     frame-geometry ; persistent spacemacs frame/window position/size on startup
+     ttk-quotes ; show quotes on echo area message at startup, alas, spacemacs override it
+     ttk-beacon ; never loose your cursor again
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these

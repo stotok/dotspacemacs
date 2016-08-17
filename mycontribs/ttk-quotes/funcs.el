@@ -1,4 +1,4 @@
-; -*- coding:utf-8-unix mode:emacs-lisp -*-
+;; -*- coding:utf-8-unix mode:emacs-lisp -*-
 ;;***************************************************************************************
 ;;
 ;; 2016 Totok Sulistiomono
