@@ -524,6 +524,10 @@ you should place your code here."
                                   `(org-document-title ((t (,@headline ,@variable-tuple :height 1.5 :underline nil)))))))
       ) ;; with-eval-after-load 'org
     ) ;; t org mode
+  ;;
+  ;; initial-buffer-choice has no effect since spacemacs buffer is manually created and switched to.
+  ;; Here's to manually switch buffer to *scratch* after all installation and loading process.
+  (switch-to-buffer "*scratch*")
   ) ;; dotspacemacs/user-config
 
 ;; Do not write anything past this comment. This is where Emacs will
