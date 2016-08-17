@@ -66,7 +66,8 @@ values."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   ;; I use company exclusively :)
+   dotspacemacs-excluded-packages '(auto-complete)
    ;; Defines the behaviour of Spacemacs when downloading packages.
    ;; Possible values are `used', `used-but-keep-unused' and `all'. `used' will
    ;; download only explicitly used packages and remove any unused packages as
@@ -280,7 +281,8 @@ values."
   ;;
   ;; Personal dotspacemacs init
   ;;
-  (load-file "~/dotspacemacs/mycontribs/dotspacemacs_init.el")
+  (when (file-exists-p "~/dotspacemacs/mycontribs/dotspacemacs_init.el")
+    (load-file "~/dotspacemacs/mycontribs/dotspacemacs_init.el"))
   ) ;; dotspacemacs/init
 
 (defun dotspacemacs/user-init ()
