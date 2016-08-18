@@ -69,7 +69,8 @@ values."
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
    ;; I use company exclusively :)
-   dotspacemacs-excluded-packages '(auto-complete)
+   dotspacemacs-excluded-packages '(auto-complete
+                                    helm)
    ;; Defines the behaviour of Spacemacs when downloading packages.
    ;; Possible values are `used', `used-but-keep-unused' and `all'. `used' will
    ;; download only explicitly used packages and remove any unused packages as
@@ -362,6 +363,10 @@ you should place your code here."
   (setq-default truncate-lines t)     ; turn on truncating long lines
   (setq require-final-newline t)      ; always add a final newline
   (set-fringe-mode '(0 . 0))          ; disable fringe, dun need it (no line wrap, etc)
+  ;; i dun want horizontal window splitting
+  ;; and i want only vertical window splitting
+  (setq split-height-threshold 0)
+  (setq split-width-threshold nil)
   ;; vi like scrolling
   (setq scroll-step 1           ; scroll just goes down 1 line even it hits the bottom
         scroll-margin 3)        ; 3 lines margin
