@@ -40,7 +40,7 @@ values."
      (auto-completion :disabled-for org git)
      ;; better-defaults
      emacs-lisp
-     ;; git
+     git
      (c-c++ :variables c-c++-enable-clang-support t)
      markdown
      latex
