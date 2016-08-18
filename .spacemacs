@@ -391,7 +391,8 @@ you should place your code here."
   ;; Here for package configuration
   ;;
   ;; ************************************************************************************
-  (global-company-mode)            ;; enable it globally
+  (global-company-mode)                ;; enable it globally
+  (setq git-magit-status-fullscreen t) ;; magit status buffer in fullscreen
   (when t  ;; projectile
     ;; tramp-mode and projectile does not play well together, it is because the projectile
     ;; tries to retrieve project name this is slow on remote host.
