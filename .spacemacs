@@ -313,6 +313,12 @@ before packages are loaded. If you are unsure, you should try in setting them in
     ;; tell projectile to not try and find the file on the remote SVN server and
     ;; instead search locally, see https://github.com/bbatsov/projectile/issues/520
     (setq projectile-svn-command "find . -type f -not -iwholename '*.svn/*' -print0"))
+  ;;
+  ;; magit
+  ;;
+  (when t
+    (setq-default git-magit-status-fullscreen t)) ;; magit status in fullscreen
+  ;;
   ) ;; dotspacemacs/user-init
 
 (defun dotspacemacs/user-config ()
@@ -392,7 +398,6 @@ you should place your code here."
   ;;
   ;; ************************************************************************************
   (global-company-mode)                ;; enable it globally
-  (setq git-magit-status-fullscreen t) ;; magit status buffer in fullscreen
   (when t  ;; projectile
     ;; tramp-mode and projectile does not play well together, it is because the projectile
     ;; tries to retrieve project name this is slow on remote host.
