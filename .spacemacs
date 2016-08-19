@@ -319,6 +319,12 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (when t
     (setq-default git-magit-status-fullscreen t)) ;; magit status in fullscreen
   ;;
+  ;; spacemacs-dark/spacemacs-light theme customization
+  ;;
+  (when t
+    (setq spacemacs-theme-comment-bg nil) ; why the heck got background :(
+    (setq spacemacs-theme-org-height nil) ; don't change height of org-mode headlines
+    )
   ) ;; dotspacemacs/user-init
 
 (defun dotspacemacs/user-config ()
