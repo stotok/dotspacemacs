@@ -29,20 +29,23 @@
           cscope-edit-single-match nil)
     :config
     (spacemacs/set-leader-keys-for-major-mode 'c-mode
-      "gc" 'cscope-find-global-definition-no-prompting
+      "gs" 'cscope-find-this-symbol
+      "gd" 'cscope-find-global-definition
+      "gc" 'cscope-find-functions-calling-this-function
+      "gC" 'cscope-find-called-functions
+      "gi" 'cscope-find-files-including-file
+      ;;
+      "gb" 'cscope-display-buffer
+      ;;
+      "ga" 'cscope-set-initial-directory
+      "gA" 'cscope-unset-initial-directory
       )
-    ;; try-1
-    ;;(evilified-state-evilify-map cscope-list-entry-keymap
-    ;;  :mode cscope-list-entry-mode
-    ;;  :bindings
-    ;;  (kbd "C-S-o") 'cscope-select-entry-one-window)
-    ;; try-2
-    ;;(defadvice cscope (after toggle-evil activate)
-    ;;  "Turn of blah blah."
-    ;;  (evil-local-mode (if cscope -1 1)))
-    ;; try-3
+    ;;
+    ;; let cscope minor modes key binding takes priority over evil key bindings
+    ;;
     (evil-make-overriding-map cscope-list-entry-keymap 'normal)
-    ;(add-hook 'cscope-)
+    ;; force update evil keymaps after cscope-list-entry-mode loaded
+    (add-hook 'cscope-list-entry-hook #'evil-normalize-keymaps)
     ))
 
 ;; EOF
