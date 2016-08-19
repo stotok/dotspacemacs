@@ -7,12 +7,12 @@ The configuration and setting are tested with 'develop' branch of syl20bnr/space
 Delete or backup your ~/.emacs and ~/.emacs.d/, then go to your `home` directory:
 
 ```
-1. $ git clone https://github.com/syl20bnr/spacemacs.git .emacs.d
-2. $ cd .emacs.d
-3. $ git checkout -b develop -t origin/develop
-4. $ cd ..
-4. $ git clone https://github.com/stotok/dotspacemacs.git
-5. $ ln -s dotspacemacs/.spacemacs .
+$ git clone https://github.com/syl20bnr/spacemacs.git .emacs.d
+$ cd .emacs.d
+$ git checkout -b develop -t origin/develop
+$ cd ..
+$ git clone https://github.com/stotok/dotspacemacs.git
+$ ln -s dotspacemacs/.spacemacs .
 ```
 
 ## Contents
