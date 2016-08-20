@@ -44,6 +44,7 @@ values."
      (c-c++ :variables c-c++-enable-clang-support t)
      markdown
      latex
+     org
      org-plus-contrib
      shell-scripts
      ;; (shell :variables
@@ -382,6 +383,24 @@ you should place your code here."
   ;; vi like scrolling
   (setq scroll-step 1           ; scroll just goes down 1 line even it hits the bottom
         scroll-margin 3)        ; 3 lines margin
+  ;;
+  ;; turn-on automatic bracket insertion by pairs. New in emacs 24
+  ;;
+  (when t
+    (electric-pair-mode t)
+    ;; make electric-pair-mode work on more brackets
+    ;; e.g. curly bracket {} isn't auto-closed when in emacs-lisp-mode
+    (setq electric-pair-pairs '(
+                                (?\" . ?\")
+                                (?\{ . ?\})
+                                ))
+    ;; LaTeX-mode
+    (add-hook 'LaTeX-mode-hook
+              '(lambda ()
+                  ;; removes TeX-insert-dollar binding to $ and somehow (electric-pair-mode)
+                  ;; takes over and realises that $ is a bracket in this context.
+                  ;; http://tex.stackexchange.com/questions/75697/auctex-how-to-cause-math-mode-dollars-to-be-closed-automatically-with-electric
+                  (define-key LaTeX-mode-map (kbd "$") 'self-insert-command))))
   ;;
   ;; ************************************************************************************
   ;;
