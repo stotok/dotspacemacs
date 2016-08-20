@@ -44,6 +44,7 @@ values."
      (c-c++ :variables c-c++-enable-clang-support t)
      markdown
      latex
+     org
      org-plus-contrib
      shell-scripts
      ;; (shell :variables
