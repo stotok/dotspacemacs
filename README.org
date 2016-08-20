@@ -1,42 +1,42 @@
-# dotspacemacs
-
-My spacemacs configuration layers including the dotfile (.spacemacs).
+* Introduction
+My spacemacs configuration layers including dotfile (.spacemacs). 
 The configuration and setting are tested with 'develop' branch of syl20bnr/spacemacs.
 
-## Installation
-Delete or backup your ~/.emacs and ~/.emacs.d/, then go to your `home` directory:
+* Installation 
+Backup and delete your ~/.emacs and ~/.emacs.d, then go to your =home= directory:
 
-```
+#+BEGIN_SRC text
 $ git clone https://github.com/syl20bnr/spacemacs.git .emacs.d
 $ cd .emacs.d
 $ git checkout -b develop -t origin/develop
 $ cd ..
 $ git clone https://github.com/stotok/dotspacemacs.git
 $ ln -s dotspacemacs/.spacemacs .
-```
+#+END_SRC
 
-## Contents
+* Contents
 
-### cscope
+** cscope
 
 Support c/c++ and python modes. Script indexers can be found at 
-`mycontribs/ttk-cscope/local/xcscope/`. Modify them according to your code structure. 
+=mycontribs/ttk-cscope/local/xcscope/=. Modify them according to your code structure. 
 
 My preference is to invoke the indexer at the root directory of your source tree from the 
 command line. Include the script's path into your ${PATH} then:
 
-```
+#+BEGIN_SRC text
 $ cscope-indexer -r -v
-```
+#+END_SRC
 
-#### Keybindings:
+*** Keybindings:
 
 In c/c++ mode or python mode, place the cursor on function name or macro of your interest:
 
-Leader key is:  `SPC m`
+Leader key is:  =SPC m=
 
 Available commands:
-```
+
+#+BEGIN_SRC test
       "gs" 'cscope-find-this-symbol
       "gd" 'cscope-find-global-definition
       "gc" 'cscope-find-functions-calling-this-function
@@ -47,11 +47,11 @@ Available commands:
       ;;
       "ga" 'cscope-set-initial-directory
       "gA" 'cscope-unset-initial-directory
-```      
+#+END_SRC
 
 In cscope buffer, here's available commands:
 
-```
+#+BEGIN_SRC test
    [return] 'cscope-select-entry-other-window
    " "      'cscope-show-entry-other-window
    "o"      'cscope-select-entry-one-window
@@ -66,5 +66,4 @@ In cscope buffer, here's available commands:
    "f"      'cscope-find-this-file
    "i"      'cscope-find-files-including-file
    "u"      'cscope-pop-mark
-```
-
+#+END_SRC
