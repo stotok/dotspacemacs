@@ -296,24 +296,8 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  ;;
-  ;; Projectile
-  ;;
-  (when t ;; projectile
-    ;; alien method need external utility (unixes), and fast.
-    ;; it ignores the content of .projectile, but read .gitignore
-    (setq projectile-indexing-method 'alien)
-    ;; native method is portable but slow. it reads the content of .projectile
-    ;;(setq projectile-indexing-method 'native)
-    (setq projectile-enable-caching t)
-    ;; disable remote file exists cache
-    (setq projectile-file-exists-remote-cache-expire nil)
-    ;; change default display on modeline (don't do it for spacemacs)
-    ;;(setq projectile-mode-line '(:eval (format " P:%s" (projectile-project-name))))
-    (setq projectile-completion-system 'ivy) ; it's nice (from swiper package)
-    ;; tell projectile to not try and find the file on the remote SVN server and
-    ;; instead search locally, see https://github.com/bbatsov/projectile/issues/520
-    (setq projectile-svn-command "find . -type f -not -iwholename '*.svn/*' -print0"))
+  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_etc_ui.el")
+    (load-file "~/dotspacemacs/mycontribs/dsp_etc_ui.el"))
   ;;
   ;; magit
   ;;
@@ -422,16 +406,10 @@ you should place your code here."
   ;; Here for package configuration
   ;;
   ;; ************************************************************************************
+  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_etc_uc.el")
+    (load-file "~/dotspacemacs/mycontribs/dsp_etc_uc.el"))
+  ;;
   (global-company-mode)                ;; enable it globally
-  (when t  ;; projectile
-    ;; tramp-mode and projectile does not play well together, it is because the projectile
-    ;; tries to retrieve project name this is slow on remote host.
-    ;; so let's make projectile modeline only displays static string and won't slow you down
-    (add-hook 'find-file-hook
-              (lambda ()
-                (when (file-remote-p default-directory)
-                  (setq-local projectile-mode-line "P:remote"))))
-    ) ;; t projectile
   (when t  ;; org mode
     (with-eval-after-load 'org
       (setq org-log-done t)
