@@ -8,11 +8,18 @@
 ;;
 ;; **************************************************************************************
 ;; Miscelleaneous utilities.
+;; This file is supposed to be called from
+;;    dontspacemacs/user-init
+;; alas,
+;;    configuration-layer/package-usedp
+;; cannot be used.
 ;; **************************************************************************************
 ;;
 ;; Projectile
 ;;
-(when (configuration-layer/package-usedp 'projectile)
+;;(when (configuration-layer/package-usedp 'projectile)
+(when t
+  (message ">>> user-init: projectile customization ...")
   ;; alien method need external utility (unixes), and fast.
   ;; it ignores the content of .projectile, but read .gitignore
   (setq projectile-indexing-method 'alien)
@@ -27,3 +34,5 @@
   ;; tell projectile to not try and find the file on the remote SVN server and
   ;; instead search locally, see https://github.com/bbatsov/projectile/issues/520
   (setq projectile-svn-command "find . -type f -not -iwholename '*.svn/*' -print0"))
+
+;; EOF
