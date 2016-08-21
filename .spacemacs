@@ -302,11 +302,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (load-file "~/dotspacemacs/mycontribs/dsp_faces_ui.el"))
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_etc_ui.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_etc_ui.el"))
-  ;;
-  ;; magit
-  ;;
-  (when t
-    (setq-default git-magit-status-fullscreen t)) ;; magit status in fullscreen
+  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_magit_ui.el")
+    (load-file "~/dotspacemacs/mycontribs/dsp_magit_ui.el"))
   ) ;; dotspacemacs/user-init
 
 (defun dotspacemacs/user-config ()
@@ -322,6 +319,8 @@ you should place your code here."
     (load-file "~/dotspacemacs/mycontribs/dsp_faces_uc.el"))
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_etc_uc.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_etc_uc.el"))
+  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_magit_uc.el")
+    (load-file "~/dotspacemacs/mycontribs/dsp_magit_uc.el"))
   ;;
   (global-company-mode)                ;; enable it globally
   (when t  ;; org mode
