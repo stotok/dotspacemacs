@@ -17,6 +17,32 @@
 ;; Here for emacs standard stuffs
 ;;
 ;; ************************************************************************************
+;; detaching the custom-file
+;; to put the customazation elisp from UI "M-x customize" at the separate file
+;; rather than at the end of your .emacs (default behaviour)
+(setq custom-file "~/.emacs.d/custom.el") ; redirect to custom.el
+(when nil                          ; t if u want to load custom.el now
+  (load custom-file 'noerror))      ; dun display error if no custom.el
+
+;;
+;; my work source files contain asm code in *.a, however, standard emacs exclude
+;; *.a, hence, here to remove *.a from exclusion.
+;; how to do:
+;;   M-x customize-variable <RET> completion-ignored-extensions <RET>
+;; and get the result from ~/.emacs.d/custom.el, then, copy here :)
+;; Here's the list for my own supposed to be ignored files extension:
+;; 1. *.orig
+;;    It is from 'hg revert'.
+;; 2. #*# --> # (e.g. #my.emacs#)
+;;    It is from emacs backup (??)
+;; 3. .DS_Store
+;;    OSX blah file I never intend to see it
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(completion-ignored-extensions (quote (".o" "~" ".bin" ".bak" ".obj" ".map" ".ico" ".pif" ".lnk" ".ln" ".blg" ".bbl" ".dll" ".drv" ".vxd" ".386" ".elc" ".lof" ".glo" ".idx" ".lot" ".svn/" ".hg/" ".git/" ".bzr/" "CVS/" "_darcs/" "_MTN/" ".fmt" ".tfm" ".class" ".fas" ".lib" ".mem" ".x86f" ".sparcf" ".dfsl" ".pfsl" ".d64fsl" ".p64fsl" ".lx64fsl" ".lx32fsl" ".dx64fsl" ".dx32fsl" ".fx64fsl" ".fx32fsl" ".sx64fsl" ".sx32fsl" ".wx64fsl" ".wx32fsl" ".fasl" ".ufsl" ".fsl" ".dxl" ".lo" ".la" ".gmo" ".mo" ".toc" ".aux" ".cp" ".fn" ".ky" ".pg" ".tp" ".vr" ".cps" ".fns" ".kys" ".pgs" ".tps" ".vrs" ".pyc" ".pyo" ".orig" "#" ".DS_Store"))))
 ;;
 ;; Enable utf coding
 ;;
@@ -61,6 +87,23 @@
 (setq scroll-step 1           ; scroll just goes down 1 line even it hits the bottom
       scroll-margin 3)        ; 3 lines margin
 ;;
+(setq delete-by-moving-to-trash nil) ;; no need to go to OS's trash folder
+(when (or (eq system-type 'cygwin) (eq system-type 'windows-nt))
+  ;; try to improve slow performance on windows and cygwin
+  (setq w32-get-true-file-attributes nil))
+;;
+;;
+;; dabbrev-expand mode: M-/
+;;
+;; to make sure case is preserved when expanding
+(setq dabbrev-case-replace nil)
+;;
+;;
+;; bookmarks
+;;
+;;(setq bookmark-default-file '   )      ; default is ~/.emacs.bmk
+(setq bookmark-save-flag 1)             ; how many mods between saves
+;;
 ;; turn-on automatic bracket insertion by pairs. New in emacs 24
 ;;
 (when t
@@ -78,6 +121,7 @@
                 ;; takes over and realises that $ is a bracket in this context.
                 ;; http://tex.stackexchange.com/questions/75697/auctex-how-to-cause-math-mode-dollars-to-be-closed-automatically-with-electric
                 (define-key LaTeX-mode-map (kbd "$") 'self-insert-command))))
+
 ;;
 ;; ************************************************************************************
 ;;

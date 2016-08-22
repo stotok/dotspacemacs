@@ -17,7 +17,7 @@
 
 ;;
 ;; Keyboard Remap
-;; 
+;;
 (when (eq system-type 'darwin)
   (message ">>> user-init: keyboard remap on OSX ...")
   ;; 1) Mac build-in Keyboard & Mouse preference:
