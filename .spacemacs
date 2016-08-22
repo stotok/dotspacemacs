@@ -37,7 +37,10 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------------------------
      ivy
-     (auto-completion :disabled-for org git)
+     (auto-completion :disabled-for org git
+                      :variables
+                      auto-completion-private-snippets-directory "~/dotspacemacs/mycontribs/myyasnippet/stotok"
+                      )
      ;; better-defaults
      emacs-lisp
      git

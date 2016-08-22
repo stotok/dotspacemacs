@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: include debugtools header
+# key: incdh
+# --
+#if ($0)
+#include "debugtools.h"
+#endif

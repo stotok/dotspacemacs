@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: include debugtools dprintf
+# key: incdp
+# --
+#if ($1)
+dprintf("$0");
+#endif
