@@ -12,7 +12,8 @@
 ;;    dontspacemacs/user-config
 ;; **************************************************************************************
 ;;
-;; Projectile
+;; projectile
+;;     https://github.com/bbatsov/projectile.git
 ;;
 (when (configuration-layer/package-usedp 'projectile)
   (message "<<< user-config: projectile customization ...")
@@ -23,5 +24,15 @@
             (lambda ()
               (when (file-remote-p default-directory)
                 (setq-local projectile-mode-line "P:remote")))))
+
+;;
+;; company-mode
+;;     https://github.com/company-mode/company-mode.git
+;;
+;; Modular in-buffer completion framework (rtags need company)
+(when (configuration-layer/package-usedp 'company)
+  (message "<<< user config: company customization ...")
+  ;; this will enable company-mode in all buffers
+  (global-company-mode t))
 
 ;; EOF

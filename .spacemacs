@@ -298,12 +298,12 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_std_ui.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_std_ui.el"))
+  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_magit_ui.el")
+    (load-file "~/dotspacemacs/mycontribs/dsp_magit_ui.el"))
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_faces_ui.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_faces_ui.el"))
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_etc_ui.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_etc_ui.el"))
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_magit_ui.el")
-    (load-file "~/dotspacemacs/mycontribs/dsp_magit_ui.el"))
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_org_ui.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_org_ui.el"))
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_abo_ui")
@@ -319,18 +319,16 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_std_uc.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_std_uc.el"))
+  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_magit_uc.el")
+    (load-file "~/dotspacemacs/mycontribs/dsp_magit_uc.el"))
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_faces_uc.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_faces_uc.el"))
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_etc_uc.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_etc_uc.el"))
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_magit_uc.el")
-    (load-file "~/dotspacemacs/mycontribs/dsp_magit_uc.el"))
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_org_uc.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_org_uc.el"))
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_abo_uc.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_abo_uc.el"))
-  ;;
-  (global-company-mode)                ;; enable it globally
   ;;
   ;; initial-buffer-choice has no effect since spacemacs buffer is manually created and switched to.
   ;; Here's to manually switch buffer to *scratch* after all installation and loading process.

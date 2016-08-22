@@ -15,9 +15,9 @@
 ;; cannot be used.
 ;; **************************************************************************************
 ;;
-;; Projectile
+;; projectile
+;;     https://github.com/bbatsov/projectile.git
 ;;
-;;(when (configuration-layer/package-usedp 'projectile)
 (when t
   (message ">>> user-init: projectile customization ...")
   ;; alien method need external utility (unixes), and fast.
@@ -34,5 +34,17 @@
   ;; tell projectile to not try and find the file on the remote SVN server and
   ;; instead search locally, see https://github.com/bbatsov/projectile/issues/520
   (setq projectile-svn-command "find . -type f -not -iwholename '*.svn/*' -print0"))
+
+;;
+;; company-mode
+;;     https://github.com/company-mode/company-mode.git
+;;
+;; Modular in-buffer completion framework (rtags need company)
+(when t
+  (message ">>> user-init: company customization ...")
+  ;; company delay until suggestions are show
+  (setq company-idle-delay 0.5)
+  ;; weight by frequency
+  (setq company-transformers '(company-sort-by-occurrence)))
 
 ;; EOF
