@@ -123,6 +123,36 @@
                 (define-key LaTeX-mode-map (kbd "$") 'self-insert-command))))
 
 ;;
+;; which-function-mode
+;;
+(when t
+  ;;
+  ;; Select for all or certain modes
+  ;;
+  (if nil
+      (which-function-mode 1) ; enable for all modes
+    (progn                    ; enable for certain modes
+      (require 'which-func)
+      (add-to-list 'which-func-modes 'c-mode)
+      (add-to-list 'which-func-modes 'cc-mode)
+      (add-to-list 'which-func-modes 'c++-mode)
+      (add-to-list 'which-func-modes 'java-mode)
+      (add-to-list 'which-func-modes 'org-mode)
+      (add-to-list 'which-func-modes 'python-mode)
+      (which-func-mode 1)))
+  ;;
+  ;; Display it in emacs header line
+  ;;
+  (when nil ;; does not work in spacemacs
+    (setq mode-line-misc-info (delete (assoc 'which-func-mode
+                                            mode-line-misc-info) mode-line-misc-info)
+          which-func-header-line-format '(which-func-mode ("" which-func-format)))
+    (defadvice which-func-ff-hook (after header-line activate)
+      (when which-func-mode
+        (setq mode-line-misc-info (delete (assoc 'which-func-mode
+                                                mode-line-misc-info) mode-line-misc-info)
+              header-line-format which-func-header-line-format)))))
+;;
 ;; ************************************************************************************
 ;;
 ;; Here for evil/spacemacs behaviour
