@@ -63,6 +63,7 @@ values."
      ttk-quotes ; show quotes on echo area message at startup, alas, spacemacs override it
      ttk-beacon ; never loose your cursor again
      ttk-cscope ; c/c++ indexer
+     ttk-shrink-whitespace ; shrink whitespace and lines around point
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
