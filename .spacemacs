@@ -306,6 +306,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (load-file "~/dotspacemacs/mycontribs/dsp_magit_ui.el"))
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_org_ui.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_org_ui.el"))
+  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_abo_ui")
+    (load-file "~/dotspacemacs/mycontribs/dsp_abo_ui"))
   ) ;; dotspacemacs/user-init
 
 (defun dotspacemacs/user-config ()
@@ -325,6 +327,8 @@ you should place your code here."
     (load-file "~/dotspacemacs/mycontribs/dsp_magit_uc.el"))
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_org_uc.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_org_uc.el"))
+  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_abo_uc.el")
+    (load-file "~/dotspacemacs/mycontribs/dsp_abo_uc.el"))
   ;;
   (global-company-mode)                ;; enable it globally
   ;;

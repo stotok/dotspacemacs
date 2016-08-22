@@ -91,7 +91,5 @@
 ;; Wait ... I think cursor creep is the way to go. Keep it creep :)
 (setq evil-move-cursor-back t)
 (spacemacs/toggle-vi-tilde-fringe-off) ;; don't want tilde on empty lines
-;; ivy-mode: well, i don't like dir buffer. let's change :)
-(define-key ivy-minibuffer-map (kbd "RET") 'ivy-alt-done)
 
 ;; EOF
