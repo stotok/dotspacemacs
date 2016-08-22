@@ -31,8 +31,17 @@
 ;;
 ;; Modular in-buffer completion framework (rtags need company)
 (when (configuration-layer/package-usedp 'company)
-  (message "<<< user config: company customization ...")
+  (message "<<< user-config: company customization ...")
   ;; this will enable company-mode in all buffers
   (global-company-mode t))
 
+;;
+;; ws-butler
+;;     https://github.com/lewang/ws-butler.git
+;;
+;; trim whitespaces only in lines edited
+(when (configuration-layer/package-usedp 'ws-butler)
+  (message "<<< user-config: ws-butler customization ...")
+  ;; enable in all buffers
+  (ws-butler-global-mode))
 ;; EOF
