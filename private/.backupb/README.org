@@ -1,0 +1,2 @@
+This directory to store emacs auto backup ~filename and #filename.
+Check backup-directory-alist and auto-save-file-name-transforms.

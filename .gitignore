@@ -8,3 +8,7 @@
 .gitignore.swp
 .spacemacs.swp
 
+# private directories
+private/
+!private/README.org
+!private/.backupb/README.org

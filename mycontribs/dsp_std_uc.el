@@ -43,6 +43,22 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(completion-ignored-extensions (quote (".o" "~" ".bin" ".bak" ".obj" ".map" ".ico" ".pif" ".lnk" ".ln" ".blg" ".bbl" ".dll" ".drv" ".vxd" ".386" ".elc" ".lof" ".glo" ".idx" ".lot" ".svn/" ".hg/" ".git/" ".bzr/" "CVS/" "_darcs/" "_MTN/" ".fmt" ".tfm" ".class" ".fas" ".lib" ".mem" ".x86f" ".sparcf" ".dfsl" ".pfsl" ".d64fsl" ".p64fsl" ".lx64fsl" ".lx32fsl" ".dx64fsl" ".dx32fsl" ".fx64fsl" ".fx32fsl" ".sx64fsl" ".sx32fsl" ".wx64fsl" ".wx32fsl" ".fasl" ".ufsl" ".fsl" ".dxl" ".lo" ".la" ".gmo" ".mo" ".toc" ".aux" ".cp" ".fn" ".ky" ".pg" ".tp" ".vr" ".cps" ".fns" ".kys" ".pgs" ".tps" ".vrs" ".pyc" ".pyo" ".orig" "#" ".DS_Store"))))
+
+;;
+;; By default emacs saves backup files under the original name with a tilde `~`
+;; appended. This is primitive and boring. Civilized people want to version
+;; their backups and organize it so that backups are not located out through
+;; their harddrive, but rather organized into specific backup directories.
+;; backup-dir.el
+(when t                             ; this is built-in emacs functions
+  (setq backup-directory-alist `((".*" . ,"~/dotspacemacs/private/.backupb/"))         ; this is for auto backup ~filename
+        auto-save-file-name-transforms `((".*" ,"~/dotspacemacs/private/.backupb/" t)) ; this is for auto-save #filename#
+        backup-by-copying t         ; don't clobber symlinks
+        delete-old-versions t       ;
+        kept-new-versions 6         ;
+        kept-old-verions 2          ;
+        version-control t           ;
+        ))
 ;;
 ;; Enable utf coding
 ;;
