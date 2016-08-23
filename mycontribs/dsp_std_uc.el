@@ -20,8 +20,8 @@
 ;; detaching the custom-file
 ;; to put the customazation elisp from UI "M-x customize" at the separate file
 ;; rather than at the end of your .emacs (default behaviour)
-(setq custom-file "~/.emacs.d/custom.el") ; redirect to custom.el
-(when nil                          ; t if u want to load custom.el now
+(setq custom-file "~/dotspacemacs/private/custom.el") ; redirect to custom.el
+(when nil                           ; t if u want to load custom.el now
   (load custom-file 'noerror))      ; dun display error if no custom.el
 
 ;;
