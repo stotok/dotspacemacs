@@ -169,6 +169,26 @@
                                                 mode-line-misc-info) mode-line-misc-info)
               header-line-format which-func-header-line-format)))))
 ;;
+;; i dun wan mouse in emacs :)
+;;
+(when t
+  ;; i dun want mouse cursor appear on emacs
+                                        ;(mouse-avoidance-mode 'banish)
+  ;; disable mouse wheel (and two finger swipe) scrolling
+  (mouse-wheel-mode  -1)
+  (global-set-key [wheel-up] 'ignore)
+  (global-set-key [wheel-down] 'ignore)
+  (global-set-key [double-wheel-up] 'ignore)
+  (global-set-key [double-wheel-down] 'ignore)
+  (global-set-key [triple-wheel-up] 'ignore)
+  (global-set-key [triple-wheel-down] 'ignore)
+  ;; disable mouse clicks
+  (global-unset-key (kbd "<down-mouse-1>"))
+  (global-unset-key (kbd "<mouse-1>"))
+  (global-unset-key (kbd "<down-mouse-3>"))
+  (global-unset-key (kbd "<mouse-3>")))
+
+;;
 ;; ************************************************************************************
 ;;
 ;; Here for evil/spacemacs behaviour
