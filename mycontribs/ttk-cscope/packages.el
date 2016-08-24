@@ -6,7 +6,10 @@
 ;;
 ;;***************************************************************************************
 (setq ttk-cscope-packages
-      '((xcscope :location local)
+      '(
+        ;; local copy of cvs vanilla cscope project version 15.8a
+        ;;     http://cscope.sourceforge.net/
+        (xcscope :location local)
 
         ;; exclude package. this will prevent the package from being installed even if
         ;; it is used by another layer
