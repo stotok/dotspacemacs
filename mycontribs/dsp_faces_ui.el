@@ -15,7 +15,8 @@
 ;; cannot be used.
 ;; **************************************************************************************
 ;;
-;; spacemacs-dark/spacemacs-light theme customization
+;; spacemacs-theme
+;;     https://github.com/nashamri/spacemacs-theme
 ;;
 ;;(when (configuration-layer/package-usedp 'spacemacs-theme)
 (when t
