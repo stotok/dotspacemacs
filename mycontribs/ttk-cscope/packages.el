@@ -29,40 +29,40 @@
           cscope-edit-single-match nil)
     :config
     (spacemacs/set-leader-keys-for-major-mode 'c-mode
-      "gs" 'cscope-find-this-symbol
-      "gd" 'cscope-find-global-definition
-      "gc" 'cscope-find-functions-calling-this-function
-      "gC" 'cscope-find-called-functions
-      "gi" 'cscope-find-files-including-file
+      "cs" 'cscope-find-this-symbol
+      "cd" 'cscope-find-global-definition
+      "cc" 'cscope-find-functions-calling-this-function
+      "cC" 'cscope-find-called-functions
+      "ci" 'cscope-find-files-including-file
       ;;
-      "gb" 'cscope-display-buffer
+      "cb" 'cscope-display-buffer
       ;;
-      "ga" 'cscope-set-initial-directory
-      "gA" 'cscope-unset-initial-directory
+      "ca" 'cscope-set-initial-directory
+      "cA" 'cscope-unset-initial-directory
       )
     (spacemacs/set-leader-keys-for-major-mode 'c++-mode
-      "gs" 'cscope-find-this-symbol
-      "gd" 'cscope-find-global-definition
-      "gc" 'cscope-find-functions-calling-this-function
-      "gC" 'cscope-find-called-functions
-      "gi" 'cscope-find-files-including-file
+      "cs" 'cscope-find-this-symbol
+      "cd" 'cscope-find-global-definition
+      "cc" 'cscope-find-functions-calling-this-function
+      "cC" 'cscope-find-called-functions
+      "ci" 'cscope-find-files-including-file
       ;;
-      "gb" 'cscope-display-buffer
+      "cb" 'cscope-display-buffer
       ;;
-      "ga" 'cscope-set-initial-directory
-      "gA" 'cscope-unset-initial-directory
+      "ca" 'cscope-set-initial-directory
+      "cA" 'cscope-unset-initial-directory
       )
     (spacemacs/set-leader-keys-for-major-mode 'python-mode
-      "gs" 'cscope-find-this-symbol
-      "gd" 'cscope-find-global-definition
-      "gc" 'cscope-find-functions-calling-this-function
-      "gC" 'cscope-find-called-functions
-      "gi" 'cscope-find-files-including-file
+      "cs" 'cscope-find-this-symbol
+      "cd" 'cscope-find-global-definition
+      "cc" 'cscope-find-functions-calling-this-function
+      "cC" 'cscope-find-called-functions
+      "ci" 'cscope-find-files-including-file
       ;;
-      "gb" 'cscope-display-buffer
+      "cb" 'cscope-display-buffer
       ;;
-      "ga" 'cscope-set-initial-directory
-      "gA" 'cscope-unset-initial-directory
+      "ca" 'cscope-set-initial-directory
+      "cA" 'cscope-unset-initial-directory
       )
     ;;
     ;; let cscope minor modes key binding takes priority over evil key bindings
