@@ -36,6 +36,7 @@
       "ci" 'cscope-find-files-including-file
       ;;
       "cb" 'cscope-display-buffer
+      "cu" 'cscope-pop-mark
       ;;
       "ca" 'cscope-set-initial-directory
       "cA" 'cscope-unset-initial-directory
@@ -48,6 +49,7 @@
       "ci" 'cscope-find-files-including-file
       ;;
       "cb" 'cscope-display-buffer
+      "cu" 'cscope-pop-mark
       ;;
       "ca" 'cscope-set-initial-directory
       "cA" 'cscope-unset-initial-directory
@@ -60,6 +62,7 @@
       "ci" 'cscope-find-files-including-file
       ;;
       "cb" 'cscope-display-buffer
+      "cu" 'cscope-pop-mark
       ;;
       "ca" 'cscope-set-initial-directory
       "cA" 'cscope-unset-initial-directory
