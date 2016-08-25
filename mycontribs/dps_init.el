@@ -58,3 +58,5 @@
                                 :powerline-scale 1.1))
   ) ;; t
  ) ;; conditional
+
+;; EOF
