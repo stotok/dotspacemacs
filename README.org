@@ -37,16 +37,17 @@ Leader key is:  =SPC m=
 Available commands:
 
 #+BEGIN_SRC test
-      "gs" 'cscope-find-this-symbol
-      "gd" 'cscope-find-global-definition
-      "gc" 'cscope-find-functions-calling-this-function
-      "gC" 'cscope-find-called-functions
-      "gi" 'cscope-find-files-including-file
+      "cs" 'cscope-find-this-symbol
+      "cd" 'cscope-find-global-definition
+      "cc" 'cscope-find-functions-calling-this-function
+      "cC" 'cscope-find-called-functions
+      "ci" 'cscope-find-files-including-file
       ;;
-      "gb" 'cscope-display-buffer
+      "cb" 'cscope-display-buffer
+      "cu" 'cscope-pop-mark
       ;;
-      "ga" 'cscope-set-initial-directory
-      "gA" 'cscope-unset-initial-directory
+      "ca" 'cscope-set-initial-directory
+      "cA" 'cscope-unset-initial-directory
 #+END_SRC
 
 In cscope buffer, here's available commands:
