@@ -188,6 +188,27 @@
   (global-unset-key (kbd "<down-mouse-3>"))
   (global-unset-key (kbd "<mouse-3>")))
 
+
+;;
+;; TRAMP
+;;
+;; SSH WITH PUBLIC KEY
+;; 1. Add to ~/.ssh/config
+;;        Host myhost
+;;             Hostname myhost.abc.com
+;;             ... <as usual>
+;;             IdentityFile ~/.ssh/id_rsa_stotok_blah
+;; 2. $ eval `ssh-agent -s`
+;; 3. $ ssh-add ~/.ssh/id_rsa_blah
+;; 4. From emacs:
+;;        C-x C-f /ssh:stotok@myhost:~/somefile.txt
+;;
+(require 'tramp)
+(tramp-set-completion-function "ssh"
+                               '((tramp-parse-sconfig "/etc/ssh_config")
+                                 (tramp-parse-sconfig "~/.ssh/config")))
+(setq tramp-default-method "ssh")
+
 ;;
 ;; ************************************************************************************
 ;;
