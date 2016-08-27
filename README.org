@@ -68,3 +68,52 @@ In cscope buffer, here's available commands:
    "i"      'cscope-find-files-including-file
    "u"      'cscope-pop-mark
 #+END_SRC
+
+** elpy
+
+   Support python environment, some say it's behemoth :) It's off by default, if you want
+   it you need to enable it in =dotspacemacs-configuration-layers= '(=ttk-elpy=). And make
+   sure you don't enable =python= layer it it.
+
+   Couple of things need to setup by you before you can enjoy elpy. First of all, install
+   python virtual environment. And some other packages that elpy depending on.
+
+*** Python Virtual Environment
+    Example here is for setting up python 3 on Debin/Ubuntu/Mint.
+
+    - Install python3 setuptools
+      : $ sudo apt-get install python3-setuptools
+
+    - Install pip
+      : $ sudo apt-get install python3-pip
+
+    - Install virtualwrapper
+      : $ sudo -H pip3 install virtualwrapper
+
+    - Setup python virtualenv (see .bash_etc)
+      : $ select_python3
+
+    - Create python3 virtualenv
+      : $ mkvirtualenv elpy3 -p /usr/bin/python3
+
+    - The above step would do auto workon
+      : $ workon elpy3
+
+    - Install these packages via pip3.
+      : $ pip3 install jedi
+      : $ pip3 install flake8
+      : $ pip3 install importmagic
+      : $ pip3 install autopep8
+      : $ pip3 install yapf
+
+    - To deactivate current virtualenv
+      : $ deactivate
+
+    - For emacs elpy package
+      : M-x pyvenv-workon elpy3
+      : M-x elpy-config
+
+*** Python Select
+    Just copy =bash_etc= from =kiss= repository how to select python.
+
+   Now it's ready. Always do =M-x pyvenv-workon elpy3= (or any venv you are working on).
