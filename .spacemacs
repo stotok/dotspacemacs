@@ -67,7 +67,7 @@ values."
      ttk-beacon ; never loose your cursor again
      ttk-cscope ; c/c++ indexer
      ttk-shrink-whitespace ; shrink whitespace and lines around point
-     ;; ttk-elpy              ; elpy python environment
+     ttk-elpy              ; elpy python environment
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -79,8 +79,7 @@ values."
    ;; A list of packages that will not be installed and loaded.
    ;; I use company exclusively :)
    dotspacemacs-excluded-packages '(auto-complete
-                                    helm
-                                    python)
+                                    helm)
    ;; Defines the behaviour of Spacemacs when downloading packages.
    ;; Possible values are `used', `used-but-keep-unused' and `all'. `used' will
    ;; download only explicitly used packages and remove any unused packages as

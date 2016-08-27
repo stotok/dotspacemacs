@@ -31,6 +31,9 @@
     (setq cscope-do-not-update-database t
           cscope-edit-single-match nil)
     :config
+    ;;
+    ;; keybinding
+    ;;
     (spacemacs/set-leader-keys-for-major-mode 'c-mode
       "cs" 'cscope-find-this-symbol
       "cd" 'cscope-find-global-definition
