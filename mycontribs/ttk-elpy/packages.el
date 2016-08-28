@@ -76,6 +76,7 @@
       ;;(define-key map (kbd "C-c C-o") 'elpy-occur-definitions)
       ;;(define-key map (kbd "C-c C-p") 'elpy-flymake-previous-error)
       "es" 'elpy-rgrep-symbol
+      "eb" 'rgrep-display-buffer
       ;;(define-key map (kbd "C-c C-t") 'elpy-test)
       ;;(define-key map (kbd "C-c C-v") 'elpy-check)
       ;;(define-key map (kbd "C-c C-z") 'elpy-shell-switch-to-shell)

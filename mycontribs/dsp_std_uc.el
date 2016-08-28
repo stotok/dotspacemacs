@@ -210,6 +210,36 @@
 (setq tramp-default-method "ssh")
 
 ;;
+;; setup for rgrep.el
+;;     https://github.com/magnars/.emacs.d/blob/master/settings/setup-rgrep.el
+(when t
+  (defun rgrep-goto-file-and-close-rgrep ()
+    (interactive)
+    (compile-goto-error)
+    ;;(kill-buffer "*grep*") ;; dun kill it, sometimes i wanna go back again
+    (delete-other-windows)
+    (message "M-x rgrep-display-buffer to return to grep buffer."))
+  (defun rgrep-display-buffer ()
+    "Display the *grep* buffer."
+    (interactive)
+    (let ((buffer (get-buffer "*grep*")))
+      (if buffer
+          (pop-to-buffer buffer)
+        (error "The *grep* buffer does not exist yet"))))
+  (eval-after-load "grep"
+    '(progn
+       ;;
+       ;; Don't recurse into some directories
+       ;(add-to-list 'grep-find-ignored-directories "target")
+       ;(add-to-list 'grep-find-ignored-directories "node_modules")
+       ;;
+       ;; add custom keybindings
+       (when nil                        ; spacemacs does not need these :)
+         (define-key grep-mode-map (kbd "j") 'next-line)
+         (define-key grep-mode-map (kbd "k") 'previous-line))
+       (define-key grep-mode-map (kbd "o") 'rgrep-goto-file-and-close-rgrep))))
+
+;;
 ;; ************************************************************************************
 ;;
 ;; Here for evil/spacemacs behaviour
