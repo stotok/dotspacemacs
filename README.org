@@ -15,10 +15,8 @@ $ ln -s dotspacemacs/.spacemacs .
 #+END_SRC
 
 * Contents
-
 ** cscope
-
-Support c/c++ and python modes. Script indexers can be found at 
+Support c/c++ and python modes. Script indexers can be found at
 =mycontribs/ttk-cscope/local/xcscope/=. Modify them according to your code structure. 
 
 My preference is to invoke the indexer at the root directory of your source tree from the 
@@ -29,7 +27,6 @@ $ cscope-indexer -r -v
 #+END_SRC
 
 *** Keybindings:
-
 In c/c++ mode or python mode, place the cursor on function name or macro of your interest:
 
 Leader key is:  =SPC m=
@@ -70,48 +67,12 @@ In cscope buffer, here's available commands:
 #+END_SRC
 
 ** elpy
-
    Support python environment, some say it's behemoth :) It's off by default, if you want
    it you need to enable it in =dotspacemacs-configuration-layers= '(=ttk-elpy=). And make
    sure you don't enable =python= layer it it.
 
    Couple of things need to setup by you before you can enjoy elpy. First of all, install
    python virtual environment. And some other packages that elpy depending on.
-
-*** Python Virtual Environment
-    Example here is for setting up python 3 on Debin/Ubuntu/Mint.
-
-    - Install python3 setuptools
-      : $ sudo apt-get install python3-setuptools
-
-    - Install pip
-      : $ sudo apt-get install python3-pip
-
-    - Install virtualwrapper
-      : $ sudo -H pip3 install virtualwrapper
-
-    - Setup python virtualenv (see below)
-      : $ select_python3
-
-    - Create python3 virtualenv
-      : $ mkvirtualenv elpy3 -p /usr/bin/python3
-
-    - The above step would do auto workon
-      : $ workon elpy3
-
-    - Install these packages via pip3.
-      : $ pip3 install jedi
-      : $ pip3 install flake8
-      : $ pip3 install importmagic
-      : $ pip3 install autopep8
-      : $ pip3 install yapf
-
-    - To deactivate current virtualenv
-      : $ deactivate
-
-    - For emacs elpy package
-      : M-x pyvenv-workon elpy3
-      : M-x elpy-config
 
 *** Python Select
     Put this in your =.bashrc= on how to select python 2 or 3 (or any other python versions in
@@ -146,4 +107,31 @@ In cscope buffer, here's available commands:
     export -f select_python3
     #+END_SRC
 
-   Now it's ready. Always do =M-x pyvenv-workon elpy3= (or any venv you are working on).
+*** Python Virtual Environment
+    Example here is for setting up python 3 on Debin/Ubuntu/Mint.
+
+    - Install python3 setuptools
+      : $ sudo apt-get install python3-setuptools
+    - Install pip
+      : $ sudo apt-get install python3-pip
+    - Install virtualwrapper
+      : $ sudo -H pip3 install virtualwrapper
+    - Setup python virtualenv (see below)
+      : $ select_python3
+    - Create python3 virtualenv
+      : $ mkvirtualenv elpy3 -p /usr/bin/python3
+    - The above step would do auto workon
+      : $ workon elpy3
+    - Install these packages via pip3.
+      : $ pip3 install jedi
+      : $ pip3 install flake8
+      : $ pip3 install importmagic
+      : $ pip3 install autopep8
+      : $ pip3 install yapf
+    - To deactivate current virtualenv
+      : $ deactivate
+    - For emacs elpy package
+      : M-x pyvenv-workon elpy3
+      : M-x elpy-config
+
+    Now it's ready. Always do =M-x pyvenv-workon elpy3= (or any venv you are working on).
