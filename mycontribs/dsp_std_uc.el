@@ -252,5 +252,7 @@
 ;; Wait ... I think cursor creep is the way to go. Keep it creep :)
 (setq evil-move-cursor-back t)
 (spacemacs/toggle-vi-tilde-fringe-off) ;; don't want tilde on empty lines
+(spaceline-toggle-buffer-size-off)     ;; don't want to display buffer size
+(spaceline-toggle-buffer-position-off) ;; don't want buffer position info
 
 ;; EOF
