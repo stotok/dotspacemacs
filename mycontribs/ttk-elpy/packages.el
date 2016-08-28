@@ -100,6 +100,7 @@
       "ed" 'elpy-goto-definition
       ;;(define-key map (kbd "C-x 4 M-.")     'elpy-goto-definition-other-window)
       ;;(define-key map (kbd "M-TAB")   'elpy-company-backend)
+      "eu" 'pop-tag-mark
       )
   ))
 
