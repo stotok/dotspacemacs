@@ -90,7 +90,7 @@ In cscope buffer, here's available commands:
     - Install virtualwrapper
       : $ sudo -H pip3 install virtualwrapper
 
-    - Setup python virtualenv (see .bash_etc)
+    - Setup python virtualenv (see below)
       : $ select_python3
 
     - Create python3 virtualenv
@@ -114,6 +114,36 @@ In cscope buffer, here's available commands:
       : M-x elpy-config
 
 *** Python Select
-    Just copy =bash_etc= from =kiss= repository how to select python.
+    Put this in your =.bashrc= on how to select python 2 or 3 (or any other python versions in
+    that matter):
+
+    #+BEGIN_SRC bashrc
+    # sudo apt-get install python-pip
+    # sudo pip install virtualenvwrapper
+    function select_python2() {
+        # update prompt
+        export PS1="(py2)${PS1}"
+        #
+        export WORKON_HOME=${HOME}/.virtenv2
+        export PIP_VIRTUALENV_BASE=${WORKON_HOME}
+        export PIP_RESPECT_VIRTUALENV=true
+        export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+        source /usr/local/bin/virtualenvwrapper.sh
+    }
+    export -f select_python2
+    # sudo apt-get install python3-pip
+    # sudo pip3 install virtualenvwrapper
+    function select_python3() {
+        # update prompt
+        export PS1="(py3)${PS1}"
+        #
+        export WORKON_HOME=${HOME}/.virtenv3
+        export PIP_VIRTUALENV_BASE=${WORKON_HOME}
+        export PIP_RESPECT_VIRTUALENV=true
+        export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+        source /usr/local/bin/virtualenvwrapper.sh
+    }
+    export -f select_python3
+    #+END_SRC
 
    Now it's ready. Always do =M-x pyvenv-workon elpy3= (or any venv you are working on).
