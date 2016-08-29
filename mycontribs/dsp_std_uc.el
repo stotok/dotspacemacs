@@ -107,6 +107,19 @@
 (when (or (eq system-type 'cygwin) (eq system-type 'windows-nt))
   ;; try to improve slow performance on windows and cygwin
   (setq w32-get-true-file-attributes nil))
+
+;;
+;; Hightlighting matching parens, etc
+;;
+(when t
+  (setq show-paren-delay 0)    ; how long to wait?
+  (show-paren-mode t)          ; hightlight matching parens, etc
+  ;; available are:
+  ;; - parentheses: hightlight character, not expression
+  ;; - expression : whole expression is highlighted
+  ;; - mixed      : mixed
+  (setq show-paren-style 'mixed))
+
 ;;
 ;;
 ;; dabbrev-expand mode: M-/
