@@ -115,7 +115,7 @@ In cscope buffer, here's available commands:
     - Install pip
       : $ sudo apt-get install python3-pip
     - Install virtualwrapper
-      : $ sudo -H pip3 install virtualwrapper
+      : $ sudo -H pip3 install virtualenvwrapper
     - Setup python virtualenv (see below)
       : $ select_python3
     - Create python3 virtualenv
