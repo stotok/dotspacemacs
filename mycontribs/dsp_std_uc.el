@@ -111,7 +111,7 @@
 ;;
 ;; Hightlighting matching parens, etc
 ;;
-(when t
+(when nil ; too noisy, seems spacemacs no need this
   (setq show-paren-delay 0)    ; how long to wait?
   (show-paren-mode t)          ; hightlight matching parens, etc
   ;; available are:
