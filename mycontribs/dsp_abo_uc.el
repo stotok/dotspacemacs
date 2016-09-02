@@ -33,6 +33,9 @@
     (define-key evil-normal-state-map (kbd "#")
       (lambda () (interactive) (swiper (format "\\<%s\\>" (thing-at-point 'word))))))
 
+  ;; search or swipe for the current word (another way)
+  ;; i.e. after start swiper, use M-j or M-n (with ivy)
+
   ;; advise swiper to recenter on exit
   ;;     http://pragmaticemacs.com/emacs/dont-search-swipe/
   (defun bjm-swiper-recenter (&rest args)
