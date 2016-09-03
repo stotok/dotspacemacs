@@ -54,7 +54,17 @@ values."
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
-     ;; syntax-checking
+     ;;
+     ;; flycheck
+     ;;     http://www.flycheck.org/
+     ;;     https://github.com/flycheck/flycheck.git
+     ;; modern on the fly syntax checking (drop-in replacement for flycmake)
+     (syntax-checking :variables
+                      ;; checkdoc seems too much for me
+                      flycheck-disabled-checkers '(emacs-lisp-checkdoc)
+                      ;; disable tooltip
+                      syntax-checking-enable-tooltips nil)
+     ;;
      ;; version-control
      ;;
      ;; https://github.com/syl20bnr/spacemacs/tree/master/layers/themes-megapack
