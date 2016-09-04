@@ -78,6 +78,7 @@ values."
      ttk-cscope ; c/c++ indexer
      ttk-shrink-whitespace ; shrink whitespace and lines around point
      ttk-elpy              ; elpy python environment
+     ttk-rtags             ; c/c++ tagging system
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
