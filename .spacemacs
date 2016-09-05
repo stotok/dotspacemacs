@@ -320,6 +320,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_std_ui.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_std_ui.el"))
+  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_modes_ui.el")
+    (load-file "~/dotspacemacs/mycontribs/dsp_modes_ui.el"))
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_magit_ui.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_magit_ui.el"))
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_faces_ui.el")
@@ -341,6 +343,8 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_std_uc.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_std_uc.el"))
+  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_modes_uc.el")
+    (load-file "~/dotspacemacs/mycontribs/dsp_modes_uc.el"))
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_magit_uc.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_magit_uc.el"))
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_faces_uc.el")

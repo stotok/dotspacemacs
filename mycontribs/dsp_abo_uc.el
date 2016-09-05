@@ -10,7 +10,7 @@
 ;; abo-abo packages here :)
 ;;
 ;; This file is supposed to be called from
-;;    dontspacemacs/user-config
+;;    dotspacemacs/user-config
 ;; **************************************************************************************
 
 (when (configuration-layer/package-usedp 'ivy)
