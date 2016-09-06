@@ -44,7 +44,12 @@ values."
      ;; better-defaults
      emacs-lisp
      git
-     (c-c++ :variables c-c++-enable-clang-support t)
+     (c-c++ :variables
+            c-c++-enable-clang-support t
+            c-toggle-auto-newline nil
+            c-toggle-auto-hungry-state nil
+            c-toggle-hungry-state nil
+            )
      markdown
      latex
      org
@@ -90,7 +95,12 @@ values."
    ;; A list of packages that will not be installed and loaded.
    ;; I use company exclusively :)
    dotspacemacs-excluded-packages '(auto-complete
-                                    helm)
+                                    helm
+                                    helm-cscope
+                                    helm-gtags
+                                    ggtags
+                                    semantic
+                                    )
    ;; Defines the behaviour of Spacemacs when downloading packages.
    ;; Possible values are `used', `used-but-keep-unused' and `all'. `used' will
    ;; download only explicitly used packages and remove any unused packages as
