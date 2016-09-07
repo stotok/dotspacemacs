@@ -38,7 +38,7 @@
   "My C Programming Style")
 ;;
 (defconst om-c-style
-  '((c-basic-offset                    . 3)
+  '((c-basic-offset                    . 4)
     ;; anyway, below is the default
     ;; (c-comment-prefix-regexp           . set-from-style)
     (c-default-style                   . ((c-mode    . "user")

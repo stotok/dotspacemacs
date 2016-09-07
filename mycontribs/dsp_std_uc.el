@@ -264,6 +264,9 @@
 ;; end of line (just like emacs behaviour).
 ;; Wait ... I think cursor creep is the way to go. Keep it creep :)
 (setq evil-move-cursor-back t)
+;; well ,,,
+(setq-default spacemacs-show-trailing-whitespace t ; i like it :) It's default behaviour anyway
+              )
 (spacemacs/toggle-vi-tilde-fringe-off) ;; don't want tilde on empty lines
 (spaceline-toggle-buffer-size-off)     ;; don't want to display buffer size
 (spaceline-toggle-buffer-position-off) ;; don't want buffer position info
