@@ -317,8 +317,8 @@ values."
   ;;
   ;; Personal dotspacemacs init
   ;;
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dps_init.el")
-    (load-file "~/dotspacemacs/mycontribs/dps_init.el"))
+  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_init.el")
+    (load-file "~/dotspacemacs/mycontribs/dsp_init.el"))
   ) ;; dotspacemacs/init
 
 (defun dotspacemacs/user-init ()
