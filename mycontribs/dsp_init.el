@@ -92,7 +92,7 @@
     (message "Unknown HOSTNAME."))))
 ;;
 ;;
-;; Fonts
+;; System Customization
 ;;
 (cond
  ((IsOSX)
@@ -104,19 +104,6 @@
                                 :weight normal
                                 :width normal
                                 :powerline-scale 1.1)
-    ;; List of themes, the first of the list is loaded when spacemacs starts.
-    ;; Press <SPC> T n to cycle to the next theme in the list (works great
-    ;; with 2 themes variants, one dark and one light)
-    dotspacemacs-themes '(
-                          leuven
-                          spacemacs-dark
-                          spacemacs-light
-                          sanityinc-solarized-dark
-                          sanityinc-solarized-light
-                          heroku
-                          zenburn
-                          anti-zenburn
-                          )
     )) ;; darwin
  ((IsGNULinux)
   (setq-default
@@ -127,25 +114,13 @@
                                 :weight normal
                                 :width normal
                                 :powerline-scale 1.2)
-    ;; List of themes, the first of the list is loaded when spacemacs starts.
-    ;; Press <SPC> T n to cycle to the next theme in the list (works great
-    ;; with 2 themes variants, one dark and one light)
-    dotspacemacs-themes '(
-                          spacemacs-dark
-                          spacemacs-light
-                          sanityinc-solarized-dark
-                          sanityinc-solarized-light
-                          leuven
-                          heroku
-                          zenburn
-                          anti-zenburn
-                          )
     )) ;; gnu/linux
  ((or (IsCygwin) (IsWindows))
   ;; This is to fix error when calling server start on startup
   (require 'server)
   (and (>= emacs-major-version 23)
         (defun server-ensure-safe-dir (dir) "Noop" t))
+  ;;
   (setq-default
     ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
     ;; quickly tweak the mode-line size to make separators look not too crappy.
@@ -154,19 +129,6 @@
                                 :weight normal
                                 :width normal
                                 :powerline-scale 1.1)
-    ;; List of themes, the first of the list is loaded when spacemacs starts.
-    ;; Press <SPC> T n to cycle to the next theme in the list (works great
-    ;; with 2 themes variants, one dark and one light)
-    dotspacemacs-themes '(
-                          spacemacs-dark
-                          spacemacs-light
-                          sanityinc-solarized-dark
-                          sanityinc-solarized-light
-                          leuven
-                          heroku
-                          zenburn
-                          anti-zenburn
-                          )
     )) ;; cygwin or windows
  (t
   (setq-default
@@ -177,20 +139,45 @@
                                 :weight normal
                                 :width normal
                                 :powerline-scale 1.1)
-    ;; List of themes, the first of the list is loaded when spacemacs starts.
-    ;; Press <SPC> T n to cycle to the next theme in the list (works great
-    ;; with 2 themes variants, one dark and one light)
-    dotspacemacs-themes '(
-                          spacemacs-dark
-                          spacemacs-light
-                          sanityinc-solarized-dark
-                          sanityinc-solarized-light
-                          leuven
-                          heroku
-                          zenburn
-                          anti-zenburn
-                          )
     )) ;; t
- ) ;; conditional
+ )
+
+;;
+;; Host name customization
+;;
+(cond
+ ((IsPolaris)
+  (setq-default
+   ;; List of themes, the first of the list is loaded when spacemacs starts.
+   ;; Press <SPC> T n to cycle to the next theme in the list (works great
+   ;; with 2 themes variants, one dark and one light)
+   dotspacemacs-themes '(
+                         leuven
+                         spacemacs-dark
+                         spacemacs-light
+                         sanityinc-solarized-dark
+                         sanityinc-solarized-light
+                         heroku
+                         zenburn
+                         anti-zenburn
+                         )
+   )) ; polaris
+ (t
+  (setq-default
+   ;; List of themes, the first of the list is loaded when spacemacs starts.
+   ;; Press <SPC> T n to cycle to the next theme in the list (works great
+   ;; with 2 themes variants, one dark and one light)
+   dotspacemacs-themes '(
+                         spacemacs-dark
+                         spacemacs-light
+                         sanityinc-solarized-dark
+                         sanityinc-solarized-light
+                         leuven
+                         heroku
+                         zenburn
+                         anti-zenburn
+                         )
+   )) ; t
+ ) ; themes
 
 ;; EOF
