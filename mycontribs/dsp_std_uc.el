@@ -268,10 +268,11 @@
 ;; well ,,,
 (setq-default spacemacs-show-trailing-whitespace t ; i like it :) It's default behaviour anyway
               )
-(spacemacs/toggle-vi-tilde-fringe-off) ;; don't want tilde on empty lines
-(spaceline-toggle-buffer-size-off)     ;; don't want to display buffer size
-(spaceline-toggle-buffer-position-off) ;; don't want buffer position info
-(spaceline-toggle-hud-off)             ;; don't want hud indicator (right bottom)
-(spaceline-toggle-window-number-off)   ;; don't want window number
+(spacemacs/toggle-vi-tilde-fringe-off)    ;; tilde on empty lines
+(spaceline-toggle-buffer-size-off)        ;; display buffer size
+(spaceline-toggle-buffer-position-off)    ;; buffer position info
+(spaceline-toggle-hud-off)                ;; hud indicator (right bottom)
+(spaceline-toggle-window-number-off)      ;; window number (left bottom 2)
+(spaceline-toggle-workspace-number-off)   ;; workspace number (left bottom 1)
 
 ;; EOF
