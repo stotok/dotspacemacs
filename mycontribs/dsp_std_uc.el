@@ -126,13 +126,6 @@
 ;;
 ;; to make sure case is preserved when expanding
 (setq dabbrev-case-replace nil)
-;; allow dabbrev to use symbols for non-symbols and vice-versa
-(when nil                               ; why this does not work?
-  (defun dabbrev-allow-symbols ()
-    (setq-local dabbrev-abbrev-skip-leading-regexp "[$!]"))
-  ;;
-  (add-hook 'tcl-mode-hook 'dabbrev-allow-symbols)
-  )
 
 ;;
 ;;

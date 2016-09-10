@@ -95,4 +95,11 @@
 ;; files *.ipp is c++ source code in UPA
 (setq auto-mode-alist (cons '("\\.ipp$" . c++-mode) auto-mode-alist))
 
+;;
+;; tcl-mode
+;;
+;; to make $ not part of a symbol, hence, $ not part of dabbrev as well :)
+(with-eval-after-load "tcl"
+  (modify-syntax-entry ?$ "'" tcl-mode-syntax-table))
+
 ;; EOF
