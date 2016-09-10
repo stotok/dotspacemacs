@@ -273,6 +273,5 @@
 (spaceline-toggle-buffer-position-off)    ;; buffer position info
 (spaceline-toggle-hud-off)                ;; hud indicator (right bottom)
 (spaceline-toggle-window-number-off)      ;; window number (left bottom 2)
-(spaceline-toggle-workspace-number-off)   ;; workspace number (left bottom 1)
 
 ;; EOF

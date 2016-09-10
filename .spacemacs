@@ -100,6 +100,9 @@ values."
                                     helm-gtags
                                     ggtags
                                     semantic
+                                    persp-mode       ; default optional spaceline modeline
+                                    window-numbering ; default optional spaceline modeline
+                                    anzu             ; default optional spaceline modeline
                                     )
    ;; Defines the behaviour of Spacemacs when downloading packages.
    ;; Possible values are `used', `used-but-keep-unused' and `all'. `used' will
