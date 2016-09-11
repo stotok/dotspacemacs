@@ -90,6 +90,8 @@
     (message "IsCrux: TRUE"))
    ((IsPolaris)
     (message "IsPolaris: TRUE"))
+   ((IsAtlas)
+    (message "IsAtlas: TRUE"))
    (t
     (message "Unknown HOSTNAME."))))
 ;;
