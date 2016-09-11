@@ -60,6 +60,8 @@
   (string= system-name "crux"))
 (defmacro IsPolaris ()
   (or (string= system-name "polaris") (string= system-name "polaris.local") (string= system-name "polaris.hgst.com")))
+(defmacro IsAtlas ()
+  (or (string= system-name "atlas") (string= system-name "atlas.local")))
 ;;
 ;; Display OS and HOSTNAME information
 ;;
@@ -146,7 +148,7 @@
 ;; Host name customization
 ;;
 (cond
- ((IsPolaris)
+ ((or (IsPolaris) (IsAtlas))
   (setq-default
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
