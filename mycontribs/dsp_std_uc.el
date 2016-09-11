@@ -259,19 +259,26 @@
 ;; Here for evil/spacemacs behaviour
 ;;
 ;; ************************************************************************************
-;; Stop Cursor Creep. Does it bother you that the cursor creeps back when you
-;; go back to normal mode? Here's how to stop it.
-;; With this setting, command '$' in normal mode will bring cursor go pass the
-;; end of line (just like emacs behaviour).
-;; Wait ... I think cursor creep is the way to go. Keep it creep :)
-(setq evil-move-cursor-back t)
-;; well ,,,
 (setq-default spacemacs-show-trailing-whitespace t ; i like it :) It's default behaviour anyway
+              ;; Stop Cursor Creep. Does it bother you that the cursor creeps back when you
+              ;; go back to normal mode? Here's how to stop it.
+              ;; With this setting, command '$' in normal mode will bring cursor go pass the
+              ;; end of line (just like emacs behaviour).
+              ;; Wait ... I think cursor creep is the way to go. Keep it creep :) Well ,,,
+              evil-move-cursor-back t
               )
 (spacemacs/toggle-vi-tilde-fringe-off)    ;; tilde on empty lines
-(spaceline-toggle-buffer-size-off)        ;; display buffer size
-(spaceline-toggle-buffer-position-off)    ;; buffer position info
-(spaceline-toggle-hud-off)                ;; hud indicator (right bottom)
-(spaceline-toggle-window-number-off)      ;; window number (left bottom 2)
+;;
+;; modeline related
+;;
+(when t
+  (spaceline-toggle-buffer-size-off)     ; display buffer size
+  (spaceline-toggle-buffer-position-off) ; buffer position info
+  (spaceline-toggle-hud-off)             ; hud indicator (right bottom)
+  (spaceline-toggle-window-number-off)   ; window number (left bottom 2)
+  (when (IsOSX)
+    (setq ns-use-srgb-colorspace nil)    ; to fix broken separator color
+    )
+  )
 
 ;; EOF
