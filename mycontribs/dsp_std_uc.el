@@ -277,6 +277,7 @@
   (spaceline-toggle-hud-off)             ; hud indicator (right bottom)
   (spaceline-toggle-window-number-off)   ; window number (left bottom 2)
   ;;(spaceline-toggle-workspace-number-off)
+  (spaceline-toggle-minor-modes-off)     ; well, no need to show liao ...
   (when (IsOSX)
     (setq ns-use-srgb-colorspace nil)    ; to fix broken separator color
     )
