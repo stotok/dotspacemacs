@@ -102,8 +102,9 @@ values."
                                     helm-gtags       ; long live ivy
                                     ggtags           ; long live cscope
                                     semantic
-                                    flx
-                                    flx-ido
+                                    flx              ; long live abo-abo
+                                    flx-ido          ; long live abo-abo
+                                    ido-vertical-mode; long live abo-abo
                                     persp-mode       ; default optional spaceline modeline
                                     window-numbering ; default optional spaceline modeline
                                     anzu             ; default optional spaceline modeline
