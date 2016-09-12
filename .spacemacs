@@ -96,6 +96,8 @@ values."
    ;; I use company exclusively :)
    dotspacemacs-excluded-packages '(auto-complete
                                     helm
+                                    helm-core
+                                    helm-make
                                     helm-cscope
                                     helm-gtags
                                     ggtags
