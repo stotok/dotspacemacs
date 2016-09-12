@@ -72,6 +72,12 @@
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
+
+;;
+;; etc
+;;
+(setq vc-follow-symlinks t) ; don't ask for confirmation for opening symlinked file
+;;
 ;; backwards compatibility as default-buffer-file-coding-system
 ;; is deprecated in 23.2
 (if (boundp buffer-file-coding-system)
