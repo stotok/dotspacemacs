@@ -94,17 +94,18 @@ values."
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
    ;; I use company exclusively :)
-   dotspacemacs-excluded-packages '(auto-complete
-                                    helm
-                                    helm-core
-                                    helm-make
-                                    helm-cscope
-                                    helm-gtags
-                                    ggtags
+   dotspacemacs-excluded-packages '(auto-complete    ; long live company
+                                    helm             ; long live ivy
+                                    helm-core        ; long live ivy
+                                    helm-make        ; long live ivy
+                                    helm-cscope      ; long live ivy
+                                    helm-gtags       ; long live ivy
+                                    ggtags           ; long live cscope
                                     semantic
                                     persp-mode       ; default optional spaceline modeline
                                     window-numbering ; default optional spaceline modeline
                                     anzu             ; default optional spaceline modeline
+                                    evil-anzu        ; yeah, dun need anzu
                                     nyan-mode        ; default optional spaceline modeline
                                     fancy-battery    ; default optional spaceline modeline
                                     )
