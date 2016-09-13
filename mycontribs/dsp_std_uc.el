@@ -110,7 +110,7 @@
       scroll-margin 3)        ; 3 lines margin
 ;;
 (setq delete-by-moving-to-trash nil) ;; no need to go to OS's trash folder
-(when (or (eq system-type 'cygwin) (eq system-type 'windows-nt))
+(when (or (IsCygwin) (IsWindows))
   ;; try to improve slow performance on windows and cygwin
   (setq w32-get-true-file-attributes nil))
 

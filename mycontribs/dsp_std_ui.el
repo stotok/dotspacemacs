@@ -18,7 +18,7 @@
 ;;
 ;; Keyboard Remap
 ;;
-(when (eq system-type 'darwin)
+(when (IsOSX)
   (message ">>> user-init: keyboard remap on OSX ...")
   ;; 1) Mac build-in Keyboard & Mouse preference:
   ;;    - Swap [CapsLock] and [Control]
