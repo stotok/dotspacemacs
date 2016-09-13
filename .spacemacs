@@ -53,7 +53,6 @@ values."
      markdown
      latex
      org
-     org-plus-contrib
      shell-scripts
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -106,6 +105,7 @@ values."
                                     flx-ido          ; long live abo-abo
                                     ido-vertical-mode; long live abo-abo
                                     neotree          ; dun need it
+                                    evil-unimpaired  ; what for it is? error compiling
                                     persp-mode       ; default optional spaceline modeline
                                     window-numbering ; default optional spaceline modeline
                                     anzu             ; default optional spaceline modeline
