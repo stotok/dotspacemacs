@@ -142,7 +142,7 @@
 ;;
 ;; turn-on automatic bracket insertion by pairs. New in emacs 24
 ;;
-(when t
+(when nil                          ; Aha!!! on spacemacs it add weird blank line
   (electric-pair-mode t)
   ;; make electric-pair-mode work on more brackets
   ;; e.g. curly bracket {} isn't auto-closed when in emacs-lisp-mode
