@@ -101,10 +101,11 @@ values."
                                     helm-cscope      ; long live ivy
                                     helm-gtags       ; long live ivy
                                     ggtags           ; long live cscope
-                                    semantic
+                                    semantic         ; dun need it
                                     flx              ; long live abo-abo
                                     flx-ido          ; long live abo-abo
                                     ido-vertical-mode; long live abo-abo
+                                    neotree          ; dun need it
                                     persp-mode       ; default optional spaceline modeline
                                     window-numbering ; default optional spaceline modeline
                                     anzu             ; default optional spaceline modeline
