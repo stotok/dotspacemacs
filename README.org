@@ -1,23 +1,24 @@
 * Introduction
-My spacemacs configuration layers including dotfile (.spacemacs). 
-The configuration and setting are tested with 'develop' branch of syl20bnr/spacemacs.
+   My spacemacs configuration layers including dotfile (.spacemacs).
+   The configuration and setting are tested with 'develop' branch of
+   syl20bnr/spacemacs.
 
 * Installation 
-Backup and delete your ~/.emacs and ~/.emacs.d, then go to your =home= directory:
+   Backup and delete your ~/.emacs and ~/.emacs.d, then go to your =home= directory:
 
-#+BEGIN_SRC text
-$ git clone https://github.com/syl20bnr/spacemacs.git .emacs.d
-$ cd .emacs.d
-$ git checkout -b develop -t origin/develop
-$ cd ..
-$ git clone https://github.com/stotok/dotspacemacs.git
-$ ln -s dotspacemacs/.spacemacs .
-#+END_SRC
+   #+BEGIN_SRC text
+   $ git clone https://github.com/syl20bnr/spacemacs.git .emacs.d
+   $ cd .emacs.d
+   $ git checkout -b develop -t origin/develop
+   $ cd ..
+   $ git clone https://github.com/stotok/dotspacemacs.git
+   $ ln -s dotspacemacs/.spacemacs .
+   #+END_SRC
 
 * Contents
 ** cscope layer (ttk-cscope)
    Support c/c++ and python projects, enable via =ttk-cscope=. First, install these
-   for generating cscope database:
+   tools for generating cscope database:
 
    For c/c++:
    : $ apt-get install cscope
@@ -28,8 +29,8 @@ $ ln -s dotspacemacs/.spacemacs .
    Script indexers to select which c/c++ or python files to be indexed is available
    at =mycontribs/ttk-cscope/local/xcscope/=. Modify them according to your needs.
 
-   My preference is to invoke the indexer at the root directory of your source tree
-   from the command line. Hence, include the script's path into your =PATH= then:
+   From the command line, invoke the indexer at the root directory of your source
+   tree. To do so, include the script's path into your =PATH= then:
 
    For c/c++:
    : $ cscope-indexer -r -v
@@ -37,17 +38,18 @@ $ ln -s dotspacemacs/.spacemacs .
    For python:
    : $ pycscope-indexer -r -v
 
-   You need to invoke the indexer again if your codes got (many) changes. Well, that's
-   all. It's now ready to roll.
+   You need to invoke the indexer again if your codes got (many) changes.
+   Well, that's all. It's now ready to roll.
 
 *** Keybindings
-In c/c++ mode or python mode, place the cursor on function name or macro of your interest:
+    In c/c++ mode or python mode, place the cursor on function name or macro of
+    your interest:
 
-Leader key is:  =SPC m=
+    Leader key is:  =SPC m= (or shortcut with =,=)
 
-Available commands:
+    Available commands:
 
-#+BEGIN_SRC test
+    #+BEGIN_SRC test
       "cs" 'cscope-find-this-symbol
       "cd" 'cscope-find-global-definition
       "cc" 'cscope-find-functions-calling-this-function
@@ -59,39 +61,42 @@ Available commands:
       ;;
       "ca" 'cscope-set-initial-directory
       "cA" 'cscope-unset-initial-directory
-#+END_SRC
+    #+END_SRC
 
-In cscope buffer, here's available commands:
+    In cscope buffer, here's available commands:
 
-#+BEGIN_SRC test
-   [return] 'cscope-select-entry-other-window
-   " "      'cscope-show-entry-other-window
-   "o"      'cscope-select-entry-one-window
-   "q"      'cscope-bury-buffer
-   "Q"      'cscope-quit
-   "s"      'cscope-find-this-symbol
-   "d"      'cscope-find-this-symbol
-   "g"      'cscope-find-global-definition
-   "c"      'cscope-find-functions-calling-this-function
-   "C"      'cscope-find-called-functions
-   "t"      'cscope-find-this-text-string
-   "f"      'cscope-find-this-file
-   "i"      'cscope-find-files-including-file
-   "u"      'cscope-pop-mark
-#+END_SRC
+    #+BEGIN_SRC test
+    [return] 'cscope-select-entry-other-window
+    " "      'cscope-show-entry-other-window
+    "o"      'cscope-select-entry-one-window
+    "q"      'cscope-bury-buffer
+    "Q"      'cscope-quit
+    "s"      'cscope-find-this-symbol
+    "d"      'cscope-find-this-symbol
+    "g"      'cscope-find-global-definition
+    "c"      'cscope-find-functions-calling-this-function
+    "C"      'cscope-find-called-functions
+    "t"      'cscope-find-this-text-string
+    "f"      'cscope-find-this-file
+    "i"      'cscope-find-files-including-file
+    "u"      'cscope-pop-mark
+   #+END_SRC
 
 ** elpy layer (ttk-elpy)
-   Support python environment, enable via =dotspacemacs-configuration-layers= '(=ttk-elpy=). And make
-   sure you don't enable =python= layer it it.
+   Support python environment, enable via
+   =dotspacemacs-configuration-layers= '(=ttk-elpy=). And make sure you don't enable
+   =python= layer.
 
-   This is practically dinosaur of pycscope :) Don't worry, they can co-exist peacefully.
+   This is practically dinosaur of pycscope :) Don't worry, they can co-exist
+   peacefully.
 
-   Couple of things need to setup by you before you can enjoy elpy. First of all, install
-   python virtual environment. And some other packages that elpy is depending on.
+   Couple of things need to setup by you before you can enjoy elpy. First of all,
+   install python virtual environment. And some other packages that elpy is
+   depending on.
 
 *** Python Select
-    Put this in your =.bashrc= on how to select python 2 or 3 (or any other python versions in
-    that matter):
+    Put this in your =.bashrc= on how to select python 2 or 3 (or any other python
+    versions in that matter):
 
     #+BEGIN_SRC bashrc
     # sudo apt-get install python-pip
@@ -122,6 +127,9 @@ In cscope buffer, here's available commands:
     export -f select_python3
     #+END_SRC
 
+    Then you need to source it to take effect:
+    : $ source ~/.bashrc
+
 *** Python Virtual Environment
     Example here is for setting up python 3 on Debin/Ubuntu/Mint.
 
@@ -149,5 +157,30 @@ In cscope buffer, here's available commands:
       : M-x pyvenv-workon elpy3
       : M-x elpy-config
 
-    It's now ready. Always do =M-x pyvenv-workon elpy3= (or any venv you are working on) before
-    you open any python project.
+    It's now ready. Always do =M-x pyvenv-workon elpy3= (or any venv you are working
+    on) before you open any python project.
+*** Keybindings
+    In python mode, place the cursor on function name or macro of your interest:
+
+    Leader key is:  =SPC m= (or shortcut with =,=)
+
+    Available commands:
+
+    #+BEGIN_SRC test
+      "es" 'elpy-rgrep-symbol
+      "eb" 'rgrep-display-buffer
+      "ed" 'elpy-goto-definition
+      "eu" 'pop-tag-mark
+    #+END_SRC
+
+** rtags layer (ttk-rtags)
+   Support c/c++ client server indexer based on clang. Enable it via =ttk-rtags=.
+   Yeah, this is dinosaur of cscope :) But again, don't worry because they can
+   co-exist peacefully.
+
+   Couple of things need to setup before you can enjoy rtags. First of all, take
+   a look at:
+
+       https://github.com/Andersbakken/rtags.git
+
+   I'll cover the rest later :)
