@@ -174,4 +174,13 @@
     #+END_SRC
 
 ** rtags layer (ttk-rtags)
-   TBA
+   Support c/c++ client server indexer based on clang. Enable it via =ttk-rtags=.
+   Yeah, this is dinosaur of cscope :) But again, don't worry because they can
+   co-exist peacefully.
+
+   Couple of things need to setup before you can enjoy rtags. First of all, take
+   a look at:
+
+       https://github.com/Andersbakken/rtags.git
+
+   I'll cover the rest later :)
