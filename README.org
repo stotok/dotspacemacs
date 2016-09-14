@@ -40,7 +40,7 @@ $ ln -s dotspacemacs/.spacemacs .
    You need to invoke the indexer again if your codes got (many) changes. Well, that's
    all. It's now ready to roll.
 
-*** Keybindings:
+*** Keybindings
 In c/c++ mode or python mode, place the cursor on function name or macro of your interest:
 
 Leader key is:  =SPC m=

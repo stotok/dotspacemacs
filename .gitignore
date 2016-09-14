@@ -8,6 +8,9 @@
 .gitignore.swp
 .spacemacs.swp
 
+# html output from README.org (C-c C-e h o)
+README.html
+
 # private directories
 private/
 !private/README.org
