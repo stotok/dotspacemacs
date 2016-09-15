@@ -108,6 +108,7 @@ values."
                                     evil-unimpaired  ; what for it is? error compiling
                                     adaptive-wrap    ; not sure what for it is :)
                                     google-translate ; dun need ahhh
+                                    lorem-ipsum      ; well,,, no need lah
                                     persp-mode       ; default optional spaceline modeline
                                     window-numbering ; default optional spaceline modeline
                                     anzu             ; default optional spaceline modeline
