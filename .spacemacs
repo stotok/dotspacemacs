@@ -111,6 +111,7 @@ values."
                                     lorem-ipsum      ; well,,, no need lah
                                     move-text        ; just do vim style lah :)
                                     gh-md            ; render markdown using github api
+                                    golden-ratio     ; auto resizing window to golden ratio
                                     persp-mode       ; default optional spaceline modeline
                                     window-numbering ; default optional spaceline modeline
                                     anzu             ; default optional spaceline modeline
