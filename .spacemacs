@@ -109,6 +109,7 @@ values."
                                     adaptive-wrap    ; not sure what for it is :)
                                     google-translate ; dun need ahhh
                                     lorem-ipsum      ; well,,, no need lah
+                                    move-text        ; just do vim style lah :)
                                     persp-mode       ; default optional spaceline modeline
                                     window-numbering ; default optional spaceline modeline
                                     anzu             ; default optional spaceline modeline
