@@ -101,23 +101,31 @@
 (cond
  ((IsOSX)
   (setq-default
-    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
-    ;; quickly tweak the mode-line size to make separators look not too crappy.
-    dotspacemacs-default-font '("Hack"
-                                :size 12
-                                :weight normal
-                                :width normal
-                                :powerline-scale 1.1)
-    )) ;; darwin
+   ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
+   ;; quickly tweak the mode-line size to make separators look not too crappy.
+   dotspacemacs-default-font '(;; available in macOS Sierra
+                               "PT Mono"
+                               :size 12
+                               :weight normal
+                               :width normal
+                               :powerline-scale 1.1
+                               ;; need to install manually
+                               "Hack"
+                               :size 12
+                               :weight normal
+                               :width normal
+                               :powerline-scale 1.1
+                               )
+   )) ;; darwin
  ((IsGNULinux)
   (setq-default
-    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
-    ;; quickly tweak the mode-line size to make separators look not too crappy.
-    dotspacemacs-default-font '("Inconsolata"
-                                :size 14
-                                :weight normal
-                                :width normal
-                                :powerline-scale 1.2)
+   ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
+   ;; quickly tweak the mode-line size to make separators look not too crappy.
+   dotspacemacs-default-font '("Inconsolata"
+                               :size 14
+                               :weight normal
+                               :width normal
+                               :powerline-scale 1.2)
     )) ;; gnu/linux
  ((or (IsCygwin) (IsWindows))
   ;; This is to fix error when calling server start on startup
@@ -126,24 +134,24 @@
         (defun server-ensure-safe-dir (dir) "Noop" t))
   ;;
   (setq-default
-    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
-    ;; quickly tweak the mode-line size to make separators look not too crappy.
-    dotspacemacs-default-font '("Consolas"
-                                :size 12
-                                :weight normal
-                                :width normal
-                                :powerline-scale 1.1)
+   ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
+   ;; quickly tweak the mode-line size to make separators look not too crappy.
+   dotspacemacs-default-font '("Consolas"
+                               :size 12
+                               :weight normal
+                               :width normal
+                               :powerline-scale 1.1)
     )) ;; cygwin or windows
  (t
   (setq-default
-    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
-    ;; quickly tweak the mode-line size to make separators look not too crappy.
-    dotspacemacs-default-font '("Source Code Pro"
-                                :size 13
-                                :weight normal
-                                :width normal
-                                :powerline-scale 1.1)
-    )) ;; t
+   ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
+   ;; quickly tweak the mode-line size to make separators look not too crappy.
+   dotspacemacs-default-font '("Source Code Pro"
+                               :size 13
+                               :weight normal
+                               :width normal
+                               :powerline-scale 1.1)
+   )) ;; t
  )
 
 ;;
