@@ -72,7 +72,7 @@ values."
      ;; version-control
      ;;
      ;; https://github.com/syl20bnr/spacemacs/tree/master/layers/themes-megapack
-     themes-megapack ;; a lot of themes :)
+     ;;themes-megapack ;; a lot of themes :)
      ;; ----------------------------------------------------------------------------------
      ;; This is private layers stored in ~/dotspacemacs/mycontribs/
      ;; ----------------------------------------------------------------------------------
@@ -81,8 +81,8 @@ values."
      ttk-beacon ; never loose your cursor again
      ttk-cscope ; c/c++ indexer
      ttk-shrink-whitespace ; shrink whitespace and lines around point
-     ttk-elpy              ; elpy python environment
-     ttk-rtags             ; c/c++ tagging system
+     ;;ttk-elpy              ; elpy python environment
+     ;;ttk-rtags             ; c/c++ tagging system
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
