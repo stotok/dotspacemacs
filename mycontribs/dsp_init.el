@@ -62,6 +62,8 @@
   (or (string= system-name "polaris") (string= system-name "polaris.local") (string= system-name "polaris.hgst.com")))
 (defmacro IsBilbo ()
   (or (string= system-name "bilbo") (string= system-name "bilbo.local") (string= system-name "bilbo.hgst.com")))
+(defmacro IsFrodo ()
+  (or (string= system-name "frodo") (string= system-name "frodo.local")))
 ;;
 ;; Display OS and HOSTNAME information
 ;;
@@ -92,6 +94,8 @@
     (message "IsPolaris: TRUE"))
    ((IsBilbo)
     (message "IsBilbo: TRUE"))
+   ((IsFrodo)
+    (message "IsFrodo: TRUE"))
    (t
     (message "Unknown HOSTNAME."))))
 ;;
@@ -150,7 +154,7 @@
 ;; Host name customization
 ;;
 (cond
- ((or (IsPolaris) (IsBilbo))
+ ((or (IsPolaris) (IsBilbo) (IsFrodo))
   (setq-default
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
