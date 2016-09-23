@@ -56,8 +56,6 @@
   (string= system-name "SG2-SATT93.msg.asia.wdc.com"))
 (defmacro IsKKB-SATT93 ()
   (string= system-name "kkb-satt93"))
-(defmacro IsCrux ()
-  (string= system-name "crux"))
 (defmacro IsPolaris ()
   (or (string= system-name "polaris") (string= system-name "polaris.local") (string= system-name "polaris.hgst.com")))
 (defmacro IsBilbo ()
@@ -88,8 +86,6 @@
     (message "IsSG2-SATT93: TRUE"))
    ((IsKKB-SATT93)
     (message "IsKKB-SATT93: TRUE"))
-   ((IsCrux)
-    (message "IsCrux: TRUE"))
    ((IsPolaris)
     (message "IsPolaris: TRUE"))
    ((IsBilbo)
@@ -160,11 +156,11 @@
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         leuven
-                         spacemacs-dark
                          spacemacs-light
+                         spacemacs-dark
                          sanityinc-solarized-dark
                          sanityinc-solarized-light
+                         leuven
                          heroku
                          zenburn
                          anti-zenburn
