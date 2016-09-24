@@ -31,11 +31,11 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     ;; ----------------------------------------------------------------------------------
+     ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------------------------
+     ;; ----------------------------------------------------------------
      ivy
      (auto-completion :disabled-for org git
                       :variables
@@ -72,7 +72,7 @@ values."
      ;; version-control
      ;;
      ;; https://github.com/syl20bnr/spacemacs/tree/master/layers/themes-megapack
-     themes-megapack ;; a lot of themes :)
+     ;;themes-megapack ;; a lot of themes :)
      ;; ----------------------------------------------------------------------------------
      ;; This is private layers stored in ~/dotspacemacs/mycontribs/
      ;; ----------------------------------------------------------------------------------
@@ -81,8 +81,8 @@ values."
      ttk-beacon ; never loose your cursor again
      ttk-cscope ; c/c++ indexer
      ttk-shrink-whitespace ; shrink whitespace and lines around point
-     ttk-elpy              ; elpy python environment
-     ttk-rtags             ; c/c++ tagging system
+     ;;ttk-elpy              ; elpy python environment
+     ;;ttk-rtags             ; c/c++ tagging system
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -92,7 +92,6 @@ values."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   ;; I use company exclusively :)
    dotspacemacs-excluded-packages '(auto-complete    ; long live company
                                     helm             ; long live ivy
                                     helm-core        ; long live ivy
@@ -119,14 +118,14 @@ values."
                                     nyan-mode        ; default optional spaceline modeline
                                     fancy-battery    ; default optional spaceline modeline
                                     )
-   ;; Defines the behaviour of Spacemacs when downloading packages.
-   ;; Possible values are `used', `used-but-keep-unused' and `all'. `used' will
-   ;; download only explicitly used packages and remove any unused packages as
-   ;; well as their dependencies. `used-but-keep-unused' will download only the
-   ;; used packages but won't delete them if they become unused. `all' will
-   ;; download all the packages regardless if they are used or not and packages
-   ;; won't be deleted by Spacemacs. (default is `used')
-   dotspacemacs-download-packages 'used))
+   ;; Defines the behaviour of Spacemacs when installing packages.
+   ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
+   ;; `used-only' installs only explicitly used packages and uninstall any
+   ;; unused packages as well as their unused dependencies.
+   ;; `used-but-keep-unused' installs only the used packages but won't uninstall
+   ;; them if they become unused. `all' installs *all* packages supported by
+   ;; Spacemacs and never uninstall them. (default is `used-only')
+   dotspacemacs-install-packages 'used-only))
 
 (defun dotspacemacs/init ()
   "Initialization function.
@@ -186,18 +185,17 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   ;;dotspacemacs-themes '(
-   ;;                      spacemacs-dark
-   ;;                      spacemacs-light
-   ;;                      sanityinc-solarized-dark
-   ;;                      sanityinc-solarized-light
-   ;;                      leuven
-   ;;                      heroku
-   ;;                      zenburn
-   ;;                      anti-zenburn
-   ;;                      )
+   ;;dotspacemacs-themes '(spacemacs-dark
+   ;;                      spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
+   ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
+   ;; quickly tweak the mode-line size to make separators look not too crappy.
+   ;;dotspacemacs-default-font '("Source Code Pro"
+   ;;                            :size 13
+   ;;                            :weight normal
+   ;;                            :width normal
+   ;;                            :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
