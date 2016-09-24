@@ -397,18 +397,3 @@ you should place your code here."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (persp-mode zenburn-theme ws-butler which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spacemacs-theme spaceline smex smeargle shrink-whitespace restart-emacs request rainbow-delimiters quelpa popwin pcre2el paradox orgit org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file mmm-mode markdown-toc magit-gitflow macrostep linum-relative link-hint ivy-hydra info+ indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation heroku-theme help-fns+ gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link flycheck-pos-tip fish-mode fill-column-indicator eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args eval-sexp-fu elisp-slime-nav dumb-jump disaster define-word counsel-projectile company-statistics company-shell company-c-headers company-auctex column-enforce-mode color-theme-sanityinc-solarized cmake-mode clean-aindent-mode clang-format beacon auto-yasnippet auto-highlight-symbol auto-compile auctex-latexmk anti-zenburn-theme aggressive-indent ace-window ace-link ac-ispell)))
- '(spacemacs-theme-custom-colors (quote ((comment . "#137C87")))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
