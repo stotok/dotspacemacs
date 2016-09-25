@@ -166,12 +166,7 @@
    dotspacemacs-themes '(
                          spacemacs-light
                          spacemacs-dark
-                         sanityinc-solarized-dark
-                         sanityinc-solarized-light
                          leuven
-                         heroku
-                         zenburn
-                         anti-zenburn
                          )
    )) ; polaris
  (t
@@ -182,12 +177,7 @@
    dotspacemacs-themes '(
                          spacemacs-dark
                          spacemacs-light
-                         sanityinc-solarized-dark
-                         sanityinc-solarized-light
                          leuven
-                         heroku
-                         zenburn
-                         anti-zenburn
                          )
    )) ; t
  ) ; themes
