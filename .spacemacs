@@ -116,6 +116,8 @@ values."
                                     evil-anzu        ; yeah, dun need anzu
                                     nyan-mode        ; default optional spaceline modeline
                                     fancy-battery    ; default optional spaceline modeline
+                                    persp-mode       ; workspace-like package
+                                    eyebrowse        ; simpler workspace-like package
                                     )
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
