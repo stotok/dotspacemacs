@@ -193,7 +193,7 @@
 ;;
 (when t
   ;; i dun want mouse cursor appear on emacs
-                                        ;(mouse-avoidance-mode 'banish)
+  ;;(mouse-avoidance-mode 'banish)
   ;; disable mouse wheel (and two finger swipe) scrolling
   (mouse-wheel-mode  -1)
   (global-set-key [wheel-up] 'ignore)
@@ -208,7 +208,6 @@
   (global-unset-key (kbd "<down-mouse-3>"))
   (global-unset-key (kbd "<mouse-3>")))
 
-
 ;;
 ;; TRAMP
 ;;
@@ -217,11 +216,11 @@
 ;;        Host myhost
 ;;             Hostname myhost.abc.com
 ;;             ... <as usual>
-;;             IdentityFile ~/.ssh/id_rsa_stotok_blah
+;;             IdentityFile ~/.ssh/id_rsa_yours_blah
 ;; 2. $ eval `ssh-agent -s`
 ;; 3. $ ssh-add ~/.ssh/id_rsa_blah
 ;; 4. From emacs:
-;;        C-x C-f /ssh:stotok@myhost:~/somefile.txt
+;;        C-x C-f /ssh:yourusername@myhost:~/somefile.txt
 ;;
 (require 'tramp)
 (tramp-set-completion-function "ssh"
