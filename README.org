@@ -10,7 +10,12 @@
    $ git clone https://github.com/syl20bnr/spacemacs.git .emacs.d
    $ cd .emacs.d
    $ git checkout -b develop -t origin/develop
-   $ cd ..
+   #+END_SRC
+
+   That's for spacemacs 'develop' branch (more features available). Now my own
+   configuration, again, at your =home= directory:
+
+   #+BEGIN_SRC text
    $ git clone https://github.com/stotok/dotspacemacs.git
    $ ln -s dotspacemacs/.spacemacs .
    #+END_SRC
