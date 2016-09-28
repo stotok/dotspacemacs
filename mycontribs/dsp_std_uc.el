@@ -209,6 +209,30 @@
   (global-unset-key (kbd "<mouse-3>")))
 
 ;;
+;; Touchpad off/on:
+;;    switch touchpad off when emacs gets focus and on again when she loses focus
+;;
+;; First, install 'synclient' in linux. For other OSes, dunno yet :)
+;; Link: https://www.reddit.com/r/emacs/comments/38o0tr/i_have_to_share_this_switch_your_touchpad_off/
+;;
+(cond
+ ((IsFrodo)
+  (defun turn-off-mouse (&optional frame)
+    (interactive)
+    (let ((inhibit-message t) (default-directory "~"))
+      (shell-command "synclient TouchpadOff=1")))
+
+  (defun turn-on-mouse (&optional frame)
+    (interactive)
+    (let ((inhibit-message t) (default-directory "~"))
+      (shell-command "synclient TouchpadOff=0")))
+
+  (add-hook 'focus-in-hook #'turn-off-mouse)
+  (add-hook 'focus-out-hook #'turn-on-mouse)
+  (add-hook 'delete-frame-functions #'turn-on-mouse)
+  ))
+
+;;
 ;; TRAMP
 ;;
 ;; SSH WITH PUBLIC KEY
