@@ -2,6 +2,10 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
+;; This provides basic definitions to be used throughout configurations
+(when (file-exists-p "~/dotspacemacs/mycontribs/dsp_defines.el")
+  (load-file "~/dotspacemacs/mycontribs/dsp_defines.el"))
+
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
 You should not put any user code in this function besides modifying the variable
@@ -70,19 +74,6 @@ values."
                       syntax-checking-enable-tooltips nil)
      ;;
      ;; version-control
-     ;;
-     ;; https://github.com/syl20bnr/spacemacs/tree/master/layers/themes-megapack
-     ;;themes-megapack ;; a lot of themes :)
-     ;; ----------------------------------------------------------------------------------
-     ;; This is private layers stored in ~/dotspacemacs/mycontribs/
-     ;; ----------------------------------------------------------------------------------
-     frame-geometry ; persistent spacemacs frame/window position/size on startup
-     ttk-quotes ; show quotes on echo area message at startup, alas, spacemacs override it
-     ;;ttk-beacon ; never loose your cursor again
-     ttk-cscope ; c/c++ indexer
-     ttk-shrink-whitespace ; shrink whitespace and lines around point
-     ;;ttk-elpy              ; elpy python environment
-     ;;ttk-rtags             ; c/c++ tagging system
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -126,7 +117,13 @@ values."
    ;; `used-but-keep-unused' installs only the used packages but won't uninstall
    ;; them if they become unused. `all' installs *all* packages supported by
    ;; Spacemacs and never uninstall them. (default is `used-only')
-   dotspacemacs-install-packages 'used-only))
+   dotspacemacs-install-packages 'used-only)
+  ;;
+  ;; This is for private layers
+  ;;
+  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_layers.el")
+    (load-file "~/dotspacemacs/mycontribs/dsp_layers.el"))
+  ) ;; dotspacemacs/layers
 
 (defun dotspacemacs/init ()
   "Initialization function.
