@@ -20,7 +20,7 @@
    $ ln -s dotspacemacs/.spacemacs .
    #+END_SRC
 
-* Contents
+* Private Layers
 ** cscope layer (ttk-cscope)
    Support c/c++ and python projects, enable via =ttk-cscope=. First, install these
    tools for generating cscope database:
@@ -189,3 +189,6 @@
        https://github.com/Andersbakken/rtags.git
 
    I'll cover the rest later :)
+
+** Other private layers
+   Refer to =~/dotspacemacs/mycontribs/dsp_layers.el= :)
