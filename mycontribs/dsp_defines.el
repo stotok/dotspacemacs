@@ -48,17 +48,17 @@
 ;; Determine hostname
 ;;
 (defmacro IsBraeburn ()
-  (string= system-name "braeburn"))
+  (string-prefix-p "braeburn" system-name t))
 (defmacro IsSG2-SATT93 ()
-  (string= system-name "SG2-SATT93.msg.asia.wdc.com"))
+  (string-prefix-p "sg2-satt93" system-name t))
 (defmacro IsKKB-SATT93 ()
-  (string= system-name "kkb-satt93"))
+  (string-prefix-p "kkb-satt93" system-name t))
 (defmacro IsPolaris ()
-  (or (string= system-name "polaris") (string= system-name "polaris.local") (string= system-name "polaris.hgst.com")))
+  (string-prefix-p "polaris" system-name t))
 (defmacro IsBilbo ()
-  (or (string= system-name "bilbo") (string= system-name "bilbo.local") (string= system-name "bilbo.hgst.com")))
+  (string-prefix-p "bilbo" system-name t))
 (defmacro IsFrodo ()
-  (or (string= system-name "frodo") (string= system-name "frodo.local")))
+  (string-prefix-p "frodo" system-name t))
 ;;
 ;; Display OS and HOSTNAME information
 ;;
