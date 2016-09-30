@@ -351,20 +351,10 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_std_ui.el")
-    (load-file "~/dotspacemacs/mycontribs/dsp_std_ui.el"))
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_modes_ui.el")
-    (load-file "~/dotspacemacs/mycontribs/dsp_modes_ui.el"))
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_magit_ui.el")
-    (load-file "~/dotspacemacs/mycontribs/dsp_magit_ui.el"))
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_faces_ui.el")
-    (load-file "~/dotspacemacs/mycontribs/dsp_faces_ui.el"))
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_etc_ui.el")
-    (load-file "~/dotspacemacs/mycontribs/dsp_etc_ui.el"))
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_org_ui.el")
-    (load-file "~/dotspacemacs/mycontribs/dsp_org_ui.el"))
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_abo_ui")
-    (load-file "~/dotspacemacs/mycontribs/dsp_abo_ui"))
+  (setq ttk-dotspacemacs-state DSP-STATE-USER-INIT)
+  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_user_init_config.el")
+    (load-file "~/dotspacemacs/mycontribs/dsp_user_init_config.el"))
+  (setq ttk-dotspacemacs-state DSP-STATE-USER-DEFAULT)
   ) ;; dotspacemacs/user-init
 
 (defun dotspacemacs/user-config ()
@@ -374,20 +364,10 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_std_uc.el")
-    (load-file "~/dotspacemacs/mycontribs/dsp_std_uc.el"))
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_modes_uc.el")
-    (load-file "~/dotspacemacs/mycontribs/dsp_modes_uc.el"))
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_magit_uc.el")
-    (load-file "~/dotspacemacs/mycontribs/dsp_magit_uc.el"))
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_faces_uc.el")
-    (load-file "~/dotspacemacs/mycontribs/dsp_faces_uc.el"))
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_etc_uc.el")
-    (load-file "~/dotspacemacs/mycontribs/dsp_etc_uc.el"))
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_org_uc.el")
-    (load-file "~/dotspacemacs/mycontribs/dsp_org_uc.el"))
-  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_abo_uc.el")
-    (load-file "~/dotspacemacs/mycontribs/dsp_abo_uc.el"))
+  (setq ttk-dotspacemacs-state DSP-STATE-USER-CONFIG)
+  (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_user_init_config.el")
+    (load-file "~/dotspacemacs/mycontribs/dsp_user_init_config.el"))
+  (setq ttk-dotspacemacs-state DSP-STATE-USER-DEFAULT)
   ;;
   ;; initial-buffer-choice has no effect since spacemacs buffer is manually created and switched to.
   ;; Here's to manually switch buffer to *scratch* after all installation and loading process.

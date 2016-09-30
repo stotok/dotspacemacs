@@ -1,14 +1,14 @@
 ;; -*- coding:utf-8-unix mode:emacs-lisp -*-
-;;***************************************************************************************
+;;****************************************************************************************
 ;;
 ;; 2016 Totok Sulistiomono
 ;; stotok@kukisku.com
 ;;
-;;***************************************************************************************
+;;****************************************************************************************
 
-;; **************************************************************************************
+;; ***************************************************************************************
 ;; This is called at very beginning of spacemacs initialization
-;; **************************************************************************************
+;; ***************************************************************************************
 ;;
 ;; Provide macro to determine operating systems and version of emacs
 ;;
@@ -29,7 +29,7 @@
 ;;      `cygwin'      compiled using the Cygwin library.
 ;;    Anything else indicates some sort of Unix system.
 ;;
-;; **************************************************************************************
+;; ***************************************************************************************
 ;;
 ;; Determine the OS
 ;; On Linux
@@ -95,5 +95,23 @@
     (message "IsFrodo: TRUE"))
    (t
     (message "Unknown HOSTNAME."))))
+
+;;
+;; Global variables and macro to determine if it's in 'user init' or 'user config' state
+;;
+
+(defconst DSP-STATE-USER-DEFAULT 0 "State of dotspacemacs default.")
+(defconst DSP-STATE-USER-INIT    1 "State of dotspacemacs user init.")
+(defconst DSP-STATE-USER-CONFIG  2 "State of dotspacemacs user config.")
+(defconst DSP-STATE-USER-DONE    3 "State of dotspacemacs user done.")
+
+(defvar ttk-dotspacemacs-state)         ; global variable to determine at which state are we
+(setq ttk-dotspacemacs-state DSP-STATE-USER-DEFAULT) ; initial state
+
+;; Use these macro to determine at which state we are during initialization
+(defmacro IsDspUserInit ()
+  (= ttk-dotspacemacs-state DSP-STATE-USER-INIT))
+(defmacro IsDspUserConfig ()
+  (= ttk-dotspacemacs-state DSP-STATE-USER-CONFIG))
 
 ;; EOF
