@@ -17,25 +17,19 @@
   (setq-default
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '(;; available in macOS Sierra
-                               "PT Mono"
-                               :size 12
+   dotspacemacs-default-font '(;; https://fonts.google.com/specimen/Inconsolata
+                               "Inconsolata"
+                               :size 14
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1
-                               ;; need to install manually
-                               "Hack"
-                               :size 12
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1
-                               )
+                               :powerline-scale 1.1)
    )) ;; darwin
  ((IsGNULinux)
   (setq-default
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Inconsolata"
+   dotspacemacs-default-font '(;; $ sudo apt-get install fonts-inconsolata
+                               "Inconsolata"
                                :size 14
                                :weight normal
                                :width normal
@@ -50,7 +44,8 @@
   (setq-default
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Consolas"
+   dotspacemacs-default-font '(;; Default from microsoft office
+                               "Consolas"
                                :size 12
                                :weight normal
                                :width normal
