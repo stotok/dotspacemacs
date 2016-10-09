@@ -37,9 +37,9 @@
     )) ;; gnu/linux
  ((or (IsCygwin) (IsWindows))
   ;; This is to fix error when calling server start on startup
-  (require 'server)
-  (and (>= emacs-major-version 23)
-        (defun server-ensure-safe-dir (dir) "Noop" t))
+  ;;(require 'server)
+  ;;(and (>= emacs-major-version 23)
+  ;;      (defun server-ensure-safe-dir (dir) "Noop" t))
   ;;
   (setq-default
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
