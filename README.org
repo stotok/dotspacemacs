@@ -1,6 +1,6 @@
 * Introduction
-   My spacemacs configuration layers including dotfile (.spacemacs).
-   The configuration and setting are tested with 'develop' branch of
+   My spacemacs configuration layers including dotfile (=.spacemacs=).
+   The configuration is assumed to be used with =develop= branch of
    syl20bnr/spacemacs.
 
 * Installation 
@@ -21,9 +21,11 @@
    #+END_SRC
 
 * Private Layers
+ The following private layers are configured in =mycontribs/dsp_layers.el=.
+
 ** cscope layer (ttk-cscope)
-   Support c/c++ and python projects, enable via =ttk-cscope=. First, install these
-   tools for generating cscope database:
+   Support c/c++ and python projects, enable via =ttk-cscope=.
+   First, install the following tools (for generating cscope database):
 
    For c/c++:
    : $ apt-get install cscope
@@ -43,12 +45,13 @@
    For python:
    : $ pycscope-indexer -r -v
 
+   Those invocation will generate cscope database file =cscope.out= that can be used by =xcscope.el=.
    You need to invoke the indexer again if your codes got (many) changes.
    Well, that's all. It's now ready to roll.
 
 *** Keybindings
-    In c/c++ mode or python mode, place the cursor on function name or macro of
-    your interest:
+    In c/c++ mode or python mode, place the cursor on function name (or macro, variables,
+    etc) of your interest:
 
     Leader key is:  =SPC m= (or shortcut with =,=)
 
@@ -90,7 +93,7 @@
 ** elpy layer (ttk-elpy)
    Support python environment, enable via
    =dotspacemacs-configuration-layers= '(=ttk-elpy=). And make sure you don't enable
-   =python= layer.
+   =python= layer in your =.spacemacs=.
 
    This is practically dinosaur of pycscope :) Don't worry, they can co-exist
    peacefully.

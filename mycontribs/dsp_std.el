@@ -263,7 +263,8 @@
   ;; Link: https://www.reddit.com/r/emacs/comments/38o0tr/i_have_to_share_this_switch_your_touchpad_off/
   ;;
   (cond
-  ((IsFrodo)
+   ((and (IsGNULinux) (IsFrodo))
+    (message "    >>> turn-off trackpad")
     (defun turn-off-mouse (&optional frame)
       (interactive)
       (let ((inhibit-message t) (default-directory "~"))
