@@ -34,44 +34,20 @@
     ;;
     ;; keybinding
     ;;
-    (spacemacs/set-leader-keys-for-major-mode 'c-mode
-      "cs" 'cscope-find-this-symbol
-      "cd" 'cscope-find-global-definition
-      "cc" 'cscope-find-functions-calling-this-function
-      "cC" 'cscope-find-called-functions
-      "ci" 'cscope-find-files-including-file
-      ;;
-      "cb" 'cscope-display-buffer
-      "cu" 'cscope-pop-mark
-      ;;
-      "ca" 'cscope-set-initial-directory
-      "cA" 'cscope-unset-initial-directory
-      )
-    (spacemacs/set-leader-keys-for-major-mode 'c++-mode
-      "cs" 'cscope-find-this-symbol
-      "cd" 'cscope-find-global-definition
-      "cc" 'cscope-find-functions-calling-this-function
-      "cC" 'cscope-find-called-functions
-      "ci" 'cscope-find-files-including-file
-      ;;
-      "cb" 'cscope-display-buffer
-      "cu" 'cscope-pop-mark
-      ;;
-      "ca" 'cscope-set-initial-directory
-      "cA" 'cscope-unset-initial-directory
-      )
-    (spacemacs/set-leader-keys-for-major-mode 'python-mode
-      "cs" 'cscope-find-this-symbol
-      "cd" 'cscope-find-global-definition
-      "cc" 'cscope-find-functions-calling-this-function
-      "cC" 'cscope-find-called-functions
-      "ci" 'cscope-find-files-including-file
-      ;;
-      "cb" 'cscope-display-buffer
-      "cu" 'cscope-pop-mark
-      ;;
-      "ca" 'cscope-set-initial-directory
-      "cA" 'cscope-unset-initial-directory
+    (dolist (mode '(c-mode c++mode python-mode))
+      (spacemacs/set-leader-keys-for-major-mode mode
+        "cs" 'cscope-find-this-symbol
+        "cd" 'cscope-find-global-definition
+        "cc" 'cscope-find-functions-calling-this-function
+        "cC" 'cscope-find-called-functions
+        "ci" 'cscope-find-files-including-file
+        ;;
+        "cb" 'cscope-display-buffer
+        "cu" 'cscope-pop-mark
+        ;;
+        "ca" 'cscope-set-initial-directory
+        "cA" 'cscope-unset-initial-directory
+        )
       )
     ;;
     ;; let cscope minor modes key binding takes priority over evil key bindings
@@ -79,6 +55,7 @@
     (evil-make-overriding-map cscope-list-entry-keymap 'normal)
     ;; force update evil keymaps after cscope-list-entry-mode loaded
     (add-hook 'cscope-list-entry-hook #'evil-normalize-keymaps)
-    ))
+    )
+  )
 
 ;; EOF
