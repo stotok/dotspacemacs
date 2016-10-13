@@ -197,7 +197,41 @@
 
        https://github.com/Andersbakken/rtags.git
 
-   I'll cover the rest later :)
+*** Install *rtags* dependencies:
+    This is for Debian based distros:
+    : $ sudo apt-get install llvm llvm-dev clang libclang-dev build-essential cmake libssl-dev
+    : $ sudo apt-get install libncurses5 libncurses5-dev pkg-config bash-completion lua5.3
+
+*** Build rtags
+    We are going to build rtags from git source.
+
+    : $ cd ~/project/emacsen
+    : $ git clone --recursive https://github.com/Andersbakken/rtags.git
+    : $ cd rtags
+    : $ mkdir build
+    : $ cd build
+    : $ rm CMakeCache.txt (if any)
+    : $ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE ..
+    : $ make
+
+    The rtags =rc=, =rdm= and =rp= executables are now generated in =build/bin= directory.
+    Update =PATH=:
+
+    : PATH=${PATH}:~/project/emacsen/rtags/build/bin
+
+*** Generate compile_commands.json
+    Various tools can generate compile_commands.json,
+    ref: https://github.com/Andersbakken/rtags.git
+    - =cmake=
+      : $ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE .
+
+*** How to use rtags
+    - Start the rtags daemon (=rdm=)
+      : $ rdm &
+    - Index the rtags project. Go to where the =compile_commands.json=:
+      : $ rc -J .
+      Do it only once. =rdm= will automatically update the index if there is change in your
+      source code.
 
 ** Other private layers
    Refer to =~/dotspacemacs/mycontribs/dsp_layers.el= :)

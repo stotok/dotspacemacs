@@ -55,7 +55,13 @@
     (add-hook 'c-mode-common-hook #'setup-flycheck-rtags)
     ;;
     ;; add company-rtags to company-backends
-    (push 'company-rtags company-backends)
+    ;;
+    ;;(push 'company-rtags company-backends) ; change to below
+    (with-eval-after-load 'company           ; defer until after company is loaded
+      (add-to-list 'company-backends 'company-rtags))
+    ;;
+    ;; alright, enable keybindings now
+    ;;
     (rtags-enable-standard-keybindings)
     )
   )
