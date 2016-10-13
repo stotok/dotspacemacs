@@ -20,6 +20,12 @@
    $ ln -s dotspacemacs/.spacemacs .
    #+END_SRC
 
+   Now is time to install *emacs* itself. On Debian based distros (Ubuntu, Mint, etc):
+
+   #+BEGIN_SRC text
+   $ apt-get install emacs
+   #+END_SRC
+
 * Private Layers
  The following private layers are configured in =mycontribs/dsp_layers.el=.
 
