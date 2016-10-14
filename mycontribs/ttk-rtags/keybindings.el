@@ -31,7 +31,7 @@
 
 (add-hook 'c-mode-common-hook 'ttk-rtags-set-evil-keys)
 
-(dolist (mode '(c-mode c++-mode))
+(dolist (mode '(c-mode c++-mode objc-mode))
   ;; i want it to be similar with cscope keybindings that i'm accustomed to.
   (evil-leader/set-key-for-mode mode
     "r d" 'rtags-find-symbol-at-point
