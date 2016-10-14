@@ -10,7 +10,7 @@
 ;; i prefer to always bury RTags and all other buffers once go to the target location
 (defun rtags-select-and-remove-rtags-buffer ()
   (interactive)
-  (rtags-bury-or-delete)
+;;  (rtags-bury-or-delete)
   (rtags-select t t))
 
 (define-key rtags-mode-map (kbd "o") 'rtags-select-and-remove-rtags-buffer)

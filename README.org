@@ -94,7 +94,7 @@
     "f"      'cscope-find-this-file
     "i"      'cscope-find-files-including-file
     "u"      'cscope-pop-mark
-   #+END_SRC
+    #+END_SRC
 
 ** elpy layer (ttk-elpy)
    Support python environment, enable via
@@ -180,7 +180,7 @@
 
     Available commands:
 
-    #+BEGIN_SRC test
+    #+BEGIN_SRC text
       "es" 'elpy-rgrep-symbol
       "eb" 'rgrep-display-buffer
       "ed" 'elpy-goto-definition
@@ -225,13 +225,45 @@
     - =cmake=
       : $ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE .
 
-*** How to use rtags
+*** Indexing project database
     - Start the rtags daemon (=rdm=)
       : $ rdm &
     - Index the rtags project. Go to where the =compile_commands.json=:
       : $ rc -J .
       Do it only once. =rdm= will automatically update the index if there is change in your
       source code.
+
+*** Keybindings
+    In C/C++ mode, place the cursor on function name or macro of your interest:
+
+    Leader key is: =SPC m= (or shortcut with =,=)
+
+    Available commands:
+
+    #+BEGIN_SRC text
+    "rd" 'rtags-find-symbol-at-point
+    "rs" 'rtags-find-all-references-at-point
+    "ru" 'rtags-location-stack-back
+    "rB" 'rtags-show-rtags-buffer
+    "rb" 'rtags-list-results
+    #+END_SRC
+
+    In rtags buffer, here's available commands:
+
+    #+BEGIN_SRC text
+    [return] 'rtags-select-other-window
+    "M-RET"  'rtags-select
+    "M-o"    'rtags-show-in-other-window
+    "c"      'rtags-select-caller
+    "M-c"    'rtags-select-caller-other-window
+    "s"      'rtags-show-in-other-window
+    "SPC"    'rtags-select-and-remove-rtags-buffer
+    "q"      'rtags-bury-or-delete
+    "j"      'next-line
+    "k"      'previous-line
+    "n"      'next-line
+    "p"      'previous-line
+    #+END_SRC
 
 ** Other private layers
    Refer to =~/dotspacemacs/mycontribs/dsp_layers.el= :)
