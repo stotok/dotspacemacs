@@ -33,6 +33,7 @@
   ;;(add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   ;; c/c++ tagging system
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-rtags))
+  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   )
  ((IsKKC-SATT93)
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-rtags))
