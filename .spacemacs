@@ -47,7 +47,7 @@ values."
                       )
      ;; better-defaults
      emacs-lisp
-     git
+     ;; git  ;; move this to dsp_layers.el
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-toggle-auto-newline nil

@@ -25,6 +25,20 @@
 (add-to-list 'dotspacemacs-configuration-layers '(ttk-cscope))
 
 ;;
+;; For each OS
+;;
+(cond
+ ((IsWindows)
+  ;; well, git on cygwin is sucks sloooowwwwwwwww
+  )
+ ((IsOSX)
+  (add-to-list 'dotspacemacs-configuration-layers '(git))
+  )
+ ((IsGNULinux)
+  (add-to-list 'dotspacemacs-configuration-layers '(git)))
+ )
+
+;;
 ;; For each system having installed and setup necessary tools
 ;;
 (cond
