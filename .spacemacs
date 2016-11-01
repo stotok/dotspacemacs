@@ -54,6 +54,7 @@ values."
             c-toggle-auto-hungry-state nil
             c-toggle-hungry-state nil
             )
+     html
      markdown
      latex
      org
