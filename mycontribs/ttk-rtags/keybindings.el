@@ -35,7 +35,7 @@
   ;; i want it to be similar with cscope keybindings that i'm accustomed to.
   (evil-leader/set-key-for-mode mode
     "r d" 'rtags-find-symbol-at-point
-;;    (define-key map (kbd (concat prefix "S")) 'rtags-find-references-at-point)
+    "r c" 'rtags-find-references-at-point
     ;;(define-key map (kbd (concat prefix "v")) 'rtags-find-virtuals-at-point)
     ;;(define-key map (kbd (concat prefix "V")) 'rtags-print-enum-value-at-point)
     "r s" 'rtags-find-all-references-at-point
