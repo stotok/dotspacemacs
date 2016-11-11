@@ -34,7 +34,7 @@
     ;;
     ;; keybinding
     ;;
-    (dolist (mode '(c-mode c++mode python-mode))
+    (dolist (mode '(c-mode c++-mode python-mode))
       (spacemacs/set-leader-keys-for-major-mode mode
         "cs" 'cscope-find-this-symbol
         "cd" 'cscope-find-global-definition
