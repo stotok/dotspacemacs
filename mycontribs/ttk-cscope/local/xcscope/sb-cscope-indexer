@@ -138,7 +138,7 @@ fi
     fi
 ) | \
     egrep -i '\.([chly](xx|pp)*|cc|hh)$' | \
-    sed -e '/\/external\/fm_fe\/tests\/FM_SW\//d' -e '/\/build\//d' -e '/\/doc\//d' -e '/\/CVS\//d' -e '/\/RCS\//d' -e 's/^\.\///' | \
+    sed -e '/\/external\/fm_fe\/tests\/FM_SW\//d' -e '/\/doc\//d' -e '/\/CVS\//d' -e '/\/RCS\//d' -e 's/^\.\///' | \
     sort > $LIST_FILE
 
 if [ "X$VERBOSE" != "X" ]
