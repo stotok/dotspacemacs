@@ -50,6 +50,7 @@ values."
      ;; git  ;; move this to dsp_layers.el
      (c-c++ :variables
             c-c++-enable-clang-support t
+            c-c++-default-mode-for-headers 'c++-mode
             c-toggle-auto-newline nil
             c-toggle-auto-hungry-state nil
             c-toggle-hungry-state nil
