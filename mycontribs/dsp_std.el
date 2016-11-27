@@ -342,6 +342,12 @@
                 ;; end of line (just like emacs behaviour).
                 ;; Wait ... I think cursor creep is the way to go. Keep it creep :) Well ,,,
                 evil-move-cursor-back t
+                ;;
+                ;; change escape keybinding from almost anything to normal state
+                ;;
+                evil-escape-key-sequence "fd"  ; default Ctrl-[ is still working
+                evil-escape-delay 0.3          ; make it a bit longer for the combination key
+                evil-escape-unordered-key-sequence t ; just press 'j' and 'k' together lah :)
                 )
   (spacemacs/toggle-vi-tilde-fringe-off)    ;; tilde on empty lines
   ;;
