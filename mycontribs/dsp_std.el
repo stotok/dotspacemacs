@@ -262,6 +262,7 @@
   ;; First, install 'synclient' in linux. For other OSes, dunno yet :)
   ;; Link: https://www.reddit.com/r/emacs/comments/38o0tr/i_have_to_share_this_switch_your_touchpad_off/
   ;;
+  (when nil
   (cond
    ((and (IsGNULinux) (IsFrodo))
     (message "    >>> turn-off trackpad")
@@ -280,7 +281,7 @@
     (add-hook 'delete-frame-functions #'turn-on-mouse)
     (add-hook 'kill-emacs-hook #'turn-on-mouse)
     )
-  )
+  ))
   ;;
   ;; TRAMP
   ;;
