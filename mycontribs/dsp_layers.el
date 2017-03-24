@@ -56,6 +56,9 @@
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-rtags))
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   )
+ ((IsPippin)
+  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
+  )
  )
 
 ;; EOF

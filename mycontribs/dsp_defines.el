@@ -63,6 +63,8 @@
   (string-prefix-p "bilbo" system-name t))
 (defmacro IsFrodo ()
   (string-prefix-p "frodo" system-name t))
+(defmacro IsPippin ()
+  (string-prefix-p "pippin" system-name t))
 ;;
 ;; Display OS and HOSTNAME information
 ;;
