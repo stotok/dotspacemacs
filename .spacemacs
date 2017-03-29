@@ -24,7 +24,10 @@ values."
    ;; installation feature and you have to explicitly list a layer in the
    ;; variable `dotspacemacs-configuration-layers' to install it.
    ;; (default 'unused)
-   dotspacemacs-enable-lazy-installation 'unused
+   ;; This way to disable constant 'install this layer ...' prompt when
+   ;; opening a file without the corresponding layer installed. In my case,
+   ;; it is python mode to use ttk-elpy layer instead of python layer.
+   dotspacemacs-enable-lazy-installation 'nil
    ;; If non-nil then Spacemacs will ask for confirmation before installing
    ;; a layer lazily. (default t)
    dotspacemacs-ask-for-lazy-installation t
