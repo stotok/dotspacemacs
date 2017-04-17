@@ -133,9 +133,9 @@
       : $ sudo port select --set pip pip36
 *** Install virtual environment
     * virtualenv
-      : $ sudo pip install virtualenv
+      : $ sudo -H pip install virtualenv
     * virtualenvwrapper
-      : $ sudo pip install virtualenvwrapper
+      : $ sudo -H pip install virtualenvwrapper
 *** Python Select
     Put this in your =.bashrc= on how to select python 2 or 3 (or any other python
     versions in that matter):
