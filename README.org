@@ -108,6 +108,31 @@
    install python virtual environment. And some other packages that elpy is
    depending on.
 
+*** Install python and pip
+    - Python 2.7
+      : $ sudo port install python27
+      : $ sudo port install py27-pip
+    - Python 3.6
+      : $ sudo port install python36
+      : $ sudo port install py36-pip
+    - Switching between versions
+      : $ sudo port select --set python python27
+      : $ sudo port select --set python2 python27
+      : $ sudo port select --set pip pip27
+      or,
+      : $ sudo port select --set python python36
+      : $ sudo port select --set python3 python36
+      : $ sudo port select --set pip pip36
+    - List available versions
+      : $ port select --list python
+      : $ port select --list pip
+
+*** Install virtual environment
+    * virtualenv
+      : $ sudo pip install virtualenv
+    * virtualenvwrapper
+      : $ sudo pip install virtualenvwrapper
+
 *** Python Select
     Put this in your =.bashrc= on how to select python 2 or 3 (or any other python
     versions in that matter):
@@ -144,34 +169,25 @@
     Then you need to source it to take effect:
     : $ source ~/.bashrc
 
-*** Python Virtual Environment
-    Example here is for setting up python 3 on Debin/Ubuntu/Mint.
 
-    - Install python3 setuptools
-      : $ sudo apt-get install python3-setuptools
-    - Install pip
-      : $ sudo apt-get install python3-pip
-    - Install virtualwrapper
-      : $ sudo -H pip3 install virtualenvwrapper
-    - Setup python virtualenv (see below)
-      : $ select_python3
-    - Create python3 virtualenv
-      : $ mkvirtualenv elpy3 -p /usr/bin/python3
+*** Python Virtual Environment
+    - Create python virtualenv
+      : $ mkvirtualenv elpy
     - The above step would do auto workon
-      : $ workon elpy3
-    - Install these packages via pip3.
-      : $ pip3 install jedi
-      : $ pip3 install flake8
-      : $ pip3 install importmagic
-      : $ pip3 install autopep8
-      : $ pip3 install yapf
+      : $ workon elpy
+    - Install these packages via pip.
+      : $ pip install jedi
+      : $ pip install flake8
+      : $ pip install importmagic
+      : $ pip install autopep8
+      : $ pip install yapf
     - To deactivate current virtualenv
       : $ deactivate
     - For emacs elpy package
-      : M-x pyvenv-workon elpy3
+      : M-x pyvenv-workon elpy
       : M-x elpy-config
 
-    It's now ready. Always do =M-x pyvenv-workon elpy3= (or any venv you are working
+    It's now ready. Always do =M-x pyvenv-workon elpy= (or any venv you are working
     on) before you open any python project.
 *** Keybindings
     In python mode, place the cursor on function name or macro of your interest:
