@@ -231,10 +231,10 @@
      - python2-pip and python3-pip
 **** Install virtualenv and virtualenvwrapper
      From cygwin terminal (notice: --user):
-     $ pip2.7 install --user virtualenv
-     $ pip2.7 install --user virtualenvwrapper
-     $ pip3.6 install --user virtualenv
-     $ pip3.6 install --user virtualenvwrapper
+     : $ pip2.7 install --user virtualenv
+     : $ pip2.7 install --user virtualenvwrapper
+     : $ pip3.6 install --user virtualenv
+     : $ pip3.6 install --user virtualenvwrapper
 **** Python Select
      Put this in your .bashrc to select python 2 or 3:
 
