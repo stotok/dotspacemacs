@@ -65,6 +65,8 @@
   (string-prefix-p "frodo" system-name t))
 (defmacro IsPippin ()
   (string-prefix-p "pippin" system-name t))
+(defmacro IsSauron ()
+  (string-prefix-p "sauron" system-name t))
 ;;
 ;; Display OS and HOSTNAME information
 ;;
@@ -99,6 +101,8 @@
     (message "IsBilbo: TRUE"))
    ((IsFrodo)
     (message "IsFrodo: TRUE"))
+   ((IsSauron)
+    (message "IsSauron: TRUE"))
    (t
     (message "Unknown HOSTNAME."))))
 

@@ -28,7 +28,7 @@
 ;; For each OS
 ;;
 (cond
- ((IsWindows)
+ ((or (IsWindows) (IsCygwin))
   ;; well, git on cygwin is sucks sloooowwwwwwwww
   )
  ((IsOSX)
@@ -57,6 +57,9 @@
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   )
  ((IsPippin)
+  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
+  )
+ ((IsSauron)
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   )
  )

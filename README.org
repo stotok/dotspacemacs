@@ -108,7 +108,8 @@
    install python virtual environment. And some other packages that elpy is
    depending on.
 
-*** Install python and pip
+*** Macports
+**** Install python and pip
     - Python 2.7
       : $ sudo port install python27
       : $ sudo port install py27-pip
@@ -126,17 +127,17 @@
     - List available versions
       : $ port select --list python
       : $ port select --list pip
-*** Activate either python and pip 2.7 or 3.6
+**** Activate either python and pip 2.7 or 3.6
     Example is activating python and pip 3.6
       : $ sudo port select --set python python36
       : $ sudo port select --set python3 python36
       : $ sudo port select --set pip pip36
-*** Install virtual environment
+**** Install virtual environment
     * virtualenv
       : $ sudo -H pip install virtualenv
     * virtualenvwrapper
       : $ sudo -H pip install virtualenvwrapper
-*** Python Select
+**** Python Select
     Put this in your =.bashrc= on how to select python 2 or 3 (or any other python
     versions in that matter):
 
@@ -198,7 +199,7 @@
     And finally select python 3.6 environment to be consistent with the activating
     python and pip 3.6 earlier:
     : $ select_python36
-*** Python Virtual Environment
+**** Python Virtual Environment
     - Create python virtualenv
       : $ mkvirtualenv elpy
     - The above step would do auto workon
@@ -217,11 +218,98 @@
 
     It's now ready. Always do =M-x pyvenv-workon elpy= (or any venv you are working
     on) before you open any python project.
-*** Chech which python and pip is currently active
+**** Chech which python and pip is currently active
     : $ which python
     : /Users/joe/.virtenv36/elpy/bin/python
     : $ which pip
     : /Users/joe/.virtenv36/elpy/bin/pip
+
+*** Cygwin
+**** Install python and pip
+     From cygwin installer, install:
+     - python2 and python3
+     - python2-pip and python3-pip
+**** Install virtualenv and virtualenvwrapper
+     From cygwin terminal (notice: --user):
+     $ pip2.7 install --user virtualenv
+     $ pip2.7 install --user virtualenvwrapper
+     $ pip3.6 install --user virtualenv
+     $ pip3.6 install --user virtualenvwrapper
+**** Python Select
+     Put this in your .bashrc to select python 2 or 3:
+
+     #+BEGIN_SRC bashrc
+      function select_python27() {
+          if [ -f "${HOME}/.local/bin/virtualenv" ] ; then
+              echo "Add virtualenv executable into system path"
+              OLD_PATH=${PATH}
+              export PATH="${HOME}/.local/bin":${OLD_PATH}
+              ### update prompt
+              export PS1="(py27)${PS1}"
+          else
+              echo "virtualenv is not installed!!!"
+          fi
+          #
+          if [ -f "${HOME}/.local/bin/virtualenvwrapper.sh" ] ; then
+              export WORKON_HOME=${HOME}/.virtenv27
+              export PIP_VIRTUALENV_BASE=${WORKON_HOME}
+              export PIP_RESPECT_VIRTUALENV=true
+              export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7.exe
+              source ${HOME}/.local/bin/virtualenvwrapper.sh
+          else
+              echo "Virtualenv is not installed!!!"
+          fi
+      }
+      export -f select_python27
+      ;;
+      function select_python36() {
+          if [ -f "${HOME}/.local/bin/virtualenv" ] ; then
+              echo "Add virtualenv executable into system path"
+              OLD_PATH=${PATH}
+              export PATH="${HOME}/.local/bin":${OLD_PATH}
+              ### update prompt
+              export PS1="(py36)${PS1}"
+          else
+              echo "virtualenv is not installed!!!"
+          fi
+          #
+          if [ -f "${HOME}/.local/bin/virtualenvwrapper.sh" ] ; then
+              export WORKON_HOME=${HOME}/.virtenv36
+              export PIP_VIRTUALENV_BASE=${WORKON_HOME}
+              export PIP_RESPECT_VIRTUALENV=true
+              export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
+              source ${HOME}/.local/bin/virtualenvwrapper.sh
+          else
+              echo "Virtualenv is not installed!!!"
+          fi
+      }
+      export -f select_python36
+     #+END_SRC
+
+    Then you need to source it to take effect:
+    : $ source ~/.bashrc
+
+**** Python Virtual Environment
+    - Create python virtualenv
+      : $ mkvirtualenv elpy
+    - The above step would do auto workon
+      : $ workon elpy
+    - Install these packages via pip
+      : $ pip install jedi
+      : $ pip install flake8
+      : $ pip install importmagic
+      : $ pip install autopep8
+      : $ pip install yapf
+    - To deactivate current virtualenv
+      : $ deactivate
+    - For emacs elpy package
+      : M-x pyvenv-workon elpy
+      : M-x elpy-config
+
+    It's now ready. Always do =M-x pyvenv-workon elpy= (or any venv you are working
+    on) before you open any python project.
+
+
 *** Keybindings
     In python mode, place the cursor on function name or macro of your interest:
 
