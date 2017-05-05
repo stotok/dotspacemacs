@@ -254,13 +254,13 @@
               export WORKON_HOME=${HOME}/.virtenv27
               export PIP_VIRTUALENV_BASE=${WORKON_HOME}
               export PIP_RESPECT_VIRTUALENV=true
-              export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7.exe
+              export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+              export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--python='"$VIRTUALENVWRAPPER_PYTHON"
               source ${HOME}/.local/bin/virtualenvwrapper.sh
           else
               echo "Virtualenv is not installed!!!"
           fi
       }
-      export -f select_python27
       ;;
       function select_python36() {
           if [ -f "${HOME}/.local/bin/virtualenv" ] ; then
@@ -278,12 +278,12 @@
               export PIP_VIRTUALENV_BASE=${WORKON_HOME}
               export PIP_RESPECT_VIRTUALENV=true
               export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
+              export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--python='"$VIRTUALENVWRAPPER_PYTHON"
               source ${HOME}/.local/bin/virtualenvwrapper.sh
           else
               echo "Virtualenv is not installed!!!"
           fi
       }
-      export -f select_python36
      #+END_SRC
 
     Then you need to source it to take effect:
