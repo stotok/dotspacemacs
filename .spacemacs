@@ -46,6 +46,7 @@ values."
      ivy
      (auto-completion :disabled-for org git
                       :variables
+                      auto-completion-enable-snippets-in-popup t
                       auto-completion-private-snippets-directory "~/dotspacemacs/mycontribs/myyasnippet/stotok"
                       )
      ;; better-defaults

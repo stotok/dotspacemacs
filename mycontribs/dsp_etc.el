@@ -70,6 +70,7 @@
   ;;
   (when (configuration-layer/package-usedp 'company)
     ;; this will enable company-mode in all buffers
+    (message "*** dsp_etc.el user config: global company mode enabled")
     (global-company-mode t))
   )
  )
