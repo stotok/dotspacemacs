@@ -53,7 +53,7 @@
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-rtags))
   )
  ((IsKKC-SATT93)
-  (add-to-list 'dotspacemacs-configuration-layers '(ttk-rtags))
+;;  (add-to-list 'dotspacemacs-configuration-layers '(ttk-rtags))
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   )
  ((IsSG2-SATT93)
