@@ -49,50 +49,6 @@
               :recursive t
               :publishing-function org-publish-attachment)
               ("todoc-org" :components ("todoc-notes" "todoc-static"))
-              ;; DNOTE project
-              ("dnote-notes"
-              :base-directory "~/project/dnote/org/"
-              :base-extension "org"
-              :publishing-directory "~/project/dnote/bo/html/"
-              :recursive t
-              :publishing-function org-html-publish-to-html
-              :headline-levels 4             ; Just the default for this project.
-              :auto-preamble t)
-              ("dnote-static"
-              :base-directory "~/project/dnote/org/"
-              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-              :publishing-directory "~/project/dnote/bo/html/"
-              :recursive t
-              :publishing-function org-publish-attachment)
-              ("dnote-org-html-themes"
-              :base-directory "~/project/org-html-themes/styles/"
-              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-              :publishing-directory "~/project/dnote/bo/html/styles/"
-              :recursive t
-              :publishing-function org-publish-attachment)
-              ("dnote-org" :components ("dnote-notes" "dnote-static" "dnote-org-html-themes"))
-              ;; omaha.org project here
-              ("omaha.org-notes"
-              :base-directory "~/project/omaha.org/org/"
-              :base-extension "org"
-              :publishing-directory "~/project/omaha.org/bo/html/"
-              :recursive t
-              :publishing-function org-html-publish-to-html
-              :headline-levels 4             ; Just the default for this project.
-              :auto-preamble t)
-              ("omaha.org-static"
-              :base-directory "~/project/omaha.org/org/"
-              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-              :publishing-directory "~/project/omaha.org/bo/html/"
-              :recursive t
-              :publishing-function org-publish-attachment)
-              ("omaha.org-org-html-themes"
-              :base-directory "~/project/org-html-themes/styles/"
-              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-              :publishing-directory "~/project/omaha.org/bo/html/styles/"
-              :recursive t
-              :publishing-function org-publish-attachment)
-              ("omaha.org-org" :components ("omaha.org-notes" "omaha.org-static" "omaha.org-org-html-themes"))
               ;; SSDC project
               ("ssdc-notes"
               :base-directory "~/project/ssdc/org/"
