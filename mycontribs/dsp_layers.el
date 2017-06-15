@@ -1,7 +1,7 @@
 ;; -*- coding:utf-8-unix mode:emacs-lisp -*-
 ;;***************************************************************************************
 ;;
-;; 2016 Totok Sulistiomono
+;; 2016, 2017 Totok Sulistiomono
 ;; stotok@kukisku.com
 ;;
 ;;***************************************************************************************
@@ -43,9 +43,6 @@
 ;;
 (cond
  ((IsFrodo)
-  ;; elpy python environment
-  ;;(add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
-  ;; c/c++ tagging system
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-rtags))
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   )
