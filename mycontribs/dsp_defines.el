@@ -47,12 +47,8 @@
 ;;
 ;; Determine hostname
 ;;
-(defmacro IsBraeburn ()
-  (string-prefix-p "braeburn" system-name t))
 (defmacro IsSG2-SATT93 ()
   (string-prefix-p "sg2-satt93" system-name t))
-(defmacro IsKKB-SATT93 ()
-  (string-prefix-p "kkb-satt93" system-name t))
 (defmacro IsKKC-SATT93 ()
   (string-prefix-p "kkc-satt93" system-name t))
 (defmacro IsFrodo ()
@@ -81,12 +77,8 @@
     (message "Unknown OS.")))
   ;; DISPLAY HOSTNAME
   (cond
-   ((IsBraeburn)
-    (message "IsBraeburn: TRUE"))
    ((IsSG2-SATT93)
     (message "IsSG2-SATT93: TRUE"))
-   ((IsKKB-SATT93)
-    (message "IsKKB-SATT93: TRUE"))
    ((IsKKC-SATT93)
     (message "IsKKC-SATT93: TRUE"))
    ((IsFrodo)
