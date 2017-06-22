@@ -37,9 +37,8 @@
     (setq projectile-svn-command "find . -type f -not -iwholename '*.svn/*' -print0"))
   )
  ((IsDspUserConfig)
-  (message "*** dsp_etc.el user config: projectile customization")
-  ;;
   (when (configuration-layer/package-usedp 'projectile)
+    (message "*** dsp_etc.el user config: projectile customization")
     ;; tramp-mode and projectile does not play well together, it is because the projectile
     ;; tries to retrieve project name this is slow on remote host.
     ;; so let's make projectile modeline only displays static string and won't slow you down
@@ -66,9 +65,8 @@
     (setq company-transformers '(company-sort-by-occurrence)))
   )
  ((IsDspUserConfig)
-  (message "*** dsp_etc.el user config: company customization")
-  ;;
   (when (configuration-layer/package-usedp 'company)
+    (message "*** dsp_etc.el user config: company customization")
     ;; this will enable company-mode in all buffers
     (message "*** dsp_etc.el user config: global company mode enabled")
     (global-company-mode t))

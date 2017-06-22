@@ -263,25 +263,23 @@
   ;; Link: https://www.reddit.com/r/emacs/comments/38o0tr/i_have_to_share_this_switch_your_touchpad_off/
   ;;
   (when nil
-  (cond
-   ((and (IsGNULinux) (IsFrodo))
-    (message "    >>> turn-off trackpad")
-    (defun turn-off-mouse (&optional frame)
-      (interactive)
-      (let ((inhibit-message t) (default-directory "~"))
-        (shell-command "synclient TouchpadOff=1")))
-    ;;
-    (defun turn-on-mouse (&optional frame)
-      (interactive)
-      (let ((inhibit-message t) (default-directory "~"))
-        (shell-command "synclient TouchpadOff=0")))
-    ;;
-    (add-hook 'focus-in-hook #'turn-off-mouse)
-    (add-hook 'focus-out-hook #'turn-on-mouse)
-    (add-hook 'delete-frame-functions #'turn-on-mouse)
-    (add-hook 'kill-emacs-hook #'turn-on-mouse)
-    )
-  ))
+    (cond
+     ((and (IsGNULinux) (IsFrodo))
+      (message "    >>> turn-off trackpad")
+      (defun turn-off-mouse (&optional frame)
+        (interactive)
+        (let ((inhibit-message t) (default-directory "~"))
+          (shell-command "synclient TouchpadOff=1")))
+      ;;
+      (defun turn-on-mouse (&optional frame)
+        (interactive)
+        (let ((inhibit-message t) (default-directory "~"))
+          (shell-command "synclient TouchpadOff=0")))
+      ;;
+      (add-hook 'focus-in-hook #'turn-off-mouse)
+      (add-hook 'focus-out-hook #'turn-on-mouse)
+      (add-hook 'delete-frame-functions #'turn-on-mouse)
+      (add-hook 'kill-emacs-hook #'turn-on-mouse))))
   ;;
   ;; TRAMP
   ;;
@@ -298,8 +296,8 @@
   ;;
   (require 'tramp)
   (tramp-set-completion-function "ssh"
-                                '((tramp-parse-sconfig "/etc/ssh_config")
-                                  (tramp-parse-sconfig "~/.ssh/config")))
+                                 '((tramp-parse-sconfig "/etc/ssh_config")
+                                   (tramp-parse-sconfig "~/.ssh/config")))
   (setq tramp-default-method "ssh")
   ;;
   ;; setup for rgrep.el

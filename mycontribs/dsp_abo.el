@@ -19,9 +19,9 @@
 ;; - etc (check github)
 (cond
  ((IsDspUserConfig)
-  (message "*** dsp_abo.el user config: ivy customization")
-  ;;
   (when (configuration-layer/package-usedp 'ivy)
+    (message "*** dsp_abo.el user config: ivy customization")
+    ;;
     (setq ivy-use-virtual-buffers t
           ivy-height 12
           ivy-count-format "(%d/%d)"
@@ -47,9 +47,8 @@
 ;; C-x C-f find-file
 (cond
  ((IsDspUserConfig)
-  (message "*** dsp_abo.el user config: swiper customization")
-  ;;
   (when (configuration-layer/package-usedp 'swiper)
+    (message "*** dsp_abo.el user config: swiper customization")
     ;; simulate "*" in vim with a better swiper interface
     (when nil                             ; let's see first
       (define-key evil-normal-state-map (kbd "*")

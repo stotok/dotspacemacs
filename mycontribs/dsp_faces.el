@@ -39,9 +39,9 @@
 ;; Toggle single buffer: M-x rainbow-delimiters-mode
 (cond
  ((IsDspUserConfig)
-  (message "*** dsp_faces.el user config: rainbow-delimiters customization")
-  ;;
   (when (configuration-layer/package-usedp 'rainbow-delimiters) ; see if it's slow on large files
+    (message "*** dsp_faces.el user config: rainbow-delimiters customization")
+    ;;
     (if nil  ; only on certain mode
         (progn
           (add-hook 'c-mode-common-hook #'rainbow-delimiters-mode)
