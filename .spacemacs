@@ -63,6 +63,7 @@ values."
      markdown
      latex
      org
+     plantuml
      shell-scripts
      ;; (shell :variables
      ;;        shell-default-height 30

@@ -111,4 +111,19 @@
   )
  )
 
+;;
+;; plantuml-mode
+;;
+(cond
+ ((IsDspUserConfig)
+  ;; (when (configuration-layer/package-usedp 'plantuml)
+    (message "*** dsp_modes.el user config: plantuml customization")
+    ;;
+    (setq plantuml-jar-path "~/dotspacemacs/plantuml/plantuml.jar")
+    ;; enable plantuml-mode for PlantUML files
+    (add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode))
+    (add-to-list 'auto-mode-alist '("\\.uml\\'"      . plantuml-mode)))
+  ;; )
+ )
+
 ;; EOF
