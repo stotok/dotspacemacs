@@ -138,7 +138,7 @@ fi
     fi
 ) | \
     egrep -i '\.([chly](xx|pp)*|cc|hh)$' | \
-    sed -e '/\/doc\//d' -e '/\/external\/product\/external\/fm_fe\/tests\/CTF\/Wrapper\/FM\ Python\ Wrapper\//d' -e '/\/external\/product\/external\/fm_fe\/tests\/FM_SW\/FM\ Python\ Wrapper\//d' -e '/\/external\/product\/external\/ftl\/doc\//d' -e '/\/external\/product\/external\/sata\/documentation\//d' -e '/\/external\/product\/external\/sata\/applications\/simulation\/sata\/haps_automation\//d'  -e '/\/external\/product\/external\/hal\/applications\//d' -e '/\/external\/product\/external\/hal\/bsp\/asic\//d' -e '/\/CVS\//d' -e '/\/RCS\//d' -e 's/^\.\///' | \
+    sed -e '/\/external\/product\/external\/ftl\//d' -e '/\/doc\//d' -e '/\/external\/product\/external\/fm_fe\/tests\/CTF\/Wrapper\/FM\ Python\ Wrapper\//d' -e '/\/external\/product\/external\/fm_fe\/tests\/FM_SW\/FM\ Python\ Wrapper\//d' -e '/\/external\/product\/external\/ftl\/doc\//d' -e '/\/external\/product\/external\/sata\/documentation\//d' -e '/\/external\/product\/external\/sata\/applications\/simulation\/sata\/haps_automation\//d'  -e '/\/external\/product\/external\/hal\/applications\//d' -e '/\/external\/product\/external\/hal\/bsp\/asic\//d' -e '/\/CVS\//d' -e '/\/RCS\//d' -e 's/^\.\///' | \
     sort > $LIST_FILE
 
 if [ "X$VERBOSE" != "X" ]
