@@ -121,6 +121,10 @@
 
 ;;
 ;; plantuml-mode
+;; Need 'dot' utility from graphviz package:
+;;      $ sudo port install graphviz
+;; then set env var:
+;;      $ export GRAPHVIZ_DOT="/opt/local/bin/dot"
 ;;
 (cond
  ((IsDspUserConfig)
