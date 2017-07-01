@@ -22,9 +22,9 @@
   (when (configuration-layer/package-usedp 'ivy)
     (message "*** dsp_abo.el user config: ivy customization")
     ;;
-    (setq ivy-use-virtual-buffers t
+    (setq ivy-use-virtual-buffers t     ; add recent files and bookmarks to the ivy-switch-buffer
           ivy-height 12
-          ivy-count-format "(%d/%d)"
+          ivy-count-format "(%d/%d)"    ; display the current and total number in the collection
           ivy-display-style 'fancy)
     ;;
     ;; i don't like dir buffer. let's change :)
