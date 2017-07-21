@@ -297,12 +297,13 @@
   (require 'tramp)
   (tramp-set-completion-function "ssh"
                                  '((tramp-parse-sconfig "/etc/ssh_config")
+                                   (tramp-parse-sconfig "/etc/ssh/ssh_config")
                                    (tramp-parse-sconfig "~/.ssh/config")))
   (setq tramp-default-method "ssh")
   ;;
   ;; setup for rgrep.el
   ;;     https://github.com/magnars/.emacs.d/blob/master/settings/setup-rgrep.el
-  (when t
+  (when nil                 ; well, spacemacs already have all bell and whistles
     (defun rgrep-goto-file-and-close-rgrep ()
       (interactive)
       (compile-goto-error)

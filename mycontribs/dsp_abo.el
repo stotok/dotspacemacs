@@ -27,7 +27,7 @@
           ivy-count-format "(%d/%d)"    ; display the current and total number in the collection
           ivy-display-style 'fancy)
     ;;
-    ;; i don't like dir buffer. let's change :)
+    ;; i don't like dir buffer. let's change some :)
     (define-key ivy-minibuffer-map (kbd "RET") 'ivy-alt-done))
   )
  )
