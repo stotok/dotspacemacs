@@ -19,8 +19,10 @@
 (cond
  ((IsDspUserInit)
   (message "*** dsp_etc.el user init: projectile customization")
-  ;;
-  (when t
+  )
+ ((IsDspUserConfig)
+  (when (configuration-layer/package-usedp 'projectile)
+    (message "*** dsp_etc.el user config: projectile customization")
     ;; alien method need external utility (unixes), and fast.
     ;; it ignores the content of .projectile, but read .gitignore
     (setq projectile-indexing-method 'alien)
@@ -28,17 +30,15 @@
     ;;(setq projectile-indexing-method 'native)
     (setq projectile-enable-caching t)
     ;; disable remote file exists cache
-    (setq projectile-file-exists-remote-cache-expire nil)
+    ;;(setq projectile-file-exists-remote-cache-expire nil)
+    ;; enable remote file exists cache 10 minutes
+    (setq projectile-file-exists-remote-cache-expire (* 10 60))
     ;; change default display on modeline (don't do it for spacemacs)
     ;;(setq projectile-mode-line '(:eval (format " P:%s" (projectile-project-name))))
     (setq projectile-completion-system 'ivy) ; it's nice (from swiper package)
     ;; tell projectile to not try and find the file on the remote SVN server and
     ;; instead search locally, see https://github.com/bbatsov/projectile/issues/520
-    (setq projectile-svn-command "find . -type f -not -iwholename '*.svn/*' -print0"))
-  )
- ((IsDspUserConfig)
-  (when (configuration-layer/package-usedp 'projectile)
-    (message "*** dsp_etc.el user config: projectile customization")
+    (setq projectile-svn-command "find . -type f -not -iwholename '*.svn/*' -print0")
     ;; tramp-mode and projectile does not play well together, it is because the projectile
     ;; tries to retrieve project name this is slow on remote host.
     ;; so let's make projectile modeline only displays static string and won't slow you down
