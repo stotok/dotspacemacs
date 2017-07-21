@@ -24,6 +24,10 @@
 ; Totok 28-Apr-2013:
 ; - Add cscope to python-mode-hook.
 ;   Please use pycscope.py to generate cscope database
+; Totok 21-Jul-2017:
+; - Enable cscope to work with tramp on remote cscope database
+;   (Ref: https://codeinator.blogspot.sg/2009/09/emacs-231-with-cscope-and-tramp.html)
+;   Replace: 'start-process' with 'start-file-process' and 'call-process' with 'process-file'
 ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ALPHA VERSION 0.96
@@ -2001,7 +2005,7 @@ using the mouse."
 		    cscope-last-file nil
 		    )
 	      (setq cscope-process
-		    (apply 'start-process "cscope" outbuf
+		    (apply 'start-file-process "cscope" outbuf
 			   cscope-program options))
 	      (set-process-filter cscope-process cscope-filter-func)
 	      (set-process-sentinel cscope-process cscope-sentinel-func)
@@ -2011,7 +2015,7 @@ using the mouse."
 		  (setq modeline-process ": Searching ..."))
 	      (setq buffer-read-only t)
 	      )
-	  (apply 'call-process cscope-program nil outbuf t options)
+	  (apply 'process-file cscope-program nil outbuf t options)
 	  )
 	t
 	))
@@ -2134,7 +2138,7 @@ SENTINEL-FUNC are optional process filter and sentinel, respectively."
       (if cscope-index-recursively
 	  (setq args (cons "-r" args)))
       (setq cscope-unix-index-process
-	    (apply 'start-process "cscope-indexer"
+	    (apply 'start-file-process "cscope-indexer"
 		   cscope-unix-index-process-buffer
 		   cscope-indexing-script args))
       (set-process-sentinel cscope-unix-index-process
