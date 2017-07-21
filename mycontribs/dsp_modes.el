@@ -61,6 +61,29 @@
       )
     "OM C Programming Style")
   ;;
+  (defconst sb-c-style
+    '((c-basic-offset                    . 4)
+      ;; anyway, below is the default
+      ;; (c-comment-prefix-regexp           . set-from-style)
+      (c-default-style                   . ((c-mode    . "user")
+                                            (c++-mode  . "user")
+                                            (java-mode . "java")
+                                            (awk-mode  . "awk")
+                                            (other     . "gnu")))
+      (c-indent-comments-syntactically-p . t)
+      (c-offsets-alist                   . ((inline-open       . 0)
+                                            (substatement-open . 0)
+                                            (case-label        . +)
+                                            (arglist-close     . 0)
+                                            (cpp-macro         . -)))
+      (c-tab-always-indent               . nil)
+      (comment-column                    . 72)
+      (indent-tabs-mode                  . nil)
+      ;(which-func-maxout                 . 0)
+      ;(which-function-mode               . t)
+      )
+    "SB C Programming Style")
+  ;;
   ;; offset customizations not in my-c-style
   ;(setq c-offsets-alist '((member-init-intro . ++)))
   ;;
