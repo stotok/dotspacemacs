@@ -90,9 +90,17 @@
     ;; local binding
     (local-set-key (kbd "C-,") 'c-up-conditional-with-else)
     (local-set-key (kbd "C-.") '(lambda (count) (interactive "p") (c-up-conditional-with-else (- count)))))
+  ;; sb hook
+  (defun sb-c-mode-common-hook ()
+    (c-add-style "SB" sb-c-style t)
+    ;; treat '_' as a word constituent
+    ;;(modify-syntax-entry ?_ "w")
+    ;; local binding
+    (local-set-key (kbd "C-,") 'c-up-conditional-with-else)
+    (local-set-key (kbd "C-.") '(lambda (count) (interactive "p") (c-up-conditional-with-else (- count)))))
   ;;
   ;; apply which one to use
-  (add-hook 'c-mode-common-hook 'om-c-mode-common-hook)
+  (add-hook 'c-mode-common-hook 'sb-c-mode-common-hook)
   ;; files *.ipp is c++ source code in UPA
   (setq auto-mode-alist (cons '("\\.ipp$" . c++-mode) auto-mode-alist))
   )
