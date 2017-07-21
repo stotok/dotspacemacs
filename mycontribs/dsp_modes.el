@@ -143,6 +143,17 @@
  )
 
 ;;
+;; python-mode
+;;
+(cond
+ ((IsDspUserConfig)
+  (message "*** dsp_modes.el user config: python-mode customization")
+  ;;
+  (setq-default python-indent-offset 4)
+  )
+ )
+
+;;
 ;; plantuml-mode
 ;; Need 'dot' utility from graphviz package:
 ;;      $ sudo port install graphviz
