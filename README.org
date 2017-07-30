@@ -164,7 +164,6 @@
             echo "Virtualenv is not installed!!!"
         fi
     }
-    export -f select_python27
     #
     # python 36
     #
@@ -190,7 +189,6 @@
             echo "Virtualenv is not installed!!!"
         fi
     }
-    export -f select_python36
     #+END_SRC
 
     Then you need to source it to take effect:
