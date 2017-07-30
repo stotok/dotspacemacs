@@ -300,6 +300,7 @@
                                    (tramp-parse-sconfig "/etc/ssh/ssh_config")
                                    (tramp-parse-sconfig "~/.ssh/config")))
   (setq tramp-default-method "ssh")
+  (add-to-list 'tramp-remote-path 'tramp-own-remote-path)
   ;;
   ;; setup for rgrep.el
   ;;     https://github.com/magnars/.emacs.d/blob/master/settings/setup-rgrep.el
