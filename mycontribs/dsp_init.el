@@ -67,7 +67,7 @@
 ;; Theme customization
 ;;
 (cond
- ((or (IsFrodo) (IsPippin) (IsC02SC24MG8WN))
+ ((or (IsFrodo) (IsPippin) (IsC02SC24MG8WN) (IsCeleborn))
   (setq-default
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great

@@ -59,6 +59,8 @@
   (string-prefix-p "sauron" system-name t))
 (defmacro IsC02SC24MG8WN ()
   (string-prefix-p "C02SC24MG8WN" system-name t))
+(defmacro IsCeleborn ()
+  (string-prefix-p "celeborn" system-name t))
 ;;
 ;; Display OS and HOSTNAME information
 ;;
@@ -87,6 +89,8 @@
     (message "IsSauron: TRUE"))
    ((IsC02SC24MG8WN)
     (message "IsC02SC24MG8WN: TRUE"))
+   ((IsCeleborn)
+    (message "IsCeleborn: TRUE"))
    (t
     (message "Unknown HOSTNAME."))))
 

@@ -62,6 +62,8 @@
  ((IsC02SC24MG8WN)
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   )
+ ((IsCeleborn)
+  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy)))
  )
 
 ;; EOF
