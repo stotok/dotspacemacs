@@ -216,7 +216,7 @@
 
     It's now ready. Always do =M-x pyvenv-workon elpy= (or any venv you are working
     on) before you open any python project.
-**** Chech which python and pip is currently active
+**** Check which python and pip is currently active
     : $ which python
     : /Users/joe/.virtenv36/elpy/bin/python
     : $ which pip
