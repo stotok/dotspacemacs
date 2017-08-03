@@ -63,6 +63,8 @@
   ;;
   (defconst sb-c-style
     '((c-basic-offset                    . 4)
+      (tab-width                         . 4)
+      (c-indent-level                    . 4)
       ;; anyway, below is the default
       ;; (c-comment-prefix-regexp           . set-from-style)
       (c-default-style                   . ((c-mode    . "user")
@@ -73,7 +75,7 @@
       (c-indent-comments-syntactically-p . t)
       (c-offsets-alist                   . ((inline-open       . 0)
                                             (substatement-open . 0)
-                                            (case-label        . +)
+                                            (case-label        . 0)
                                             (arglist-close     . 0)
                                             (cpp-macro         . -)))
       (c-tab-always-indent               . nil)
