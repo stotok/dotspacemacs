@@ -304,7 +304,8 @@
   ;;
   ;; setup for rgrep.el
   ;;     https://github.com/magnars/.emacs.d/blob/master/settings/setup-rgrep.el
-  (when nil                 ; well, spacemacs already have all bell and whistles
+  (when t                 ; well, spacemacs already have all bell and whistles
+                          ; but elpy custom key binding 'o' need this
     (defun rgrep-goto-file-and-close-rgrep ()
       (interactive)
       (compile-goto-error)
