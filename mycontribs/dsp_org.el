@@ -25,6 +25,8 @@
       ;; hide them, but actually the slash characters (and asterisks for bold, etc)
       ;; are still there, but aren't displayed. To display it, just backspace over it.
       (setq org-hide-emphasis-markers t)
+      ;; not to display image in original size
+      (setq org-image-actual-width nil)
       ;; org-special-ctrl-a/e, I want it behaves as normal
       ;; https://schenizzle.wordpress.com/2014/03/26/org-mode-ctrl-a-ctrl-e/
       ;;(setq org-special-ctrl-a/e t)
