@@ -59,6 +59,9 @@ values."
             c-toggle-auto-hungry-state nil
             c-toggle-hungry-state nil
             )
+     ;; R
+     ess
+     ;;
      html
      markdown
      latex
