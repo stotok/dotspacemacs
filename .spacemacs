@@ -60,7 +60,7 @@ values."
             c-toggle-hungry-state nil
             )
      ;; R
-     ess
+     ;; ess
      ;;
      html
      markdown
@@ -128,7 +128,7 @@ values."
    ;; `used-but-keep-unused' installs only the used packages but won't uninstall
    ;; them if they become unused. `all' installs *all* packages supported by
    ;; Spacemacs and never uninstall them. (default is `used-only')
-   dotspacemacs-install-packages 'used-only)
+   dotspacemacs-install-packages 'used-but-keep-unused)
   ;;
   ;; This is for private layers
   ;;
