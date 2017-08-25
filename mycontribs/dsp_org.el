@@ -32,8 +32,11 @@
       ;;(setq org-special-ctrl-a/e t)
       ;; syntax coloring embedded source code
       (setq org-src-fontify-natively t)
-      ;; publishing (specific for each project)
+      ;;
+      ;; Publishing the Website
       ;;(require 'ox-publish) ;; ox-publish already install inside org-plus-contrib package
+      (setq org-html-coding-system 'utf-8-unix)
+      ;; Project Tree
       (setq org-publish-project-alist
             '(;; TODOC project
               ("todoc-notes"
@@ -73,6 +76,7 @@
               :recursive t
               :publishing-function org-publish-attachment)
               ("ssdc-org" :components ("ssdc-notes" "ssdc-static" "ssdc-org-html-themes"))))
+      ;;
       ;; asterisks and dashes for bullet lists are fine, but having an actual circular
       ;; bullet, is just nice
       (font-lock-add-keywords 'org-mode
