@@ -55,14 +55,14 @@
   (string-prefix-p "frodo" system-name t))
 (defmacro IsPippin ()
   (string-prefix-p "pippin" system-name t))
-(defmacro IsSauron ()
-  (string-prefix-p "sauron" system-name t))
 (defmacro IsC02SC24MG8WN ()
   (string-prefix-p "C02SC24MG8WN" system-name t))
 (defmacro IsCeleborn ()
   (string-prefix-p "celeborn" system-name t))
 (defmacro IsGandalf ()
   (string-prefix-p "gandalf" system-name t))
+(defmacro IsBoromir ()
+  (string-prefix-p "boromir" system-name t))
 ;;
 ;; Display OS and HOSTNAME information
 ;;
@@ -87,14 +87,14 @@
     (message "IsKKC-SATT93: TRUE"))
    ((IsFrodo)
     (message "IsFrodo: TRUE"))
-   ((IsSauron)
-    (message "IsSauron: TRUE"))
    ((IsC02SC24MG8WN)
     (message "IsC02SC24MG8WN: TRUE"))
    ((IsCeleborn)
     (message "IsCeleborn: TRUE"))
    ((IsGandalf)
     (message "IsGandalf: TRUE"))
+   ((IsBoromir)
+    (message "IsBoromir: TRUE"))
    (t
     (message "Unknown HOSTNAME."))))
 
