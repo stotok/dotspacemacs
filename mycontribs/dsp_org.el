@@ -13,6 +13,15 @@
  ((IsDspUserConfig)
   (when (configuration-layer/package-usedp 'org)
     (message "*** dsp_org.el user-config: org-mode customization")
+    ;;
+    ;; Ref: http://spacemacs.org/layers/+emacs/org/README.html#important-note
+    ;; Since version 0.104, spacemacs uses the org version from the org ELPA repository
+    ;; instead of the one shipped with emacs. Then, any org related code should not be
+    ;; loaded before dotspacemacs/user-config, otherwise both versions will be loaded
+    ;; and will conflict. Because of autoloading, calling to org functions will trigger
+    ;; the loading up of the org shipped with emacs which will induce conflicts.
+    ;; One way to avoid conflict is to wrap your org config code in a with-eval-after-load
+    ;;
     (with-eval-after-load 'org
       (setq org-log-done t)
       (setq org-todo-keywords
