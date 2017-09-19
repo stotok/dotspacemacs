@@ -154,6 +154,18 @@
                      ("\\paragraph{%s}" . "\\paragraph*{%s}")
                      ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
       ) ;; with-eval-after-load 'ox-latex
+    ;;
+    ;; Waiting for ox-reveal to load
+    ;;
+    ;; ox-reveal need reveal.js packages, i install from github:
+    ;; $ git clone https://github.com/hakimel/reveal.js.git
+    ;; and set it's path to org-reveal-root
+    ;;
+    (with-eval-after-load 'ox-reveal
+      (cond
+       ((IsBoromir)
+        (setq org-reveal-root "file:///Volumes/HOME/NewUsers/stotok/project/reveal.js")))
+      ) ;; with-eval-after-load 'ox-reveal
     )
   )
  )

@@ -65,7 +65,7 @@ values."
      html
      markdown
      latex
-     org
+     (org :variables org-enable-reveal-js-support t)
      plantuml
      shell-scripts
      ;; (shell :variables
