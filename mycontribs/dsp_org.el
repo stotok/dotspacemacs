@@ -42,6 +42,9 @@
       ;; syntax coloring embedded source code
       (setq org-src-fontify-natively t)
       ;;
+      (setq org-latex-pdf-process
+            '("latexmk -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f"))
+      ;;
       ;; Publishing the Website
       ;;(require 'ox-publish) ;; ox-publish already install inside org-plus-contrib package
       (setq org-html-coding-system 'utf-8-unix)
