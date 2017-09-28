@@ -49,8 +49,8 @@
 ;;
 (defmacro IsSG2-SATT93 ()
   (string-prefix-p "sg2-satt93" system-name t))
-(defmacro IsKKC-SATT93 ()
-  (string-prefix-p "kkc-satt93" system-name t))
+(defmacro IsKKD-SATT93 ()
+  (string-prefix-p "kkd-satt93" system-name t))
 (defmacro IsFrodo ()
   (string-prefix-p "frodo" system-name t))
 (defmacro IsPippin ()
@@ -83,8 +83,8 @@
   (cond
    ((IsSG2-SATT93)
     (message "IsSG2-SATT93: TRUE"))
-   ((IsKKC-SATT93)
-    (message "IsKKC-SATT93: TRUE"))
+   ((IsKKD-SATT93)
+    (message "IsKKD-SATT93: TRUE"))
    ((IsFrodo)
     (message "IsFrodo: TRUE"))
    ((IsC02SC24MG8WN)
