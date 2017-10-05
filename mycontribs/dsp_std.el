@@ -141,6 +141,7 @@
   (setq frame-resize-pixelwise t)
   ;;
   ;; Frame title bar formatting to show full path of file
+  ;; This will override whatever format set previously in .spacemacs
   ;;
   (setq-default
     frame-title-format
