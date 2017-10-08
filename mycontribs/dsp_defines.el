@@ -63,6 +63,8 @@
   (string-prefix-p "gandalf" system-name t))
 (defmacro IsBoromir ()
   (string-prefix-p "boromir" system-name t))
+(defmacro IsKali ()
+  (string-prefix-p "kali" system-name t))
 ;;
 ;; Display OS and HOSTNAME information
 ;;
@@ -95,6 +97,8 @@
     (message "IsGandalf: TRUE"))
    ((IsBoromir)
     (message "IsBoromir: TRUE"))
+   ((IsKali)
+    (message "IsKali: TRUE"))
    (t
     (message "Unknown HOSTNAME."))))
 
