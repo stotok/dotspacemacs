@@ -20,7 +20,7 @@
 ;; shrink whitespace and lines around point
 (add-to-list 'dotspacemacs-configuration-layers '(ttk-shrink-whitespace))
 ;; never loose your cursor again
-(add-to-list 'dotspacemacs-configuration-layers '(ttk-beacon))
+;; (add-to-list 'dotspacemacs-configuration-layers '(ttk-beacon))
 ;; c/c++ indexer
 (add-to-list 'dotspacemacs-configuration-layers '(ttk-cscope))
 
