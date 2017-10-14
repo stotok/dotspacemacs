@@ -158,9 +158,11 @@
 ;;
 ;; plantuml-mode
 ;; Need 'dot' utility from graphviz package:
-;;      $ sudo port install graphviz
+;;      $ sudo port install graphviz (macport)
+;;      $ sudo apt-get install graphviz (debian)
 ;; then set env var:
-;;      $ export GRAPHVIZ_DOT="/opt/local/bin/dot"
+;;      $ export GRAPHVIZ_DOT="/opt/local/bin/dot" (macport)
+;;      $ export GRAPHVIZ_DOT="/usr/bin/dot" (debian)
 ;;
 (cond
  ((IsDspUserConfig)
