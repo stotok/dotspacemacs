@@ -142,6 +142,12 @@
                                   `(org-level-2 ((t (,@headline ,@variable-tuple :height 1.5))))
                                   `(org-level-1 ((t (,@headline ,@variable-tuple :height 1.75))))
                                   `(org-document-title ((t (,@headline ,@variable-tuple :height 1.5 :underline nil)))))))
+      ;;
+      ;; orgmode.org/worg/org-contrib/org-drill.html
+      ;;
+      (require 'org-drill)
+      (setq org-drill-maximum-items-per-session nil) ; unlimited questions
+      (setq org-drill-maximum-duration 0)            ; no timeout
       ) ;; with-eval-after-load 'org
     ;;
     ;;
