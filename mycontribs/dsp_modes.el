@@ -39,7 +39,22 @@
     "My C Programming Style")
   ;;
   (defconst my-c-style-2
-    '((c-tab-always-indent        . t)
+    '(;; gnu        : coding style blessed by FSF for C code in  GNU programs
+      ;; stroustrup : the classic Stroustrup style for C++ code.
+      ;; linux      : C coding standard for Linux (the kernel).
+      ;; user       : special style created by you. It consists of the factory defaults for
+      ;;              all the style variables as modified by the customizations.
+      (setq c-default-style '((java-mode . "java")
+                              (awk-mode  . "awk")
+                              (c-mode    . "user")
+                              (c++-mode  . "user")
+                              (other     . "user")))
+      ;; this is for linux kernel and driver project
+      (c-set-style (if (and (buffer-file-name)
+                            (string-match "~/project/linux" (buffer-file-name)))
+                       "linux"
+                     "user"))
+      (c-tab-always-indent        . t)
       (c-comment-only-line-offset . 0) ;; 4
       (c-hanging-braces-alist     . ((substatement-open after)
                                     (brace-list-open)))
