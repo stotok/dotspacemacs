@@ -147,7 +147,7 @@
       ;;
       (require 'org-drill)
       (setq org-drill-maximum-items-per-session nil) ; unlimited questions
-      (setq org-drill-maximum-duration 0)            ; no timeout
+      (setq org-drill-maximum-duration nil)          ; no timeout
       ) ;; with-eval-after-load 'org
     ;;
     ;;
