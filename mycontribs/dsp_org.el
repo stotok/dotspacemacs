@@ -42,6 +42,13 @@
       ;; syntax coloring embedded source code
       (setq org-src-fontify-natively t)
       ;;
+      ;; note that org-list-allow-alphabetical only applies to the org-mode source
+      ;; files. If it is set to nil, org will ignore lists that use alphabetical
+      ;; markers. This doesn't have any impact on how lists are exported, which
+      ;; are always numerical.
+      ;;
+      (setq org-list-allow-alphabetical t)
+      ;;
       (setq org-latex-pdf-process
             '("latexmk -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f"))
       ;;
