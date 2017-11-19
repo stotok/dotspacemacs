@@ -143,11 +143,16 @@
                                   `(org-level-1 ((t (,@headline ,@variable-tuple :height 1.75))))
                                   `(org-document-title ((t (,@headline ,@variable-tuple :height 1.5 :underline nil)))))))
       ;;
-      ;; orgmode.org/worg/org-contrib/org-drill.html
+      ;; org-drill: http://orgmode.org/worg/org-contrib/org-drill.html
       ;;
-      (require 'org-drill)
+      ;; (require 'org-drill)
+      (add-to-list 'org-modules 'org-drill)
       (setq org-drill-maximum-items-per-session nil) ; unlimited questions
       (setq org-drill-maximum-duration nil)          ; no timeout
+      (setq org-drill-save-buffers-after-drill-sessions-p nil) ; no need to save buffer
+      (setq org-drill-hide-item-headings-p nil)      ; show heading during drill
+      (setq org-drill-add-random-noise-to-intervals-p t)
+      ;;
       ) ;; with-eval-after-load 'org
     ;;
     ;;
