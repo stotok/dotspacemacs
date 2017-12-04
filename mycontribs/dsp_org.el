@@ -159,6 +159,7 @@
       (setq org-drill-save-buffers-after-drill-sessions-p nil) ; no need to save buffer
       (setq org-drill-hide-item-headings-p nil)      ; show heading during drill
       (setq org-drill-add-random-noise-to-intervals-p t)
+      (setq org-drill-learn-fraction 0.2)    ; to appear more frequently (default: 0.5)
       ;;
       ) ;; with-eval-after-load 'org
     ;;
