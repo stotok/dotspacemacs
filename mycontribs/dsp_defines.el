@@ -49,12 +49,8 @@
 ;;
 (defmacro IsSG2-SATT93 ()
   (string-prefix-p "sg2-satt93" system-name t))
-(defmacro IsKKD-SATT93 ()
-  (string-prefix-p "kkd-satt93" system-name t))
 (defmacro IsFrodo ()
   (string-prefix-p "frodo" system-name t))
-(defmacro IsOptimus ()
-  (string-prefix-p "optimus" system-name t))
 (defmacro IsC02SC24MG8WN ()
   (string-prefix-p "C02SC24MG8WN" system-name t))
 (defmacro IsCeleborn ()
@@ -67,6 +63,10 @@
   (string-prefix-p "kali" system-name t))
 (defmacro IsSentinel ()
   (string-prefix-p "sentinel" system-name t))
+(defmacro IsOptimus ()
+  (string-prefix-p "optimus" system-name t))
+(defmacro IsMoonracer ()
+  (string-prefix-p "moonracer" system-name t))
 ;;
 ;; Display OS and HOSTNAME information
 ;;
@@ -87,8 +87,6 @@
   (cond
    ((IsSG2-SATT93)
     (message "IsSG2-SATT93: TRUE"))
-   ((IsKKD-SATT93)
-    (message "IsKKD-SATT93: TRUE"))
    ((IsFrodo)
     (message "IsFrodo: TRUE"))
    ((IsC02SC24MG8WN)
@@ -103,6 +101,10 @@
     (message "IsKali: TRUE"))
    ((IsSentinel)
     (message "IsSentinel: TRUE"))
+   ((IsOptimus)
+    (message "IsOptimus: TRUE"))
+   ((IsMoonracer)
+    (message "IsMoonracer: TRUE"))
    (t
     (message "Unknown HOSTNAME."))))
 
