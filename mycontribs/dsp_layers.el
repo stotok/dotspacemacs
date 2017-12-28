@@ -42,17 +42,8 @@
 ;; For each system having installed and setup necessary tools
 ;;
 (cond
- ((IsFrodo)
-  (add-to-list 'dotspacemacs-configuration-layers '(ttk-rtags))
-  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
-  )
- ((IsSG2-SATT93)
-  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
-  )
- ((IsC02SC24MG8WN)
-  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
-  )
  ((IsCeleborn)
+;  (add-to-list 'dotspacemacs-configuration-layers '(ttk-rtags))
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy)))
  ((IsSentinel)
 ;;  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))

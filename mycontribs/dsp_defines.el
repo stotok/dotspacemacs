@@ -47,12 +47,6 @@
 ;;
 ;; Determine hostname
 ;;
-(defmacro IsSG2-SATT93 ()
-  (string-prefix-p "sg2-satt93" system-name t))
-(defmacro IsFrodo ()
-  (string-prefix-p "frodo" system-name t))
-(defmacro IsC02SC24MG8WN ()
-  (string-prefix-p "C02SC24MG8WN" system-name t))
 (defmacro IsCeleborn ()
   (string-prefix-p "celeborn" system-name t))
 (defmacro IsGandalf ()
@@ -85,12 +79,6 @@
     (message "Unknown OS.")))
   ;; DISPLAY HOSTNAME
   (cond
-   ((IsSG2-SATT93)
-    (message "IsSG2-SATT93: TRUE"))
-   ((IsFrodo)
-    (message "IsFrodo: TRUE"))
-   ((IsC02SC24MG8WN)
-    (message "IsC02SC24MG8WN: TRUE"))
    ((IsCeleborn)
     (message "IsCeleborn: TRUE"))
    ((IsGandalf)

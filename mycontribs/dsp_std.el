@@ -265,7 +265,7 @@
   ;;
   (when nil
     (cond
-     ((and (IsGNULinux) (IsFrodo))
+     ((IsGNULinux)
       (message "    >>> turn-off trackpad")
       (defun turn-off-mouse (&optional frame)
         (interactive)
