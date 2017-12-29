@@ -305,8 +305,9 @@
   ;;
   ;; setup for rgrep.el
   ;;     https://github.com/magnars/.emacs.d/blob/master/settings/setup-rgrep.el
-  (when t                 ; well, spacemacs already have all bell and whistles
-                          ; but elpy custom key binding 'o' need this
+  (when nil               ;; well, spacemacs already have all bell and whistles
+                          ;; but elpy custom key binding 'o' need this
+                          ;; Well, don't need anymore. Just use ivy-occur.
     (defun rgrep-goto-file-and-close-rgrep ()
       (interactive)
       (compile-goto-error)
