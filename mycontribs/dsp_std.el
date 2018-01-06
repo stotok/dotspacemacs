@@ -352,9 +352,21 @@
                 ;; evil-escape-key-sequence "fd"  ; default Ctrl-[ is still working
                 ;; evil-escape-delay 0.3          ; make it a bit longer for the combination key
                 ;; evil-escape-unordered-key-sequence t ; just press 'j' and 'k' together lah :)
+                ;;
+                ;; fill column indicator
+                fill-column 100 ; default is 80
+                ;; fci-rule-color "#FF0000" ; color of the highlight column
                 )
   (spacemacs/toggle-vi-tilde-fringe-off)    ;; tilde on empty lines
   ;;
+  ;; highlight column
+  ;; set by fill-column value at user init above (default is 80)
+  ;; note: you can turn on/off manually with: <space> t f
+  ;; turn-on for certain modes
+  (spacemacs/add-to-hooks 'turn-on-fci-mode '(prog-mode-hook text-mode-hook))
+  ;; turn-off for certain modes
+  ;; (spacemacs/add-to-hooks 'turn-off-fci-mode '(org-mode-hook))
+
   ;; modeline related
   ;;
   (when t
