@@ -363,7 +363,7 @@
   ;; set by fill-column value at user init above (default is 80)
   ;; note: you can turn on/off manually with: <space> t f
   ;; turn-on for certain modes
-  (spacemacs/add-to-hooks 'turn-on-fci-mode '(prog-mode-hook text-mode-hook))
+  ;; (spacemacs/add-to-hooks 'turn-on-fci-mode '(prog-mode-hook text-mode-hook))
   ;; turn-off for certain modes
   ;; (spacemacs/add-to-hooks 'turn-off-fci-mode '(org-mode-hook))
 
