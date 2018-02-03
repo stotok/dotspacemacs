@@ -1,9 +1,10 @@
 * Introduction
    My spacemacs configuration layers including dotfile (=.spacemacs=).
-   The configuration is assumed to be used with =develop= branch of
-   syl20bnr/spacemacs.
+   At the start of this project, the configuration is assumed to be used
+   with =develop= branch of syl20bnr/spacemacs, however, it's now just fine
+   to use =master= branch.
 
-* Installation 
+* Installation
    Backup and delete your ~/.emacs and ~/.emacs.d, then go to your =home= directory:
 
    #+BEGIN_SRC text
