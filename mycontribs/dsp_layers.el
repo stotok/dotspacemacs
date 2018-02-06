@@ -29,7 +29,7 @@
 ;;
 (cond
  ((or (IsWindows) (IsCygwin))
-  ;; well, git on cygwin is sucks sloooowwwwwwwww
+  (add-to-list 'dotspacemacs-configuration-layers '(git))
   )
  ((IsOSX)
   (add-to-list 'dotspacemacs-configuration-layers '(git))
@@ -52,6 +52,9 @@
 ;;  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   )
  ((IsMoonracer)
+;;  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
+  )
+ ((IsBumblebee)
 ;;  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   )
  )

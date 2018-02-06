@@ -39,6 +39,19 @@
     ;; tell projectile to not try and find the file on the remote SVN server and
     ;; instead search locally, see https://github.com/bbatsov/projectile/issues/520
     (setq projectile-svn-command "find . -type f -not -iwholename '*.svn/*' -print0")
+    ;;
+    ;; A list of files considered to mark the root of a project.
+    ;; The bottommost (parentmost) match has precedence."
+    (setq projectile-project-root-files-bottom-up
+      '(".projectile" ; projectile project marker
+        ".git"        ; Git VCS root dir
+        ".hg"         ; Mercurial VCS root dir
+        ".fslckout"   ; Fossil VCS root dir
+        "_FOSSIL_"    ; Fossil VCS root DB on Windows
+        ".bzr"        ; Bazaar VCS root dir
+        "_darcs"      ; Darcs VCS root dir
+        ".repo"       ; my VCS root dir
+        ))
     ;; tramp-mode and projectile does not play well together, it is because the projectile
     ;; tries to retrieve project name this is slow on remote host.
     ;; so let's make projectile modeline only displays static string and won't slow you down

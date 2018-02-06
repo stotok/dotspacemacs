@@ -67,7 +67,7 @@
 ;; Theme customization
 ;;
 (cond
- ((or (IsCeleborn) (IsGandalf) (IsBoromir) (IsOptimus) (IsMoonracer))
+ ((or (IsCeleborn) (IsGandalf) (IsBoromir) (IsOptimus) (IsMoonracer) (IsBumblebee))
   (setq-default
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great

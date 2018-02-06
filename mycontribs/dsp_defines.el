@@ -61,6 +61,8 @@
   (string-prefix-p "optimus" system-name t))
 (defmacro IsMoonracer ()
   (string-prefix-p "moonracer" system-name t))
+(defmacro IsBumblebee ()
+  (string-prefix-p "bumblebee" system-name t))
 ;;
 ;; Display OS and HOSTNAME information
 ;;
@@ -93,6 +95,8 @@
     (message "IsOptimus: TRUE"))
    ((IsMoonracer)
     (message "IsMoonracer: TRUE"))
+   ((IsBumblebee)
+    (message "IsBumblebee: TRUE"))
    (t
     (message "Unknown HOSTNAME."))))
 
