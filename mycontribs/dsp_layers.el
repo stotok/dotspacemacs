@@ -29,7 +29,7 @@
 ;;
 (cond
  ((or (IsWindows) (IsCygwin))
-  (add-to-list 'dotspacemacs-configuration-layers '(git))
+  ;; (add-to-list 'dotspacemacs-configuration-layers '(git))
   )
  ((IsOSX)
   (add-to-list 'dotspacemacs-configuration-layers '(git))
@@ -56,6 +56,9 @@
   )
  ((IsBumblebee)
 ;;  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
+  )
+ ((IsIgl2465g)
+  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   )
  )
 
