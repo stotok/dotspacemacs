@@ -138,7 +138,7 @@ fi
     fi
 ) | \
     egrep -i '\.([chly](xx|pp)*|cc|hh)$' | \
-    sed -e '/\/.repo\//d' -e '/\/CVS\//d' -e '/\/RCS\//d' -e 's/^\.\///' | \
+    sed -e '/\/.repo\//d' -e '/\/CVS\//d' -e '/\/RCS\//d' -e '/^\.svn\//d' -e '/\/.git\//d' -e '/\/.hg\//d' -e 's/^\.\///' | \
     sort > $LIST_FILE
 
 if [ "X$VERBOSE" != "X" ]

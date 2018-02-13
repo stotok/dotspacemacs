@@ -233,8 +233,8 @@
     ;; treat '_' as a word constituent
     (modify-syntax-entry ?_ "w")
     ;; local binding
-    (local-set-key (kbd "C-,") 'c-up-conditional-with-else)
-    (local-set-key (kbd "C-.") '(lambda (count) (interactive "p") (c-up-conditional-with-else (- count))))
+    (local-set-key (kbd "C-<") 'c-up-conditional-with-else)
+    (local-set-key (kbd "C->") '(lambda (count) (interactive "p") (c-up-conditional-with-else (- count))))
     ;; other customizations
     (setq tab-width 4
           c-basic-offset 4
