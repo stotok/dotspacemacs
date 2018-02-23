@@ -77,11 +77,13 @@ values."
      ;;     http://www.flycheck.org/
      ;;     https://github.com/flycheck/flycheck.git
      ;; modern on the fly syntax checking (drop-in replacement for flycmake)
-     (syntax-checking :variables
-                      ;; checkdoc seems too much for me
-                      flycheck-disabled-checkers '(emacs-lisp-checkdoc)
-                      ;; disable tooltip
-                      syntax-checking-enable-tooltips nil)
+     ;; What for is this? I forget :) but it is causing editing c files on
+     ;; windoz hang during syntax-checking. So, disable lah.
+     ;; (syntax-checking :variables
+     ;;                  ;; checkdoc seems too much for me
+     ;;                  flycheck-disabled-checkers '(emacs-lisp-checkdoc)
+     ;;                  ;; disable tooltip
+     ;;                  syntax-checking-enable-tooltips nil)
      ;;
      ;; docker
      docker
