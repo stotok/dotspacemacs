@@ -358,6 +358,7 @@
                 ;; fci-rule-color "#FF0000" ; color of the highlight column
                 )
   (spacemacs/toggle-vi-tilde-fringe-off)    ;; tilde on empty lines
+  (global-set-key (kbd "C-l") 'evil-escape) ;; C-l as escape keybinding (default: recenter)
   ;;
   ;; highlight column
   ;; set by fill-column value at user init above (default is 80)
