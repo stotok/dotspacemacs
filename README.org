@@ -110,30 +110,54 @@
    depending on.
 
 *** Kali Linux
+    Kali python executable for python 2.X is *python2* while for python ver 3.X is
+    *python3*. So, just juse =shebang= line at your script to indicate which version
+    the script intended to run.
+
 **** Install python and pip
      - Python 2.7
-       : $ sudo apt install python python-pip
+       : $ sudo apt install python python-setuptools python-pip
 
-     * Python 3.6
-       : $ sudo apt install python3 python3-pip
+     * Python 3
+       : $ sudo apt install python3 python3-setuptools python3-pip
 
 **** Install virtual environment
-     : $ sudo -H pip install virtualenv virtualenvwrapper
-     : $ sudo -H pip3 install virtualenv virtualenvwrapper
+     * Python 2.7
+       : $ sudo -H pip install virtualenv virtualenvwrapper
+
+     * Python 3
+       : $ sudo -H pip3 install virtualenv virtualenvwrapper
 
 **** Select which python
-     : $ select_python2
-     : $ select_python3
+     * Python 2.7
+       : $ select_python2
+
+     * Python 3
+       : $ select_python3
 
 **** Create python virtualenv
-     : $ mkvirtualenv elpy
+     * Python 2.7
+       : $ mkvirtualenv elpy -p /usr/bin/python2
+
+     * Python 3
+       : $ mkvirtualenv elpy -p /usr/bin/python3
 
 **** The above step would do auto workon
      : $ workon elpy
 
 **** Install these packagess via pip
-     : $ pip install jedi flake8 importmagic autopep8 yapf
+     * Python 2.7
+       : $ pip install jedi flake8 importmagic autopep8 yapf
 
+     * Python 3
+       : $ pip3 install jedi flake8 importmagic autopep8 yapf
+
+**** To deactivate current virtualenv
+     : $ deactivate
+
+**** For emacs elpy package
+     : M-x pyvenv-workon elpy
+     : M-x elpy-config
 
 *** Macports
 **** Install python and pip
