@@ -109,6 +109,32 @@
    install python virtual environment. And some other packages that elpy is
    depending on.
 
+*** Kali Linux
+**** Install python and pip
+     - Python 2.7
+       : $ sudo apt install python python-pip
+
+     * Python 3.6
+       : $ sudo apt install python3 python3-pip
+
+**** Install virtual environment
+     : $ sudo -H pip install virtualenv virtualenvwrapper
+     : $ sudo -H pip3 install virtualenv virtualenvwrapper
+
+**** Select which python
+     : $ select_python2
+     : $ select_python3
+
+**** Create python virtualenv
+     : $ mkvirtualenv elpy
+
+**** The above step would do auto workon
+     : $ workon elpy
+
+**** Install these packagess via pip
+     : $ pip install jedi flake8 importmagic autopep8 yapf
+
+
 *** Macports
 **** Install python and pip
     - Python 2.7
