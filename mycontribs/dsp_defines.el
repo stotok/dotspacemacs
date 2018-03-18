@@ -53,8 +53,6 @@
   (string-prefix-p "gandalf" system-name t))
 (defmacro IsBoromir ()
   (string-prefix-p "boromir" system-name t))
-(defmacro IsKali ()
-  (string-prefix-p "kali" system-name t))
 (defmacro IsSentinel ()
   (string-prefix-p "sentinel" system-name t))
 (defmacro IsOptimus ()
@@ -65,6 +63,8 @@
   (string-prefix-p "bumblebee" system-name t))
 (defmacro IsIgl2465g ()
   (string-prefix-p "igl2465g" system-name t))
+(defmacro IsIronhide ()
+  (string-prefix-p "ironhide" system-name t))
 ;;
 ;; Display OS and HOSTNAME information
 ;;
@@ -89,10 +89,6 @@
     (message "IsGandalf: TRUE"))
    ((IsBoromir)
     (message "IsBoromir: TRUE"))
-   ((IsKali)
-    (message "IsKali: TRUE"))
-   ((IsSentinel)
-    (message "IsSentinel: TRUE"))
    ((IsOptimus)
     (message "IsOptimus: TRUE"))
    ((IsMoonracer)
@@ -101,6 +97,8 @@
     (message "IsBumblebee: TRUE"))
    ((IsIgl2465g)
     (message "IsIgl2465g: TRUE"))
+   ((IsIronhide)
+    (message "IsIronhide: TRUE"))
    (t
     (message "Unknown HOSTNAME."))))
 
