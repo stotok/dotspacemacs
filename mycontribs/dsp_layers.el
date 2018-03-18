@@ -61,6 +61,9 @@
  ((IsIgl2465g)
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   )
+ ((IsIronhide)
+  ;; (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
+  )
  )
 
 ;; EOF
