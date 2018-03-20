@@ -277,6 +277,7 @@
   (message "*** dsp_modes.el user config: python-mode customization")
   ;;
   (setq-default python-indent-offset 4)
+  (setq python-shell-completion-native-enable nil)
   )
  )
 
