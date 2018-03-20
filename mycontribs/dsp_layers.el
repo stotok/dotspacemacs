@@ -53,7 +53,7 @@
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   )
  ((IsMoonracer)
-;;  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
+  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   )
  ((IsBumblebee)
 ;;  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
