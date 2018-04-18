@@ -152,11 +152,11 @@
                                     defun-close-semi))
       (c-offsets-alist            . ((arglist-close . c-lineup-arglist)
                                     (substatement-open . 0)
-                                    (case-label        . 3) ;; 0 ;; 4
+                                    (case-label        . 4) ;; 0 ;; 3
                                     (block-open        . 0)
                                     (knr-argdecl-intro . -)))
       (c-echo-syntactic-information-p . t))
-    "CT C Programming Style ")
+    "CT C Programming Style")
   ;;
   ;; offset customizations not in my-c-style
   ;(setq c-offsets-alist '((member-init-intro . ++)))
