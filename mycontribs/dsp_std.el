@@ -126,9 +126,17 @@
   (set-keyboard-coding-system 'utf-8)
   ;;
   ;;
-  ;; etc
+  ;; Build-In VC Package
   ;;
   (setq vc-follow-symlinks t) ; don't ask for confirmation for opening symlinked file
+  ;; Ref https://magit.vc/manual/magit/Performance.html
+  ;; I don't use VC in addition to Magit, so disable it to keep it from performing
+  ;; unnecessary work (see also another option just below)
+  (setq vc-handled-backends nil)
+  ;; You can also disable its use for Git but keep using it when using another version
+  ;; control system:
+  ;; (setq vc-handled-backends (delq 'Git vc-handled-backends))
+
   ;;
   ;; backwards compatibility as default-buffer-file-coding-system
   ;; is deprecated in 23.2
