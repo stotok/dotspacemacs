@@ -37,6 +37,9 @@
       (setq counsel-git-cmd "rg --files")
       (setq counsel-rg-base-command
             "rg -i -M 120 --no-heading --line-number --color never %s .")
+      ;; https://oremacs.com/2017/08/04/ripgrep/
+      (setq counsel-grep-base-command
+            "rg -i -M 120 --no-heading --line-number --color never '%s' %s")
       )
      )
     )
