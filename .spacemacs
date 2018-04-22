@@ -92,7 +92,8 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(rg             ; ripgrep
+                                      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -407,3 +408,18 @@ before packages are loaded."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (rg ws-butler which-key wgrep web-mode volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tagedit spaceline smex smeargle slim-mode shrink-whitespace scss-mode sass-mode restart-emacs request rainbow-delimiters pug-mode popwin plantuml-mode pcre2el paradox ox-reveal orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets open-junk-file mmm-mode markdown-toc magit-gitflow macrostep linum-relative link-hint less-css-mode ivy-hydra insert-shebang info+ indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers hide-comnt help-fns+ gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip fish-mode fill-column-indicator expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args eval-sexp-fu emmet-mode elpy elisp-slime-nav dumb-jump dockerfile-mode docker disaster diminish define-word counsel-projectile company-web company-statistics company-shell company-c-headers company-auctex column-enforce-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-compile auctex-latexmk aggressive-indent ace-window ace-link ac-ispell)))
+ '(spacemacs-theme-custom-colors (quote ((comment . "#137C87")))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
