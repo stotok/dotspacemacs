@@ -28,7 +28,18 @@
           ivy-display-style 'fancy)
     ;;
     ;; i don't like dir buffer. let's change some :)
-    (define-key ivy-minibuffer-map (kbd "RET") 'ivy-alt-done))
+    (define-key ivy-minibuffer-map (kbd "RET") 'ivy-alt-done)
+    ;;
+    ;; ripgrep, see: https://oremacs.com/2018/03/05/grep-exclude/
+    ;;
+    (cond                               ; please install ripgrep
+     ((IsOSX)                           ; $ sudo port install ripgrep
+      (setq counsel-git-cmd "rg --files")
+      (setq counsel-rg-base-command
+            "rg -i -M 120 --no-heading --line-number --color never %s .")
+      )
+     )
+    )
   )
  )
 
