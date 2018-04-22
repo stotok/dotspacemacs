@@ -51,6 +51,7 @@
   )
  ((IsOptimus)
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
+  (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
   )
  ((IsMoonracer)
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
