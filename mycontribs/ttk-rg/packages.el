@@ -10,6 +10,8 @@
 ;;
 ;; MacPort
 ;;     $ sudo port install ripgrep
+;; Windows/Cygwin
+;;     Download binary from https://github.com/dajva/rg.el
 
 (setq ttk-rg-packages
       '(
@@ -24,6 +26,6 @@
     :init
     ;;
     :config
-    (rg-enable-default-bindings (kbd "C-c s"))
+    ;; (rg-enable-default-bindings (kbd "C-c s"))
     )
   )

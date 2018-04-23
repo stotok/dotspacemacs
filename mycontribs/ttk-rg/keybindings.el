@@ -6,5 +6,16 @@
 ;;
 ;;***************************************************************************************
 ;;
-;; TODO: find spacemacs keybindings
-;; as of now, use "C-c s" as configured in packages.el
+;; see rg.el
+;;
+(spacemacs/declare-prefix "sr" "ripgrep")
+(spacemacs/set-leader-keys
+  "srd"  'rg-dwim
+  "srk"  'rg-kill-saved-searches
+  "srl"  'rg-list-searches
+  "srp"  'rg-project
+  "srr"  'rg
+  "srs"  'rg-save-search
+  "srS"  'rg-save-search-as-name
+  "srt"  'rg-literal
+  )
