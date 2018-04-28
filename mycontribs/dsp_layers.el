@@ -48,6 +48,7 @@
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy)))
  ((IsSentinel)
 ;;  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
+  (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
   )
  ((IsOptimus)
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
