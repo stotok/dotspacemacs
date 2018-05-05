@@ -175,6 +175,11 @@
     ;; try to improve slow performance on windows and cygwin
     (setq w32-get-true-file-attributes nil))
   ;;
+  ;; always just just left-to-right text
+  ;; this makes emacs a bit fater for very long lines
+  (setq-default bidi-display-reordering nil)
+  ;;
+  ;;
   ;; Hightlighting matching parens, etc
   ;;
   (when nil ; too noisy, seems spacemacs no need this
@@ -310,6 +315,20 @@
                                    (tramp-parse-sconfig "~/.ssh/config")))
   (setq tramp-default-method "ssh")
   (add-to-list 'tramp-remote-path 'tramp-own-remote-path)
+  ;; Only for debugging slow tramp connections
+  ;;(setq tramp-verbose 7)
+  ;;
+  ;; Skip version control for tramp files
+  (setq vc-ignore-dir-regexp
+        (format "\\(%s\\)\\|\\(%s\\)"
+                vc-ignore-dir-regexp
+                tramp-file-name-regexp))
+  ;; Turn off auto-save for tramp files
+  (add-to-list 'backup-directory-alist
+               (cons tramp-file-name-regexp nil))
+  ;; Use ControlPath from .ssh/config
+  (setq tramp-ssh-controlmaster-options "")
+  ;;
   ;;
   ;; setup for rgrep.el
   ;;     https://github.com/magnars/.emacs.d/blob/master/settings/setup-rgrep.el
