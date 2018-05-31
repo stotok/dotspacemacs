@@ -10,10 +10,9 @@
    #+BEGIN_SRC text
    $ git clone https://github.com/syl20bnr/spacemacs.git .emacs.d
    $ cd .emacs.d
-   $ git checkout -b develop -t origin/develop
    #+END_SRC
 
-   That's for spacemacs 'develop' branch (more features available). Now my own
+   That's for spacemacs 'master' branch. Now my own
    configuration, again, at your =home= directory:
 
    #+BEGIN_SRC text
@@ -26,6 +25,8 @@
    #+BEGIN_SRC text
    $ apt-get install emacs
    #+END_SRC
+
+   On Windows, install cygwin =emacs-w32= via cygwin installer.
 
 * Private Layers
  The following private layers are configured in =mycontribs/dsp_layers.el=.
