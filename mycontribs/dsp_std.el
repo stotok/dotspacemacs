@@ -230,12 +230,8 @@
         (which-function-mode 1) ; enable for all modes
       (progn                    ; enable for certain modes
         (require 'which-func)
-        (add-to-list 'which-func-modes 'c-mode)
-        (add-to-list 'which-func-modes 'cc-mode)
-        (add-to-list 'which-func-modes 'c++-mode)
-        (add-to-list 'which-func-modes 'java-mode)
-        (add-to-list 'which-func-modes 'org-mode)
-        (add-to-list 'which-func-modes 'python-mode)
+        (eval-after-load "which-func-modes"
+          '(setq which-func-modes '(c-mode cc-mode c++-mode java-mode org-mode python-mode)))
         (which-func-mode 1)))
     ;;
     ;; Display it in emacs header line
