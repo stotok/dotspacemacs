@@ -26,7 +26,7 @@
     (cond
      ((or (IsCygwin) (IsWindows))
       (custom-set-variables '(spacemacs-theme-custom-colors
-                              '((comment . "#ade5eb")))) ; #2aa1ae (original spacemacs-dark)
+                              '((comment . "#137C87")))) ; #2aa1ae (original spacemacs-dark)
       )
      (t
       (custom-set-variables '(spacemacs-theme-custom-colors

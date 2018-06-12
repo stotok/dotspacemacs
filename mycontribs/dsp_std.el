@@ -179,6 +179,9 @@
   ;; this makes emacs a bit fater for very long lines
   (setq-default bidi-display-reordering nil)
   ;;
+  ;; Fix cursor moving up/down lagging
+  ;; (I noticed this with cygwin emacs-32 version 26.1)
+  (setq auto-window-vscroll nil)
   ;;
   ;; Hightlighting matching parens, etc
   ;;
