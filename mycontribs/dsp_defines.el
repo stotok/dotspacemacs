@@ -65,6 +65,8 @@
   (string-prefix-p "igl2465g" system-name t))
 (defmacro IsIronhide ()
   (string-prefix-p "ironhide" system-name t))
+(defmacro IsRatchet ()
+  (string-prefix-p "ratchet" system-name t))
 ;;
 ;; Display OS and HOSTNAME information
 ;;
@@ -99,6 +101,8 @@
     (message "IsIgl2465g: TRUE"))
    ((IsIronhide)
     (message "IsIronhide: TRUE"))
+   ((IsRatchet)
+    (message "IsRatchet: TRUE"))
    (t
     (message "Unknown HOSTNAME."))))
 
