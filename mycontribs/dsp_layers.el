@@ -67,6 +67,9 @@
  ((IsIronhide)
   ;; (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   )
+ ((IsRatchet)
+  (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
+  )
  )
 
 ;; EOF
