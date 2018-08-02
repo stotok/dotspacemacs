@@ -53,7 +53,7 @@ values."
      emacs-lisp
      ;; git  ;; move this to dsp_layers.el
      (c-c++ :variables
-            c-c++-enable-clang-support t
+            c-c++-enable-clang-support nil ; clang causing hang with tramp editing
             c-c++-default-mode-for-headers 'c++-mode
             c-toggle-auto-newline nil
             c-toggle-auto-hungry-state nil
