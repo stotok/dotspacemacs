@@ -25,16 +25,40 @@
                                :powerline-scale 1.1)
    )) ;; darwin
  ((IsGNULinux)
-  (setq-default
-   ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
-   ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '(;; $ sudo apt-get install fonts-inconsolata
-                               "Inconsolata"
-                               :size 14
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
-    )) ;; gnu/linux
+  (cond
+   ((IsIgd0464u)
+    (setq-default
+     ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
+     ;; quickly tweak the mode-line size to make separators look not too crappy.
+     dotspacemacs-default-font '(;; default x11 fonts
+                                 "fixed"
+                                 :size 12
+                                 :weight normal
+                                 :width normal
+                                 :powerline-scale 1.1)
+     ))
+   ((IsRatchet)
+    (setq-default
+     ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
+     ;; quickly tweak the mode-line size to make separators look not too crappy.
+     dotspacemacs-default-font '(;; $ sudo apt-get install fonts-inconsolata
+                                 "Inconsolata"
+                                 :size 16
+                                 :weight normal
+                                 :width normal
+                                 :powerline-scale 1.1)
+     ))
+   (t
+    (setq-default
+     ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
+     ;; quickly tweak the mode-line size to make separators look not too crappy.
+     dotspacemacs-default-font '(;; $ sudo apt-get install fonts-inconsolata
+                                 "Inconsolata"
+                                 :size 14
+                                 :weight normal
+                                 :width normal
+                                 :powerline-scale 1.1)
+     )))) ;; gnu/linux
  ((or (IsCygwin) (IsWindows))
   ;; This is to fix error when calling server start on startup
   ;;(require 'server)
@@ -78,7 +102,7 @@
                          leuven
                          )
    ))
- ((IsRatchet)
+ ((or (IsRatchet) (IsIgd0464u))
   (setq-default
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
