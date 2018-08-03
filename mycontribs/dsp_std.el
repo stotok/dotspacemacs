@@ -125,6 +125,12 @@
   (set-terminal-coding-system 'utf-8)
   (set-keyboard-coding-system 'utf-8)
   ;;
+  ;; emacs 26.1 has replaced the old linum-mode with a faster and less
+  ;; clusttered implementation.
+  (when (>= emacs-major-version 26)
+    ;; let's turn on for programming modes
+    (add-hook 'prog-mode-hook 'display-line-numbers-mode))
+  ;;
   ;;
   ;; Build-In VC Package
   ;;
@@ -315,7 +321,7 @@
   (setq tramp-default-method "ssh")
   (add-to-list 'tramp-remote-path 'tramp-own-remote-path)
   ;; Only for debugging slow tramp connections
-  ;;(setq tramp-verbose 7)
+  ;; (setq tramp-verbose 7)
   ;;
   ;; Skip version control for tramp files
   (setq vc-ignore-dir-regexp
@@ -327,6 +333,12 @@
                (cons tramp-file-name-regexp nil))
   ;; Use ControlPath from .ssh/config
   (setq tramp-ssh-controlmaster-options "")
+  ;; Disable ssh password cache expiration
+  (setq password-cache-expiry nil)
+  ;; When autosave kickec in, save here ...
+  (setq tramp-auto-save-directory "~/tmp/tramp/")
+  ;; Let's see this chunksize value
+  (setq tramp-chunksize 2000)
   ;;
   ;;
   ;; setup for rgrep.el
