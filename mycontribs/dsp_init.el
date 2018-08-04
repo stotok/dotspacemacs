@@ -30,7 +30,7 @@
     (setq-default
      ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
      ;; quickly tweak the mode-line size to make separators look not too crappy.
-     dotspacemacs-default-font '(;; default x11 fonts
+     dotspacemacs-default-font '(;; available in x11 fonts
                                  "fixed"
                                  :size 12
                                  :weight normal
@@ -46,7 +46,7 @@
                                  :size 16
                                  :weight normal
                                  :width normal
-                                 :powerline-scale 1.1)
+                                 :powerline-scale 1.3)
      ))
    (t
     (setq-default
