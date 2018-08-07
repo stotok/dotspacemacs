@@ -102,7 +102,7 @@
                          leuven
                          )
    ))
- ((or (IsRatchet) (IsIgd0464u))
+ ((or (IsRatchet) (IsIgd0464u) (IsIgl2465g))
   (setq-default
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great

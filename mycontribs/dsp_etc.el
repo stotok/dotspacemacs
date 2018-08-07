@@ -52,13 +52,40 @@
         "_darcs"      ; Darcs VCS root dir
         ".repo"       ; my VCS root dir
         ))
+    ;;
+    ;; Use ripgrep to index files to be used by projectile
+    ;; See: https://emacs.stackexchange.com/questions/16497/how-to-exclude-files-from-projectile/16499
+    ;;
+    ;; Default rg arguments
+    ;; https://github.com/BurntSushi/ripgrep
+    (when (executable-find "rg")
+      (message "Projectile use rg to generate project files.")
+      (progn
+        (defconst modi/rg-arguments
+          `("--line-number"                     ; line numbers
+            "--smart-case"
+            "--follow"                          ; follow symlinks
+            "--mmap")                           ; apply memory map optimization when possible
+          "Default rg arguments used in the functions in `projectile' package.")
+        ;;
+        (defun modi/advice-projectile-use-rg ()
+          "Always use `rg' for getting a list of all files in the project."
+          (mapconcat 'identity
+                    (append '("\\rg") ; used unaliased version of `rg': \rg
+                            modi/rg-arguments
+                            '("--null" ; output null separated results,
+                              "--files")) ; get file names matching the regex '' (all files)
+                    " "))
+        (advice-add 'projectile-get-ext-command :override #'modi/advice-projectile-use-rg)))
+    ;;
     ;; tramp-mode and projectile does not play well together, it is because the projectile
     ;; tries to retrieve project name this is slow on remote host.
     ;; so let's make projectile modeline only displays static string and won't slow you down
     (add-hook 'find-file-hook
               (lambda ()
                 (when (file-remote-p default-directory)
-                  (setq-local projectile-mode-line "P:remote")))))
+                  (setq-local projectile-mode-line "P:remote"))))
+    )
   )
  )
 
