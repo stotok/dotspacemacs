@@ -74,6 +74,7 @@
                     (append '("\\rg") ; used unaliased version of `rg': \rg
                             modi/rg-arguments
                             '("--null" ; output null separated results,
+                              "--path-separator /" ; use forward slash (for cygwin)
                               "--files")) ; get file names matching the regex '' (all files)
                     " "))
         (advice-add 'projectile-get-ext-command :override #'modi/advice-projectile-use-rg)))
