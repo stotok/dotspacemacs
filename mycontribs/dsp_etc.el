@@ -25,7 +25,7 @@
     (message "*** dsp_etc.el user config: projectile customization")
     ;; alien method need external utility (unixes), and fast.
     ;; it ignores the content of .projectile, but read .gitignore
-    (setq projectile-indexing-method 'alien)
+    (setq projectile-indexing-method 'alien) ; long live 'ripgrep'
     ;; native method is portable but slow. it reads the content of .projectile
     ;;(setq projectile-indexing-method 'native)
     (setq projectile-enable-caching t)

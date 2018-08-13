@@ -179,10 +179,18 @@
   (setq delete-by-moving-to-trash nil) ;; no need to go to OS's trash folder
   (when (or (IsCygwin) (IsWindows))
     ;; try to improve slow performance on windows and cygwin
-    (setq w32-get-true-file-attributes nil))
+    (setq w32-get-true-file-attributes nil)
+    ;;
+    ;; well, 2 codes below actually not specific to windows but it's specific to fonts
+    ;; and display something. They fix the slowness of emacs scrolling etc when in
+    ;; windows laptop battery mode. Probably good to have it on other platform as well, let's see
+    (setq inhibit-compacting-font-caches t)
+    (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
+    )
+
   ;;
   ;; always just just left-to-right text
-  ;; this makes emacs a bit fater for very long lines
+  ;; this makes emacs a bit faster for very long lines
   (setq-default bidi-display-reordering nil)
   ;;
   ;; Fix cursor moving up/down lagging
