@@ -188,6 +188,8 @@
       (cond
        ((or (IsBoromir) (IsMoonracer))
         (setq org-reveal-root "file:///Volumes/HOME/NewUsers/stotok/project/reveal.js"))
+       ((IsOptimus)
+        (setq org-reveal-root "file:/Users/stotok/project/reveal.js"))
        )
       ) ;; with-eval-after-load 'ox-reveal
     )
