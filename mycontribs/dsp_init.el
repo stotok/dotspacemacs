@@ -18,6 +18,7 @@
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '(;; https://fonts.google.com/specimen/Inconsolata
+                               ;; https://github.com/googlefonts/Inconsolata.git
                                "Inconsolata"
                                :size 14
                                :weight normal
@@ -91,7 +92,7 @@
 ;; Theme customization
 ;;
 (cond
- ((or (IsCeleborn) (IsGandalf) (IsBoromir) (IsOptimus) (IsMoonracer) (IsBumblebee) (IsIronhide))
+ ((or (IsCeleborn) (IsGandalf) (IsBoromir) (IsMoonracer) (IsBumblebee) (IsIronhide))
   (setq-default
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
@@ -102,7 +103,7 @@
                          leuven
                          )
    ))
- ((or (IsRatchet) (IsIgd0464u) (IsIgl2465g))
+ ((or (IsRatchet) (IsIgd0464u) (IsIgl2465g) (IsJazz))
   (setq-default
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great

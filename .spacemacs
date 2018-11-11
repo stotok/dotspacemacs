@@ -362,13 +362,6 @@ values."
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup 'changed
-   ;; Either nil or a number of seconds. If non-nil zone out after the specified
-   ;; number of seconds. (default nil)
-   dotspacemacs-zone-out-when-idle nil
-   ;; Run `spacemacs/prettify-org-buffer' when
-   ;; visiting README.org files of Spacemacs.
-   ;; (default nil)
-   dotspacemacs-pretty-docs nil
    ) ;; end of setq-default
   ;;
   ;; Personal dotspacemacs init
@@ -378,11 +371,12 @@ values."
   ) ;; dotspacemacs/init
 
 (defun dotspacemacs/user-init ()
-  "Initialization for user code:
-This function is called immediately after `dotspacemacs/init', before layer
-configuration.
-It is mostly for variables that should be set before packages are loaded.
-If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  "Initialization function for user code.
+It is called immediately after `dotspacemacs/init', before layer configuration
+executes.
+ This function is mostly useful for variables that need to be set
+before packages are loaded. If you are unsure, you should try in setting them in
+`dotspacemacs/user-config' first."
   (setq ttk-dotspacemacs-state DSP-STATE-USER-INIT)
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_user_init_config.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_user_init_config.el"))
@@ -390,11 +384,12 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ) ;; dotspacemacs/user-init
 
 (defun dotspacemacs/user-config ()
-  "Configuration for user code:
-This function is called at the very end of Spacemacs startup, after layer
-configuration.
-Put your configuration code here, except for variables that should be set
-before packages are loaded."
+  "Configuration function for user code.
+This function is called at the very end of Spacemacs initialization after
+layers configuration.
+This is the place where most of your configurations should be done. Unless it is
+explicitly specified that a variable should be set before a package is loaded,
+you should place your code here."
   (setq ttk-dotspacemacs-state DSP-STATE-USER-CONFIG)
   (when (file-exists-p "~/dotspacemacs/mycontribs/dsp_user_init_config.el")
     (load-file "~/dotspacemacs/mycontribs/dsp_user_init_config.el"))
