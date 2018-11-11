@@ -33,7 +33,7 @@
     ;; ripgrep, see: https://oremacs.com/2018/03/05/grep-exclude/
     ;;
     (cond                               ; please install ripgrep
-     ((IsOSX)                           ; $ sudo port install ripgrep
+     ((or (IsOSX) (IsGNULinux))         ; $ sudo port install ripgrep
       (setq counsel-git-cmd "rg --files")
       (setq counsel-rg-base-command
             "rg -i -M 120 --no-heading --line-number --color never %s .")
