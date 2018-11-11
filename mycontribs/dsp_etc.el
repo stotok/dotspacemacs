@@ -25,7 +25,8 @@
     (message "*** dsp_etc.el user config: projectile customization")
     ;; alien method need external utility (unixes), and fast.
     ;; it ignores the content of .projectile, but read .gitignore
-    (setq projectile-indexing-method 'alien) ; long live 'ripgrep'
+    ;; totok 11-nov-2018: new method by default: turbo-alien
+    ;; (setq projectile-indexing-method 'alien) ; long live 'ripgrep'
     ;; native method is portable but slow. it reads the content of .projectile
     ;;(setq projectile-indexing-method 'native)
     (setq projectile-enable-caching t)
@@ -42,42 +43,43 @@
     ;;
     ;; A list of files considered to mark the root of a project.
     ;; The bottommost (parentmost) match has precedence."
-    (setq projectile-project-root-files-bottom-up
-      '(".projectile" ; projectile project marker
-        ".git"        ; Git VCS root dir
-        ".hg"         ; Mercurial VCS root dir
-        ".fslckout"   ; Fossil VCS root dir
-        "_FOSSIL_"    ; Fossil VCS root DB on Windows
-        ".bzr"        ; Bazaar VCS root dir
-        "_darcs"      ; Darcs VCS root dir
-        ".repo"       ; my VCS root dir
-        ))
+    ;; totok 11-nov-2018: disable first
+    ;; (setq projectile-project-root-files-bottom-up
+    ;;   '(".projectile" ; projectile project marker
+    ;;     ".git"        ; Git VCS root dir
+    ;;     ".hg"         ; Mercurial VCS root dir
+    ;;     ".fslckout"   ; Fossil VCS root dir
+    ;;     "_FOSSIL_"    ; Fossil VCS root DB on Windows
+    ;;     ".bzr"        ; Bazaar VCS root dir
+    ;;     "_darcs"      ; Darcs VCS root dir
+    ;;     ".repo"       ; my VCS root dir
+    ;;     ))
     ;;
     ;; Use ripgrep to index files to be used by projectile
     ;; See: https://emacs.stackexchange.com/questions/16497/how-to-exclude-files-from-projectile/16499
     ;;
     ;; Default rg arguments
     ;; https://github.com/BurntSushi/ripgrep
-    (when (executable-find "rg")
-      (message "Projectile use rg to generate project files.")
-      (progn
-        (defconst modi/rg-arguments
-          `("--line-number"                     ; line numbers
-            "--smart-case"
-            "--follow"                          ; follow symlinks
-            "--mmap")                           ; apply memory map optimization when possible
-          "Default rg arguments used in the functions in `projectile' package.")
-        ;;
-        (defun modi/advice-projectile-use-rg ()
-          "Always use `rg' for getting a list of all files in the project."
-          (mapconcat 'identity
-                    (append '("\\rg") ; used unaliased version of `rg': \rg
-                            modi/rg-arguments
-                            '("--null" ; output null separated results,
-                              "--path-separator /" ; use forward slash (for cygwin)
-                              "--files")) ; get file names matching the regex '' (all files)
-                    " "))
-        (advice-add 'projectile-get-ext-command :override #'modi/advice-projectile-use-rg)))
+    ;; (when (executable-find "rg")
+    ;;   (message "Projectile use rg to generate project files.")
+    ;;   (progn
+    ;;     (defconst modi/rg-arguments
+    ;;       `("--line-number"                     ; line numbers
+    ;;         "--smart-case"
+    ;;         "--follow"                          ; follow symlinks
+    ;;         "--mmap")                           ; apply memory map optimization when possible
+    ;;       "Default rg arguments used in the functions in `projectile' package.")
+    ;;     ;;
+    ;;     (defun modi/advice-projectile-use-rg ()
+    ;;       "Always use `rg' for getting a list of all files in the project."
+    ;;       (mapconcat 'identity
+    ;;                 (append '("\\rg") ; used unaliased version of `rg': \rg
+    ;;                         modi/rg-arguments
+    ;;                         '("--null" ; output null separated results,
+    ;;                           "--path-separator /" ; use forward slash (for cygwin)
+    ;;                           "--files")) ; get file names matching the regex '' (all files)
+    ;;                 " "))
+    ;;     (advice-add 'projectile-get-ext-command :override #'modi/advice-projectile-use-rg)))
     ;;
     ;; tramp-mode and projectile does not play well together, it is because the projectile
     ;; tries to retrieve project name this is slow on remote host.
