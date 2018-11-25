@@ -35,18 +35,19 @@
     ;; keybinding
     ;;
     (dolist (mode '(c-mode c++-mode python-mode))
+      (spacemacs/declare-prefix-for-mode mode "ms" "cscope")
       (spacemacs/set-leader-keys-for-major-mode mode
-        "cs" 'cscope-find-this-symbol
-        "cd" 'cscope-find-global-definition
-        "cc" 'cscope-find-functions-calling-this-function
-        "cC" 'cscope-find-called-functions
-        "ci" 'cscope-find-files-including-file
+        "ss" 'cscope-find-this-symbol
+        "sd" 'cscope-find-global-definition
+        "sc" 'cscope-find-functions-calling-this-function
+        "sC" 'cscope-find-called-functions
+        "si" 'cscope-find-files-including-file
         ;;
-        "cb" 'cscope-display-buffer
-        "cu" 'cscope-pop-mark
+        "sb" 'cscope-display-buffer
+        "su" 'cscope-pop-mark
         ;;
-        "ca" 'cscope-set-initial-directory
-        "cA" 'cscope-unset-initial-directory
+        "sa" 'cscope-set-initial-directory
+        "sA" 'cscope-unset-initial-directory
         )
       )
     ;;

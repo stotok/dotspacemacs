@@ -23,6 +23,8 @@
 ;; (add-to-list 'dotspacemacs-configuration-layers '(ttk-beacon))
 ;; c/c++ indexer
 (add-to-list 'dotspacemacs-configuration-layers '(ttk-cscope))
+;; c/c++ modes
+(add-to-list 'dotspacemacs-configuration-layers '(ttk-cpp))
 
 ;;
 ;; For each OS
