@@ -454,3 +454,13 @@
 
 ** Other private layers
    Refer to =~/dotspacemacs/mycontribs/dsp_layers.el= :)
+
+* Misc Stuffs
+
+Interesting stuffs:
+
+1. [[https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org#replacing-text-with-iedit][Replacing text with iedit]]
+2. [[https://emacsredux.com/blog/2018/09/29/projectile-goes-turbo/][Projectile goes Turbo]]
+3. [[https://www.gnu.org/software/emacs/manual/html_mono/ccmode.html#Movement-Commands][CC mode Movement Commands]]
+4. [[https://stackoverflow.com/questions/807244/c-compiler-asserts-how-to-implement][C Compile Time Assert]]
+5. [[http://www.pixelbeat.org/programming/gcc/static_assert.html][Another C Compile Time Assert]]
