@@ -107,6 +107,8 @@
     (message "IsIronhide: TRUE"))
    ((IsRatchet)
     (message "IsRatchet: TRUE"))
+   ((IsSentinel)
+    (message "IsSentinel: TRUE"))
    (t
     (message "Unknown HOSTNAME."))))
 
