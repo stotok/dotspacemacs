@@ -423,7 +423,11 @@
     (spaceline-toggle-window-number-off)   ; window number (left bottom 2)
     (spaceline-toggle-minor-modes-off)     ; well, no need to show liao ...
     (when (IsOSX)
-      (setq ns-use-srgb-colorspace nil)    ; to fix broken separator color
+      ;; https://github.com/syl20bnr/spacemacs/tree/master#macos
+      ;; this is not ideal solution as it affects all colours in emacs
+      ;;(setq ns-use-srgb-colorspace nil)    ; to fix broken separator color
+      ;; another alternative
+      (setq powerline-default-separator 'alternate) ; to fix broken separator color
       )
     )
   )
