@@ -97,6 +97,13 @@
 ;;     https://github.com/company-mode/company-mode.git
 ;;
 ;; Modular in-buffer completion framework (rtags need company)
+;;
+;; Company is a code completion frontend, meaning it handles all the
+;; logic regarding code completion while typing except for actually
+;; coming up with completions. So basically, Company does all the work
+;; with showing and handling completions, but it needs a brain (backend)
+;; to provide it with completions. It can use different sources (packages)
+;; of completions, including Irony and Rtags, which work really well for C++.
 (cond
  ((IsDspUserInit)
   (message "*** dsp_etc.el user init: company customization")
