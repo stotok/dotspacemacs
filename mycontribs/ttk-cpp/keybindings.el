@@ -1,7 +1,7 @@
 ;; -*- coding:utf-8-unix mode:emacs-lisp -*-
 ;;***************************************************************************************
 ;;
-;; 2018 Totok Sulistiomono
+;; 2018-2019 Totok Sulistiomono
 ;; stotok@kukisku.com
 ;;
 ;;***************************************************************************************
@@ -27,9 +27,5 @@
     "ce" 'c-end-of-statement
     )
   )
-;;
-;; let cscope minor modes key binding takes priority over evil key bindings
-;;
-;; (evil-make-overriding-map cscope-list-entry-keymap 'normal)
-;; force update evil keymaps after cscope-list-entry-mode loaded
-;; (add-hook 'cscope-list-entry-hook #'evil-normalize-keymaps)
+
+;; EOF

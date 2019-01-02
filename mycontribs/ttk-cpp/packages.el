@@ -1,7 +1,7 @@
 ;; -*- coding:utf-8-unix mode:emacs-lisp -*-
 ;;***************************************************************************************
 ;;
-;; 2018 Totok Sulistiomono
+;; 2018-2019 Totok Sulistiomono
 ;; stotok@kukisku.com
 ;;
 ;;***************************************************************************************
@@ -253,3 +253,5 @@
 (add-hook 'c-mode-common-hook 'ct-c-mode-common-hook)
 ;; files *.ipp is c++ source code in UPA
 (setq auto-mode-alist (cons '("\\.ipp$" . c++-mode) auto-mode-alist))
+
+;; EOF
