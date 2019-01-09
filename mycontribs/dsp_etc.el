@@ -40,20 +40,22 @@
     ;; tell projectile to not try and find the file on the remote SVN server and
     ;; instead search locally, see https://github.com/bbatsov/projectile/issues/520
     (setq projectile-svn-command "find . -type f -not -iwholename '*.svn/*' -print0")
+    ;; require presence of project root, otherwise current directory is the project root
+    ;; other options: 'prompt or nil
+    (setq projectile-require-project-root t)
     ;;
     ;; A list of files considered to mark the root of a project.
     ;; The bottommost (parentmost) match has precedence."
-    ;; totok 11-nov-2018: disable first
-    ;; (setq projectile-project-root-files-bottom-up
-    ;;   '(".projectile" ; projectile project marker
-    ;;     ".git"        ; Git VCS root dir
-    ;;     ".hg"         ; Mercurial VCS root dir
-    ;;     ".fslckout"   ; Fossil VCS root dir
-    ;;     "_FOSSIL_"    ; Fossil VCS root DB on Windows
-    ;;     ".bzr"        ; Bazaar VCS root dir
-    ;;     "_darcs"      ; Darcs VCS root dir
-    ;;     ".repo"       ; my VCS root dir
-    ;;     ))
+    (setq projectile-project-root-files-bottom-up
+          '(".repo"       ; my VCS root dir
+            ".projectile" ; projectile project marker
+            ".git"        ; Git VCS root dir
+            ".hg"         ; Mercurial VCS root dir
+            ".fslckout"   ; Fossil VCS root dir
+            "_FOSSIL_"    ; Fossil VCS root DB on Windows
+            ".bzr"        ; Bazaar VCS root dir
+            "_darcs"      ; Darcs VCS root dir
+            ))
     ;;
     ;; Use ripgrep to index files to be used by projectile
     ;; See: https://emacs.stackexchange.com/questions/16497/how-to-exclude-files-from-projectile/16499
