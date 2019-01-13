@@ -25,6 +25,8 @@
 (add-to-list 'dotspacemacs-configuration-layers '(ttk-cscope))
 ;; c/c++ modes
 (add-to-list 'dotspacemacs-configuration-layers '(ttk-cpp))
+;; rj-mode, evil-goto-line center the screen
+;; (add-to-list 'dotspacemacs-configuration-layers '(ttk-rj))
 
 ;;
 ;; For each OS
