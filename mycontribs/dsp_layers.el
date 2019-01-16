@@ -80,6 +80,9 @@
  ((IsEpsilon)
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
   )
+ ((IsSideswipe)
+  (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
+  )
  )
 
 ;; EOF

@@ -57,6 +57,12 @@
             "_darcs"      ; Darcs VCS root dir
             ))
     ;;
+    ;; (setq projectile-globally-ignored-file-suffixes
+    ;;       '(".d"
+    ;;         ".o"
+    ;;         ".html"
+    ;;         ))
+    ;;
     ;; Use ripgrep to index files to be used by projectile
     ;; See: https://emacs.stackexchange.com/questions/16497/how-to-exclude-files-from-projectile/16499
     ;;

@@ -71,6 +71,8 @@
   (string-prefix-p "ratchet" system-name t))
 (defmacro IsEpsilon ()
   (string-prefix-p "epsilon" system-name t))
+(defmacro IsSideswipe ()
+  (string-prefix-p "sideswipe" system-name t))
 ;;
 ;; Display OS and HOSTNAME information
 ;;
@@ -113,6 +115,9 @@
     (message "IsSentinel: TRUE"))
    ((IsEpsilon)
     (message "IsEpsilon: TRUE"))
+   ((IsSideswipe)
+    (message "IsSideswipe: TRUE")
+    )
    (t
     (message "Unknown HOSTNAME."))))
 
