@@ -38,7 +38,7 @@
                                  :width normal
                                  :powerline-scale 1.1)
      ))
-   ((IsRatchet)
+   ((or (IsRatchet) (IsEpsilon))
     (setq-default
      ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
      ;; quickly tweak the mode-line size to make separators look not too crappy.
@@ -103,7 +103,7 @@
                          leuven
                          )
    ))
- ((or (IsRatchet) (IsIgd0464u) (IsIgl2465g) (IsJazz) (IsSentinel))
+ ((or (IsRatchet) (IsIgd0464u) (IsIgl2465g) (IsJazz) (IsSentinel) (IsEpsilon))
   (setq-default
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great

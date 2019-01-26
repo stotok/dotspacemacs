@@ -69,6 +69,8 @@
   (string-prefix-p "ironhide" system-name t))
 (defmacro IsRatchet ()
   (string-prefix-p "ratchet" system-name t))
+(defmacro IsEpsilon ()
+  (string-prefix-p "epsilon" system-name t))
 ;;
 ;; Display OS and HOSTNAME information
 ;;
@@ -109,6 +111,8 @@
     (message "IsRatchet: TRUE"))
    ((IsSentinel)
     (message "IsSentinel: TRUE"))
+   ((IsEpsilon)
+    (message "IsEpsilon: TRUE"))
    (t
     (message "Unknown HOSTNAME."))))
 

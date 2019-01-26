@@ -77,6 +77,9 @@
  ((IsRatchet)
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
   )
+ ((IsEpsilon)
+  (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
+  )
  )
 
 ;; EOF
