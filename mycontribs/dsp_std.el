@@ -157,12 +157,13 @@
   ;; Frame title bar formatting to show full path of file
   ;; This will override whatever format set previously in .spacemacs
   ;;
+  (when nil                             ; move to .spacemacs in 'develop' branch
   (setq-default
     frame-title-format
     (list '((buffer-file-name " %f" (dired-directory
                                     dired-directory
                                     (refert-buffer-function " %b"
-                                                            ("%b - Dir: " default-directory)))))))
+                                                            ("%b - Dir: " default-directory))))))))
   ;;
   (setq-default indent-tabs-mode nil) ; use spaces (not tabs) for indenting
   (setq-default truncate-lines t)     ; turn on truncating long lines
@@ -422,13 +423,14 @@
     (spaceline-toggle-hud-off)             ; hud indicator (right bottom)
     (spaceline-toggle-window-number-off)   ; window number (left bottom 2)
     (spaceline-toggle-minor-modes-off)     ; well, no need to show liao ...
-    (when (IsOSX)
-      ;; https://github.com/syl20bnr/spacemacs/tree/master#macos
-      ;; this is not ideal solution as it affects all colours in emacs
-      ;;(setq ns-use-srgb-colorspace nil)    ; to fix broken separator color
-      ;; another alternative
-      (setq powerline-default-separator 'alternate) ; to fix broken separator color
-      )
+    (when nil                              ; this move to .spacemacs in 'develop' branch
+      (when (IsOSX)
+        ;; https://github.com/syl20bnr/spacemacs/tree/master#macos
+        ;; this is not ideal solution as it affects all colours in emacs
+        ;;(setq ns-use-srgb-colorspace nil)    ; to fix broken separator color
+        ;; another alternative
+        (setq powerline-default-separator 'alternate) ; to fix broken separator color
+        ))
     )
   )
  )
