@@ -90,6 +90,14 @@ This function should only modify configuration layer settings."
      ;; docker
      docker
      ;; multiple cursor (currently only available in spacemacs develop branch)
+     ;; how to use:
+     ;; - Select text
+     ;; - Press C-n to create a next cursor for the same selection forwards
+     ;; - Press C-p to create a next cursor for the same selection backwards
+     ;; - 'grn' to skip a forward match
+     ;; - 'grp' to skip a backward match
+     ;; - Start editing with multiple cursor
+     ;; - 'gru' to remove all cursors
      (multiple-cursors :variables multiple-cursors-backend 'evil-mc)
      )
 
