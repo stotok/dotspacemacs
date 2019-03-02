@@ -53,6 +53,7 @@
  ((IsSentinel)
 ;;  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
+  (add-to-list 'dotspacemacs-configuration-layers '(ttk-counsel-etags))
   )
  ((IsJazz)
   ;; (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
