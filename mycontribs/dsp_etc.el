@@ -28,7 +28,7 @@
     ;; totok 11-nov-2018: new method by default: turbo-alien
     ;; (setq projectile-indexing-method 'alien) ; long live 'ripgrep'
     ;; native method is portable but slow. it reads the content of .projectile
-    ;;(setq projectile-indexing-method 'native)
+    ;; (setq projectile-indexing-method 'native)
     (setq projectile-enable-caching t)
     ;; disable remote file exists cache
     ;;(setq projectile-file-exists-remote-cache-expire nil)
@@ -46,17 +46,23 @@
     ;;
     ;; A list of files considered to mark the root of a project.
     ;; The bottommost (parentmost) match has precedence."
-    (setq projectile-project-root-files-bottom-up
-          '(".repo"       ; my VCS root dir
-            ".projectile" ; projectile project marker
-            ".git"        ; Git VCS root dir
-            ".hg"         ; Mercurial VCS root dir
-            ".fslckout"   ; Fossil VCS root dir
-            "_FOSSIL_"    ; Fossil VCS root DB on Windows
-            ".bzr"        ; Bazaar VCS root dir
-            "_darcs"      ; Darcs VCS root dir
-            ))
+    ;; (setq projectile-project-root-files-bottom-up
+    ;;       '(".repo"       ; my VCS root dir
+    ;;         ".projectile" ; projectile project marker
+    ;;         ".git"        ; Git VCS root dir
+    ;;         ".hg"         ; Mercurial VCS root dir
+    ;;         ".fslckout"   ; Fossil VCS root dir
+    ;;         "_FOSSIL_"    ; Fossil VCS root DB on Windows
+    ;;         ".bzr"        ; Bazaar VCS root dir
+    ;;         "_darcs"      ; Darcs VCS root dir
+    ;;         ))
     ;;
+    ;; But doesn't work with indexing method alien nor turbo-alien
+    ;; nvm, use rg to index and ignored directories put inside .gitignore
+    ;; (with-eval-after-load 'projectile
+    ;;   (add-to-list 'projectile-globally-ignored-directories "tests")
+    ;;   (add-to-list 'projectile-project-root-files-bottom-up ".repo")
+    ;;   )
     ;; (setq projectile-globally-ignored-file-suffixes
     ;;       '(".d"
     ;;         ".o"
@@ -68,26 +74,39 @@
     ;;
     ;; Default rg arguments
     ;; https://github.com/BurntSushi/ripgrep
-    ;; (when (executable-find "rg")
-    ;;   (message "Projectile use rg to generate project files.")
-    ;;   (progn
-    ;;     (defconst modi/rg-arguments
-    ;;       `("--line-number"                     ; line numbers
-    ;;         "--smart-case"
-    ;;         "--follow"                          ; follow symlinks
-    ;;         "--mmap")                           ; apply memory map optimization when possible
-    ;;       "Default rg arguments used in the functions in `projectile' package.")
-    ;;     ;;
-    ;;     (defun modi/advice-projectile-use-rg ()
-    ;;       "Always use `rg' for getting a list of all files in the project."
-    ;;       (mapconcat 'identity
-    ;;                 (append '("\\rg") ; used unaliased version of `rg': \rg
-    ;;                         modi/rg-arguments
-    ;;                         '("--null" ; output null separated results,
-    ;;                           "--path-separator /" ; use forward slash (for cygwin)
-    ;;                           "--files")) ; get file names matching the regex '' (all files)
-    ;;                 " "))
-    ;;     (advice-add 'projectile-get-ext-command :override #'modi/advice-projectile-use-rg)))
+    (when (executable-find "rg")
+      (message "Projectile use rg to generate project files.")
+      (progn
+        (defconst modi/rg-arguments
+          `("--line-number"                     ; line numbers
+            "--smart-case"
+            "--follow"                          ; follow symlinks
+            "--mmap")                           ; apply memory map optimization when possible
+          "Default rg arguments used in the functions in `projectile' package.")
+        ;;
+        (defun modi/advice-projectile-use-rg (&rest _args)
+          "Always use `rg' for getting a list of all files in the project."
+          (let* ((prj-user-ignore-name (expand-file-name
+                                        (concat ".ignore." user-login-name)
+                                        (projectile-project-root)))
+                 (prj-user-ignore (when (file-exists-p prj-user-ignore-name)
+                                    (concat "--ignore-file " prj-user-ignore-name))))
+            (mapconcat #'shell-quote-argument
+                       (if prj-user-ignore
+                           (append '("rg")
+                                   modi/rg-arguments
+                                   `(,prj-user-ignore)
+                                   '("--null" ;Output null separated results
+                                     "--path-separator //" ; use forward slash (for cygwin)
+                                     ;; Get names of all the to-be-searched files,
+                                     ;; same as the "-g ''" argument in ag.
+                                     "--files"))
+                         (append '("rg")
+                                 modi/rg-arguments
+                                 '("--null"
+                                   "--files")))
+                       " ")))
+        (advice-add 'projectile-get-ext-command :override #'modi/advice-projectile-use-rg)))
     ;;
     ;; tramp-mode and projectile does not play well together, it is because the projectile
     ;; tries to retrieve project name this is slow on remote host.
