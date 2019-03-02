@@ -21,10 +21,10 @@
 (add-to-list 'dotspacemacs-configuration-layers '(ttk-shrink-whitespace))
 ;; never loose your cursor again
 ;; (add-to-list 'dotspacemacs-configuration-layers '(ttk-beacon))
-;; c/c++ indexer
+;; c/c++
 (add-to-list 'dotspacemacs-configuration-layers '(ttk-cscope))
-;; c/c++ modes
 (add-to-list 'dotspacemacs-configuration-layers '(ttk-cpp))
+(add-to-list 'dotspacemacs-configuration-layers '(ttk-counsel-etags))
 ;; rj-mode, evil-goto-line center the screen
 ;; (add-to-list 'dotspacemacs-configuration-layers '(ttk-rj))
 
@@ -53,10 +53,8 @@
  ((IsSentinel)
 ;;  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
-  (add-to-list 'dotspacemacs-configuration-layers '(ttk-counsel-etags))
   )
  ((IsJazz)
-  (add-to-list 'dotspacemacs-configuration-layers '(ttk-counsel-etags))
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
   )
  ((IsMoonracer)

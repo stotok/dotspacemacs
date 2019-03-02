@@ -97,7 +97,6 @@
                                    modi/rg-arguments
                                    `(,prj-user-ignore)
                                    '("--null" ;Output null separated results
-                                     "--path-separator //" ; use forward slash (for cygwin)
                                      ;; Get names of all the to-be-searched files,
                                      ;; same as the "-g ''" argument in ag.
                                      "--files"))
