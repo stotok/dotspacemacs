@@ -159,7 +159,7 @@ then
 fi
 
 ctags --version                 # should be exuberant ctags
-ctags -e -L ${LIST_FILE} -f ${DATABASE_FILE}
+ctags --append=no --links=no -e -L ${LIST_FILE} -f ${DATABASE_FILE}
 
 if [ "X${VERBOSE}" != "X" ]
 then

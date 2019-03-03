@@ -11,9 +11,11 @@
 (dolist (mode '(c-mode c++-mode))
   (spacemacs/declare-prefix-for-mode mode "me" "etags")
   (spacemacs/set-leader-keys-for-major-mode mode
+    "eb"   'counsel-etags-recent-tag
     "ed"   'counsel-etags-find-tag-at-point
     "es"   'counsel-etags-grep-symbol-at-point
-    "ea"   'counsel-etags-find-tag
+    "eS"   'counsel-etags-find-tag
+    "eu"   'xref-pop-marker-stack
     )
 )
 
