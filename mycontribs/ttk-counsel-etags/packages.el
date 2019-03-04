@@ -47,7 +47,10 @@
     ;; dont' warn then TAGS files are large
     (setq large-file-warning-threshold nil)
     ;; how many seconds to wait before rerunning tags for auto-update
-    (setq counsel-etags-update-interval 180)
+    ;;(setq counsel-etags-update-interval 180)
+    (setq counsel-etags-update-interval 9999999) ; well,, make it laarrge enough
+    ;; no need to automatically update tag, don't be lazy, run ctags-indexer.sh manually
+    (setq counsel-etags-stop-auto-update-tags t)
     ;; setup auto update
     (add-hook
      'prog-mode-hook
