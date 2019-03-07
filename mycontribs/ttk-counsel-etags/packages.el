@@ -32,12 +32,12 @@
   ;;     https://github.com/redguardtoo/counsel-etags
   (use-package counsel-etags
     :init
-    (eval-when-compile
-      ;; silence missing function warnings
-      (declare-function counsel-etags-virtual-update-tags "counsel-etags.el")
-      (declare-function counsel-etags-guess-program "counsel-etags.el")
-      (declare-function counsel-etags-locate-tags-file "counsel-etags.el")
-      )
+    ;; (eval-when-compile
+    ;;   ;; silence missing function warnings
+    ;;   (declare-function counsel-etags-virtual-update-tags "counsel-etags.el")
+    ;;   (declare-function counsel-etags-guess-program "counsel-etags.el")
+    ;;   (declare-function counsel-etags-locate-tags-file "counsel-etags.el")
+    ;;   )
     ;;
     :config
     ;; ignore files above 800kb
@@ -52,10 +52,10 @@
     ;; no need to automatically update tag, don't be lazy, run ctags-indexer.sh manually
     (setq counsel-etags-stop-auto-update-tags t)
     ;; setup auto update
-    (add-hook
-     'prog-mode-hook
-     (lambda () (add-hook 'after-save-hook
-                          (lambda ()
-                            (counsel-etags-virtual-update-tags)))))
+    ;; (add-hook
+    ;;  'prog-mode-hook
+    ;;  (lambda () (add-hook 'after-save-hook
+    ;;                       (lambda ()
+    ;;                         (counsel-etags-virtual-update-tags)))))
     )
   )
