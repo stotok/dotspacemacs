@@ -20,7 +20,25 @@
 ;;     general:
 ;;     $ ctags -R -e .
 ;;     $ mv tags TAGS
-
+;;
+;; Note-1
+;; 1. counsel-etags reread TAGS once it detects timestamp change
+;;
+;; Note-2
+;; 1. If counsel-etags-find-tag-at-point cannot find a tag in TAGS,
+;; 2. It will do counsel-etags-grep-symbol-at-point using grep (or
+;;    ripgrep if available), hence, if we want to ignore certain
+;;    files/directories during grepping, we need to do:
+;;    For common/general:
+;;        (add-to-list 'counsel-etags-ignore-filenames "TAGS.files")
+;;        (add-to-list 'counsel-etags-ignore-filenames "cscope.out")
+;;    For specific project:
+;;    - ripgrep: .ignore (or .rgignore) in project root
+;;      /TAGS     <- file
+;;      /doc/     <- directory
+;;      *.min.js* <- regexp
+;;    - grep   : as usual
+;;
 (setq ttk-counsel-etags-packages
       '(
         counsel-etags
@@ -42,6 +60,9 @@
     :config
     ;; ignore files above 800kb
     (setq counsel-etags-max-file-size 800)
+    ;; ignore file names
+    (add-to-list 'counsel-etags-ignore-filenames "TAGS.files")
+    (add-to-list 'counsel-etags-ignore-filenames "cscope.out")
     ;; don't ask before rereading the TAGS file if they have changed
     (setq tags-revert-without-query t)
     ;; dont' warn then TAGS files are large
