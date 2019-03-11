@@ -181,6 +181,11 @@
   (when (or (IsCygwin) (IsWindows))
     ;; try to improve slow performance on windows and cygwin
     (setq w32-get-true-file-attributes nil)
+    ;; see https://stackoverflow.com/questions/8837712/emacs-creates-buffers-very-slowly
+    ;; see https://stackoverflow.com/questions/6724471/git-slows-down-emacs-to-death-how-to-fix-this
+    (remove-hook 'find-file-hooks 'vc-find-file-hook)
+    ;; https://stackoverflow.com/questions/2068697/emacs-is-slow-opening-recent-files
+    (setq recentf-keep '(file-remote-p file-readable-p))
     ;;
     ;; well, 2 codes below actually not specific to windows but it's specific to fonts
     ;; and display something. They fix the slowness of emacs scrolling etc when in

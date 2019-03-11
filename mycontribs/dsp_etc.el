@@ -44,30 +44,16 @@
     ;; other options: 'prompt or nil
     (setq projectile-require-project-root t)
     ;;
-    ;; A list of files considered to mark the root of a project.
-    ;; The bottommost (parentmost) match has precedence."
-    ;; (setq projectile-project-root-files-bottom-up
-    ;;       '(".repo"       ; my VCS root dir
-    ;;         ".projectile" ; projectile project marker
-    ;;         ".git"        ; Git VCS root dir
-    ;;         ".hg"         ; Mercurial VCS root dir
-    ;;         ".fslckout"   ; Fossil VCS root dir
-    ;;         "_FOSSIL_"    ; Fossil VCS root DB on Windows
-    ;;         ".bzr"        ; Bazaar VCS root dir
-    ;;         "_darcs"      ; Darcs VCS root dir
-    ;;         ))
-    ;;
     ;; But doesn't work with indexing method alien nor turbo-alien
-    ;; nvm, use rg to index and ignored directories put inside .gitignore
-    ;; (with-eval-after-load 'projectile
-    ;;   (add-to-list 'projectile-globally-ignored-directories "tests")
-    ;;   (add-to-list 'projectile-project-root-files-bottom-up ".repo")
-    ;;   )
-    ;; (setq projectile-globally-ignored-file-suffixes
-    ;;       '(".d"
-    ;;         ".o"
-    ;;         ".html"
-    ;;         ))
+    ;; nvm, use rg to index and ignored directories put inside .rgignore
+    (with-eval-after-load 'projectile
+      (add-to-list 'projectile-project-root-files-bottom-up ".repo")
+      ;; ignored directories
+      (add-to-list 'projectile-globally-ignored-directories "tests")
+      ;; ignored files
+      (add-to-list 'projectile-globally-ignored-file-suffixes ".d")
+      (add-to-list 'projectile-globally-ignored-file-suffixes ".o")
+      )
     ;;
     ;; Use ripgrep to index files to be used by projectile
     ;; See: https://emacs.stackexchange.com/questions/16497/how-to-exclude-files-from-projectile/16499
