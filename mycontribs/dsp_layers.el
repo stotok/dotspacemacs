@@ -27,6 +27,7 @@
 (add-to-list 'dotspacemacs-configuration-layers '(ttk-counsel-etags))
 ;; rj-mode, evil-goto-line center the screen
 ;; (add-to-list 'dotspacemacs-configuration-layers '(ttk-rj))
+(add-to-list 'dotspacemacs-configuration-layers '(ttk-symbol-overlay))
 
 ;;
 ;; For each OS
