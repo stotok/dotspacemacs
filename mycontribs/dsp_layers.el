@@ -35,7 +35,7 @@
 (cond
  ((or (IsWindows) (IsCygwin))
   ;; well, please bear with the sloowwwwwly git on windoz
-  (add-to-list 'dotspacemacs-configuration-layers '(git))
+  ;; (add-to-list 'dotspacemacs-configuration-layers '(git))
   )
  ((IsOSX)
   (add-to-list 'dotspacemacs-configuration-layers '(git))

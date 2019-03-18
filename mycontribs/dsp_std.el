@@ -184,7 +184,19 @@
     (setq w32-get-true-file-attributes nil)
     ;; see https://stackoverflow.com/questions/8837712/emacs-creates-buffers-very-slowly
     ;; see https://stackoverflow.com/questions/6724471/git-slows-down-emacs-to-death-how-to-fix-this
-    (remove-hook 'find-file-hooks 'vc-find-file-hook)
+    ;; (remove-hook 'find-file-hooks 'vc-find-file-hook)
+    ;; To make opening files faster, remove a vc hook that checks for source control.
+    ;; On windows, it takes over 1 second just to open a small file while emacs checks for
+    ;; source control status.
+    (let ((file-hook (if (version< emacs-version "22.1")
+                         'find-file-hooks
+                       'find-file-hook))
+          (vc-hook-attach (if (version< emacs-version "25.1")
+                              'vc-find-file-hook
+                            'vc-refresh-state)))
+      ;; remove a vc source control hook that slows down opening files.
+      (remove-hook file-hook vc-hook-attach))
+    ;;
     ;; https://stackoverflow.com/questions/2068697/emacs-is-slow-opening-recent-files
     (setq recentf-keep '(file-remote-p file-readable-p))
     ;;
@@ -193,6 +205,14 @@
     ;; windows laptop battery mode. Probably good to have it on other platform as well, let's see
     (setq inhibit-compacting-font-caches t)
     (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
+    ;;
+    ;; disable cleaning up unavailable files
+    (setq recentf-auto-cleanup 'never)
+    ;;
+    ;; always redraw immediately when scrolling
+    ;; https://www.reddit.com/r/emacs/comments/9rwb4h/why_does_fast_scrolling_freeze_the_screen/
+    (setq jit-lock-defer-time 0)
+    (setq fast-but-imprecise-scrolling t)
     )
 
   ;;
