@@ -49,7 +49,6 @@
 ;;
 (cond
  ((IsCeleborn)
-;  (add-to-list 'dotspacemacs-configuration-layers '(ttk-rtags))
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy)))
  ((IsSentinel)
 ;;  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
