@@ -102,7 +102,8 @@
   ;; their backups and organize it so that backups are not located out through
   ;; their harddrive, but rather organized into specific backup directories.
   ;; backup-dir.el
-  (when t                             ; this is built-in emacs functions
+  ;; spacemacs use dotspacemacs-auto-save-file-location (see .spacemacs)
+  (when nil                           ; this is built-in emacs functions
     (setq backup-directory-alist `((".*" . ,"~/dotspacemacs/private/.backupb/"))         ; this is for auto backup ~filename
           auto-save-file-name-transforms `((".*" ,"~/dotspacemacs/private/.backupb/" t)) ; this is for auto-save #filename#
           backup-by-copying t         ; don't clobber symlinks

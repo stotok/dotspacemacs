@@ -144,6 +144,8 @@ This function should only modify configuration layer settings."
                                     persp-mode       ; workspace-like package
                                     eyebrowse        ; simpler workspace-like package
                                     winum            ; dun need it
+                                    writeroom-mode   ; dun need it
+                                    spinner          ; dun need it
                                     )
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -556,24 +558,3 @@ before packages are loaded."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-(defun dotspacemacs/emacs-custom-settings ()
-  "Emacs custom settings.
-This is an auto-generated function, do not modify its content directly, use
-Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (yasnippet-snippets web-mode treemacs-projectile spaceline-all-the-icons plantuml-mode paradox orgit org-mime org-brain magit-svn link-hint ivy-hydra git-timemachine git-link expand-region evil-nerd-commenter evil-mc evil-matchit evil-magit editorconfig dumb-jump doom-modeline all-the-icons counsel-projectile counsel-etags cmake-ide centered-cursor-mode auto-yasnippet ace-link company counsel swiper flycheck window-purpose rtags ivy magit transient git-commit with-editor markdown-mode alert projectile powerline treemacs pfuture ace-window avy dash which-key hydra org-plus-contrib ws-butler writeroom-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package treemacs-evil toc-org tagedit symon symbol-overlay string-inflection spinner spaceline smex smeargle slim-mode shrink-whitespace shrink-path scss-mode sass-mode rg restart-emacs request rainbow-delimiters pug-mode prettier-js popwin pcre2el password-generator ox-reveal overseer org-projectile org-present org-pomodoro org-download org-bullets open-junk-file nameless mmm-mode memoize material-theme markdown-toc magit-gitflow macrostep lv log4e levenshtein ivy-yasnippet ivy-xref ivy-rtags ivy-purpose insert-shebang indent-guide impatient-mode imenu-list hungry-delete ht hl-todo highlight-parentheses highlight-numbers highlight-indentation google-c-style gnuplot gntp gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-messenger fuzzy font-lock+ flycheck-bashate fish-mode fill-column-indicator evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-org evil-numbers evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args eval-sexp-fu emmet-mode elisp-slime-nav eldoc-eval dotenv-mode dockerfile-mode docker disaster diminish define-word counsel-css company-web company-statistics company-shell company-rtags company-c-headers company-auctex column-enforce-mode cmake-mode clean-aindent-mode clang-format beacon auto-highlight-symbol auto-compile auctex-latexmk aggressive-indent ac-ispell)))
- '(spacemacs-theme-custom-colors (quote ((comment . "#137C87")))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
