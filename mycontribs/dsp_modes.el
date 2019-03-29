@@ -75,6 +75,8 @@
  ((IsDspUserConfig)
   (when (configuration-layer/package-usedp 'rtags)
     (message "*** dsp_modes.el user config: rtags customization")
+    (setq rtags-completions-enabled t)  ; enable completions in rtags
+
     ;; redefine the original rtags function, to include rtags-bury-or-delete because
     ;; i prefer to always bury RTags and all other buffers once go to the target location
     ;; (defun rtags-select-and-remove-rtags-buffer ()
@@ -82,13 +84,12 @@
     ;; ;;  (rtags-bury-or-delete)
     ;;   (rtags-select t t))
 
-    ;; (define-key rtags-mode-map (kbd "o") 'rtags-select-and-remove-rtags-buffer)
-    ;; (evil-make-overriding-map rtags-mode-map 'normal)
-    ;; (add-hook 'rtags-mode-hook #'evil-normalize-keymaps)
-
-    ;;
-    ;;
-    ;;
+    (with-eval-after-load 'rtags
+      (define-key rtags-mode-map (kbd "o") 'rtags-select-and-remove-rtags-buffer)
+      (define-key rtags-mode-map (kbd "q") 'rtags-call-bury-or-delete)
+      ;;
+      (evil-make-overriding-map rtags-mode-map 'normal)
+      (add-hook 'rtags-mode-hook #'evil-normalize-keymaps))
 
     ;; (defconst ttk-rtags-overrides
     ;;   '(("C-]" 'rtags-find-symbol-at-point)

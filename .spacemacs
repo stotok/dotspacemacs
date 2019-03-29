@@ -54,10 +54,10 @@ This function should only modify configuration layer settings."
      emacs-lisp
      ;; git  ;; move this to dsp_layers.el
      (c-c++ :variables
-            c-c++-enable-clang-support t ; note that clang causing hang with tramp editing
+            ;; c-c++-enable-clang-support t ; note that clang causing hang with tramp editing
             c-c++-default-mode-for-headers 'c++-mode
-            c-c++-enable-rtags-support t
             ;; c-c++-default-mode-for-headers 'c-mode
+            c-c++-enable-rtags-support t
             c-toggle-auto-newline nil
             c-toggle-auto-hungry-state nil
             c-toggle-hungry-state nil

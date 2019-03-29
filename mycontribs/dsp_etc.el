@@ -165,6 +165,9 @@ In that case, insert the number."
     ;;
     ;; end of using digits to select company-mode candidates
     ;;
+
+    ;; add company-rtags to company-backends
+    (push 'company-rtags company-backends)
     )
   )
  )
