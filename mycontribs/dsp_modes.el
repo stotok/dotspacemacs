@@ -107,10 +107,10 @@
         "r d" 'rtags-find-symbol-at-point
         "r D" 'rtags-find-symbol
         "r c" 'rtags-find-references-at-point
-        "r C" 'rtags-find-references
-        ;;(define-key map (kbd (concat prefix "v")) 'rtags-find-virtuals-at-point)
+        "r C" 'rtags-find-references    ; find functions call this function
+        "r v" 'rtags-find-virtuals-at-point
         "r V" 'rtags-print-enum-value-at-point
-        "r s" 'rtags-find-all-references-at-point
+        "r s" 'rtags-find-all-references-at-point ; find functions anywhere
         ;;(define-key map (kbd (concat prefix "Y")) 'rtags-cycle-overlays-on-screen)
         "r u" 'rtags-location-stack-back
         ;;(define-key map (kbd (concat prefix "]")) 'rtags-location-stack-forward)
@@ -130,12 +130,13 @@
         ;;(define-key map (kbd (concat prefix "F")) 'rtags-fixit)
         ;;(define-key map (kbd (concat prefix "L")) 'rtags-copy-and-print-current-location)
         ;;(define-key map (kbd (concat prefix "X")) 'rtags-fix-fixit-at-point)
-        "r B" 'rtags-show-rtags-buffer
         ;;(define-key map (kbd (concat prefix "K")) 'rtags-make-member)
-        ;;(define-key map (kbd (concat prefix "I")) 'rtags-imenu)
+        "r j" 'rtags-imenu
+        "r t" 'rtags-symbol-type
         ;;(define-key map (kbd (concat prefix "T")) 'rtags-taglist)
         "r h" 'rtags-print-class-hierarchy
-        "r a" 'rtags-print-source-arguments
+        ;; "r a" 'rtags-print-source-arguments
         "r b" 'rtags-list-results
+        ;; "r B" 'rtags-show-rtags-buffer
         )))))
 ;; EOF
