@@ -139,7 +139,7 @@ fi
     fi
 ) | \
     egrep -i '\.([chy](xx|pp)*|cc|hh)$' | \
-    sed -e '/\/TelematicsAutomatedTest\//d' -e '/\/int_scripts\//d' -e '/\/tests\//d' -e '/\/stub\//d' -e '/\/.repo\//d' -e '/\/CVS\//d' -e '/\/RCS\//d' -e '/^\.svn\//d' -e '/\/.git\//d' -e '/\/.hg\//d' -e 's/^\.\///' | \
+    sed -e '/\/package\/valens\//d' -e '/\/package\/specs\//d' -e '/\/package\/redbend\//d' -e '/\/package\/qualcomm\//d' -e '/\/package\/codeaurora\//d' -e '/\/package\/codeaurora\//d' -e '/\/tools\//d' -e '/\/release-toolchain\//d' -e '/\/release-host\//d' -e '/\/release\//d' -e '/\/project\//d' -e '/\/platform-hal\//d' -e '/\/platform-framework\//d' -e '/\/platform\//d' -e '/\/logs\//d' -e '/\/.build\//d' -e '/\/.repo\//d' -e '/\/CVS\//d' -e '/\/RCS\//d' -e '/^\.svn\//d' -e '/\/.git\//d' -e '/\/.hg\//d' -e 's/^\.\///' | \
     sort > $LIST_FILE
 
 # what is 'l' ??
