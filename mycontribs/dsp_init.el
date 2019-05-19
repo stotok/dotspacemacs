@@ -9,6 +9,18 @@
 ;; ----------------------------------------------------------------------------------
 ;; This is loaded during initialization in dotspacemacs/init
 ;; ----------------------------------------------------------------------------------
+
+;;
+;; well, let's just use local repository
+;; see: https://github.com/d12frosted/elpa-mirror
+;;
+;; step-1: git clone --depth 1 https://github.com/d12frosted/elpa-mirror.git ~/.elpa-mirror
+;; step-2: setup spacemacs configuration as follows:
+(setq configuration-layer-elpa-archives
+      '(("melpa" . "~/.elpa-mirror/melpa/")
+        ("org"   . "~/.elpa-mirror/org/")
+        ("gnu"   . "~/.elpa-mirror/gnu/")))
+
 ;;
 ;; System Customization
 ;;
