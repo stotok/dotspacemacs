@@ -37,7 +37,6 @@
 
 * Private Layers
  The following private layers are configured in =mycontribs/dsp_layers.el=.
-
 ** cscope layer (ttk-cscope)
    Support c/c++ and python projects, enable via =ttk-cscope=.
    First, install the following tools (for generating cscope database):
@@ -382,6 +381,9 @@
     #+END_SRC
 
 ** rtags layer (ttk-rtags)
+   THIS PRIVATE LAYER IS NO LONGER NEEDED DUE TO RTAGS SPACEMACS LAYER COMES
+   INTO EXISTENCE IN DEVELOP BRANCH.
+
    Support c/c++ client server indexer based on clang. Enable it via =ttk-rtags=.
    Yeah, this is dinosaur of cscope :) But again, don't worry because they can
    co-exist peacefully.
@@ -463,11 +465,39 @@
    Refer to =~/dotspacemacs/mycontribs/dsp_layers.el= :)
 
 * Misc Stuffs
+** Multiple with evil-mc:
 
-Interesting stuffs:
+| Key Binding | Description                        |
+|-------------+------------------------------------|
+|  g r f      | evil-mc-make-and-goto-first-cursor |
+|  g r h      | evil-mc-make-cursor-here           |
+|  g r j      | evil-mc-make-cursor-move-next-line |
+|  g r k      | evil-mc-make-cursor-move-prev-line |
+|  g r l      | evil-mc-make-and-goto-last-cursor  |
+|  g r m      | evil-mc-make-all-cursors           |
+|  g r n      | evil-mc-skip-and-goto-next-match   |
+|  g r N      | evil-mc-skip-and-goto-next-cursor  |
+|  g r p      | evil-mc-skip-and-goto-prev-match   |
+|  g r P      | evil-mc-skip-and-goto-prev-cursor  |
+|  g r r      | evil-mc-resume-cursors             |
+|  g r s      | evil-mc-pause-cursors              |
+|  g r u      | evil-mc-undo-all-cursors           |
 
+For easy navigation you also have the following:
+
+| Key Binding | Description                        |
+|-------------+------------------------------------|
+|  M-n        | evil-mc-make-and-goto-next-cursor  |
+|  M-p        | evil-mc-make-and-goto-prev-cursor  |
+|  C-n        | evil-mc-make-and-goto-next-match   |
+|  C-p        | evil-mc-make-and-goto-prev-match   |
+|  C-t        | evil-mc-skip-and-goto-next-match   |
+|  C-M-j      | evil-mc-make-cursor-move-next-line |
+|  C-M-k      | evil-mc-make-cursor-move-prev-line |
+** Interesting stuffs:
 1. [[https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org#replacing-text-with-iedit][Replacing text with iedit]]
 2. [[https://emacsredux.com/blog/2018/09/29/projectile-goes-turbo/][Projectile goes Turbo]]
 3. [[https://www.gnu.org/software/emacs/manual/html_mono/ccmode.html#Movement-Commands][CC mode Movement Commands]]
 4. [[https://stackoverflow.com/questions/807244/c-compiler-asserts-how-to-implement][C Compile Time Assert]]
 5. [[http://www.pixelbeat.org/programming/gcc/static_assert.html][Another C Compile Time Assert]]
+
