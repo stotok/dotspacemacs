@@ -103,15 +103,23 @@
   ;; their harddrive, but rather organized into specific backup directories.
   ;; backup-dir.el
   ;; spacemacs use dotspacemacs-auto-save-file-location (see .spacemacs)
-  (when t                             ; this is built-in emacs functions
-    (setq backup-directory-alist `((".*" . ,"~/dotspacemacs/private/.backupb/"))         ; this is for auto backup ~filename
-          auto-save-file-name-transforms `((".*" ,"~/dotspacemacs/private/.backupb/" t)) ; this is for auto-save #filename#
-          backup-by-copying t         ; don't clobber symlinks
-          delete-old-versions t       ;
-          kept-new-versions 6         ;
-          kept-old-verions 2          ;
-          version-control t           ;
-          ))
+  (if nil                             ; this is built-in emacs functions
+      (setq backup-directory-alist `((".*" . ,"~/dotspacemacs/private/.backupb/"))         ; this is for auto backup ~filename
+            auto-save-file-name-transforms `((".*" ,"~/dotspacemacs/private/.backupb/" t)) ; this is for auto-save #filename#
+            backup-by-copying t         ; don't clobber symlinks
+            delete-old-versions t       ;
+            kept-new-versions 6         ;
+            kept-old-verions 2          ;
+            version-control t           ;
+            )
+    (progn
+      ;; Do not need emacs backup file lah ...
+      (setq make-backup-files nil)
+      (setq auto-save-default nil)
+      (setq create-lockfiles nil)
+      )
+    )
+
   ;;
   ;; Enable utf coding
   ;;
