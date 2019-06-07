@@ -100,7 +100,7 @@ This function should only modify configuration layer settings."
      ;; - 'grn' to skip a forward match
      ;; - 'grp' to skip a backward match
      ;; - Start editing with multiple cursor
-     ;; - 'gru' to remove all cursors
+     ;; - 'grq' to remove all cursors
      (multiple-cursors :variables multiple-cursors-backend 'evil-mc)
      )
 
@@ -243,7 +243,7 @@ It should only modify the values of Spacemacs settings."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner nil
 
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
@@ -344,7 +344,8 @@ It should only modify the values of Spacemacs settings."
    ;; auto-save the file in-place, `cache' to auto-save the file to another
    ;; file stored in the cache directory and `nil' to disable auto-saving.
    ;; (default 'cache)
-   dotspacemacs-auto-save-file-location 'cache
+   ;; dotspacemacs-auto-save-file-location 'cache
+   dotspacemacs-auto-save-file-location nil
 
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
    dotspacemacs-max-rollback-slots 5
