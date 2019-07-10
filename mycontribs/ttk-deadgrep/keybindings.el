@@ -9,7 +9,7 @@
 ;;
 (spacemacs/declare-prefix "sr" "ripgrep")
 (spacemacs/set-leader-keys
-  ;; "srb"  'ttk-rg-display-buffer
+  "srb"  'ttk-deadgrep-display-buffer
   ;; "srd"  'rg-dwim
   ;; "srk"  'rg-kill-saved-searches
   ;; "srl"  'rg-list-searches

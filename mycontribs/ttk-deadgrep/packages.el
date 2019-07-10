@@ -27,5 +27,17 @@
     ;;
     :config
     ;;
+    (defun ttk-deadgrep-display-buffer ()
+      "Display the *deadgrep* buffer."
+      (interactive)
+      (let ((buffer (get-buffer "*deadgrep")))
+        (if buffer
+            (pop-to-buffer buffer)
+          (error "The *deadgrep* buffer does not exist yet"))))
+    ;;
+    (with-eval-after-load 'deadgrep
+      (evil-make-overriding-map deadgrep-mode-map 'normal)
+      (add-hook 'deadgrep-mode-hook #'evil-normalize-keymaps)
+      )
     )
   )
