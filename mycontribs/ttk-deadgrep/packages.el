@@ -26,11 +26,17 @@
     :init
     ;;
     :config
+    ;; override same function in deadgrep.el
+    ;; force result buffer name to '*deadgrep*
+    (defun deadgrep--buffer-name (search-term directory)
+      (format "*deadgrep*"
+              search-term
+              (abbreviate-file-name directory)))
     ;;
     (defun ttk-deadgrep-display-buffer ()
       "Display the *deadgrep* buffer."
       (interactive)
-      (let ((buffer (get-buffer "*deadgrep")))
+      (let ((buffer (get-buffer "*deadgrep*")))
         (if buffer
             (pop-to-buffer buffer)
           (error "The *deadgrep* buffer does not exist yet"))))

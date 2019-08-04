@@ -7,6 +7,8 @@
 ;;***************************************************************************************
 ;;
 ;;
+;; Note: There is already default spacemacs ripgrep keybindings 'srr'
+;;       Let's override them :)
 (spacemacs/declare-prefix "sr" "ripgrep")
 (spacemacs/set-leader-keys
   "srb"  'ttk-deadgrep-display-buffer
