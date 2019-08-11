@@ -51,19 +51,7 @@
   (when (configuration-layer/package-usedp 'plantuml-mode)
     (message "*** dsp_modes.el user config: plantuml-mode customization")
     ;;
-    (setq plantuml-jar-path "~/dotspacemacs/plantuml/plantuml.jar")
-    ;; (setq plantuml-jar-path "`cygpath -w -a /cygdrive/d/DSUsers/uia53572/dotspacemacs/plantuml/plantuml.jar`")
-    ;; (setq plantuml-jar-path "D:\DSUsers\uia53572\dotspacemacs\plantuml\plantuml.jar")      ; NO
-    ;;
-    ;; (setq plantuml-jar-path (shell-command-to-string (format "cygpath -w -a ~/dotspacemacs/plantuml/plantuml.jar")))      ; NO
-    ;;;;;;;;(setq plantuml-jar-path (expand-file-name "~/dotspacemacs/plantuml/plantuml.jar"))
-    ;;
-    ;; (setq plantuml-jar-path "`cygpath -w -a ~/dotspacemacs/plantuml/plantuml.jar'") ; NO
-    ;; (setq plantuml-jar-path (expand-file-name "`cygpath -w -a ~/dotspacemacs/plantuml/plantuml.jar`"))
-    ;; (setq plantuml-jar-path (expand-file-name "`cygpath -m ~/dotspacemacs/plantuml/plantuml.jar`"))
-    ;; https://github.com/skuro/plantuml-mode/issues/22
-    ;; (setq plantuml-jar-path "`cygpath -w -a /cygdrive/d/DSUsers/uia53572/dotspacemacs/plantuml/plantuml.jar`")
-    ;; (shell-quote-argument (convert-standard-filename plantuml-jar-path))
+    ;; (setq plantuml-jar-path "~/dotspacemacs/plantuml/plantuml.jar")
     ;; enable plantuml-mode for PlantUML files
     (setq auto-mode-alist (cons '("\\.plantuml$" . plantuml-mode) auto-mode-alist))
     (setq auto-mode-alist (cons '("\\.uml$"      . plantuml-mode) auto-mode-alist))

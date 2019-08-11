@@ -73,6 +73,8 @@
   (string-prefix-p "epsilon" system-name t))
 (defmacro IsSideswipe ()
   (string-prefix-p "sideswipe" system-name t))
+(defmacro IsGrimlock ()
+  (string-prefix-p "grimlock" system-name t))
 ;;
 ;; Display OS and HOSTNAME information
 ;;
@@ -116,8 +118,9 @@
    ((IsEpsilon)
     (message "IsEpsilon: TRUE"))
    ((IsSideswipe)
-    (message "IsSideswipe: TRUE")
-    )
+    (message "IsSideswipe: TRUE"))
+   ((IsGrimlock)
+    (message "IsGrimlock: TRUE"))
    (t
     (message "Unknown HOSTNAME."))))
 

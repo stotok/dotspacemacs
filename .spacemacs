@@ -71,7 +71,10 @@ This function should only modify configuration layer settings."
      markdown
      latex
      (org :variables org-enable-reveal-js-support t)
-     plantuml
+     (plantuml :variables
+               plantuml-default-exec-mode 'jar
+               plantuml-jar-path "~/dotspacemacs/plantuml/plantuml.jar"
+               )
      shell-scripts
      ;; (shell :variables
      ;;        shell-default-height 30
