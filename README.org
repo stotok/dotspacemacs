@@ -7,13 +7,20 @@
 * Installation
    Backup and delete your ~/.emacs and ~/.emacs.d, then go to your =home= directory:
 
+   Well, blah blah blah but let's have elpa-mirror repo locally (see =dsp_init.el=):
+
+   : $ git clone --depth 1 https://github.com/d12frosted/elpa-mirror.git ~/.elpa-mirror
+
+   Then clone spacemacs:
+
    #+BEGIN_SRC text
    $ git clone https://github.com/syl20bnr/spacemacs.git .emacs.d
    $ cd .emacs.d
+   $ git checkout -b develop -t origin/develop
    #+END_SRC
 
-   That's for spacemacs 'master' branch. Now my own
-   configuration, again, at your =home= directory:
+   That's for spacemacs =develop= branch. Now my own configuration, again, at your
+   =home= directory:
 
    #+BEGIN_SRC text
    $ git clone https://github.com/stotok/dotspacemacs.git
