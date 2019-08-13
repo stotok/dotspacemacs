@@ -123,6 +123,30 @@
               :recursive t
               :publishing-function org-publish-attachment)
               ("cissp-org" :components ("cissp-notes" "cissp-static" "cissp-org-html-themes"))
+              ;;
+              ;; CTDC project
+              ;;
+              ("ctdc-notes"
+              :base-directory "~/project/ctdc/org/"
+              :base-extension "org"
+              :publishing-directory "~/project/ctdc/bo/html/"
+              :recursive t
+              :publishing-function org-html-publish-to-html
+              :headline-levels 4             ; Just the default for this project.
+              :auto-preamble t)
+              ("ctdc-static"
+              :base-directory "~/project/ctdc/org/"
+              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+              :publishing-directory "~/project/ctdc/bo/html/"
+              :recursive t
+              :publishing-function org-publish-attachment)
+              ("ctdc-org-html-themes"
+              :base-directory "~/project/org-html-themes/styles/"
+              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+              :publishing-directory "~/project/ctdc/bo/html/styles/"
+              :recursive t
+              :publishing-function org-publish-attachment)
+              ("ctdc-org" :components ("ctdc-notes" "ctdc-static" "ctdc-org-html-themes"))
               ))
       ;; asterisks and dashes for bullet lists are fine, but having an actual circular
       ;; bullet, is just nice
