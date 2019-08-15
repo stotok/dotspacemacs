@@ -115,7 +115,7 @@
                          leuven
                          )
    ))
- ((or (IsRatchet) (IsIgd0464u) (IsIgl2465g) (IsJazz) (IsSentinel) (IsEpsilon) (IsSideswipe) (IsGrimlock))
+ ((or (IsRatchet) (IsIgd0464u) (IsIgl2465w) (IsJazz) (IsSentinel) (IsEpsilon) (IsSideswipe) (IsGrimlock))
   (setq-default
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
