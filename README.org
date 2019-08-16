@@ -1,17 +1,17 @@
 * Introduction
    My spacemacs configuration layers including dotfile (=.spacemacs=).
    At the start of this project, the configuration is assumed to be used
-   with =develop= branch of syl20bnr/spacemacs, however, it's now just fine
-   to use =master= branch.
+   with =develop= branch of syl20bnr/spacemacs, however, it's now remain
+   the same :)
 
 * Installation
-   Backup and delete your ~/.emacs and ~/.emacs.d, then go to your =home= directory:
+   Backup and delete your =~/.emacs= and =~/.emacs.d=, then go to your =home= directory:
 
    Well, blah blah blah but let's have elpa-mirror repo locally (see =dsp_init.el=):
 
    : $ git clone --depth 1 https://github.com/d12frosted/elpa-mirror.git ~/.elpa-mirror
 
-   Then clone spacemacs:
+   Then clone spacemacs and get =develop= branch:
 
    #+BEGIN_SRC text
    $ git clone https://github.com/syl20bnr/spacemacs.git .emacs.d
@@ -19,8 +19,7 @@
    $ git checkout -b develop -t origin/develop
    #+END_SRC
 
-   That's for spacemacs =develop= branch. Now my own configuration, again, at your
-   =home= directory:
+   Now my own configuration, again, at your =home= directory:
 
    #+BEGIN_SRC text
    $ git clone https://github.com/stotok/dotspacemacs.git
@@ -62,47 +61,6 @@
    Those invocation will generate cscope database file =cscope.out= that can be used by =xcscope.el=.
    You need to invoke the indexer again if your codes got (many) changes.
    Well, that's all. It's now ready to roll.
-
-*** Keybindings
-    In c/c++ mode or python mode, place the cursor on function name (or macro, variables,
-    etc) of your interest:
-
-    Leader key is:  =SPC m= (or shortcut with =,=)
-
-    Available commands:
-
-    #+BEGIN_SRC test
-      "cs" 'cscope-find-this-symbol
-      "cd" 'cscope-find-global-definition
-      "cc" 'cscope-find-functions-calling-this-function
-      "cC" 'cscope-find-called-functions
-      "ci" 'cscope-find-files-including-file
-      ;;
-      "cb" 'cscope-display-buffer
-      "cu" 'cscope-pop-mark
-      ;;
-      "ca" 'cscope-set-initial-directory
-      "cA" 'cscope-unset-initial-directory
-    #+END_SRC
-
-    In cscope buffer, here's available commands:
-
-    #+BEGIN_SRC test
-    [return] 'cscope-select-entry-other-window
-    " "      'cscope-show-entry-other-window
-    "o"      'cscope-select-entry-one-window
-    "q"      'cscope-bury-buffer
-    "Q"      'cscope-quit
-    "s"      'cscope-find-this-symbol
-    "d"      'cscope-find-this-symbol
-    "g"      'cscope-find-global-definition
-    "c"      'cscope-find-functions-calling-this-function
-    "C"      'cscope-find-called-functions
-    "t"      'cscope-find-this-text-string
-    "f"      'cscope-find-this-file
-    "i"      'cscope-find-files-including-file
-    "u"      'cscope-pop-mark
-    #+END_SRC
 
 ** elpy layer (ttk-elpy)
    Support python environment, enable via
@@ -366,20 +324,6 @@
     on) before you open any python project.
 
 
-*** Keybindings
-    In python mode, place the cursor on function name or macro of your interest:
-
-    Leader key is:  =SPC m= (or shortcut with =,=)
-
-    Available commands:
-
-    #+BEGIN_SRC text
-      "es" 'elpy-rgrep-symbol
-      "eb" 'rgrep-display-buffer
-      "ed" 'elpy-goto-definition
-      "eu" 'pop-tag-mark
-    #+END_SRC
-
 ** rtags layer (ttk-rtags)
    THIS PRIVATE LAYER IS NO LONGER NEEDED DUE TO RTAGS SPACEMACS LAYER COMES
    INTO EXISTENCE IN DEVELOP BRANCH.
@@ -429,43 +373,12 @@
       Do it only once. =rdm= will automatically update the index if there is change in your
       source code.
 
-*** Keybindings
-    In C/C++ mode, place the cursor on function name or macro of your interest:
-
-    Leader key is: =SPC m= (or shortcut with =,=)
-
-    Available commands:
-
-    #+BEGIN_SRC text
-    "rd" 'rtags-find-symbol-at-point
-    "rs" 'rtags-find-all-references-at-point
-    "ru" 'rtags-location-stack-back
-    "rB" 'rtags-show-rtags-buffer
-    "rb" 'rtags-list-results
-    #+END_SRC
-
-    In rtags buffer, here's available commands:
-
-    #+BEGIN_SRC text
-    [return] 'rtags-select-other-window
-    "M-RET"  'rtags-select
-    "M-o"    'rtags-show-in-other-window
-    "c"      'rtags-select-caller
-    "M-c"    'rtags-select-caller-other-window
-    "s"      'rtags-show-in-other-window
-    "SPC"    'rtags-select-and-remove-rtags-buffer
-    "q"      'rtags-bury-or-delete
-    "j"      'next-line
-    "k"      'previous-line
-    "n"      'next-line
-    "p"      'previous-line
-    #+END_SRC
 
 ** Other private layers
    Refer to =~/dotspacemacs/mycontribs/dsp_layers.el= :)
 
 * Misc Stuffs
-** Multiple with evil-mc:
+** Multiple Cursor with evil-mc:
 
 | Key Binding | Description                        |
 |-------------+------------------------------------|
