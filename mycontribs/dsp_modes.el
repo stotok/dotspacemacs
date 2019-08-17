@@ -51,7 +51,6 @@
   (when (configuration-layer/package-usedp 'plantuml-mode)
     (message "*** dsp_modes.el user config: plantuml-mode customization")
     ;;
-    ;; (setq plantuml-jar-path "~/dotspacemacs/plantuml/plantuml.jar")
     ;; enable plantuml-mode for PlantUML files
     (setq auto-mode-alist (cons '("\\.plantuml$" . plantuml-mode) auto-mode-alist))
     (setq auto-mode-alist (cons '("\\.uml$"      . plantuml-mode) auto-mode-alist))

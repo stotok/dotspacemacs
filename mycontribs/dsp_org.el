@@ -186,6 +186,20 @@
       (setq org-drill-learn-fraction 0.2)    ; to appear more frequently (default: 0.5)
       (setq org-drill-leech-method nil)      ; leech treated same as normal items
       ;;
+      ;; For "<s" snippets you need to (require 'org-tempo).
+      ;; Blocks can also be inserted using the interface accessed via C-c C-,.
+      ;; The syntax of org-structure-template-alist is also changed.
+      ;; (require 'org-tempo)  ; no need, just use spacemacs standard C-c C-, or 'm i b'
+      ;;
+      ;; To use plantmul-mode to edit PlantUML source snippets within an org-mode document,
+      ;; First, register it with the plantuml languange
+      ;; Then you can edit a plantuml code block with plantuml-mode by hitting C-' while inside
+      ;; of the code block itself:
+      ;;   #+BEGIN_SRC plantuml
+      ;;     <hit C-c ' here to open a plantuml-mode buffer>
+      ;;   #+END_SRC
+      ;; When in the plantuml-mode buffer you can hit again C-' to return to the original org-mode buffer.
+      (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
       ) ;; with-eval-after-load 'org
     ;;
     ;;

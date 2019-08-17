@@ -74,6 +74,7 @@ This function should only modify configuration layer settings."
      (plantuml :variables
                plantuml-default-exec-mode 'jar
                plantuml-jar-path "~/dotspacemacs/plantuml/plantuml.jar"
+               org-plantuml-jar-path "~/dotspacemacs/plantuml/plantuml.jar"
                )
      shell-scripts
      ;; (shell :variables
