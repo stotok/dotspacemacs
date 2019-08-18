@@ -200,6 +200,9 @@
       ;;   #+END_SRC
       ;; When in the plantuml-mode buffer you can hit again C-' to return to the original org-mode buffer.
       (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
+      ;;
+      ;; Source code block evaluated during export. I don't want to be asked everytime :)
+      (setq org-confirm-babel-evaluate nil)
       ) ;; with-eval-after-load 'org
     ;;
     ;;
