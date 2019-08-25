@@ -61,6 +61,7 @@
  ((IsJazz)
   ;; (add-to-list 'dotspacemacs-configuration-layers '(ttk-deadgrep))
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
+  (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   )
  ((IsMoonracer)
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
