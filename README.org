@@ -112,10 +112,10 @@
 
 **** Install these packagess via pip
      * Python 2.7
-       : $ pip install jedi flake8 importmagic autopep8 yapf
+       : $ pip install jedi flake8 importmagic autopep8 yapf rope black
 
      * Python 3
-       : $ pip3 install jedi flake8 importmagic autopep8 yapf
+       : $ pip3 install jedi flake8 importmagic autopep8 yapf rope black
 
 **** To deactivate current virtualenv
      : $ deactivate
@@ -219,11 +219,7 @@
     - The above step would do auto workon
       : $ workon elpy
     - Install these packages via pip.
-      : $ pip install jedi
-      : $ pip install flake8
-      : $ pip install importmagic
-      : $ pip install autopep8
-      : $ pip install yapf
+      : $ pip install jedi flake8 importmagic autopep8 yapf rope black
     - To deactivate current virtualenv
       : $ deactivate
     - For emacs elpy package
@@ -309,11 +305,7 @@
     - The above step would do auto workon
       : $ workon elpy
     - Install these packages via pip
-      : $ pip install jedi
-      : $ pip install flake8
-      : $ pip install importmagic
-      : $ pip install autopep8
-      : $ pip install yapf
+      : $ pip install jedi flake8 importmagic autopep8 yapf rope black
     - To deactivate current virtualenv
       : $ deactivate
     - For emacs elpy package
