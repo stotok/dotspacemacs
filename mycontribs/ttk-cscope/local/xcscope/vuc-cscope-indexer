@@ -141,7 +141,7 @@ fi
     sed -e '/\/VectorCAST\//d' -e '/\/tests\//d' -e '/\/TestCode\//d' -e '/\/.repo\//d' -e '/\/CVS\//d' -e '/\/RCS\//d' -e '/^\.svn\//d' -e '/\/.git\//d' -e '/\/.hg\//d' -e 's/^\.\///' | \
     sort > $LIST_FILE
 
-buildenv="$DIR/etc/buildenv.h"
+buildenv="$DIR/TVIP/Vehicle_Micro/buildenv.h"
 [ -f "$buildenv" ] && echo "${buildenv}" >> $LIST_FILE
 
 if [ "X$VERBOSE" != "X" ]
