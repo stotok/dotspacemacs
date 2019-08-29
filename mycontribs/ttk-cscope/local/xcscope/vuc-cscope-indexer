@@ -138,11 +138,15 @@ fi
     fi
 ) | \
     egrep -i '\.([chly](xx|pp)*|cc|hh)$' | \
-    sed -e '/\/VectorCAST\//d' -e '/\/tests\//d' -e '/\/TestCode\//d' -e '/\/.repo\//d' -e '/\/CVS\//d' -e '/\/RCS\//d' -e '/^\.svn\//d' -e '/\/.git\//d' -e '/\/.hg\//d' -e 's/^\.\///' | \
+    sed -e '/\/TVIP\/Vehicle_Micro\/Test\//d' -e '/\/VUC_APP\/tools\//d' -e '/\/BSP_MCAL_V4_RH850F1L\//d' -e '/\/BSP_MCAL_RH850F1L\//d' -e '/\/BSP_MCAL_Bolero\//d' -e '/\/User_Config_PTF\//d' -e '/\/Application_PTF\//d' -e '/\/MCAL_V4_RH850F1L\//d' -e '/\/MCAL_RH850F1L\//d' -e '/\/MCAL_Bolero\//d' -e '/\/UnitTest_Vcast\//d' -e '/\/Vehicle_Tools\//d' -e '/\/VectorCAST\//d' -e '/\/tests\//d' -e '/\/TestCode\//d' -e '/\/.repo\//d' -e '/\/CVS\//d' -e '/\/RCS\//d' -e '/^\.svn\//d' -e '/\/.git\//d' -e '/\/.hg\//d' -e 's/^\.\///' | \
     sort > $LIST_FILE
 
-buildenv="$DIR/TVIP/Vehicle_Micro/buildenv.h"
-[ -f "$buildenv" ] && echo "${buildenv}" >> $LIST_FILE
+#
+# NOTE
+# this script meant to be executed from root of T19P1
+# so, this one is not needed anymore
+# buildenv="$DIR/TVIP/Vehicle_Micro/compiler_opts.h"
+# [ -f "$buildenv" ] && echo "${buildenv}" >> $LIST_FILE
 
 if [ "X$VERBOSE" != "X" ]
 then
