@@ -88,6 +88,9 @@
  ((IsSideswipe)
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
   )
+ ((IsJolt)
+  (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
+  )
  )
 
 ;; EOF
