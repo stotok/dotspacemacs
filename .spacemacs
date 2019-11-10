@@ -78,6 +78,9 @@ This function should only modify configuration layer settings."
                plantuml-default-exec-mode 'jar
                plantuml-jar-path "~/dotspacemacs/plantuml/plantuml.jar"
                org-plantuml-jar-path "~/dotspacemacs/plantuml/plantuml.jar"
+               ;; we can save *PLANTUML Preview* buffer to a file with
+               ;; command 'M-x save-buffer'. Supported format: "svg", "png", "txt" (ascii art)
+               plantuml-output-type "svg"
                )
      shell-scripts
      ;; (shell :variables
