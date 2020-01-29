@@ -1,7 +1,7 @@
 ;; -*- coding:utf-8-unix mode:emacs-lisp -*-
 ;;****************************************************************************************
 ;;
-;; 2016-2019 Totok Sulistiomono
+;; 2016-2020 Totok Sulistiomono
 ;; stotok@kukisku.com
 ;;
 ;;****************************************************************************************
@@ -77,6 +77,8 @@
   (string-prefix-p "grimlock" system-name t))
 (defmacro IsJolt ()
   (string-prefix-p "jolt" system-name t))
+(defmacro IsIgl6301w ()
+  (string-prefix-p "IGL6301W" system-name t))
 
 ;;
 ;; Display OS and HOSTNAME information
@@ -110,6 +112,8 @@
     (message "IsBumblebee: TRUE"))
    ((IsIgl2465w)
     (message "IsIgl2465w: TRUE"))
+   ((IsIgl6301w)
+    (message "IsIgl6301w: TRUE"))
    ((IsIgd0464u)
     (message "IsIgd0464u: TRUE"))
    ((IsIronhide)

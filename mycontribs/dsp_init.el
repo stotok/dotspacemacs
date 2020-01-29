@@ -1,7 +1,7 @@
 ;; -*- coding:utf-8-unix mode:emacs-lisp -*-
 ;;***************************************************************************************
 ;;
-;; 2016-2019 Totok Sulistiomono
+;; 2016-2020 Totok Sulistiomono
 ;; stotok@kukisku.com
 ;;
 ;;***************************************************************************************
@@ -38,6 +38,15 @@
                                :powerline-scale 1.1)
    )) ;; darwin
  ((IsGNULinux)
+  ;; To install custom fonts in linux:
+  ;; $ mkdir ~/.fonts
+  ;; $ rsync ~/Download/NewFonts/ ~/.fonts/
+  ;; and delete non fonts file (e.g. text files)
+  ;; $ cd ~/.fonts
+  ;; $ fc-cache -fv
+  ;;
+  ;; To list available fonts in linux:
+  ;; $ fc-list | grep InputSans
   (cond
    ((IsIgd0464u)
     (setq-default
@@ -45,6 +54,17 @@
      ;; quickly tweak the mode-line size to make separators look not too crappy.
      dotspacemacs-default-font '(;; available in x11 fonts
                                  "fixed"
+                                 :size 12
+                                 :weight normal
+                                 :width normal
+                                 :powerline-scale 1.1)
+     ))
+   ((IsIgl6301w)
+    (setq-default
+     ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
+     ;; quickly tweak the mode-line size to make separators look not too crappy.
+     dotspacemacs-default-font '(;; https://input.fontbureau.com/download/
+                                 "InputSans-Light"
                                  :size 12
                                  :weight normal
                                  :width normal
@@ -115,7 +135,7 @@
                          leuven
                          )
    ))
- ((or (IsRatchet) (IsIgd0464u) (IsIgl2465w) (IsJazz) (IsSentinel) (IsEpsilon) (IsSideswipe) (IsGrimlock) (IsJolt))
+ ((or (IsRatchet) (IsIgd0464u) (IsIgl2465w) (IsJazz) (IsSentinel) (IsEpsilon) (IsSideswipe) (IsGrimlock) (IsJolt) (IsIgl6301w))
   (setq-default
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
