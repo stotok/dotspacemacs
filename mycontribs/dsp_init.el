@@ -33,6 +33,7 @@
                                ;; https://github.com/googlefonts/Inconsolata.git
                                ;; "Inconsolata"
                                ;; :size 14
+                               ;; https://input.fontbureau.com
                                "Input Mono Narrow"
                                :size 12
                                :weight normal
@@ -65,7 +66,7 @@
     (setq-default
      ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
      ;; quickly tweak the mode-line size to make separators look not too crappy.
-     dotspacemacs-default-font '(;; https://input.fontbureau.com/download/
+     dotspacemacs-default-font '(;; https://input.fontbureau.com
                                  "InputSans-Light"
                                  :size 12
                                  :weight normal
