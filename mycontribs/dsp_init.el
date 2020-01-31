@@ -23,7 +23,7 @@
 
 ;;
 ;; System Customization
-;;
+;; To show font list: M-x menu-set-font
 (cond
  ((IsOSX)
   (setq-default
@@ -31,8 +31,10 @@
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '(;; https://fonts.google.com/specimen/Inconsolata
                                ;; https://github.com/googlefonts/Inconsolata.git
-                               "Inconsolata"
-                               :size 14
+                               ;; "Inconsolata"
+                               ;; :size 14
+                               "Input Mono Narrow"
+                               :size 12
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
