@@ -1,7 +1,7 @@
 ;; -*- coding:utf-8-unix mode:emacs-lisp -*-
 ;;***************************************************************************************
 ;;
-;; 2016-2019 Totok Sulistiomono
+;; 2016-2020 Totok Sulistiomono
 ;; stotok@kukisku.com
 ;;
 ;;***************************************************************************************
@@ -23,7 +23,7 @@
   ;;     $ sudo apt-get install cscope
   ;;     $ cscope-indexer
   ;;
-  ;; for Python install pycscope:
+  ;; for Python install pycscope (obsolete, use lsp):
   ;;     $ sudo pip install pycscope
   ;;     $ pycscope-indexer
   (use-package xcscope
@@ -33,8 +33,9 @@
     :config
     ;;
     ;; keybinding
-    ;;
-    (dolist (mode '(c-mode c++-mode python-mode))
+    ;; remove python-mode, now use lsp-mode
+    ;; (dolist (mode '(c-mode c++-mode python-mode))
+    (dolist (mode '(c-mode c++-mode))
       (spacemacs/declare-prefix-for-mode mode "ms" "cscope")
       (spacemacs/set-leader-keys-for-major-mode mode
         "ss" 'cscope-find-this-symbol

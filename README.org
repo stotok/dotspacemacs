@@ -44,7 +44,7 @@
    For c/c++:
    : $ apt-get install cscope
 
-   For python:
+   For python (obsolete, now use lsp-layer):
    : $ apt-get install pycscope
 
    Script indexers to select which c/c++ or python files to be indexed is available
@@ -56,13 +56,12 @@
    For c/c++:
    : $ cscope-indexer -r -v
 
-   For python:
+   For python (obsolete, now use lsp-layer):
    : $ pycscope-indexer -r -v
 
    Those invocation will generate cscope database file =cscope.out= that can be used by =xcscope.el=.
    You need to invoke the indexer again if your codes got (many) changes.
    Well, that's all. It's now ready to roll.
-
 
 ** python lsp layer
    Ok, now the world is moving towards [[https://langserver.org][Language Server Protocol]], so are we :)
@@ -121,6 +120,7 @@
       : $ port select --list pip
 **** Install pipenv
      : $ sudo port install pipenv
+
 
 ** elpy layer (ttk-elpy)
    NOTICE: This layer is obsolete, replaced by =lsp-mode= above.
