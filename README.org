@@ -11,19 +11,20 @@
 
    : $ git clone --depth 1 https://github.com/d12frosted/elpa-mirror.git ~/.elpa-mirror
 
-   Then clone spacemacs and get =develop= branch:
+   Then clone spacemacs and switch to =develop= branch:
 
    #+BEGIN_SRC text
-   $ git clone https://github.com/syl20bnr/spacemacs.git .emacs.d
-   $ cd .emacs.d
+   $ git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d
+   $ cd ~/.emacs.d
    $ git checkout -b develop -t origin/develop
    #+END_SRC
 
-   Now my own configuration, again, at your =home= directory:
+   Now my configuration:
 
    #+BEGIN_SRC text
-   $ git clone https://github.com/stotok/dotspacemacs.git
-   $ ln -s dotspacemacs/.spacemacs .
+     $ cd ~
+     $ git clone https://github.com/stotok/dotspacemacs.git
+     $ ln -s dotspacemacs/.spacemacs .
    #+END_SRC
 
    Now is time to install *emacs* itself. On Debian based distros (Ubuntu, Mint, etc):
@@ -62,7 +63,68 @@
    You need to invoke the indexer again if your codes got (many) changes.
    Well, that's all. It's now ready to roll.
 
+
+** python lsp layer
+   Ok, now the world is moving towards [[https://langserver.org][Language Server Protocol]], so are we :)
+
+*** =.basrc=
+    : # pipenv will now place the virtualenv inside the project folder
+    : # emacs will see it and activate it
+    : export PIPENV_VENV_IN_PROJECT=1
+*** =.spacemacs=
+    #+begin_src emacs-lisp :tangle yes
+      dotspacemacs-configuration-layers
+      '(
+        ;; lsp layer
+        lsp
+        ;; python lsp-mode
+        (python :variables
+                python-backend 'lsp
+                python-fill-column 99
+                python-formatter 'yapf
+                python-format-on-save t
+                python-sort-imports-on-save t
+                python-pipenv-activate t
+                )
+         )
+    #+end_src
+*** =pipenv=
+    - install
+      : $ cd <your project root>
+      : $ pipenv install autoflake flake8 epc importmagic 'python-language-server[all]' 'ptvsd>=4.2'
+      : $ pipenv install <python library needed by your project>
+    - activate
+      : $ pipenv shell
+    * execute
+      : $ pipenv run python main.py
+
+  That's it. Open a file in your project, emacs will automagically start lsp/pyls.
+
+*** Macports
+**** Install python and pip
+    - python 2.7
+      : $ sudo port install python27
+      : $ sudo port install py27-pip
+    - python 3.6
+      : $ sudo port install python37
+      : $ sudo port install py37-pip
+    - switching between versions
+      : $ sudo port select --set python python27
+      : $ sudo port select --set python2 python27
+      : $ sudo port select --set pip pip27
+      or,
+      : $ sudo port select --set python python37
+      : $ sudo port select --set python3 python37
+      : $ sudo port select --set pip pip37
+    - list available versions
+      : $ port select --list python
+      : $ port select --list pip
+**** Install pipenv
+     : $ sudo port install pipenv
+
 ** elpy layer (ttk-elpy)
+   NOTICE: This layer is obsolete, replaced by =lsp-mode= above.
+
    Support python environment, enable via
    =dotspacemacs-configuration-layers= '(=ttk-elpy=). And make sure you don't enable
    =python= layer in your =.spacemacs=.
@@ -125,14 +187,14 @@
      : M-x elpy-config
 
 *** Macports
-**** Install python and pip
-    - Python 2.7
+**** install python and pip
+    - python 2.7
       : $ sudo port install python27
       : $ sudo port install py27-pip
-    - Python 3.6
+    - python 3.6
       : $ sudo port install python36
       : $ sudo port install py36-pip
-    - Switching between versions
+    - switching between versions
       : $ sudo port select --set python python27
       : $ sudo port select --set python2 python27
       : $ sudo port select --set pip pip27
@@ -140,7 +202,7 @@
       : $ sudo port select --set python python36
       : $ sudo port select --set python3 python36
       : $ sudo port select --set pip pip36
-    - List available versions
+    - list available versions
       : $ port select --list python
       : $ port select --list pip
 **** Activate either python and pip 2.7 or 3.6

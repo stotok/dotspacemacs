@@ -26,16 +26,16 @@
 ;;
 ;; python-mode
 ;;
-(cond
- ((IsDspUserConfig)
-  (message "*** dsp_modes.el user config: python-mode customization")
-  ;;
-  (setq-default python-indent-offset 4)
-  (setq python-shell-completion-native-enable nil)
-  ;; Don't spam message buffer when python-mode can't guess indent-offset
-  (setq python-indent-guess-indent-offset-verbose nil)
-  )
- )
+;; (cond
+;;  ((IsDspUserConfig)
+;;   (message "*** dsp_modes.el user config: python-mode customization")
+;;   ;;
+;;   (setq-default python-indent-offset 4)
+;;   (setq python-shell-completion-native-enable nil)
+;;   ;; Don't spam message buffer when python-mode can't guess indent-offset
+;;   (setq python-indent-guess-indent-offset-verbose nil)
+;;   )
+;;  )
 
 ;;
 ;; plantuml-mode

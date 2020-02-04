@@ -59,7 +59,7 @@ This function should only modify configuration layer settings."
             ;; c-c++-enable-clang-support t ; note that clang causing hang with tramp editing
             c-c++-default-mode-for-headers 'c++-mode
             ;; c-c++-default-mode-for-headers 'c-mode
-            c-c++-enable-rtags-support t
+            ;; c-c++-enable-rtags-support t ;; moving to LSP :)
             c-toggle-auto-newline nil
             c-toggle-auto-hungry-state nil
             c-toggle-hungry-state nil
@@ -112,6 +112,20 @@ This function should only modify configuration layer settings."
      ;; - Start editing with multiple cursor
      ;; - 'grq' to remove all cursors
      (multiple-cursors :variables multiple-cursors-backend 'evil-mc)
+     ;;
+     ;; lsp
+     ;;
+     lsp
+     ;; python lsp-mode
+     (python :variables
+             python-backend 'lsp
+             ;; python-tab-width 4
+             python-fill-column 99
+             python-formatter 'yapf
+             python-format-on-save t
+             python-sort-imports-on-save t
+             python-pipenv-activate t
+             )
      )
 
    ;; List of additional packages that will be installed without being
