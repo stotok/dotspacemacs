@@ -67,8 +67,12 @@
      ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
      ;; quickly tweak the mode-line size to make separators look not too crappy.
      dotspacemacs-default-font '(;; https://input.fontbureau.com
-                                 "InputSans-Light"
-                                 :size 12
+                                 ;; "Input Sans Narrow"
+                                 ;; "Input Mono"
+                                 ;; "Input Mono Narrow"
+                                 "Input Mono Condensed"
+                                 ;; "Input Mono Compressed"
+                                 :size 14
                                  :weight normal
                                  :width normal
                                  :powerline-scale 1.1)
