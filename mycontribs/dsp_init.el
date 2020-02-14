@@ -72,7 +72,7 @@
                                  ;; "Input Mono Narrow"
                                  "Input Mono Condensed"
                                  ;; "Input Mono Compressed"
-                                 :size 14
+                                 :size 12
                                  :weight normal
                                  :width normal
                                  :powerline-scale 1.1)
