@@ -47,6 +47,8 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      ivy
+     ;; auto-completion layer will install "company" and "auto-complete",
+     ;; then the modes decide which one to enable
      (auto-completion :disabled-for org git
                       :variables
                       auto-completion-enable-snippets-in-popup t
