@@ -435,23 +435,14 @@
    Refer to =~/dotspacemacs/mycontribs/dsp_layers.el= :)
 
 * Misc Stuffs
-** Multiple Cursor with evil-mc:
+** Evaluate lisp in =scratch= buffer
+   - Navigate to =scratch= buffer
+   - =M-x list-interaction-mode=
+   - Type lisp statements, go to EOL and hit =C-x C-e=
 
-| Key Binding | Description                        |
-|-------------+------------------------------------|
-|  g r f      | evil-mc-make-and-goto-first-cursor |
-|  g r h      | evil-mc-make-cursor-here           |
-|  g r j      | evil-mc-make-cursor-move-next-line |
-|  g r k      | evil-mc-make-cursor-move-prev-line |
-|  g r l      | evil-mc-make-and-goto-last-cursor  |
-|  g r m      | evil-mc-make-all-cursors           |
-|  g r n      | evil-mc-skip-and-goto-next-match   |
-|  g r N      | evil-mc-skip-and-goto-next-cursor  |
-|  g r p      | evil-mc-skip-and-goto-prev-match   |
-|  g r P      | evil-mc-skip-and-goto-prev-cursor  |
-|  g r r      | evil-mc-resume-cursors             |
-|  g r s      | evil-mc-pause-cursors              |
-|  g r u      | evil-mc-undo-all-cursors           |
+** Multiple Cursor with evil-mc:
+   Type ='g r'= it will show available command
+
 
 For easy navigation you also have the following:
 
