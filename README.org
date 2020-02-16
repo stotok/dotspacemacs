@@ -437,11 +437,11 @@
 * Misc Stuffs
 ** Evaluate lisp in =scratch= buffer
    - Navigate to =scratch= buffer
-   - =M-x list-interaction-mode=
+   - =M-x lisp-interaction-mode=
    - Type lisp statements, go to EOL and hit =C-x C-e=
 
 ** Multiple Cursor with evil-mc:
-   Type ='g r'= it will show available command
+   Type =g r= it will show available command
 
 
 For easy navigation you also have the following:
