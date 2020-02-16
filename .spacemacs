@@ -57,6 +57,29 @@ This function should only modify configuration layer settings."
      ;; better-defaults
      emacs-lisp
      ;; git  ;; move this to dsp_layers.el
+     ;;
+     ;; lsp layer
+     ;;
+     (lsp :variables
+          lsp-auto-configure nil        ; to configure only features u like
+          lsp-prefer-flymake nil
+          lsp-auto-execute-action nil
+          )
+     ;;
+     ;; python layer with lsp-mode
+     ;;
+     (python :variables
+             python-backend 'lsp
+             ;; python-tab-width 4
+             python-fill-column 99
+             python-formatter 'yapf
+             python-format-on-save t
+             python-sort-imports-on-save t
+             python-pipenv-activate t
+             )
+     ;;
+     ;; c-c++ layer
+     ;;
      (c-c++ :variables
             ;; support backend: lsp-clangd, lsp-ccls, lsp-cquery, rtags, ycmd
             c-c++-backend nil
@@ -115,24 +138,6 @@ This function should only modify configuration layer settings."
      ;; - Start editing with multiple cursor
      ;; - 'grq' to remove all cursors
      (multiple-cursors :variables multiple-cursors-backend 'evil-mc)
-     ;;
-     ;; lsp
-     ;;
-     (lsp :variables
-          lsp-auto-configure nil        ; to configure only features u like
-          lsp-prefer-flymake nil
-          lsp-auto-execute-action nil
-          )
-     ;; python lsp-mode
-     (python :variables
-             python-backend 'lsp
-             ;; python-tab-width 4
-             python-fill-column 99
-             python-formatter 'yapf
-             python-format-on-save t
-             python-sort-imports-on-save t
-             python-pipenv-activate t
-             )
      )
 
    ;; List of additional packages that will be installed without being

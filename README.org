@@ -66,6 +66,8 @@
 ** python lsp layer
    Ok, now the world is moving towards [[https://langserver.org][Language Server Protocol]], so are we :)
 
+*** install =pipenv= system-wide
+    : $ port install pipenv
 *** =.basrc=
     : # pipenv will now place the virtualenv inside the project folder
     : # emacs will see it and activate it
@@ -119,6 +121,7 @@
       : $ port select --list python
       : $ port select --list pip
 **** Install pipenv
+     Select which python version, then:
      : $ sudo port install pipenv
 
 
