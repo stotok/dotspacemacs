@@ -61,9 +61,9 @@ This function should only modify configuration layer settings."
      ;; lsp layer
      ;;
      (lsp :variables
-          lsp-auto-configure nil        ; to configure only features u like
+          ;; lsp-auto-configure nil        ; to configure only features u like
           lsp-prefer-flymake nil
-          lsp-auto-execute-action nil
+          ;; lsp-auto-execute-action nil
           )
      ;;
      ;; python layer with lsp-mode
