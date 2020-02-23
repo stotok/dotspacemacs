@@ -167,7 +167,8 @@ In that case, insert the number."
     ;;
 
     ;; add company-rtags to company-backends
-    (push 'company-rtags company-backends)
+    ;; (push 'company-rtags company-backends)
+    (push 'company-lsp company-backends)
     )
   )
  )
