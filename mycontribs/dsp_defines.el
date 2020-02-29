@@ -79,6 +79,8 @@
   (string-prefix-p "jolt" system-name t))
 (defmacro IsIgl6301w ()
   (string-prefix-p "IGL6301W" system-name t))
+(defmacro IsLoge ()
+  (string-prefix-p "loge" system-name t))
 
 ;;
 ;; Display OS and HOSTNAME information
@@ -130,6 +132,8 @@
     (message "IsGrimlock: TRUE"))
    ((IsJolt)
     (message "IsJolt: TRUE"))
+   ((IsLoge)
+    (message "IsLoge: TRUE"))
    (t
     (message "Unknown HOSTNAME."))))
 

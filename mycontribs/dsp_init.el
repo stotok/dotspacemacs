@@ -77,6 +77,21 @@
                                  :width normal
                                  :powerline-scale 1.1)
      ))
+   ((IsLoge)
+    (setq-default
+     ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
+     ;; quickly tweak the mode-line size to make separators look not too crappy.
+     dotspacemacs-default-font '(;; https://input.fontbureau.com
+                                 ;; "Input Sans Narrow"
+                                 ;; "Input Mono"
+                                 "Input Mono Narrow"
+                                 ;; "Input Mono Condensed"
+                                 ;; "Input Mono Compressed"
+                                 :size 12
+                                 :weight normal
+                                 :width normal
+                                 :powerline-scale 1.1)
+     ))
    ((or (IsRatchet) (IsEpsilon))
     (setq-default
      ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -142,7 +157,7 @@
                          leuven
                          )
    ))
- ((or (IsRatchet) (IsIgd0464u) (IsIgl2465w) (IsJazz) (IsSentinel) (IsEpsilon) (IsSideswipe) (IsGrimlock) (IsJolt) (IsIgl6301w))
+ ((or (IsRatchet) (IsIgd0464u) (IsIgl2465w) (IsJazz) (IsSentinel) (IsEpsilon) (IsSideswipe) (IsGrimlock) (IsJolt) (IsIgl6301w) (IsLoge))
   (setq-default
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great

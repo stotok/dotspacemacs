@@ -82,6 +82,9 @@
  ((IsJolt)
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
   )
+ ((IsLoge)
+  (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
+  )
  )
 
 ;; EOF
