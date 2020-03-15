@@ -58,24 +58,6 @@
       ;; Project Tree
       (setq org-publish-project-alist
             '(;;
-              ;; TODOC project
-              ;;
-              ("todoc-notes"
-              :base-directory "~/project/todoc.org/org/"
-              :base-extension "org"
-              :publishing-directory "~/project/todoc.org/bo/html/"
-              :recursive t
-              :publishing-function org-html-publish-to-html
-              :headline-levels 4             ; Just the default for this project.
-              :auto-preamble t)
-              ("todoc-static"
-              :base-directory "~/project/todoc.org/org/"
-              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-              :publishing-directory "~/project/todoc.org/bo/html/"
-              :recursive t
-              :publishing-function org-publish-attachment)
-              ("todoc-org" :components ("todoc-notes" "todoc-static"))
-              ;;
               ;; SSDC project
               ;;
               ("ssdc-notes"
@@ -177,14 +159,16 @@
       ;; org-drill: http://orgmode.org/worg/org-contrib/org-drill.html
       ;;
       ;; (require 'org-drill)
-      (add-to-list 'org-modules 'org-drill)
-      (setq org-drill-maximum-items-per-session nil) ; unlimited questions
-      (setq org-drill-maximum-duration nil)          ; no timeout
-      (setq org-drill-save-buffers-after-drill-sessions-p nil) ; no need to save buffer
-      (setq org-drill-hide-item-headings-p nil)      ; show heading during drill
-      (setq org-drill-add-random-noise-to-intervals-p t)
-      (setq org-drill-learn-fraction 0.2)    ; to appear more frequently (default: 0.5)
-      (setq org-drill-leech-method nil)      ; leech treated same as normal items
+      (with-eval-after-load 'org-modules
+        (add-to-list 'org-modules 'org-drill)
+        (setq org-drill-maximum-items-per-session nil) ; unlimited questions
+        (setq org-drill-maximum-duration nil)          ; no timeout
+        (setq org-drill-save-buffers-after-drill-sessions-p nil) ; no need to save buffer
+        (setq org-drill-hide-item-headings-p nil)      ; show heading during drill
+        (setq org-drill-add-random-noise-to-intervals-p t)
+        (setq org-drill-learn-fraction 0.2)    ; to appear more frequently (default: 0.5)
+        (setq org-drill-leech-method nil)      ; leech treated same as normal items
+      )
       ;;
       ;; For "<s" snippets you need to (require 'org-tempo).
       ;; Blocks can also be inserted using the interface accessed via C-c C-,.
