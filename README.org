@@ -68,15 +68,17 @@
 
 *** install =pipenv=
     - macports (system-wide)
-      : $ port install pipenv
-    - debian (virtualenv as system-wide, pipenv as user local)
-      : $ pip3 install virtualenv
+      : $ sudo port install pipenv
+    - debian (whell and virtualenv as system-wide, pipenv as user local)
+      : $ sudo apt install python3-dev
+      : $ sudo pip3 install wheel
+      : $ sudo pip3 install virtualenv
       : $ pip3 install --user pipenv
 *** =.basrc=
     : # pipenv will now place the virtualenv inside the project folder
     : # emacs will see it and activate it
     : export PIPENV_VENV_IN_PROJECT=1
-    :
+    : ...
     : # debian pipenv install here
     : PATH=~/.local/bin:${PATH}
 *** =.spacemacs=
