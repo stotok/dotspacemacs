@@ -101,7 +101,8 @@
 *** =pipenv=
     - spawn a shell in a virtual environment
       : $ cd <your project root>
-      : $ pipenv shell --python 3.6
+      : $ pipenv shell --python 3.6 (first time to create venv)
+      : $ pipenv shell (next time after the fist time)
     - install
       : $ pipenv install autoflake flake8 epc importmagic 'python-language-server[all]' 'ptvsd>=4.2'
       : $ pipenv install <python library needed by your project>
