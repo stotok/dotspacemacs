@@ -98,16 +98,24 @@
                 )
          )
     #+end_src
-*** =pipenv=
+*** create/activate virtual environment
     - spawn a shell in a virtual environment
       : $ cd <your project root>
-      : $ pipenv shell --python 3.6 (first time to create venv)
-      : $ pipenv shell (next time after the fist time)
-    - install
-      : $ pipenv install autoflake flake8 epc importmagic 'python-language-server[all]' 'ptvsd>=4.2'
-      : $ pipenv install <python library needed by your project>
-    - execute
-      : $ pipenv run python main.py
+      - first time (create virtual env)
+        : $ pipenv shell --python 3.6 (first time to create venv)
+      - next time (virtual env already created)
+        : $ pipenv shell (next time after the fist time)
+    - install packages
+      - first time
+        : $ pipenv install autoflake flake8 epc importmagic 'python-language-server[all]' 'ptvsd>=4.2'
+        : $ pipenv install <python library needed by your project>
+      - next time (after clone from git repo, install from Pipfile and Pipfile.lock)
+        : $ pipenv install
+    - execute python program
+      - when in virtual env shell
+        : (venv) $ python main.py
+      - when not in virtual env shell
+        : $ pipenv run python main.py
 
   That's it. Open a file in your project, emacs will automagically start lsp/pyls.
 
