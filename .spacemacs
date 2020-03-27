@@ -77,6 +77,9 @@ This function should only modify configuration layer settings."
              python-format-on-save nil
              python-sort-imports-on-save t
              python-pipenv-activate t
+             ;; disable these plugins, too noisy :)
+             lsp-pyls-plugins-pycodestyle-enabled nil
+             lsp-pyls-plugins-mccabe-enabled nil
              )
      ;;
      ;; c-c++ layer
