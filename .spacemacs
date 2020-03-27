@@ -70,10 +70,11 @@ This function should only modify configuration layer settings."
      ;;
      (python :variables
              python-backend 'lsp
+             python-lsp-server 'pyls
              ;; python-tab-width 4
-             python-fill-column 99
+             python-fill-column 149
              python-formatter 'yapf
-             python-format-on-save t
+             python-format-on-save nil
              python-sort-imports-on-save t
              python-pipenv-activate t
              )

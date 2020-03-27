@@ -108,6 +108,7 @@
     - install packages
       - first time
         : $ pipenv install autoflake flake8 epc importmagic 'python-language-server[all]' 'ptvsd>=4.2'
+        : $ pipenv install pyls-isort pyls-mypy pyls-black
         : $ pipenv install <python library needed by your project>
       - next time (after clone from git repo, install from Pipfile and Pipfile.lock)
         : $ pipenv install
