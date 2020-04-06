@@ -70,9 +70,10 @@
                                  ;; "Input Sans Narrow"
                                  ;; "Input Mono"
                                  ;; "Input Mono Narrow"
-                                 "Input Mono Condensed"
                                  ;; "Input Mono Compressed"
-                                 :size 12
+                                 ;; "Input Mono Condensed"
+                                 "Inconsolata"
+                                 :size 14
                                  :weight normal
                                  :width normal
                                  :powerline-scale 1.1)
