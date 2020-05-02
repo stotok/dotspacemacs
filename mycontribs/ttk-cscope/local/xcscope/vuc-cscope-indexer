@@ -138,7 +138,31 @@ fi
     fi
 ) | \
     egrep -i '\.([chly](xx|pp)*|cc|hh)$' | \
-    sed -e '/\/TVIP\/Vehicle_Micro\/Test\//d' -e '/\/VUC_APP\/tools\//d' -e '/\/BSP_MCAL_V4_RH850F1L\//d' -e '/\/BSP_MCAL_RH850F1L\//d' -e '/\/BSP_MCAL_Bolero\//d' -e '/\/User_Config_PTF\//d' -e '/\/Application_PTF\//d' -e '/\/MCAL_V4_RH850F1L\//d' -e '/\/MCAL_RH850F1L\//d' -e '/\/MCAL_Bolero\//d' -e '/\/UnitTest_Vcast\//d' -e '/\/Vehicle_Tools\//d' -e '/\/VectorCAST\//d' -e '/\/tests\//d' -e '/\/TestCode\//d' -e '/\/.repo\//d' -e '/\/CVS\//d' -e '/\/RCS\//d' -e '/^\.svn\//d' -e '/\/.git\//d' -e '/\/.hg\//d' -e 's/^\.\///' | \
+    sed -e '/\/TVIP\/Vehicle_Micro\/Test\//d' \
+        -e '/\/TVIP\/Vehicle_Micro\/User_Config\//d' \
+        -e '/\/TVIP\/Vehicle_Micro\/Application\//d' \
+        -e '/\/TVIP\/Vehicle_Micro\/target\//d' \
+        -e '/\/VUC_APP\/tools\//d' \
+        -e '/\/BSP_MCAL_V4_RH850F1L\//d' \
+        -e '/\/BSP_MCAL_RH850F1L\//d' \
+        -e '/\/BSP_MCAL_Bolero\//d' \
+        -e '/\/User_Config_PTF\//d' \
+        -e '/\/Application_PTF\//d' \
+        -e '/\/MCAL_V4_RH850F1L\//d' \
+        -e '/\/MCAL_RH850F1L\//d' \
+        -e '/\/MCAL_Bolero\//d' \
+        -e '/\/UnitTest_Vcast\//d' \
+        -e '/\/Vehicle_Tools\//d' \
+        -e '/\/VectorCAST\//d' \
+        -e '/\/tests\//d' \
+        -e '/\/TestCode\//d' \
+        -e '/\/.repo\//d' \
+        -e '/\/CVS\//d' \
+        -e '/\/RCS\//d' \
+        -e '/^\.svn\//d' \
+        -e '/\/.git\//d' \
+        -e '/\/.hg\//d' \
+        -e 's/^\.\///' | \
     sort > $LIST_FILE
 
 #
