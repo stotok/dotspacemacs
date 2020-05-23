@@ -22,6 +22,10 @@
         ("gnu"   . "~/.elpa-mirror/gnu/")))
 
 ;;
+;; https://articles.inqk.net/2019/02/12/how-to-spacemacs-custom-themes.html
+(add-to-list 'custom-theme-load-path "~/project/tron-legacy-emacs-theme/")
+
+;;
 ;; System Customization
 ;; To show font list: M-x menu-set-font
 (cond
@@ -164,6 +168,7 @@
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
+                         tron-legacy
                          material
                          spacemacs-light
                          spacemacs-dark

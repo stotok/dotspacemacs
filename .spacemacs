@@ -143,6 +143,9 @@ This function should only modify configuration layer settings."
      ;; - Start editing with multiple cursor
      ;; - 'grq' to remove all cursors
      (multiple-cursors :variables multiple-cursors-backend 'evil-mc)
+     ;; colors layer consist of several packages, one of them is rainbow-mode
+     ;; to display, turn on rainbow-mode by 'SPC t C c'
+     colors
      )
 
    ;; List of additional packages that will be installed without being

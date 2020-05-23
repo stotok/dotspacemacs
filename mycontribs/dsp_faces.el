@@ -23,15 +23,15 @@
     (setq spacemacs-theme-org-height nil) ; don't change height of org-mode headlines
     ;; original color for comment is too strong
     ;; use http://www.colorpicker.com to determine RGB value
-    (cond
-     ((or (IsCygwin) (IsWindows))
-      (custom-set-variables '(spacemacs-theme-custom-colors
-                              '((comment . "#137C87")))) ; #2aa1ae (original spacemacs-dark)
-      )
-     (t
-      (custom-set-variables '(spacemacs-theme-custom-colors
-                              '((comment . "#137C87")))) ; #2aa1ae (original spacemacs-dark)
-      ))
+    ;; (cond
+    ;;  ((or (IsCygwin) (IsWindows))
+    ;;   (custom-set-variables '(spacemacs-theme-custom-colors
+    ;;                           '((comment . "#137C87")))) ; #2aa1ae (original spacemacs-dark)
+    ;;   )
+    ;;  (t
+    ;;   (custom-set-variables '(spacemacs-theme-custom-colors
+    ;;                           '((comment . "#137C87")))) ; #2aa1ae (original spacemacs-dark)
+    ;;   ))
     )
   )
  )

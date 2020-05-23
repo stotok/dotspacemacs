@@ -14,12 +14,20 @@
    Then clone spacemacs and switch to =develop= branch:
 
    #+BEGIN_SRC text
-   $ git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d
-   $ cd ~/.emacs.d
-   $ git checkout -b develop -t origin/develop
+    $ git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d
+    $ cd ~/.emacs.d
+    $ git checkout -b develop -t origin/develop
    #+END_SRC
 
-   Now my configuration:
+   Then clone emacs theme tron-legacy-emacs-theme:
+
+   #+begin_src text
+     $ cd ~/project/
+     $ git clone https://github.com/stotok/tron-legacy-emacs-theme.git
+     $ git checkout -b develop -t origin/develop
+   #+end_src
+
+   Now dotspacemacs configuration:
 
    #+BEGIN_SRC text
      $ cd ~
@@ -460,20 +468,20 @@
    - Type lisp statements, go to EOL and hit =C-x C-e=
 
 ** Multiple Cursor with evil-mc:
-   Type =g r= it will show available command
+   Type =g r= it will show available commands.
 
+    For easy navigation you also have the following:
 
-For easy navigation you also have the following:
+    | Key Binding | Description                        |
+    |-------------+------------------------------------|
+    |  M-n        | evil-mc-make-and-goto-next-cursor  |
+    |  M-p        | evil-mc-make-and-goto-prev-cursor  |
+    |  C-n        | evil-mc-make-and-goto-next-match   |
+    |  C-p        | evil-mc-make-and-goto-prev-match   |
+    |  C-t        | evil-mc-skip-and-goto-next-match   |
+    |  C-M-j      | evil-mc-make-cursor-move-next-line |
+    |  C-M-k      | evil-mc-make-cursor-move-prev-line |
 
-| Key Binding | Description                        |
-|-------------+------------------------------------|
-|  M-n        | evil-mc-make-and-goto-next-cursor  |
-|  M-p        | evil-mc-make-and-goto-prev-cursor  |
-|  C-n        | evil-mc-make-and-goto-next-match   |
-|  C-p        | evil-mc-make-and-goto-prev-match   |
-|  C-t        | evil-mc-skip-and-goto-next-match   |
-|  C-M-j      | evil-mc-make-cursor-move-next-line |
-|  C-M-k      | evil-mc-make-cursor-move-prev-line |
 ** Interesting stuffs:
 1. [[https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org#replacing-text-with-iedit][Replacing text with iedit]]
 2. [[https://emacsredux.com/blog/2018/09/29/projectile-goes-turbo/][Projectile goes Turbo]]
