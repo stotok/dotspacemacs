@@ -23,6 +23,9 @@
 
 ;;
 ;; https://articles.inqk.net/2019/02/12/how-to-spacemacs-custom-themes.html
+;; https://www.reddit.com/r/emacs/comments/gtmi8h/customizing_a_theme_for_emacs/
+;; To show full list of currently loaded faces: M-x list-faces-display
+;; To switch to another theme: <SPACE> T s
 (add-to-list 'custom-theme-load-path "~/project/tron-legacy-emacs-theme/")
 
 ;;
