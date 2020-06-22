@@ -80,6 +80,14 @@ This function should only modify configuration layer settings."
              ;; disable these plugins, too noisy :)
              lsp-pyls-plugins-pycodestyle-enabled nil
              lsp-pyls-plugins-mccabe-enabled nil
+             ;; this is also too noisy
+             lsp-ui-doc-enable nil
+             lsp-ui-sideline-enable nil
+             lsp-ui-sideline-show-symbol nil
+             lsp-ui-sideline-show-diagnostics nil
+             lsp-ui-sideline-show-hover nil
+             lsp-ui-sideline-show-code-actions nil
+             lsp-ui-sideline-update-mode nil
              )
      ;;
      ;; c-c++ layer

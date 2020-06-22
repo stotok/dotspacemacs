@@ -76,11 +76,11 @@
      dotspacemacs-default-font '(;; https://input.fontbureau.com
                                  ;; "Input Sans Narrow"
                                  ;; "Input Mono"
-                                 ;; "Input Mono Narrow"
+                                 "Input Mono Narrow"
                                  ;; "Input Mono Compressed"
                                  ;; "Input Mono Condensed"
-                                 "Inconsolata"
-                                 :size 14
+                                 ;; "Inconsolata"
+                                 :size 12
                                  :weight normal
                                  :width normal
                                  :powerline-scale 1.1)
