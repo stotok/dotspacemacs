@@ -143,6 +143,7 @@ fi
         -e '/\/TVIP\/Vehicle_Micro\/Application\//d' \
         -e '/\/TVIP\/Vehicle_Micro\/target\//d' \
         -e '/\/VUC_APP\/tools\//d' \
+        -e '/\/VUC_APP\/tmp\//d' \
         -e '/\/BSP_MCAL_V4_RH850F1L\//d' \
         -e '/\/BSP_MCAL_RH850F1L\//d' \
         -e '/\/BSP_MCAL_Bolero\//d' \
@@ -187,7 +188,7 @@ then
     echo "Indexing files ..."
 fi
 
-cscope -b -i $LIST_FILE -f $DATABASE_FILE
+cscope -b -c -i $LIST_FILE -f $DATABASE_FILE
 
 if [ "X$VERBOSE" != "X" ]
 then

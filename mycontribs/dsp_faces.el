@@ -32,6 +32,7 @@
     ;;   (custom-set-variables '(spacemacs-theme-custom-colors
     ;;                           '((comment . "#137C87")))) ; #2aa1ae (original spacemacs-dark)
     ;;   ))
+    (setq tron-legacy-theme-softer-bg t)
     )
   )
  )

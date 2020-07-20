@@ -64,6 +64,21 @@ This function should only modify configuration layer settings."
           ;; lsp-auto-configure nil        ; to configure only features u like
           lsp-prefer-flymake nil
           ;; lsp-auto-execute-action nil
+          ;;
+          lsp-navigation 'simple
+          ;; this is also too noisy
+          lsp-ui-doc-enable nil
+          lsp-ui-sideline-enable nil
+          lsp-ui-sideline-show-symbol nil
+          lsp-ui-sideline-show-diagnostics nil
+          lsp-ui-sideline-show-hover nil
+          lsp-ui-sideline-show-code-actions nil
+          lsp-ui-sideline-update-mode nil
+          lsp-ui-peek-enable nil
+          lsp-ui-peek-show-directory nil
+          ;; these also too noisy?
+          lsp-ui-flycheck-enable nil
+          lsp-ui-imenu-enable t
           )
      ;;
      ;; python layer with lsp-mode
@@ -80,14 +95,6 @@ This function should only modify configuration layer settings."
              ;; disable these plugins, too noisy :)
              lsp-pyls-plugins-pycodestyle-enabled nil
              lsp-pyls-plugins-mccabe-enabled nil
-             ;; this is also too noisy
-             lsp-ui-doc-enable nil
-             lsp-ui-sideline-enable nil
-             lsp-ui-sideline-show-symbol nil
-             lsp-ui-sideline-show-diagnostics nil
-             lsp-ui-sideline-show-hover nil
-             lsp-ui-sideline-show-code-actions nil
-             lsp-ui-sideline-update-mode nil
              )
      ;;
      ;; c-c++ layer
