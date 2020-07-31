@@ -205,6 +205,7 @@ This function should only modify configuration layer settings."
                                     winum            ; dun need it
                                     writeroom-mode   ; dun need it
                                     spinner          ; dun need it
+                                    rtags            ; dun need it at the moment
                                     )
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
