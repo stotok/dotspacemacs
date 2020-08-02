@@ -23,6 +23,7 @@
 ;; (add-to-list 'dotspacemacs-configuration-layers '(ttk-beacon))
 ;; c/c++
 (add-to-list 'dotspacemacs-configuration-layers '(ttk-cscope))
+(add-to-list 'dotspacemacs-configuration-layers '(ttk-ivy-cscope))
 (add-to-list 'dotspacemacs-configuration-layers '(ttk-cpp))
 (add-to-list 'dotspacemacs-configuration-layers '(ttk-counsel-etags))
 ;; rj-mode, evil-goto-line center the screen
