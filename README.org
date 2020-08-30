@@ -152,310 +152,310 @@
      : $ sudo port install pipenv
 
 
-** elpy layer (ttk-elpy)
-   NOTICE: This layer is obsolete, replaced by =lsp-mode= above.
+ # ** elpy layer (ttk-elpy)
+#    NOTICE: This layer is obsolete, replaced by =lsp-mode= above.
 
-   Support python environment, enable via
-   =dotspacemacs-configuration-layers= '(=ttk-elpy=). And make sure you don't enable
-   =python= layer in your =.spacemacs=.
+#    Support python environment, enable via
+#    =dotspacemacs-configuration-layers= '(=ttk-elpy=). And make sure you don't enable
+#    =python= layer in your =.spacemacs=.
 
-   This is practically dinosaur of pycscope :) Don't worry, they can co-exist
-   peacefully.
+#    This is practically dinosaur of pycscope :) Don't worry, they can co-exist
+#    peacefully.
 
-   Couple of things need to setup by you before you can enjoy elpy. First of all,
-   install python virtual environment. And some other packages that elpy is
-   depending on.
+#    Couple of things need to setup by you before you can enjoy elpy. First of all,
+#    install python virtual environment. And some other packages that elpy is
+#    depending on.
 
-*** Kali Linux
-    Kali python executable for python 2.X is *python2* while for python ver 3.X is
-    *python3*. So, just juse =shebang= line at your script to indicate which version
-    the script intended to run.
+# *** Kali Linux
+#     Kali python executable for python 2.X is *python2* while for python ver 3.X is
+#     *python3*. So, just juse =shebang= line at your script to indicate which version
+#     the script intended to run.
 
-**** Install python and pip
-     - Python 2.7
-       : $ sudo apt install python python-setuptools python-pip
+# **** Install python and pip
+#      - Python 2.7
+#        : $ sudo apt install python python-setuptools python-pip
 
-     * Python 3
-       : $ sudo apt install python3 python3-setuptools python3-pip
+#      * Python 3
+#        : $ sudo apt install python3 python3-setuptools python3-pip
 
-**** Install virtual environment
-     * Python 2.7
-       : $ sudo -H pip install virtualenv virtualenvwrapper
+# **** Install virtual environment
+#      * Python 2.7
+#        : $ sudo -H pip install virtualenv virtualenvwrapper
 
-     * Python 3
-       : $ sudo -H pip3 install virtualenv virtualenvwrapper
+#      * Python 3
+#        : $ sudo -H pip3 install virtualenv virtualenvwrapper
 
-**** Select which python
-     * Python 2.7
-       : $ select_python2
+# **** Select which python
+#      * Python 2.7
+#        : $ select_python2
 
-     * Python 3
-       : $ select_python3
+#      * Python 3
+#        : $ select_python3
 
-**** Create python virtualenv
-     * Python 2.7
-       : $ mkvirtualenv elpy -p /usr/bin/python2
+# **** Create python virtualenv
+#      * Python 2.7
+#        : $ mkvirtualenv elpy -p /usr/bin/python2
 
-     * Python 3
-       : $ mkvirtualenv elpy -p /usr/bin/python3
+#      * Python 3
+#        : $ mkvirtualenv elpy -p /usr/bin/python3
 
-**** The above step would do auto workon
-     : $ workon elpy
+# **** The above step would do auto workon
+#      : $ workon elpy
 
-**** Install these packagess via pip
-     * Python 2.7
-       : $ pip install jedi flake8 importmagic autopep8 yapf rope black
+# **** Install these packagess via pip
+#      * Python 2.7
+#        : $ pip install jedi flake8 importmagic autopep8 yapf rope black
 
-     * Python 3
-       : $ pip3 install jedi flake8 importmagic autopep8 yapf rope black
+#      * Python 3
+#        : $ pip3 install jedi flake8 importmagic autopep8 yapf rope black
 
-**** To deactivate current virtualenv
-     : $ deactivate
+# **** To deactivate current virtualenv
+#      : $ deactivate
 
-**** For emacs elpy package
-     : M-x pyvenv-workon elpy
-     : M-x elpy-config
+# **** For emacs elpy package
+#      : M-x pyvenv-workon elpy
+#      : M-x elpy-config
 
-*** Macports
-**** install python and pip
-    - python 2.7
-      : $ sudo port install python27
-      : $ sudo port install py27-pip
-    - python 3.6
-      : $ sudo port install python36
-      : $ sudo port install py36-pip
-    - switching between versions
-      : $ sudo port select --set python python27
-      : $ sudo port select --set python2 python27
-      : $ sudo port select --set pip pip27
-      or,
-      : $ sudo port select --set python python36
-      : $ sudo port select --set python3 python36
-      : $ sudo port select --set pip pip36
-    - list available versions
-      : $ port select --list python
-      : $ port select --list pip
-**** Activate either python and pip 2.7 or 3.6
-    Example is activating python and pip 3.6
-      : $ sudo port select --set python python36
-      : $ sudo port select --set python3 python36
-      : $ sudo port select --set pip pip36
-**** Install virtual environment
-    * virtualenv
-      : $ sudo -H pip install virtualenv
-    * virtualenvwrapper
-      : $ sudo -H pip install virtualenvwrapper
-**** Python Select
-    Put this in your =.bashrc= on how to select python 2 or 3 (or any other python
-    versions in that matter):
+# *** Macports
+# **** install python and pip
+#     - python 2.7
+#       : $ sudo port install python27
+#       : $ sudo port install py27-pip
+#     - python 3.6
+#       : $ sudo port install python36
+#       : $ sudo port install py36-pip
+#     - switching between versions
+#       : $ sudo port select --set python python27
+#       : $ sudo port select --set python2 python27
+#       : $ sudo port select --set pip pip27
+#       or,
+#       : $ sudo port select --set python python36
+#       : $ sudo port select --set python3 python36
+#       : $ sudo port select --set pip pip36
+#     - list available versions
+#       : $ port select --list python
+#       : $ port select --list pip
+# **** Activate either python and pip 2.7 or 3.6
+#     Example is activating python and pip 3.6
+#       : $ sudo port select --set python python36
+#       : $ sudo port select --set python3 python36
+#       : $ sudo port select --set pip pip36
+# **** Install virtual environment
+#     * virtualenv
+#       : $ sudo -H pip install virtualenv
+#     * virtualenvwrapper
+#       : $ sudo -H pip install virtualenvwrapper
+# **** Python Select
+#     Put this in your =.bashrc= on how to select python 2 or 3 (or any other python
+#     versions in that matter):
 
-    #+BEGIN_SRC bashrc
-    function select_python27() {
-        if [ -d "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin" ] ; then
-            echo "Setting env for system python 2.7 macport."
-            # add virtualenv executable into system path
-            OLD_PATH=${PATH}
-            export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin":${OLD_PATH}
-            ### update prompt
-            export PS1="(py27)${PS1}"
-        else
-            echo "Python 2.7 macport is not installed!!!"
-        fi
-        #
-        if [ -f /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh ] ; then
-            export WORKON_HOME=${HOME}/.virtenv27
-            export PIP_VIRTUALENV_BASE=${WORKON_HOME}
-            export PIP_RESPECT_VIRTUALENV=true
-            export VIRTUALENVWRAPPER_PYTHON=/opt/local/bin/python2.7
-            source /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
-        else
-            echo "Virtualenv is not installed!!!"
-        fi
-    }
-    #
-    # python 36
-    #
-    function select_python36() {
-        if [ -d "/opt/local/Library/Frameworks/Python.framework/Versions/3.6/bin" ] ; then
-            echo "Setting env for system python 3.6 macport."
-            # add virtualenv executable into system path
-            OLD_PATH=${PATH}
-            export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/3.6/bin":${OLD_PATH}
-            ### update prompt
-            export PS1="(py36) ${PS1}"
-        else
-            echo "Python 3.6 macport is not installed!!!"
-        fi
-        #
-        if [ -f /opt/local/Library/Frameworks/Python.framework/Versions/3.6/bin/virtualenvwrapper.sh ] ; then
-            export WORKON_HOME=${HOME}/.virtenv36
-            export PIP_VIRTUALENV_BASE=${WORKON_HOME}
-            export PIP_RESPECT_VIRTUALENV=true
-            export VIRTUALENVWRAPPER_PYTHON=/opt/local/bin/python3.6
-            source /opt/local/Library/Frameworks/Python.framework/Versions/3.6/bin/virtualenvwrapper.sh
-        else
-            echo "Virtualenv is not installed!!!"
-        fi
-    }
-    #+END_SRC
+#     #+BEGIN_SRC bashrc
+#     function select_python27() {
+#         if [ -d "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin" ] ; then
+#             echo "Setting env for system python 2.7 macport."
+#             # add virtualenv executable into system path
+#             OLD_PATH=${PATH}
+#             export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin":${OLD_PATH}
+#             ### update prompt
+#             export PS1="(py27)${PS1}"
+#         else
+#             echo "Python 2.7 macport is not installed!!!"
+#         fi
+#         #
+#         if [ -f /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh ] ; then
+#             export WORKON_HOME=${HOME}/.virtenv27
+#             export PIP_VIRTUALENV_BASE=${WORKON_HOME}
+#             export PIP_RESPECT_VIRTUALENV=true
+#             export VIRTUALENVWRAPPER_PYTHON=/opt/local/bin/python2.7
+#             source /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
+#         else
+#             echo "Virtualenv is not installed!!!"
+#         fi
+#     }
+#     #
+#     # python 36
+#     #
+#     function select_python36() {
+#         if [ -d "/opt/local/Library/Frameworks/Python.framework/Versions/3.6/bin" ] ; then
+#             echo "Setting env for system python 3.6 macport."
+#             # add virtualenv executable into system path
+#             OLD_PATH=${PATH}
+#             export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/3.6/bin":${OLD_PATH}
+#             ### update prompt
+#             export PS1="(py36) ${PS1}"
+#         else
+#             echo "Python 3.6 macport is not installed!!!"
+#         fi
+#         #
+#         if [ -f /opt/local/Library/Frameworks/Python.framework/Versions/3.6/bin/virtualenvwrapper.sh ] ; then
+#             export WORKON_HOME=${HOME}/.virtenv36
+#             export PIP_VIRTUALENV_BASE=${WORKON_HOME}
+#             export PIP_RESPECT_VIRTUALENV=true
+#             export VIRTUALENVWRAPPER_PYTHON=/opt/local/bin/python3.6
+#             source /opt/local/Library/Frameworks/Python.framework/Versions/3.6/bin/virtualenvwrapper.sh
+#         else
+#             echo "Virtualenv is not installed!!!"
+#         fi
+#     }
+#     #+END_SRC
 
-    Then you need to source it to take effect:
-    : $ source ~/.bashrc
+#     Then you need to source it to take effect:
+#     : $ source ~/.bashrc
 
-    And finally select python 3.6 environment to be consistent with the activating
-    python and pip 3.6 earlier:
-    : $ select_python36
-**** Python Virtual Environment
-    - Create python virtualenv
-      : $ mkvirtualenv elpy
-    - The above step would do auto workon
-      : $ workon elpy
-    - Install these packages via pip.
-      : $ pip install jedi flake8 importmagic autopep8 yapf rope black
-    - To deactivate current virtualenv
-      : $ deactivate
-    - For emacs elpy package
-      : M-x pyvenv-workon elpy
-      : M-x elpy-config
+#     And finally select python 3.6 environment to be consistent with the activating
+#     python and pip 3.6 earlier:
+#     : $ select_python36
+# **** Python Virtual Environment
+#     - Create python virtualenv
+#       : $ mkvirtualenv elpy
+#     - The above step would do auto workon
+#       : $ workon elpy
+#     - Install these packages via pip.
+#       : $ pip install jedi flake8 importmagic autopep8 yapf rope black
+#     - To deactivate current virtualenv
+#       : $ deactivate
+#     - For emacs elpy package
+#       : M-x pyvenv-workon elpy
+#       : M-x elpy-config
 
-    It's now ready. Always do =M-x pyvenv-workon elpy= (or any venv you are working
-    on) before you open any python project.
-**** Check which python and pip is currently active
-    : $ which python
-    : /Users/joe/.virtenv36/elpy/bin/python
-    : $ which pip
-    : /Users/joe/.virtenv36/elpy/bin/pip
+#     It's now ready. Always do =M-x pyvenv-workon elpy= (or any venv you are working
+#     on) before you open any python project.
+# **** Check which python and pip is currently active
+#     : $ which python
+#     : /Users/joe/.virtenv36/elpy/bin/python
+#     : $ which pip
+#     : /Users/joe/.virtenv36/elpy/bin/pip
 
-*** Cygwin
-**** Install python and pip
-     From cygwin installer, install:
-     - python2 and python3
-     - python2-pip and python3-pip
-**** Install virtualenv and virtualenvwrapper
-     From cygwin terminal (notice: --user):
-     : $ pip2.7 install --user virtualenv
-     : $ pip2.7 install --user virtualenvwrapper
-     : $ pip3.6 install --user virtualenv
-     : $ pip3.6 install --user virtualenvwrapper
-**** Python Select
-     Put this in your .bashrc to select python 2 or 3:
+# *** Cygwin
+# **** Install python and pip
+#      From cygwin installer, install:
+#      - python2 and python3
+#      - python2-pip and python3-pip
+# **** Install virtualenv and virtualenvwrapper
+#      From cygwin terminal (notice: --user):
+#      : $ pip2.7 install --user virtualenv
+#      : $ pip2.7 install --user virtualenvwrapper
+#      : $ pip3.6 install --user virtualenv
+#      : $ pip3.6 install --user virtualenvwrapper
+# **** Python Select
+#      Put this in your .bashrc to select python 2 or 3:
 
-     #+BEGIN_SRC bashrc
-      function select_python27() {
-          if [ -f "${HOME}/.local/bin/virtualenv" ] ; then
-              echo "Add virtualenv executable into system path"
-              OLD_PATH=${PATH}
-              export PATH="${HOME}/.local/bin":${OLD_PATH}
-              ### update prompt
-              export PS1="(py27)${PS1}"
-          else
-              echo "virtualenv is not installed!!!"
-          fi
-          #
-          if [ -f "${HOME}/.local/bin/virtualenvwrapper.sh" ] ; then
-              export WORKON_HOME=${HOME}/.virtenv27
-              export PIP_VIRTUALENV_BASE=${WORKON_HOME}
-              export PIP_RESPECT_VIRTUALENV=true
-              export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
-              export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--python='"$VIRTUALENVWRAPPER_PYTHON"
-              source ${HOME}/.local/bin/virtualenvwrapper.sh
-          else
-              echo "Virtualenv is not installed!!!"
-          fi
-      }
-      ;;
-      function select_python36() {
-          if [ -f "${HOME}/.local/bin/virtualenv" ] ; then
-              echo "Add virtualenv executable into system path"
-              OLD_PATH=${PATH}
-              export PATH="${HOME}/.local/bin":${OLD_PATH}
-              ### update prompt
-              export PS1="(py36)${PS1}"
-          else
-              echo "virtualenv is not installed!!!"
-          fi
-          #
-          if [ -f "${HOME}/.local/bin/virtualenvwrapper.sh" ] ; then
-              export WORKON_HOME=${HOME}/.virtenv36
-              export PIP_VIRTUALENV_BASE=${WORKON_HOME}
-              export PIP_RESPECT_VIRTUALENV=true
-              export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
-              export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--python='"$VIRTUALENVWRAPPER_PYTHON"
-              source ${HOME}/.local/bin/virtualenvwrapper.sh
-          else
-              echo "Virtualenv is not installed!!!"
-          fi
-      }
-     #+END_SRC
+#      #+BEGIN_SRC bashrc
+#       function select_python27() {
+#           if [ -f "${HOME}/.local/bin/virtualenv" ] ; then
+#               echo "Add virtualenv executable into system path"
+#               OLD_PATH=${PATH}
+#               export PATH="${HOME}/.local/bin":${OLD_PATH}
+#               ### update prompt
+#               export PS1="(py27)${PS1}"
+#           else
+#               echo "virtualenv is not installed!!!"
+#           fi
+#           #
+#           if [ -f "${HOME}/.local/bin/virtualenvwrapper.sh" ] ; then
+#               export WORKON_HOME=${HOME}/.virtenv27
+#               export PIP_VIRTUALENV_BASE=${WORKON_HOME}
+#               export PIP_RESPECT_VIRTUALENV=true
+#               export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+#               export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--python='"$VIRTUALENVWRAPPER_PYTHON"
+#               source ${HOME}/.local/bin/virtualenvwrapper.sh
+#           else
+#               echo "Virtualenv is not installed!!!"
+#           fi
+#       }
+#       ;;
+#       function select_python36() {
+#           if [ -f "${HOME}/.local/bin/virtualenv" ] ; then
+#               echo "Add virtualenv executable into system path"
+#               OLD_PATH=${PATH}
+#               export PATH="${HOME}/.local/bin":${OLD_PATH}
+#               ### update prompt
+#               export PS1="(py36)${PS1}"
+#           else
+#               echo "virtualenv is not installed!!!"
+#           fi
+#           #
+#           if [ -f "${HOME}/.local/bin/virtualenvwrapper.sh" ] ; then
+#               export WORKON_HOME=${HOME}/.virtenv36
+#               export PIP_VIRTUALENV_BASE=${WORKON_HOME}
+#               export PIP_RESPECT_VIRTUALENV=true
+#               export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
+#               export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--python='"$VIRTUALENVWRAPPER_PYTHON"
+#               source ${HOME}/.local/bin/virtualenvwrapper.sh
+#           else
+#               echo "Virtualenv is not installed!!!"
+#           fi
+#       }
+#      #+END_SRC
 
-    Then you need to source it to take effect:
-    : $ source ~/.bashrc
+#     Then you need to source it to take effect:
+#     : $ source ~/.bashrc
 
-**** Python Virtual Environment
-    - Create python virtualenv
-      : $ mkvirtualenv elpy
-    - The above step would do auto workon
-      : $ workon elpy
-    - Install these packages via pip
-      : $ pip install jedi flake8 importmagic autopep8 yapf rope black
-    - To deactivate current virtualenv
-      : $ deactivate
-    - For emacs elpy package
-      : M-x pyvenv-workon elpy
-      : M-x elpy-config
+# **** Python Virtual Environment
+#     - Create python virtualenv
+#       : $ mkvirtualenv elpy
+#     - The above step would do auto workon
+#       : $ workon elpy
+#     - Install these packages via pip
+#       : $ pip install jedi flake8 importmagic autopep8 yapf rope black
+#     - To deactivate current virtualenv
+#       : $ deactivate
+#     - For emacs elpy package
+#       : M-x pyvenv-workon elpy
+#       : M-x elpy-config
 
-    It's now ready. Always do =M-x pyvenv-workon elpy= (or any venv you are working
-    on) before you open any python project.
+#     It's now ready. Always do =M-x pyvenv-workon elpy= (or any venv you are working
+#     on) before you open any python project.
 
 
-** rtags layer (ttk-rtags)
-   THIS PRIVATE LAYER IS NO LONGER NEEDED DUE TO RTAGS SPACEMACS LAYER COMES
-   INTO EXISTENCE IN DEVELOP BRANCH.
+# ** rtags layer (ttk-rtags)
+#    THIS PRIVATE LAYER IS NO LONGER NEEDED DUE TO RTAGS SPACEMACS LAYER COMES
+#    INTO EXISTENCE IN DEVELOP BRANCH.
 
-   Support c/c++ client server indexer based on clang. Enable it via =ttk-rtags=.
-   Yeah, this is dinosaur of cscope :) But again, don't worry because they can
-   co-exist peacefully.
+#    Support c/c++ client server indexer based on clang. Enable it via =ttk-rtags=.
+#    Yeah, this is dinosaur of cscope :) But again, don't worry because they can
+#    co-exist peacefully.
 
-   Couple of things need to setup before you can enjoy rtags. First of all, take
-   a look at:
+#    Couple of things need to setup before you can enjoy rtags. First of all, take
+#    a look at:
 
-       https://github.com/Andersbakken/rtags.git
+#        https://github.com/Andersbakken/rtags.git
 
-*** Install *rtags* dependencies:
-    This is for Debian based distros:
-    : $ sudo apt-get install llvm llvm-dev clang libclang-dev build-essential cmake libssl-dev
-    : $ sudo apt-get install libncurses5 libncurses5-dev pkg-config bash-completion lua5.3
+# *** Install *rtags* dependencies:
+#     This is for Debian based distros:
+#     : $ sudo apt-get install llvm llvm-dev clang libclang-dev build-essential cmake libssl-dev
+#     : $ sudo apt-get install libncurses5 libncurses5-dev pkg-config bash-completion lua5.3
 
-*** Build rtags
-    We are going to build rtags from git source.
+# *** Build rtags
+#     We are going to build rtags from git source.
 
-    : $ cd ~/project/emacsen
-    : $ git clone --recursive https://github.com/Andersbakken/rtags.git
-    : $ cd rtags
-    : $ mkdir build
-    : $ cd build
-    : $ rm CMakeCache.txt (if any)
-    : $ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE ..
-    : $ make
+#     : $ cd ~/project/emacsen
+#     : $ git clone --recursive https://github.com/Andersbakken/rtags.git
+#     : $ cd rtags
+#     : $ mkdir build
+#     : $ cd build
+#     : $ rm CMakeCache.txt (if any)
+#     : $ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE ..
+#     : $ make
 
-    The rtags =rc=, =rdm= and =rp= executables are now generated in =build/bin= directory.
-    Update =PATH=:
+#     The rtags =rc=, =rdm= and =rp= executables are now generated in =build/bin= directory.
+#     Update =PATH=:
 
-    : PATH=${PATH}:~/project/emacsen/rtags/build/bin
+#     : PATH=${PATH}:~/project/emacsen/rtags/build/bin
 
-*** Generate compile_commands.json
-    Various tools can generate compile_commands.json,
-    ref: https://github.com/Andersbakken/rtags.git
-    - =cmake=
-      : $ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE .
+# *** Generate compile_commands.json
+#     Various tools can generate compile_commands.json,
+#     ref: https://github.com/Andersbakken/rtags.git
+#     - =cmake=
+#       : $ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE .
 
-*** Indexing project database
-    - Start the rtags daemon (=rdm=)
-      : $ rdm &
-    - Index the rtags project. Go to where the =compile_commands.json=:
-      : $ rc -J .
-      Do it only once. =rdm= will automatically update the index if there is change in your
-      source code.
+# *** Indexing project database
+#     - Start the rtags daemon (=rdm=)
+#       : $ rdm &
+#     - Index the rtags project. Go to where the =compile_commands.json=:
+#       : $ rc -J .
+#       Do it only once. =rdm= will automatically update the index if there is change in your
+#       source code.
 
 
 ** Other private layers
