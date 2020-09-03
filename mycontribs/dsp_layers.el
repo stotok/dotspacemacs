@@ -61,7 +61,7 @@
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
   ;; (add-to-list 'dotspacemacs-configuration-layers '(ttk-elpy))
   )
- ((IsIgl2465w)
+ ((IsIgd1943u)
   (add-to-list 'dotspacemacs-configuration-layers '(ttk-rg))
   )
  ((IsIgl6301w)
