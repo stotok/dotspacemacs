@@ -120,8 +120,8 @@
  ((IsDspUserInit)
   (message "*** dsp_etc.el user init: company customization")
   ;;
-  (when t
-    ;; company delay until suggestions are show
+  (when nil                             ; alerady setup in .spacemacs
+    ;; company delay until suggestions are shown
     (setq company-idle-delay 0.5)
     ;; weight by frequency
     (setq company-transformers '(company-sort-by-occurrence)))
@@ -131,45 +131,49 @@
     (message "*** dsp_etc.el user config: company customization")
     ;; this will enable company-mode in all buffers
     (message "*** dsp_etc.el user config: global company mode enabled")
-    (global-company-mode t)
+    ;; Ref: https://develop.spacemacs.org/layers/+completion/auto-completion/README.html
+    ;; It can be done by adding (global-company-mode) in the dotspacemacs/user-config
+    ;; function of your dotfile. But it is not recommended to do so, you should instead
+    ;; open an issue to ask for auto-completion support for the major-modes where it is
+    ;; missing.
+    ;; If you choose to use (global-company-mode) then you loose some advantages provided
+    ;; by the layer system like disabling auto-completion for specific layers.
+    ;;(global-company-mode t)
     ;;
     ;; using digits to select company-mode candidates
     ;; https://oremacs.com/2017/12/27/company-numbers/
     ;; basic setting
-    (setq company-show-numbers t)       ; numbers show next to candidate
-    ;; add some bindings
-    (let ((map company-active-map))
-      (mapc (lambda (x) (define-key map (format "%d" x) 'ora-company-number))
-       (number-sequence 0 9))
-      (define-key map " " (lambda ()
-                            (interactive)
-                            (company-abort)
-                            (self-insert-command 1)))
-      (define-key map (kbd "<return>") nil))
-    ;; actual code
-    (defun ora-company-number ()
-      "Forward to `company-complete-number'.
+    (with-eval-after-load 'company
+      (setq company-show-numbers t)       ; numbers show next to candidate
+      ;; add some bindings
+      (let ((map company-active-map))
+        (mapc (lambda (x) (define-key map (format "%d" x) 'ora-company-number))
+        (number-sequence 0 9))
+        (define-key map " " (lambda ()
+                              (interactive)
+                              (company-abort)
+                              (self-insert-command 1)))
+        (define-key map (kbd "<return>") nil))
+      ;; actual code
+      (defun ora-company-number ()
+        "Forward to `company-complete-number'.
 
-Unless the number is potentially part of the candidate.
-In that case, insert the number."
-      (interactive)
-      (let* ((k (this-command-keys))
-             (re (concat "^" company-prefix k)))
-        (if (cl-find-if (lambda (s) (string-match re s))
-                        company-candidates)
-            (self-insert-command 1)
-          (company-complete-number
-           (if (equal k "0")
-               10
-             (string-to-number k))))))
-    ;;
-    ;; end of using digits to select company-mode candidates
-    ;;
-
-    ;; add company-rtags to company-backends
-    ;; (push 'company-rtags company-backends)
-    ;; (push 'company-lsp company-backends)
-    (push 'company-capf company-backends)
+  Unless the number is potentially part of the candidate.
+  In that case, insert the number."
+        (interactive)
+        (let* ((k (this-command-keys))
+              (re (concat "^" company-prefix k)))
+          (if (cl-find-if (lambda (s) (string-match re s))
+                          company-candidates)
+              (self-insert-command 1)
+            (company-complete-number
+            (if (equal k "0")
+                10
+              (string-to-number k))))))
+        ;;
+        ;; end of using digits to select company-mode candidates
+        ;;
+      )
     )
   )
  )

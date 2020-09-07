@@ -51,8 +51,19 @@ This function should only modify configuration layer settings."
      ;; then the modes decide which one to enable
      (auto-completion :disabled-for org git
                       :variables
+                      auto-completion-return-key-behavior 'complete
+                      auto-completion-tab-key-behavior 'cycle
+                      auto-completion-complete-with-key-sequence nil
+                      auto-completion-complete-with-key-sequence-delay 0.1
+                      auto-completion-minimum-prefix-length 2
+                      auto-completion-idle-delay 0.5 ; until suggestions are shown
+                      auto-completion-enable-help-tooltip nil
+                      auto-completion-use-company-box nil
+                      auto-completion-enable-sort-by-usage t ; company-statistics will be automatically installed
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-private-snippets-directory "~/dotspacemacs/mycontribs/myyasnippet/stotok"
+                      ;; completion backends
+                      spacemacs-default-company-backends '(company-capf)
                       )
      ;; better-defaults
      emacs-lisp
