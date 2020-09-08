@@ -80,11 +80,11 @@ This function should only modify configuration layer settings."
           ;; this is also too noisy
           lsp-ui-doc-enable nil
           lsp-ui-sideline-enable nil
-          lsp-ui-sideline-show-symbol nil
-          lsp-ui-sideline-show-diagnostics nil
-          lsp-ui-sideline-show-hover nil
-          lsp-ui-sideline-show-code-actions nil
-          lsp-ui-sideline-update-mode nil
+          ;; lsp-ui-sideline-show-symbol nil
+          ;; lsp-ui-sideline-show-diagnostics nil
+          ;; lsp-ui-sideline-show-hover nil
+          ;; lsp-ui-sideline-show-code-actions nil
+          ;; lsp-ui-sideline-update-mode nil
           lsp-ui-peek-enable nil
           lsp-ui-peek-show-directory nil
           ;; these also too noisy?
@@ -96,7 +96,7 @@ This function should only modify configuration layer settings."
      ;;
      (python :variables
              python-backend 'lsp
-             python-lsp-server 'pyls
+             python-lsp-server 'pyls    ; package lsp-python-ms is disabled, see below
              ;; python-tab-width 4
              python-fill-column 149
              python-formatter 'yapf
@@ -106,6 +106,13 @@ This function should only modify configuration layer settings."
              ;; disable these plugins, too noisy :)
              lsp-pyls-plugins-pycodestyle-enabled nil
              lsp-pyls-plugins-mccabe-enabled nil
+             ;; enable back if you want
+             lsp-pyls-plugins-pylint-enabled nil
+             lsp-pyls-plugins-autopep8-enabled nil
+             lsp-pyls-plugins-yapf-enabled nil
+             lsp-pyls-plugins-pyflakes-enabled nil
+             lsp-pyls-plugins-flake8-enabled nil
+             lsp-pyls-plugins-pydocstyle-enabled nil
              )
      ;;
      ;; c-c++ layer
@@ -218,6 +225,7 @@ This function should only modify configuration layer settings."
                                     writeroom-mode   ; dun need it
                                     spinner          ; dun need it
                                     rtags            ; dun need it at the moment
+                                    lsp-python-ms    ; force disable mspyls
                                     )
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
