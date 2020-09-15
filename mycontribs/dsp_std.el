@@ -136,9 +136,11 @@
   ;;
   ;; emacs 26.1 has replaced the old linum-mode with a faster and less
   ;; clusttered implementation.
-  (when (>= emacs-major-version 26)
-    ;; let's turn on for programming modes
-    (add-hook 'prog-mode-hook 'display-line-numbers-mode))
+  (when nil                             ; move to .spacemacs
+    (when (>= emacs-major-version 26)
+      ;; let's turn on for programming modes
+      (add-hook 'prog-mode-hook 'display-line-numbers-mode))
+    )
   ;;
   ;;
   ;; Build-In VC Package
