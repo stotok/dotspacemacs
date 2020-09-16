@@ -80,16 +80,33 @@ This function should only modify configuration layer settings."
           ;; this is also too noisy
           lsp-ui-doc-enable nil
           lsp-ui-sideline-enable nil
-          ;; lsp-ui-sideline-show-symbol nil
-          ;; lsp-ui-sideline-show-diagnostics nil
-          ;; lsp-ui-sideline-show-hover nil
-          ;; lsp-ui-sideline-show-code-actions nil
-          ;; lsp-ui-sideline-update-mode nil
+          lsp-ui-sideline-show-symbol nil
+          lsp-ui-sideline-show-diagnostics nil
+          lsp-ui-sideline-show-hover nil
+          lsp-ui-sideline-show-code-actions nil
+          lsp-ui-sideline-update-mode nil
           lsp-ui-peek-enable nil
           lsp-ui-peek-show-directory nil
           ;; these also too noisy?
           lsp-ui-flycheck-enable nil
           lsp-ui-imenu-enable t
+          ;;
+          ;; see https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
+          ;; let's kill them all :)
+          lsp-enable-symbol-highlighting nil   ; symbol highlighting
+          lsp-ui-doc-show-with-cursor nil      ; cursor hover
+          lsp-ui-doc-show-with-mouse nil       ; mouse hover
+          lsp-lens-enable nil                  ; lens
+          lsp-headerline-breadcrumb-enable nil ; headerline
+          lsp-modeline-code-actions-enable nil ; modeline code actions
+          lsp-diagnostics-provider :none
+          lsp-modeline-diagnostics-enable nil  ; modeline diagnostics statistics
+          lsp-eldoc-enable-hover nil           ; eldoc
+          lsp-signature-auto-activate nil      ; manually: `lsp-signature-activate'
+          lsp-signature-render-documentation nil ; signature help documentation
+          lsp-completion-provider :ivy           ; long live ivy
+          ;; lsp-completion-show-detail nil         ; completion item detail
+          ;; lsp-completion-show-kind nil           ; completion item kind
           )
      ;;
      ;; python layer with lsp-mode
