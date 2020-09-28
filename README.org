@@ -468,19 +468,29 @@
    - Type lisp statements, go to EOL and hit =C-x C-e=
 
 ** Multiple Cursor with evil-mc:
+   1. Select text
+   2. Press =C-n= to create a next *cursor* for the same *selection* forwards
+   3. Press =C-p= to create a next *cursor* for the same *selection* backwards
+   4. =grn= to skip a forward match
+   5. =grp= to skip a backward match
+   6. Start editing with =multiple cursors=
+   7. =grq= to remove all *cursors*
+
    Type =g r= it will show available commands.
 
     For easy navigation you also have the following:
 
+    |-------------+------------------------------------|
     | Key Binding | Description                        |
     |-------------+------------------------------------|
-    |  M-n        | evil-mc-make-and-goto-next-cursor  |
-    |  M-p        | evil-mc-make-and-goto-prev-cursor  |
-    |  C-n        | evil-mc-make-and-goto-next-match   |
-    |  C-p        | evil-mc-make-and-goto-prev-match   |
-    |  C-t        | evil-mc-skip-and-goto-next-match   |
-    |  C-M-j      | evil-mc-make-cursor-move-next-line |
-    |  C-M-k      | evil-mc-make-cursor-move-prev-line |
+    | M-n         | evil-mc-make-and-goto-next-cursor  |
+    | M-p         | evil-mc-make-and-goto-prev-cursor  |
+    | C-n         | evil-mc-make-and-goto-next-match   |
+    | C-p         | evil-mc-make-and-goto-prev-match   |
+    | C-t         | evil-mc-skip-and-goto-next-match   |
+    | C-M-j       | evil-mc-make-cursor-move-next-line |
+    | C-M-k       | evil-mc-make-cursor-move-prev-line |
+    |-------------+------------------------------------|
 
 ** Interesting stuffs:
 1. [[https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org#replacing-text-with-iedit][Replacing text with iedit]]
