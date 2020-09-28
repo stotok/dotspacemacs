@@ -19,6 +19,10 @@
 ;         Steven Elliott <selliott4@austin.rr.com>
 ;
 ;
+;; Totok 29-Sep-2020:
+;; - Don't use function process-kill-without-query that is no longer exist
+;;   in Emacs 27
+;;
 ; Totok 14-Feb-2013:
 ; - Fix cscope-bury-buffer() not really bury it :)
 ; Totok 28-Apr-2013:
@@ -2010,7 +2014,12 @@ using the mouse."
 	      (set-process-filter cscope-process cscope-filter-func)
 	      (set-process-sentinel cscope-process cscope-sentinel-func)
 	      (set-marker (process-mark cscope-process) (point))
-	      (process-kill-without-query cscope-process)
+        ;; totok: delete start
+	      ;; (process-kill-without-query cscope-process)
+        ;; totok: delete end
+        ;; totok: add start (the above is replaced with this below)
+        (set-process-query-on-exit-flag cscope-process nil)
+        ;; totok: add end
 	      (if cscope-running-in-xemacs
 		  (setq modeline-process ": Searching ..."))
 	      (setq buffer-read-only t)
@@ -2143,7 +2152,12 @@ SENTINEL-FUNC are optional process filter and sentinel, respectively."
 		   cscope-indexing-script args))
       (set-process-sentinel cscope-unix-index-process
 			    'cscope-unix-index-files-sentinel)
-      (process-kill-without-query cscope-unix-index-process)
+      ;; totok: delete start
+      ;; (process-kill-without-query cscope-unix-index-process)
+      ;; totok: delete end
+      ;; totok: add start (the above is replaced with this below)
+      (set-process-query-on-exit-flag cscope-unix-index-process nil)
+      ;; totok: add end
       )
     ))
 
