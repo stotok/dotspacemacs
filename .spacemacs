@@ -197,6 +197,16 @@ This function should only modify configuration layer settings."
      ;; colors layer consist of several packages, one of them is rainbow-mode
      ;; to display, turn on rainbow-mode by 'SPC t C c'
      colors
+     ;;
+     ;; layouts
+     ;; this layer needs package 'persp-mode' and 'eyebrowse'
+     (spacemacs-layouts :variables
+                        spacemacs-layouts-restricted-functions
+                        '(spacemacs/window-split-double-columns
+                          spacemacs/window-split-tripple-columns
+                          spacemacs/window-split-grid)
+                        spacemacs-layouts-restrict-spc-tab t
+                        persp-autokill-buffer-on-remove t)
      )
 
    ;; List of additional packages that will be installed without being
@@ -236,8 +246,8 @@ This function should only modify configuration layer settings."
                                     evil-anzu        ; yeah, dun need anzu
                                     nyan-mode        ; default optional spaceline modeline
                                     fancy-battery    ; default optional spaceline modeline
-                                    persp-mode       ; workspace-like package
-                                    eyebrowse        ; simpler workspace-like package
+                                    ;; persp-mode       ; workspace-like package
+                                    ;; eyebrowse        ; simpler workspace-like package
                                     winum            ; dun need it
                                     writeroom-mode   ; dun need it
                                     spinner          ; dun need it
