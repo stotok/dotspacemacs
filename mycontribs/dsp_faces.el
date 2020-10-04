@@ -35,6 +35,18 @@
     (setq tron-legacy-theme-softer-bg t)
     )
   )
+ ((IsDspUserConfig)
+  ;; get the right time to set face of hl-line is a bit tricky
+  ;; each theme has its own way to set and clear
+  ;; hence, call this function after switching to a theme
+  (defun ttk-hl-line-underline-on ()
+    "Enable hl-line underline"
+    (interactive)
+    (set-face-background 'hl-line nil)
+    (set-face-foreground 'hl-line nil)
+    (set-face-underline 'hl-line t))
+  (ttk-hl-line-underline-on)
+  )
  )
 
 ;;
