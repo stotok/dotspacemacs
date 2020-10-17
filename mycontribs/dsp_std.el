@@ -141,18 +141,6 @@
       ;; let's turn on for programming modes
       (add-hook 'prog-mode-hook 'display-line-numbers-mode))
     )
-  ;;
-  ;;
-  ;; Build-In VC Package
-  ;;
-  (setq vc-follow-symlinks t) ; don't ask for confirmation for opening symlinked file
-  ;; Ref https://magit.vc/manual/magit/Performance.html
-  ;; I don't use VC in addition to Magit, so disable it to keep it from performing
-  ;; unnecessary work (see also another option just below)
-  (setq vc-handled-backends nil)
-  ;; You can also disable its use for Git but keep using it when using another version
-  ;; control system:
-  ;; (setq vc-handled-backends (delq 'Git vc-handled-backends))
 
   ;;
   ;; backwards compatibility as default-buffer-file-coding-system
@@ -176,19 +164,35 @@
                                     (refert-buffer-function " %b"
                                                             ("%b - Dir: " default-directory))))))))
   ;;
-  (setq-default indent-tabs-mode nil) ; use spaces (not tabs) for indenting
-  (setq-default truncate-lines t)     ; turn on truncating long lines
-  (setq require-final-newline t)      ; always add a final newline
-  (set-fringe-mode '(0 . 0))          ; disable fringe, dun need it (no line wrap, etc)
-  ;; i dun want horizontal window splitting
-  ;; and i want only vertical window splitting
-  (setq split-height-threshold 0)
-  (setq split-width-threshold nil)
-  ;; vi like scrolling
-  (setq scroll-step 1           ; scroll just goes down 1 line even it hits the bottom
-        scroll-margin 3)        ; 3 lines margin
+  ;; This is my default preferences
   ;;
-  (setq delete-by-moving-to-trash nil) ;; no need to go to OS's trash folder
+  (set-fringe-mode '(0 . 0))            ; disable fringe, dun need it (no line wrap, etc)
+  (fset 'yes-or-no-p 'y-or-n-p)         ; replace yes/no prompts with y/n
+  (setq-default
+   indent-tabs-mode nil                 ; use spaces (not tabs) for indenting
+   truncate-lines t                     ; turn on truncating long lines
+   require-final-newline t              ; always add a final newline
+   delete-by-moving-to-trash nil        ; no need to go to OS's trash folder
+   cursor-in-non-selected-windows nil   ; hide cursor in inactive windows
+   select-enable-clipboard t            ; merge system's and emacs's clipboard
+   ;;
+   split-height-threshold 0             ; i only want vertical window splitting
+   split-width-threshold nil            ; and dunwan horizontal window splitting
+   ;; vi like scrolling
+   scroll-step 1                        ; scroll just goes down 1 line even it hits the bottom
+   scroll-margin 3                      ; 3 lines margin
+   ;;
+   ;; Build-In VC Package
+   vc-follow-symlinks t                 ; don't ask for confirmation for opening symlinked file
+   ;; Ref https://magit.vc/manual/magit/Performance.html
+   ;; I don't use VC in addition to Magit, so disable it to keep it from performing
+   ;; unnecessary work (see also another option just below)
+   vc-handled-backends nil
+   ;; You can also disable its use for Git but keep using it when using another version
+   ;; control system:
+   ;; vc-handled-backends (delq 'Git vc-handled-backends)
+   )
+  ;;
   (when (or (IsCygwin) (IsWindows))
     ;; try to improve slow performance on windows and cygwin
     (setq w32-get-true-file-attributes nil)
