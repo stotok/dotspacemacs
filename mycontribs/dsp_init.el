@@ -58,18 +58,7 @@
   ;; To list available fonts in linux:
   ;; $ fc-list | grep InputSans
   (cond
-   ((IsIgd0464u)
-    (setq-default
-     ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
-     ;; quickly tweak the mode-line size to make separators look not too crappy.
-     dotspacemacs-default-font '(;; available in x11 fonts
-                                 "fixed"
-                                 :size 12
-                                 :weight normal
-                                 :width normal
-                                 :powerline-scale 1.1)
-     ))
-   ((or (IsIgl6301w) (IsIgd1943u))
+   ((or (IsIgl6301w) (IsIgd1943u) (IsIgd0464u) (IsLoge))
     (setq-default
      ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
      ;; quickly tweak the mode-line size to make separators look not too crappy.
@@ -80,21 +69,6 @@
                                  ;; "Input Mono Compressed"
                                  ;; "Input Mono Condensed"
                                  ;; "Inconsolata"
-                                 :size 12
-                                 :weight normal
-                                 :width normal
-                                 :powerline-scale 1.1)
-     ))
-   ((IsLoge)
-    (setq-default
-     ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
-     ;; quickly tweak the mode-line size to make separators look not too crappy.
-     dotspacemacs-default-font '(;; https://input.fontbureau.com
-                                 ;; "Input Sans Narrow"
-                                 ;; "Input Mono"
-                                 "Input Mono Narrow"
-                                 ;; "Input Mono Condensed"
-                                 ;; "Input Mono Compressed"
                                  :size 12
                                  :weight normal
                                  :width normal
@@ -115,9 +89,9 @@
     (setq-default
      ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
      ;; quickly tweak the mode-line size to make separators look not too crappy.
-     dotspacemacs-default-font '(;; $ sudo apt-get install fonts-inconsolata
-                                 "Inconsolata"
-                                 :size 14
+     dotspacemacs-default-font '(;; available in x11 fonts
+                                 "fixed"
+                                 :size 12
                                  :weight normal
                                  :width normal
                                  :powerline-scale 1.1)
