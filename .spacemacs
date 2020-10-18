@@ -89,7 +89,7 @@ This function should only modify configuration layer settings."
           lsp-ui-peek-show-directory nil
           ;; these also too noisy?
           lsp-ui-flycheck-enable nil
-          lsp-ui-imenu-enable t
+          lsp-ui-imenu-enable nil
           ;;
           ;; see https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
           ;; let's kill them all :)
@@ -101,6 +101,7 @@ This function should only modify configuration layer settings."
           lsp-modeline-code-actions-enable nil ; modeline code actions
           lsp-diagnostics-provider :none
           lsp-modeline-diagnostics-enable nil  ; modeline diagnostics statistics
+          lsp-eldoc-hook nil                   ; eldoc
           lsp-eldoc-enable-hover nil           ; eldoc
           lsp-signature-auto-activate nil      ; manually: `lsp-signature-activate'
           lsp-signature-render-documentation nil ; signature help documentation
@@ -175,11 +176,15 @@ This function should only modify configuration layer settings."
      ;; modern on the fly syntax checking (drop-in replacement for flycmake)
      ;; What for is this? I forget :) but it is causing editing c files on
      ;; windoz hang during syntax-checking. So, disable lah.
-     ;; (syntax-checking :variables
-     ;;                  ;; checkdoc seems too much for me
-     ;;                  flycheck-disabled-checkers '(emacs-lisp-checkdoc)
-     ;;                  ;; disable tooltip
-     ;;                  syntax-checking-enable-tooltips nil)
+     (syntax-checking :variables
+                      ;; don't enable by default
+                      syntax-checking-enable-by-default nil
+                      ;; disable tooltip
+                      syntax-checking-enable-tooltips nil
+                      ;; use alternative general emacs binding
+                      syntax-checking-use-standard-error-navigation t
+                      ;; checkdoc seems too much for me
+                      flycheck-disabled-checkers '(emacs-lisp-checkdoc))
      ;;
      docker
      treemacs
