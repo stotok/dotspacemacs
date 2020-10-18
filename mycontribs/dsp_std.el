@@ -153,17 +153,6 @@
   ;; Depend on the font size, sometimes frame size cannot be maximized (there's ugly gap)
   (setq frame-resize-pixelwise t)
   ;;
-  ;; Frame title bar formatting to show full path of file
-  ;; This will override whatever format set previously in .spacemacs
-  ;;
-  (when nil                             ; move to .spacemacs in 'develop' branch
-  (setq-default
-    frame-title-format
-    (list '((buffer-file-name " %f" (dired-directory
-                                    dired-directory
-                                    (refert-buffer-function " %b"
-                                                            ("%b - Dir: " default-directory))))))))
-  ;;
   ;; This is my default preferences
   ;;
   (set-fringe-mode '(0 . 0))            ; disable fringe, dun need it (no line wrap, etc)
