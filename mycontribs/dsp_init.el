@@ -31,6 +31,11 @@
 ;;
 ;; System Customization
 ;; To show font list: M-x menu-set-font
+;;
+;; To show currently font being used by emacs:
+;; - Put curson on a char
+;; - M-x describe-font
+;; - Enter
 (cond
  ((IsOSX)
   (setq-default
@@ -58,18 +63,18 @@
   ;; To list available fonts in linux:
   ;; $ fc-list | grep InputSans
   (cond
-   ((IsLoge)
+   ((or (IsLoge) (IsIgl6301w))
     (setq-default
      ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
      ;; quickly tweak the mode-line size to make separators look not too crappy.
-     dotspacemacs-default-font '(;; $ sudo apt-get install fonts-roboto
+     dotspacemacs-default-font '(;; https://fonts.google.com/specimen/Roboto+Mono
                                  "Roboto Mono"
                                  :size 12
                                  :weight normal
                                  :width normal
                                  :powerline-scale 1.3)
      ))
-   ((or (IsIgl6301w) (IsIgd1943u) (IsIgd0464u))
+   ((or (IsIgd1943u) (IsIgd0464u))
     (setq-default
      ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
      ;; quickly tweak the mode-line size to make separators look not too crappy.
