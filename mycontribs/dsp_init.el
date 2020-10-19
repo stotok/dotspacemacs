@@ -58,7 +58,18 @@
   ;; To list available fonts in linux:
   ;; $ fc-list | grep InputSans
   (cond
-   ((or (IsIgl6301w) (IsIgd1943u) (IsIgd0464u) (IsLoge))
+   ((IsLoge)
+    (setq-default
+     ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
+     ;; quickly tweak the mode-line size to make separators look not too crappy.
+     dotspacemacs-default-font '(;; $ sudo apt-get install fonts-roboto
+                                 "Roboto Mono"
+                                 :size 12
+                                 :weight normal
+                                 :width normal
+                                 :powerline-scale 1.3)
+     ))
+   ((or (IsIgl6301w) (IsIgd1943u) (IsIgd0464u))
     (setq-default
      ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
      ;; quickly tweak the mode-line size to make separators look not too crappy.
@@ -139,7 +150,7 @@
                          leuven
                          )
    ))
- ((or (IsRatchet) (IsIgd0464u) (IsIgd1943u) (IsJazz) (IsSentinel) (IsEpsilon) (IsSideswipe) (IsGrimlock) (IsJolt) (IsIgl6301w) (IsLoge))
+ ((or (IsRatchet) (IsIgd0464u) (IsIgd1943u) (IsJazz) (IsSentinel) (IsEpsilon) (IsSideswipe) (IsGrimlock) (IsJolt) (IsIgl6301w))
   (setq-default
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
@@ -148,6 +159,20 @@
                          zenburn
                          tron-legacy
                          material
+                         spacemacs-light
+                         spacemacs-dark
+                         leuven
+                         )
+   ))
+ ((IsLoge)
+  (setq-default
+   ;; List of themes, the first of the list is loaded when spacemacs starts.
+   ;; Press <SPC> T n to cycle to the next theme in the list (works great
+   ;; with 2 themes variants, one dark and one light)
+   dotspacemacs-themes '(
+                         material
+                         zenburn
+                         tron-legacy
                          spacemacs-light
                          spacemacs-dark
                          leuven
