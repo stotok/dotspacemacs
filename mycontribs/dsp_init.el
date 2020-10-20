@@ -63,7 +63,7 @@
   ;; To list available fonts in linux:
   ;; $ fc-list | grep InputSans
   (cond
-   ((or (IsLoge) (IsIgl6301w))
+   ((or (IsLoge) (IsIgl6301w) (IsIgd1943u))
     (setq-default
      ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
      ;; quickly tweak the mode-line size to make separators look not too crappy.
@@ -74,7 +74,7 @@
                                  :width normal
                                  :powerline-scale 1.3)
      ))
-   ((or (IsIgd1943u) (IsIgd0464u))
+   ((IsIgd0464u)
     (setq-default
      ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
      ;; quickly tweak the mode-line size to make separators look not too crappy.
