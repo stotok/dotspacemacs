@@ -8,6 +8,9 @@
 .gitignore.swp
 .spacemacs.swp
 
+# fortune dat file
+mycontribs/ttk-quotes/fortunes.dat
+
 # html output from README.org (C-c C-e h o)
 README.html
 
