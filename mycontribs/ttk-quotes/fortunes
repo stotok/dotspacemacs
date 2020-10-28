@@ -98,11 +98,9 @@ Don't tell people your plans. Show them your results.
 %
 Keep It Simple Stupid.
 %
-It's hardware that makes a machine fast. It's software that makes a fast machine slow.
-%
 Tell me and I forget. Teach me and I remember. Involve me and I learn.
 %
-In a room full of top software architects, if two agree on the same thing, that's a majority.
+In a room full of software architects, if two agree on the same thing, that's a majority.
 %
 If you automate a mess, you get an automated mess.
 %
@@ -114,3 +112,51 @@ I think it's a new feature. Don't tell anyone it was an accient.
 %
 When debugging, novices insert corrective code; experts remove defective code.
 %
+Adding manpower to a late software project makes it later!
+%
+The bearing of a child takes nine months, no matter how many women are assigned.
+Many software tasks have this characteristic because of the sequential nature of debugging.
+%
+Documentation is the castor oil of programming.
+Managers think it's good for programmers and programmers hate it!
+%
+Better train people and risk they leave - than do nothing and risk they stay.
+%
+Good judgment comes from experience, and experience comes from bad judgment.
+%
+The perfect project plan is possible if one first documents a list of all the unknowns.
+%
+Life would be much easier if I had the source code.
+%
+We must not blame developers for their bugs.
+They belong to them only until the code is merged to the repository.
+After that, all bugs are ours!
+%
+Don't comment bad code - rewrite it.
+%
+Walking on water and developing software from a specification
+are easy if both are frozen.
+%
+If debugging is the process of removing software bugs,
+then programming must be the process of putting them in.
+%
+Real programmers don't comment their code.
+If it was hard to write, it should be hard to understand.
+%
+It's not a bug - it's an undocumented feature.
+%
+Copy and paste is a design error.
+    David Parnas
+%
+Software and cathedrals are much the same - first we build them, then we pray.
+%
+Code review: With enough eyes, all bugs are shallow.
+%
+A dynamic duo who works well together can be worth any three people working in isolation.
+%
+Why do we never have time to do it right, but always have time to do it over?
+%
+Analysis occurs only when the domain expert is in the room.
+Otherwise it is pseudo-analysis.
+%
+All programming is maintenance programming, because you are rarely writing original code.
