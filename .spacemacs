@@ -156,8 +156,22 @@ This function should only modify configuration layer settings."
      csv
      html
      markdown
-     latex
-     (org :variables org-enable-reveal-js-support t)
+     ;;
+     ;; auctex is part of latex layer
+     ;; https://develop.spacemacs.org/layers/+lang/latex/README.html
+     (latex :variables
+            latex-enable-auto-fill t    ; default
+            latex-enable-folding nil    ; default
+            latex-enable-magic nil      ; weird :)
+            )
+     ;;
+     ;; cdlatex seems to be orgmode related
+     ;; https://irreal.org/blog/?p=9245
+     ;; https://www.reddit.com/r/emacs/comments/g8ecpj/advice_for_auclatex_what_keybinds_do_you_find/foo64ge/
+     ;; https://github.com/syl20bnr/spacemacs/issues/12840
+     ;; << study how to enable cdlatex later >>
+     (org :variables
+          org-enable-reveal-js-support t)
      (plantuml :variables
                plantuml-default-exec-mode 'jar
                plantuml-jar-path "~/dotspacemacs/plantuml/plantuml.jar"
