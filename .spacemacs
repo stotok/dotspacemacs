@@ -111,6 +111,11 @@ This function should only modify configuration layer settings."
           lsp-completion-provider :ivy           ; long live ivy
           ;; lsp-completion-show-detail nil         ; completion item detail
           ;; lsp-completion-show-kind nil           ; completion item kind
+          ;;
+          ;; http://blog.binchen.org/posts/how-to-speed-up-lsp-mode/
+          lsp-log-io nil                ; enable log only for debug
+          lsp-enable-folding nil        ; use evil-matchit' instead
+          ;; lsp-enable-links nil          ; use ffip instead
           )
      ;;
      ;; python layer with lsp-mode
@@ -142,8 +147,8 @@ This function should only modify configuration layer settings."
             ;; support backend: lsp-clangd, lsp-ccls, lsp-cquery, rtags, ycmd
             c-c++-backend nil
             ;; c-c++-enable-clang-support t ; note that clang causing hang with tramp editing
-            c-c++-default-mode-for-headers 'c++-mode
-            ;; c-c++-default-mode-for-headers 'c-mode
+            ;; c-c++-default-mode-for-headers 'c++-mode
+            c-c++-default-mode-for-headers 'c-mode
             c-toggle-auto-newline nil
             c-toggle-auto-hungry-state nil
             c-toggle-hungry-state nil
