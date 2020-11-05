@@ -447,6 +447,16 @@
   ;; modeline related
   ;;
   (when t
+    (setq-default
+     ;; display-time-24hr-format nil
+     ;; display-time-format "%p%I:%M"
+     display-time-format "%H:%M"
+     display-time-interval 60              ; update every 60 sec
+     display-time-default-load-average nil ; don't show load average
+     display-time-mail-string ""           ; don't show mail
+     )
+    (spacemacs/toggle-display-time-on)     ; show time on modeline
+    ;;
     (spaceline-toggle-buffer-size-off)     ; display buffer size
     (spaceline-toggle-buffer-position-off) ; buffer position info
     (spaceline-toggle-hud-off)             ; hud indicator (right bottom)
