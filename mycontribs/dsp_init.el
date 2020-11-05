@@ -155,7 +155,7 @@
                          leuven
                          )
    ))
- ((or (IsRatchet) (IsIgd0464u) (IsIgd1943u) (IsJazz) (IsSentinel) (IsEpsilon) (IsSideswipe) (IsGrimlock) (IsJolt) (IsIgl6301w))
+ ((or (IsRatchet) (IsIgd0464u) (IsJazz) (IsSentinel) (IsEpsilon) (IsSideswipe) (IsGrimlock) (IsJolt))
   (setq-default
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
@@ -163,6 +163,20 @@
    dotspacemacs-themes '(
                          zenburn
                          tron-legacy
+                         material
+                         spacemacs-light
+                         spacemacs-dark
+                         leuven
+                         )
+   ))
+ ((or (IsIgd1943u) (IsIgl6301w))
+  (setq-default
+   ;; List of themes, the first of the list is loaded when spacemacs starts.
+   ;; Press <SPC> T n to cycle to the next theme in the list (works great
+   ;; with 2 themes variants, one dark and one light)
+   dotspacemacs-themes '(
+                         tron-legacy
+                         zenburn
                          material
                          spacemacs-light
                          spacemacs-dark
