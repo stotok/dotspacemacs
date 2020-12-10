@@ -77,6 +77,8 @@
 *** install =pipenv=
     - macports (system-wide)
       : $ sudo port install pipenv
+    - brew (system-wide)
+      : $ brew install pipenv
     - debian (whell and virtualenv as system-wide, pipenv as user local)
       : $ sudo apt install python3-dev
       : $ sudo pip3 install wheel
@@ -111,7 +113,7 @@
       : $ cd <your project root>
       - first time (create virtual env)
         : $ pipenv shell --python 3.6 (first time to create venv)
-      - next time (virtual env already created)
+      - next time (virtual env already created, ie =Pipfile= already exist)
         : $ pipenv shell (next time after the fist time)
     - install packages
       - first time
