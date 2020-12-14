@@ -75,9 +75,9 @@
               :recursive t
               :publishing-function org-publish-attachment)
               ("ssdc-org-html-themes"
-              :base-directory "~/project/org-html-themes/styles/"
+              :base-directory "~/project/org-html-themes/src/"
               :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-              :publishing-directory "~/project/ssdc/bo/html/styles/"
+              :publishing-directory "~/project/ssdc/bo/html/src/"
               :recursive t
               :publishing-function org-publish-attachment)
               ("ssdc-org" :components ("ssdc-notes" "ssdc-static" "ssdc-org-html-themes"))
@@ -123,9 +123,9 @@
               :recursive t
               :publishing-function org-publish-attachment)
               ("ctdc-org-html-themes"
-              :base-directory "~/project/org-html-themes/styles/"
+              :base-directory "~/project/conti/org-html-themes/src/"
               :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-              :publishing-directory "~/project/conti/ctdc/bo/html/styles/"
+              :publishing-directory "~/project/conti/ctdc/bo/html/src/"
               :recursive t
               :publishing-function org-publish-attachment)
               ("ctdc-org" :components ("ctdc-notes" "ctdc-static" "ctdc-org-html-themes"))
